@@ -7,42 +7,30 @@
 {{$content}}
 
 <main id="content" role="main">
-
+	{{>includes/alpha_banner}}
 	<p><u><b>Create Case</b></u> > <u>Confirm Transaction</u> > <u>Create Mortgage</u> > <u>Sign Mortgage</u> > <u>Date and Submit</u></p>
 
-				<h1 class="heading-large">Case list</h1>
+	<h1 class="form-title heading-large">Case List</h1>
 
-				<div class="grid-wrapper">
-					<div class="grid grid-1-2">
-						<div class="inner-block">
-							<a href="../charges/conveyancer-get-client-assurance" class="button">Add new case</a>
-						</div>
+
+	<div class="grid-row">
+		<div class="column-half">
+			<div class="inner-block">
+				<a href="../charges/conveyancer-get-client-assurance" class="button">Add new case</a>
+			</div>
+		</div>
+		<div class="column-half">
+			<div class="inner-block">
+				<form id="search" class="site-search" action="/search" method="get" role="search">
+					<div class="content">
+						<label for="site-search-text">Search</label>
+						<input type="search" name="q" id="site-search-text" title="Search" class="js-search-focus">
+						<button class="button" type="submit">Go</button>
 					</div>
-					<div class="grid grid-1-2">
-						<div class="inner-block">
-							<form id="search" class="site-search" action="/search" method="get" role="search">
-								<div class="content">
-									<label for="site-search-text">Search</label>
-									<input type="search" name="q" id="site-search-text" title="Search" class="js-search-focus">
-									<button class="button" type="submit">Go</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-
-				<div class="grid-wrapper">
-
-					<ul class="grid case-list">
-
-						{% from "charges/_case-item.html" import build_case_item %}
-						{% for case in data.cases %}
-						{{ build_case_item(case) }}
-						{% endfor %}
-
-					</ul>
-				</div>
-
+				</form>
+			</div>
+		</div>
+	</div>
 </main>
 
 {{/content}}
