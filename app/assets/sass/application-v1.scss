@@ -1,1 +1,219 @@
 // V1 prototype custom styles as required
+@import 'elements';
+@import 'landregistry';
+
+
+.case-list__item {
+  margin-top: $gutter;
+}
+
+.case-list__item--border {
+  border-top: 1px solid $panel-colour;
+}
+
+.case-list {
+  summary::-webkit-details-marker {
+    display: none
+  }
+
+  details summary:focus {
+    outline: none;
+  }
+
+  .case-list__delete {
+    color: $error-colour;
+  }
+}
+
+p.radio-group {
+  margin-bottom: em(5, 16 );
+}
+
+.dec-trust__hidden {
+  display: none;
+}
+
+input[type="radio"]:checked ~ .dec-trust__hidden {
+  display: block;
+  width: 25em;
+}
+
+.supporting-uploads {
+  margin-top: 0;
+  padding-bottom: 0;
+  li {
+    margin: 5px 0;
+  }
+}
+
+.supporting-uploads__remove {
+  color: $link-colour;
+  margin-left: $gutter;
+}
+
+.document-section {
+  clear: both;
+  padding: $gutter 0;
+  @extend %contain-floats;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  h2 {
+    margin-top: 15px;
+  }
+
+  .button-secondary {
+    margin-bottom: 0;
+    margin-top: -0.25em;
+  }
+
+  .alert-flag {
+    font-size: 1.6rem;
+  }
+}
+
+.document-section--bordered {
+  border-top: 1px solid $grey-3;
+}
+
+.document-section__item {
+  margin-top: em(5, 16 );
+  margin-bottom: em(20, 16);
+
+  @include media(tablet) {
+    margin-top: em(5);
+    margin-bottom: em(20);
+  }
+
+  ul, p {
+    margin-top: 0;
+  }
+}
+
+.document-section__heading {
+  margin-top: 0;
+}
+
+.document-section__help-def {
+  margin-bottom: $gutter;
+}
+
+.document-section__form--collapse {
+  margin-bottom: $gutter-half;
+  @extend %contain-floats;
+
+  .form-group {
+    margin-bottom: 0;
+  }
+}
+
+.new-provisions {
+  label {
+    display: inline;
+  }
+  textarea {
+    width: 100%;
+  }
+  summary:focus {
+    outline: none;
+  }
+}
+
+.final-btn {
+  margin-top: $gutter;
+}
+
+.panel-indent h2 {
+  margin-top: 0;
+}
+
+.restriction-panel {
+  margin-bottom: 15px;
+}
+
+.form-control--shorten {
+  width: 100%;
+  @include media(tablet) {
+    width: 30%;
+  }
+}
+
+.no-mortgage {
+  color: $grey-1;
+
+  .nomortgagecheck {
+    color: $black;
+  }
+}
+
+// empty state highlighting
+.empty-state {
+  border-left: 3px solid $error-colour;
+  background: $error-background;
+  padding-left: 10px;
+  margin-left: -13px;
+  .form-hint {
+    color: $black;
+  }
+  @include media(tablet) {
+    border-right: 0;
+    margin-left: -18px;
+    padding-left: $gutter-half;
+  }
+}
+
+.document-section .document-section__item.empty-state {
+  padding: 10px 0;
+  margin-right: 0;
+  background: $error-background;
+}
+
+.document-section__item {
+  margin-left: 0;
+  margin-right: 0;
+
+  &:nth-child(even) {
+    background: $grey-4;
+    padding: 10px 0;
+  }
+}
+
+.document-section__item--collapse {
+  margin: 0;
+}
+
+.transferees {
+  margin-top: $gutter-half;
+}
+
+.signees {
+  padding: 10px $gutter-half 0 $gutter-half;
+  @extend %contain-floats;
+}
+
+.document-section--flush {
+  padding-top: 0;
+}
+
+.confirm-flag--block {
+  display: block;
+  text-align: center;
+}
+
+.addr-collapse {
+  margin-bottom: 0;
+}
+
+.legal-document--bounds {
+  margin: 0 30px 30px;
+
+  .inner-block & {
+    margin: 0 0 30px;
+  }
+}
