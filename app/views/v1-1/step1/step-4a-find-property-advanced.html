@@ -1,0 +1,51 @@
+{{<layout-v1-1}}
+
+{{$pageTitle}}
+	GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main">
+	<div class="outer-block">
+			<div class="inner-block">
+				{{>includes/alpha_banner}}
+				<form class="form" action="step-5a-search-results-advanced" method="get">
+
+						<p><u><b>Create Case</b></u> > <u>Confirm Transaction</u> > <u>Create Mortgage</u> > <u>Sign Mortgage</u> > <u>Date and Submit</u></p>
+
+
+					<h1 class="form-title heading-large">
+						Find property or land
+					</h1>
+
+					<div class="form-group">
+						<label class="form-label-bold" for="search">Advanced Search</label>
+						<form class="form" action="conveyancer-add-client-2" method="get">
+
+							<div class="form-group">
+								<label class="form-label" for="full-name">House Number/Name</label>
+								<input type="text" class="form-control" id="full-name" name="full-name">
+							</div>
+							<div class="form-group">
+								<label class="form-label" for="full-name">Postcode</label>
+								<input type="text" class="form-control" id="full-name" name="full-name">
+							</div>
+							<div class="form-group">
+								<label class="form-label" for="full-name">Surname (enter surname only)</label>
+								<input type="text" class="form-control" id="full-name" name="full-name">
+							</div>
+
+							<div class="form-group">
+								<input type="submit" class="button" value="Search">
+							</div>
+
+						</form>
+			</div>
+		</div>
+
+</main>
+
+{{/content}}
+
+{{/layout-v1-1}}
