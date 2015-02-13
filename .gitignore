@@ -1,6 +1,7 @@
 .sass-cache
 .DS_Store
 .start.pid
-public
+javascripts
+stylesheets
 govuk_modules
 node_modules/*
