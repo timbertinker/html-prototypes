@@ -371,3 +371,13 @@ input[type="radio"]:checked ~ .dec-trust__hidden {
       left: 0;
       bottom: 0;
       display: none; }
+
+
+// Progress indicator - simplest first for testing.
+// See https://www.gov.uk/service-manual/user-centred-design/resources/patterns/progress-indicators
+
+.progress {
+  display: block;
+  color: $grey-1;
+  @include core-24;
+}
