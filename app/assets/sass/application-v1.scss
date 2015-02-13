@@ -211,12 +211,17 @@ input[type="radio"]:checked ~ .dec-trust__hidden {
 }
 
 .legal-document--bounds {
-  margin: 0 30px 30px;
+  margin-bottom: $gutter;
+  padding: $gutter 0; 
+  border-top: 4px solid $light-blue;
+  border-bottom: 2px solid $light-blue;
 
   .inner-block & {
     margin: 0 0 30px;
   }
+
 }
+
 
 .legal-document--bounds {
   margin-bottom: $gutter;
@@ -226,13 +231,143 @@ input[type="radio"]:checked ~ .dec-trust__hidden {
 }
 
 .legal-document--item {
-    width: $two-thirds;
-    padding-right: $one-third;
+  width: $two-thirds;
+  padding-right: $one-third;
 
-    @extend %contain-floats;
-  }
+  @extend %contain-floats;
+}
 
-  .legal-document--bordered {
-    margin-top: $gutter;
-    border-top: 1px solid $grey-3;
+.legal-document--bordered {
+  margin-top: $gutter;
+  border-top: 1px solid $grey-3;
+}
+
+.legal-document--bounds .legal-document--item:first-of-type h2 {
+  margin-top: 15px;
+}
+
+// Faux GOV.UK Verify login page
+
+.intro {
+  position: relative;
+  width: 960px;
+  margin: auto;
+
+    .form-label {
+      color: $white;
+    }
+    details, summary, summary:hover {
+      color: $white;
+    }
   }
+  .intro .step-wrap {
+    position: relative;
+    width: 960px;
+    margin: auto;
+    overflow: hidden;
+    white-space: nowrap; }
+    .intro .step-wrap .progress {
+      display: none;
+      text-align: center; }
+      .intro .step-wrap .progress .steps {
+        padding: 0;
+        margin: 0; }
+      .intro .step-wrap .progress li {
+        margin: 5px;
+        display: inline-block;
+        list-style: none;
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        background: #fff;
+        opacity: 0.3; }
+      .intro .step-wrap .progress li.selected {
+        opacity: 1; }
+  .intro .step {
+    min-height: 360px;
+    white-space: normal;
+    padding: 70px 100px 50px 100px;
+    width: 760px;
+    display: inline-block;
+    vertical-align: top;
+    color: #fff;
+    font-size: 22px;
+    margin-right: -4px;
+    background: #005ea5; }
+    .intro .step .icon {
+      vertical-align: -15px;
+      margin: 0 10px 0 0; }
+    .intro .step details {
+      font-size: 16px; }
+  .intro a {
+    color: #fff; }
+  .intro .step-1 h4 {
+    margin: 22px 0 0.1em 0;
+    font-weight: normal;
+    font-size: 22px; }
+  .intro .step-1 h3 {
+    margin-top: 0;
+    margin-bottom: 1.5em;
+    font-size: 25px; }
+  .intro .step-1 li {
+    margin: 8px 0; }
+  .intro .step-1 img.icon {
+    width: 230px;
+    position: absolute;
+    right: 90px;
+    top: 90px; }
+  .intro .step-1 .text-wrap {
+    width: 525px;
+    padding-right: 20px; }
+  .intro .step-1 .government-gateway-logo {
+    width: 80px; }
+  .intro .step-2 h3 {
+    margin-top: 0;
+    font-size: 22px;
+    max-width: 600px; }
+  .intro .new {
+    display: inline-block;
+    margin: 0 0 10px 0;
+    border: 1px solid #fff;
+    padding: 2px 7px 0 7px;
+    color: #fff;
+    font-size: 19px; }
+  .intro .step-3 .button {
+    background: #fff;
+    color: #28A197;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 2px #087167;
+    margin: 30px;
+    vertical-align: top; }
+    .intro .step-3 .button strong {
+      display: block; }
+  .intro .logos {
+    margin: 8px 0; }
+  .intro .government-gateway {
+    color: #fff;
+    font-size: 17px;
+    margin: 40px 0 0 0; }
+  .intro .actions {
+    font-size: 19px;
+    margin: 30px 0 30px -20px; }
+    .intro .actions .sign-in-link {
+      display: inline-block;
+      margin-left: 20px; }
+    .intro .actions .back, .intro .actions .next, .intro .actions .start, .intro .actions .been-verified {
+      display: inline-block;
+      width: 180px;
+      padding: 8px 6px 6px 6px;
+      text-align: center;
+      border: 1px solid #fff;
+      text-decoration: none;
+      background: #fff;
+      color: #005ea5;
+      font-weight: bold;
+      margin: 0 0 0 20px;
+      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4); }
+    .intro .actions .back {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      display: none; }
