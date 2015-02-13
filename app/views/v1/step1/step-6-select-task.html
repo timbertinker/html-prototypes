@@ -7,8 +7,56 @@
 {{$content}}
 
 <main id="content" role="main">
-	<div class="inner-block">
-	{{>includes/alpha_banner}}
+	<div class="outer-block">
+		<div class="inner-block">
+			{{>includes/alpha_banner}}
+			<p><u><b>Create Case</b></u> > <u>Confirm Transaction</u> > <u>Create Mortgage</u> > <u>Sign Mortgage</u> > <u>Date and Submit</u></p>
+
+
+			<form class="form" action="conveyancer-add-clients" method="get">
+
+				<h1 class="form-title heading-large">
+					Is the borrower buying, selling or mortgaging?
+				</h1>
+
+				<div class="form-group">
+
+					<label for="radio-inline-1" class="block-label">
+						<input id="radio-inline-1" type="radio" name="task" value="buy-property">
+						Buying
+					</label>
+
+					<label for="radio-inline-2" class="block-label">
+						<input id="radio-inline-2" type="radio" name="task" value="sell-property">
+						Selling
+					</label>
+
+					<label for="radio-inline-3" class="block-label">
+						<input id="radio-inline-3" type="radio" name="task" value="mortgage-property">
+						Mortgaging
+					</label>
+
+					<p class="form-block">or</p>
+
+					<label for="radio-inline-3" class="block-label">
+						<input id="radio-inline-3" type="radio" name="task" value="another">
+						Another task
+					</label>
+
+				</div>
+
+				<div class="form-group">
+					<input type="submit" class="button" value="Next">
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+
+
+</div>
+</main>
 
 </div>
 </main>
