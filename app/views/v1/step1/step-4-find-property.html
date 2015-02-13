@@ -1,0 +1,43 @@
+{{<layout-v1}}
+
+{{$pageTitle}}
+	GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+	<div class="outer-block">
+				<div class="inner-block">
+					{{>includes/alpha_banner}}
+					<form class="form" action="step-5-search-results" method="get">
+
+							<p><u><b>Create Case</b></u> > <u>Confirm Transaction</u> > <u>Create Mortgage</u> > <u>Sign Mortgage</u> > <u>Date and Submit</u></p>
+
+
+						<h1 class="form-title heading-large">
+							Find property or land
+						</h1>
+
+						<div class="form-group">
+							<label class="form-label-bold" for="search">Search the Land Registry</label>
+							<p class="form-hint">eg by title number, postcode, street name or town or city</p>
+							<input type="text" class="form-control" id="search">
+						</div>
+
+						<div class="form-group">
+							<input type="submit" class="button" value="Search">  <a href="conveyancer-find-property-advanced">Advanced Search</a>
+						</div>
+
+					</form>
+
+				</div>
+			</div>
+
+</div>
+</main>
+
+{{/content}}
+
+{{/layout-v1}}

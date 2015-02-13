@@ -7,13 +7,14 @@
 {{$content}}
 
 <main id="content" role="main">
+	<div class="inner-block">
 	{{>includes/alpha_banner}}
 	<p><u><b>Create Case</b></u> > <u>Confirm Transaction</u> > <u>Create Mortgage</u> > <u>Sign Mortgage</u> > <u>Date and Submit</u></p>
 
 	<h1 class="form-title heading-large">Login</h1>
 
 
-<form action="{{ next_page }}" method="get" class="form">
+<form action="step-2-case-list" method="get" class="form">
 
 	<div class="form-group">
 		<label for="username" class="form-label">Username</label>
@@ -30,6 +31,7 @@
 	</div>
 
 </form>
+</div>
 </main>
 
 {{/content}}
