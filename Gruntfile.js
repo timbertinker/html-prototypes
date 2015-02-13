@@ -1,7 +1,7 @@
 module.exports = function(grunt){
   grunt.initConfig({
     // Clean
-    clean: ['public', 'govuk_modules'],
+    clean: ['public/javascripts', 'public/stylesheets', 'govuk_modules'],
 
     // Builds Sass
     sass: {
