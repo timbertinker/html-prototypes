@@ -222,17 +222,25 @@ input[type="radio"]:checked ~ .dec-trust__hidden {
 
 }
 
-  .legal-document--item {
-    width: $two-thirds;
-    padding-right: $one-third;
 
-    @extend %contain-floats;
-  }
+.legal-document--bounds {
+  margin-bottom: $gutter;
+  padding: $gutter 0;
+  border-top: 4px solid $light-blue;
+  border-bottom: 2px solid $light-blue;
+}
 
-  .legal-document--bordered {
-    margin-top: $gutter;
-    border-top: 1px solid $grey-3;
-  }
+.legal-document--item {
+  width: $two-thirds;
+  padding-right: $one-third;
+
+  @extend %contain-floats;
+}
+
+.legal-document--bordered {
+  margin-top: $gutter;
+  border-top: 1px solid $grey-3;
+}
 
 .legal-document--bounds .legal-document--item:first-of-type h2 {
   margin-top: 15px;
