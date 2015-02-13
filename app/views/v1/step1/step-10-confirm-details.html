@@ -1,0 +1,150 @@
+{{<layout-v1}}
+
+{{$pageTitle}}
+	GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main">
+			<div class="outer-block">
+				<div class="inner-block">
+					{{>includes/alpha_banner}}
+						<p><u><b>Create Case</b></u> > <u>Confirm Transaction</u> > <u>Create Mortgage</u> > <u>Sign Mortgage</u> > <u>Date and Submit</u></p>
+
+
+					<h1 class="heading-large">Check details before confirming</h1>
+
+				</div>
+			</div>
+
+			<div class="grid-wrapper">
+				<div class="grid grid-1-4">
+					<h2 class="inner-block heading-small">Property</h2>
+				</div>
+				<div class="grid grid-1-4">
+					<div class="inner-block">
+						<p class="lede" itemscope itemtype="http://schema.org/PostalAddress">
+							<span itemprop="streetAddress">
+								Flat 18 Kingman Court<br>
+								Verdant Road<br>
+							</span>
+							<span itemprop="addressLocality">London</span><br>
+							<span itemprop="postalCode">SV19 9BT</span>
+						</p>
+					</div>
+				</div>
+				<!--
+				<div class="grid grid-1-4">
+				<div class="inner-block">
+				<img src="{{ prototypes_asset_path }}images/dummy-title-plan.png" alt="">
+			</div>
+		</div>
+	-->
+	<div class="grid grid-1-4">
+		<div class="inner-block">
+			<a href="conveyancer-select-property" class="button-secondary">Change<span class="visuallyhidden"> property details</span></a>
+		</div>
+	</div>
+	</div>
+
+	<div class="grid-divider grid-3-4"></div>
+
+	<div class="grid-wrapper">
+		<div class="grid grid-1-4">
+			<h2 class="inner-block heading-small">Task</h2>
+		</div>
+		<div class="grid grid-1-4">
+			<div class="inner-block">
+				<p>Mortgage</p>
+			</div>
+		</div>
+		<div class="grid grid-1-4">
+			<div class="inner-block">
+				<a href="conveyancer-select-task" class="button-secondary">Change<span class="visuallyhidden"> task</span></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="grid-divider grid-3-4"></div>
+
+	<div class="grid-wrapper">
+		<div class="grid grid-1-4">
+			<h2 class="inner-block heading-small">Number of borrowers</h2>
+		</div>
+		<div class="grid grid-1-4">
+			<div class="inner-block">
+				<p>2</p>
+			</div>
+		</div>
+		<div class="grid grid-1-4">
+			<div class="inner-block">
+				<a href="conveyancer-add-clients" class="button-secondary">Change<span class="visuallyhidden"> number of borrowers</span></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="grid-divider grid-3-4"></div>
+
+	<div class="grid-wrapper">
+		<div class="grid grid-1-4">
+			<h2 class="inner-block heading-small">First borrower</h2>
+		</div>
+		<div class="grid grid-1-4">
+			<div class="inner-block">
+				<p>
+					<b>Matthew Jameson</b><br>
+					118 Leafy Way,<br>
+					Thale,<br>
+					Berks<br>
+					RG12 9AB
+				</p>
+			</div>
+		</div>
+		<div class="grid grid-1-4">
+			<div class="inner-block">
+				<a href="conveyancer-add-client-1" class="button-secondary">Change<span class="visuallyhidden"> first borrower details</span></a>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="grid-divider grid-3-4"></div>
+
+	<div class="grid-wrapper">
+		<div class="grid grid-1-4">
+			<h2 class="inner-block heading-small">Second borrower</h2>
+		</div>
+		<div class="grid grid-1-4">
+			<div class="inner-block">
+				<p>
+					<b>Jennifer Spencer</b><br>
+					88 Monad Road,<br>
+					Slough,<br>
+					Berks<br>
+					SL20 3JD
+				</p>
+			</div>
+		</div>
+		<div class="grid grid-1-4">
+			<div class="inner-block">
+				<a href="conveyancer-add-client-2" class="button-secondary">Change<span class="visuallyhidden"> second borrower details</span></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="grid-divider grid-3-4"></div>
+
+	<div class="outer-block">
+		<div class="inner-block">
+			<p>
+				<a href="/charges/conveyancer-token" class="button">Confirm details</a>
+			</p>
+		</div>
+	</div>
+
+</main>
+
+{{/content}}
+
+{{/layout-v1}}
