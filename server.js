@@ -30,7 +30,7 @@ app.use('/public', express.static(__dirname + '/public'));
 app.use('/public', express.static(__dirname + '/govuk_modules/govuk_template/assets'));
 app.use('/public', express.static(__dirname + '/govuk_modules/govuk_frontend_toolkit'));
 
-app.use(express.favicon(path.join(__dirname, 'govuk_modules', 'govuk_template', 'assets', 'images','favicon.ico'))); 
+app.use(express.favicon(path.join(__dirname, 'govuk_modules', 'govuk_template', 'assets', 'images','favicon.ico')));
 
 
 // send assetPath to all views
@@ -49,11 +49,11 @@ routes.bind(app);
 app.get(/^\/([^.]+)$/, function (req, res) {
 
 	var path = (req.params[0]);
-
 	res.render(path, function(err, html) {
 		if (err) {
 			console.log(err);
-			res.send(404);
+			res.status(404);
+      res.render("proto-404");
 		} else {
 			res.end(html);
 		}
