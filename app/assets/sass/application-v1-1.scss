@@ -1,6 +1,11 @@
 // V1 prototype custom styles as required
 @import 'elements';
 
+// element definitions ONLY WHERE NECESSARY
+b {
+  font-weight: 700;
+}
+
 .case-list__item {
   margin-top: $gutter;
 }
@@ -379,3 +384,54 @@ input[type="radio"]:checked ~ .dec-trust__hidden {
   color: $grey-1;
   @include core-24;
 }
+
+
+// Completion box
+
+.completion-box {
+  text-align: center;
+  background-color: $turquoise;
+  padding: $gutter;
+  margin: $gutter 0;
+
+  [class*=heading] {
+    display: inline-block;
+    margin: 0;
+  }
+
+  [class*=heading]:before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: $gutter-half;
+    vertical-align: baseline;
+    background: url(/public/images/global/icon-tick-black.svg) left bottom no-repeat;
+  }
+
+}
+
+
+// Alert box
+
+.alert-box {
+  position: relative;
+  padding: $gutter $gutter $gutter $gutter*2.5;
+  background-color: $yellow-25;
+
+  &:before {
+    content: '!';
+    position: absolute;
+    left: $gutter;
+    top: $gutter;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    text-align: center;
+    color: $white;
+    font-weight: 700;
+    background-color: $black;
+    border-radius: 100%;
+  }
+}
+
