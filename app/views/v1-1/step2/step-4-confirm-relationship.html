@@ -1,4 +1,4 @@
-{{<layout-v1}}
+{{<layout-v1-1}}
 
 {{$pageTitle}}
 	GOV.UK prototyping kit
@@ -7,95 +7,80 @@
 {{$content}}
 
 <main id="content" role="main">
-	<div class="outer-block">
-			<div class="inner-block">
-				<p><u>Create Case</u> > <u><b>Confirm Transaction</b></u> > <u>Create Mortgage</u> > <u>Sign Mortgage</u> > <u>Date and Submit</u></p>
+	<div class="inner-block">
+
+		{{>includes/alpha_banner}}
+
+		<h1 class="heading-xlarge">Confirm lender details</h1>
+
+		<div class="text">
+			<p>Please check that these lender and property details are correct.</p>
+		</div>
+
+		<article class="legal-document--bounds">
+
+			<section class="legal-document--item">
+
+				<h2 class="heading-small">Lender:</h2>
+
+				<p itemscope itemtype="http://schema.org/Corporation">
+					<span itemprop="name">Bank of England Plc</span><br>
+					<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="address-inline">
+						<span itemprop="streetAddress">
+							12 Trinity Place</span><br>
+						<span itemprop="addressLocality">London</span><br>
+						<span itemprop="postalCode">NW10 6TQ</span>
+					</span>
+					<dl class="definition-inline">
+						<dt>Company registration number</dt>
+						<dd>2347676</dd>
+					</dl>
+				</p>
+			</section><!-- end item -->
 
 
-				<h1 class="heading-large">Verify transaction</h1>
+			<section class="legal-document--item">
 
-				<div class="text">
-					<p class="lede">Please check all the details carefully before verifying you want this lender to proceed with this transaction.</p>
+				<h2 class="heading-small">Property:</h2>
+
+				<div class="grid grid-1-2">
+					<p itemscope itemtype="http://schema.org/PostalAddress">
+						<span itemprop="streetAddress">
+							Flat 18 Kingman Court<br>
+							Verdant Road<br>
+						</span>
+						<span itemprop="addressLocality">London</span><br>
+						<span itemprop="postalCode">SV19 9BT</span>
+					</p>
 				</div>
 
-				<article class="legal-document--bounds">
-
-					<section class="legal-document--item">
-
-						<h2 class="heading-small">You are authorising:</h2>
-
-						<p itemscope itemtype="http://schema.org/Corporation">
-							<span itemprop="name">Bank of England Plc</span><br>
-							<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="address-inline">
-								<span itemprop="streetAddress">
-									12 Trinity Place</span><br>
-								<span itemprop="addressLocality">London</span><br>
-								<span itemprop="postalCode">NW10 6TQ</span>
-							</span>
-							<dl class="definition-inline">
-								<dt>Company registration number</dt>
-								<dd>2347676</dd>
-								<dt>Account number</dt>
-								<dd>1007-789654</dd>
-							</dl>
-						</p>
-					</section><!-- end item -->
-
-					<section class="legal-document--item legal-document--bordered">
-
-						<h3 class="heading-small">To make the following changes:</h3>
-						<p class="text">Mortgage</p>
-
-					</section><!-- end item -->
-
-
-					<section class="legal-document--item legal-document--bordered">
-
-						<h2 class="heading-small">On the following property:</h2>
-
-						<div class="grid grid-1-2">
-							<p itemscope itemtype="http://schema.org/PostalAddress">
-								<span itemprop="streetAddress">
-									Flat 18 Kingman Court<br>
-									Verdant Road<br>
-								</span>
-								<span itemprop="addressLocality">London</span><br>
-								<span itemprop="postalCode">SV19 9BT</span>
-							</p>
-
-							<dl class="definition-inline">
-								<dt>Title number</dt>
-								<dd>GHR67834</dd>
-							</dl>
-						</div>
-
-						<div class="grid grid-1-2">
-							<img src="/public/images/v1/dummy-title-plan.png" alt="">
-						</div>
-
-					</section><!-- end item -->
+			</section><!-- end item -->
 
 
 
-				</article>
+		</article>
 
 
-				<form action="step-5-mortgage-deed" method="" class="form">
-					<div class="form-group">
-						<label for="check-1" class="block-label">
-							<input id="check-1" type="checkbox" name="agree-execution">
-							I have read the information and confirm it’s correct
-						</label>
-					</div>
-					<div class="form-group">
-						<button type="submit" class="button">Verify transaction</button>
-					</div>
-				</form>
-
+		<form action="step-5-mortgage-deed" method="" class="form">
+	    <div class="form-group">
+	    	<h3 class="form-header heading-medium">Are these details correct?</h3>
+	      <label class="block-label" for="radio-1">
+	        <input id="radio-1" type="radio" name="radio-group" value="correct">
+	        Yes, they are correct
+	      </label>
+	      <label class="block-label" for="radio-2">
+	        <input id="radio-2" type="radio" name="radio-group" value="not-correct">
+	        No, these details are not correct
+	      </label>
+	    </div>
+			<div class="form-group">
+				<button type="submit" class="button">Next</button>
 			</div>
-		</div>
+	  </form>
+
+	</div>
 </main>
 
 {{/content}}
 
-{{/layout-v1}}
+{{/layout-v1-1}}
