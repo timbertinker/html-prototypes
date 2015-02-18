@@ -249,6 +249,14 @@ input[type="radio"]:checked ~ .dec-trust__hidden {
   margin-top: 15px;
 }
 
+// Make a deed look like a self-contained document?
+
+.deed-document {
+  padding: $gutter;
+  border: 3px solid $light-blue;
+  border-radius: $gutter-half;
+}
+
 // Faux GOV.UK Verify login page
 
 .intro {

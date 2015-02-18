@@ -12,93 +12,95 @@
 
 		{{>includes/alpha_banner}}
 
+    <h1 class="heading-xlarge">Sign your mortgage deed</h1>
 
-        <div class="text">
+    <div class="text">
+      <p>This is a legal document &mdash; please check all details carefully before signing.</p>
+      <p>If anything is incorrect, or you require further assistance, please contact your lender.</p>
 
+      <p>CHECK WHAT VERIFY IS DOING WITH 2 FACTOR? WILL WE ALREADY HAVE IT? http://govuk-verify-test.herokuapp.com/</p>
+    </div>
 
-          <h1 class="heading-large">Your mortgage deed</h1>
+    <article class="deed-document">
 
-          <p class="lede">Please check all the details carefully before signing.</p>
+      <h2 class="heading-large">Mortgage deed</h2>
+
+      <section class="legal-document--item">
+        <h2 class="heading-medium">Property:</h2>
+
+        <p itemscope itemtype="http://schema.org/PostalAddress">
+          <span itemprop="streetAddress">
+            Flat 18 Kingman Court<br>
+            Verdant Road<br>
+          </span>
+          <span itemprop="addressLocality">London</span><br>
+          <span itemprop="postalCode">SV19 9BT</span>
+        </p>
+
+        <dl class="definition-tabular">
+          <dt>Title number</dt>
+          <dd>GHR67834</dd>
+        </dl>
+
+      </section><!-- end item -->
+
+      <section class="legal-document--item legal-document--bordered">
+        <h2 class="heading-medium">Lender</h2>
+
+        <p itemscope itemtype="http://schema.org/Corporation">
+          <span itemprop="name">Bank of England Plc</span><br>
+          <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="address-inline">
+            <span itemprop="streetAddress">
+              12 Trinity Place, Regents Street
+            </span>
+            <span itemprop="addressLocality">London</span>
+            <span itemprop="postalCode">NW10 6TQ</span>
+          </span>
+          <dl class="definition-inline">
+            <dt>Company registration number</dt>
+            <dd>2347676</dd>
+            <dt>Account number</dt>
+            <dd>1007-789654</dd>
+          </dl>
+        </p>
+
+      </section><!-- end item -->
+
+      <section class="legal-document--item legal-document--bordered">
+
+        <h2 class="heading-large">Agreement</h2>
+
+        <h3 class="heading-small">You, the borrowers:</h3>
+
+        <div class="grid grid-1-2">
+          <p>
+            <b>Matthew Jameson</b> <span class="alert-flag">you</span><br>
+            118 Leafy Way,<br>
+            Thale,<br>
+            Berks<br>
+            RG12 9AB
+          </p>
         </div>
 
-        <article class="legal-document--bounds">
+        <div class="grid grid-1-2">
+          <p>
+            Jennifer Spencer<br>
+            88 Monad Road,<br>
+            Slough,<br>
+            Berks<br>
+            SL20 3JD
+          </p>
+        </div>
 
-          <section class="legal-document--item">
-            <h2 class="heading-medium">Property details</h2>
-
-            <p class="lede" itemscope itemtype="http://schema.org/PostalAddress">
-              <span itemprop="streetAddress">
-                Flat 18 Kingman Court<br>
-                Verdant Road<br>
-              </span>
-              <span itemprop="addressLocality">London</span><br>
-              <span itemprop="postalCode">SV19 9BT</span>
-            </p>
-
-            <dl class="lede definition-inline">
-              <dt>Title number</dt>
-              <dd>GHR67834</dd>
-            </dl>
-
-          </section><!-- end item -->
-
-          <section class="legal-document--item legal-document--bordered">
-            <h2 class="heading-medium">Mortgage lender</h2>
-
-            <p itemscope itemtype="http://schema.org/Corporation">
-              <span itemprop="name">Bank of England Plc</span><br>
-              <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="address-inline">
-                <span itemprop="streetAddress">
-                  12 Trinity Place, Regents Street
-                </span>
-                <span itemprop="addressLocality">London</span>
-                <span itemprop="postalCode">NW10 6TQ</span>
-              </span>
-              <dl class="definition-inline">
-                <dt>Company registration number</dt>
-                <dd>2347676</dd>
-                <dt>Account number</dt>
-                <dd>1007-789654</dd>
-              </dl>
-            </p>
-
-          </section><!-- end item -->
-
-          <section class="legal-document--item legal-document--bordered">
-
-            <h2 class="heading-medium">Agreement</h2>
-
-            <h3 class="heading-small">You, the borrowers:</h3>
-
-            <div class="grid grid-1-2">
-              <p>
-                <b>Matthew Jameson</b> <span class="alert-flag">you</span><br>
-                118 Leafy Way,<br>
-                Thale,<br>
-                Berks<br>
-                RG12 9AB
-              </p>
-            </div>
-
-            <div class="grid grid-1-2">
-              <p>
-                Jennifer Spencer<br>
-                88 Monad Road,<br>
-                Slough,<br>
-                Berks<br>
-                SL20 3JD
-              </p>
-            </div>
-
-          </section><!-- end item -->
+      </section><!-- end item -->
 
 
-          <section class="legal-document--item">
+      <section class="legal-document--item">
 
-            <h3 class="heading-small">Make effective:</h3>
-            <p class="text">This mortgage takes effect when Bank of England PLC notifies the registrar.</p>
+        <h3 class="heading-small">Make effective:</h3>
+        <p class="text">This mortgage takes effect when Bank of England PLC notifies the registrar.</p>
 
-          </section><!-- end item -->
+      </section><!-- end item -->
 
 
           <section class="legal-document--item">
@@ -120,24 +122,16 @@
           <section class="legal-document--item">
 
             <h3 class="heading-small">Restriction:</h3>
-            <details>
-              <summary>What is a restriction?</summary>
-              <div class="panel-indent">
-                <p>A restriction limits the powers of a registered owner to deal with or dispose of the registered land. It may also limit the powers of a chargee to dispose of a charge.</p>
-              </div>
-            </details>
             <p class="text">You apply to the Chief Land Registrar that no disposition of the registered estate by the owner is to be done so without written consent by the owner for the duration of the mortgage.</p>
 
           </section>
 
-        </article>
-
-        <div class="panel-indent text">
-          <div class="footnote">
+          <section class="legal-document--item legal-document--bordered">
             <p>Form of mortgage deed filed at Land Registry under <a href="#" rel="external">MD859K</a>.</p>
             <p>This Mortgage Deed incorporates the <a href="#" rel="external">Lenders Mortgage Conditions and Explanation 2006</a>, a copy of which has been received by the Borrower</p>
-          </div>
-        </div>
+          </section><!-- end item -->
+
+        </article>
 
 
         <form action="step-6-confirmation" method="get" class="form">
