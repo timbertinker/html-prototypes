@@ -167,8 +167,8 @@
           <label class="form-label" for="auth-code">Your authentication code:</label>
           <p class="form-hint">Example: ABC1234</p>
           <input type="text" class="form-control" id="auth-code" name="auth-code">
-          <div><a href="#">I haven't received my code, resend it</a></div>
         </div>
+        <p><a href="#">I haven't received my code, resend it</a></p>
         <div class="form-group">
           <button type="submit" class="button">Sign mortgage deed</button>
         </div>
@@ -196,7 +196,7 @@
 
       $('html, body')
         .animate({
-          scrollTop: $signatureEl.offset().top
+          scrollTop: $signatureEl.offset().top - 60
         },
         750,
         function() {
