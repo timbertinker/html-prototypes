@@ -6,6 +6,33 @@ b {
   font-weight: 700;
 }
 
+// general element based patterns:
+
+dl.definition-inline {
+
+  @extend %contain-floats;
+
+  dt {
+    clear: left;
+    float: left;
+  }
+  dt:after {
+    content: ':';
+    margin-right: $gutter-one-quarter;
+  }
+  dd {
+    float: left;
+  }
+}
+
+// handy tools
+
+.js-hidden {
+  display: none;
+}
+
+//
+
 .case-list__item {
   margin-top: $gutter;
 }
@@ -251,10 +278,18 @@ input[type="radio"]:checked ~ .dec-trust__hidden {
 
 // Make a deed look like a self-contained document?
 
-.deed-document {
-  padding: $gutter;
-  border: 3px solid $light-blue;
-  border-radius: $gutter-half;
+.deed-document--bounds {
+  margin-bottom: $gutter;
+  padding: 0 $gutter $gutter $gutter;
+  border-color: $light-blue;
+  border-width: 3px 2px;
+  border-style: solid;
+}
+
+.deed-document--divider {
+  margin-top: $gutter;
+  padding-top: $gutter-half;
+  border-top: 1px solid $grey-3;
 }
 
 // Faux GOV.UK Verify login page
@@ -426,20 +461,45 @@ input[type="radio"]:checked ~ .dec-trust__hidden {
   position: relative;
   padding: $gutter $gutter $gutter $gutter*2.5;
   background-color: $yellow-25;
+}
 
-  &:before {
-    content: '!';
-    position: absolute;
-    left: $gutter;
-    top: $gutter;
-    width: 1.5em;
-    height: 1.5em;
-    line-height: 1.5em;
-    text-align: center;
-    color: $white;
-    font-weight: 700;
-    background-color: $black;
-    border-radius: 100%;
-  }
+// inline alert - bold text, with exclamation mark
+
+.alert-inline {
+  position: relative;
+  padding-left: $gutter*1.5;
+}
+
+// exclamation mark in a circle !
+
+.alert-inline:before,
+.alert-box:before {
+  content: '!';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+  color: $white;
+  font-weight: 700;
+  background-color: $black;
+  border-radius: 100%;
+}
+.alert-box:before {
+  left: $gutter;
+  top: $gutter;
+}
+
+// alert flag - 37signals yellow bg ;)
+
+.alert-flag {
+  @include bold-16();
+  text-transform: uppercase;
+  padding: 0 $gutter-one-quarter;
+  margin-left: $gutter-one-quarter;
+  background-color: $yellow-25;
+  @include border-radius(5px);
 }
 
