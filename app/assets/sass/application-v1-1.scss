@@ -247,17 +247,8 @@ input[type="radio"]:checked ~ .dec-trust__hidden {
   border-bottom: 2px solid $light-blue;
 
   .inner-block & {
-    margin: 0 0 30px;
+    margin: 0 0 $gutter;
   }
-
-}
-
-
-.legal-document--bounds {
-  margin-bottom: $gutter;
-  padding: $gutter 0;
-  border-top: 4px solid $light-blue;
-  border-bottom: 2px solid $light-blue;
 }
 
 .legal-document--item {
@@ -289,6 +280,14 @@ input[type="radio"]:checked ~ .dec-trust__hidden {
 .deed-document--divider {
   margin-top: $gutter;
   padding-top: $gutter-half;
+  border-top: 1px solid $grey-3;
+}
+
+// a handy divider
+
+.divider {
+  margin-top: 1em;
+  padding-top: 1em;
   border-top: 1px solid $grey-3;
 }
 
@@ -459,7 +458,7 @@ input[type="radio"]:checked ~ .dec-trust__hidden {
 
 .alert-box {
   position: relative;
-  padding: $gutter $gutter $gutter $gutter*2.5;
+  padding: $gutter-half $gutter 1px $gutter*2;
   background-color: $yellow-25;
 }
 
@@ -488,8 +487,8 @@ input[type="radio"]:checked ~ .dec-trust__hidden {
   border-radius: 100%;
 }
 .alert-box:before {
-  left: $gutter;
-  top: $gutter;
+  left: $gutter-half;
+  top: $gutter-half;
 }
 
 // alert flag - 37signals yellow bg ;)
