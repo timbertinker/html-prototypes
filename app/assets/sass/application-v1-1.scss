@@ -1,7 +1,37 @@
 // V1 prototype custom styles as required
 @import 'elements';
-@import 'landregistry';
 
+// element definitions ONLY WHERE NECESSARY
+b {
+  font-weight: 700;
+}
+
+// general element based patterns:
+
+dl.definition-inline {
+
+  @extend %contain-floats;
+
+  dt {
+    clear: left;
+    float: left;
+  }
+  dt:after {
+    content: ':';
+    margin-right: $gutter-one-quarter;
+  }
+  dd {
+    float: left;
+  }
+}
+
+// handy tools
+
+.js-hidden {
+  display: none;
+}
+
+//
 
 .case-list__item {
   margin-top: $gutter;
@@ -217,17 +247,8 @@ input[type="radio"]:checked ~ .dec-trust__hidden {
   border-bottom: 2px solid $light-blue;
 
   .inner-block & {
-    margin: 0 0 30px;
+    margin: 0 0 $gutter;
   }
-
-}
-
-
-.legal-document--bounds {
-  margin-bottom: $gutter;
-  padding: $gutter 0;
-  border-top: 4px solid $light-blue;
-  border-bottom: 2px solid $light-blue;
 }
 
 .legal-document--item {
@@ -244,6 +265,30 @@ input[type="radio"]:checked ~ .dec-trust__hidden {
 
 .legal-document--bounds .legal-document--item:first-of-type h2 {
   margin-top: 15px;
+}
+
+// Make a deed look like a self-contained document?
+
+.deed-document--bounds {
+  margin-bottom: $gutter;
+  padding: 0 $gutter $gutter $gutter;
+  border-color: $light-blue;
+  border-width: 3px 2px;
+  border-style: solid;
+}
+
+.deed-document--divider {
+  margin-top: $gutter;
+  padding-top: $gutter-half;
+  border-top: 1px solid $grey-3;
+}
+
+// a handy divider
+
+.divider {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 1px solid $grey-3;
 }
 
 // Faux GOV.UK Verify login page
@@ -381,3 +426,79 @@ input[type="radio"]:checked ~ .dec-trust__hidden {
   color: $grey-1;
   @include core-24;
 }
+
+
+// Completion box
+
+.completion-box {
+  text-align: center;
+  background-color: $turquoise;
+  padding: $gutter;
+  margin: $gutter 0;
+
+  [class*=heading] {
+    display: inline-block;
+    margin: 0;
+  }
+
+  [class*=heading]:before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: $gutter-half;
+    vertical-align: baseline;
+    background: url(/public/images/global/icon-tick-black.svg) left bottom no-repeat;
+  }
+
+}
+
+
+// Alert box
+
+.alert-box {
+  position: relative;
+  padding: $gutter-half $gutter 1px $gutter*2;
+  background-color: $yellow-25;
+}
+
+// inline alert - bold text, with exclamation mark
+
+.alert-inline {
+  position: relative;
+  padding-left: $gutter*1.5;
+}
+
+// exclamation mark in a circle !
+
+.alert-inline:before,
+.alert-box:before {
+  content: '!';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+  color: $white;
+  font-weight: 700;
+  background-color: $black;
+  border-radius: 100%;
+}
+.alert-box:before {
+  left: $gutter-half;
+  top: $gutter-half;
+}
+
+// alert flag - 37signals yellow bg ;)
+
+.alert-flag {
+  @include bold-16();
+  text-transform: uppercase;
+  padding: 0 $gutter-one-quarter;
+  margin-left: $gutter-one-quarter;
+  background-color: $yellow-25;
+  @include border-radius(5px);
+}
+
