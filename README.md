@@ -26,7 +26,7 @@ Install Node.js (see requirements)
 #### Clone this repo
 
 ```
-git clone git@github.com:tombye/express_prototype.git
+git clone git@github.com:LandRegistry/charges-html-prototypes.git
 ```
 
 #### Install dependencies
@@ -45,15 +45,9 @@ node start.js
 
 Go to [localhost:3000](http://localhost:3000) in your browser.
 
-#### Hot reload
-
-Any code changes should update in the browser without you restarting the app.
-
-The app recompiles app/assets/stylesheets/application.scss everytime changes are observed.
-
 ## Documentation
 
-Guides for getting set up and how to work with the prototyping application are available on this repo's [wiki](https://github.com/tombye/express_prototype/wiki).
+Guides for getting set up and how to work with the prototyping application are available on the original repo's [wiki](https://github.com/tombye/express_prototype/wiki).
 
 * [Getting started](https://github.com/tombye/express_prototype/wiki/Getting-started) (Read this first)
 * [Creating routes](https://github.com/tombye/express_prototype/wiki/Creating-routes)
