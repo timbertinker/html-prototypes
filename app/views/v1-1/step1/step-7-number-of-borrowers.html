@@ -1,4 +1,4 @@
-{{<layout-v1-1}}
+{{<layout-v1}}
 
 {{$pageTitle}}
 	GOV.UK prototyping kit
@@ -10,15 +10,14 @@
 	<div class="outer-block">
 			<div class="inner-block">
 				{{>includes/alpha_banner}}
-				
+				<p><u><b>Create Case</b></u> > <u>Confirm Transaction</u> > <u>Create Mortgage</u> > <u>Sign Mortgage</u> > <u>Date and Submit</u></p>
+
 				<form class="form" action="step-8-first-borrower" method="get">
 					<h1 class="form-title heading-large">
-						<span class="progress">Step 3 of 4</span>
-						Borrower details
+						How many borrowers are you acting for?
 					</h1>
 
 					<div class="form-group">
-						<label for="num-clients" class="form-label">How many borrowers are you acting for?</label>
 						<input type="number" min="1" max="4" class="form-control field-numeric" id="num-clients" name="num-clients">
 					</div>
 
@@ -36,4 +35,4 @@
 
 {{/content}}
 
-{{/layout-v1-1}}
+{{/layout-v1}}
