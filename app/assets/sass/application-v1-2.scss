@@ -1,0 +1,505 @@
+// V1 prototype custom styles as required
+@import 'elements';
+@import 'landregistry';
+
+// element definitions ONLY WHERE NECESSARY
+b {
+  font-weight: 700;
+}
+
+// general element based patterns:
+
+dl.definition-inline {
+
+  @extend %contain-floats;
+
+  dt {
+    clear: left;
+    float: left;
+  }
+  dt:after {
+    content: ':';
+    margin-right: $gutter-one-quarter;
+  }
+  dd {
+    float: left;
+  }
+}
+
+// handy tools
+
+.js-hidden {
+  display: none;
+}
+
+//
+
+.case-list__item {
+  margin-top: $gutter;
+}
+
+.case-list__item--border {
+  border-top: 1px solid $panel-colour;
+}
+
+.case-list {
+  summary::-webkit-details-marker {
+    display: none
+  }
+
+  details summary:focus {
+    outline: none;
+  }
+
+  .case-list__delete {
+    color: $error-colour;
+  }
+}
+
+p.radio-group {
+  margin-bottom: em(5, 16 );
+}
+
+.dec-trust__hidden {
+  display: none;
+}
+
+input[type="radio"]:checked ~ .dec-trust__hidden {
+  display: block;
+  width: 25em;
+}
+
+.supporting-uploads {
+  margin-top: 0;
+  padding-bottom: 0;
+  li {
+    margin: 5px 0;
+  }
+}
+
+.supporting-uploads__remove {
+  color: $link-colour;
+  margin-left: $gutter;
+}
+
+.document-section {
+  clear: both;
+  padding: $gutter 0;
+  @extend %contain-floats;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  h2 {
+    margin-top: 15px;
+  }
+
+  .button-secondary {
+    margin-bottom: 0;
+    margin-top: -0.25em;
+  }
+
+  .alert-flag {
+    font-size: 1.6rem;
+  }
+}
+
+.document-section--bordered {
+  border-top: 1px solid $grey-3;
+}
+
+.document-section__item {
+  margin-top: em(5, 16 );
+  margin-bottom: em(20, 16);
+
+  @include media(tablet) {
+    margin-top: em(5);
+    margin-bottom: em(20);
+  }
+
+  ul, p {
+    margin-top: 0;
+  }
+}
+
+.document-section__heading {
+  margin-top: 0;
+}
+
+.document-section__help-def {
+  margin-bottom: $gutter;
+}
+
+.document-section__form--collapse {
+  margin-bottom: $gutter-half;
+  @extend %contain-floats;
+
+  .form-group {
+    margin-bottom: 0;
+  }
+}
+
+.new-provisions {
+  label {
+    display: inline;
+  }
+  textarea {
+    width: 100%;
+  }
+  summary:focus {
+    outline: none;
+  }
+}
+
+.final-btn {
+  margin-top: $gutter;
+}
+
+.panel-indent h2 {
+  margin-top: 0;
+}
+
+.restriction-panel {
+  margin-bottom: 15px;
+}
+
+.form-control--shorten {
+  width: 100%;
+  @include media(tablet) {
+    width: 30%;
+  }
+}
+
+.no-mortgage {
+  color: $grey-1;
+
+  .nomortgagecheck {
+    color: $black;
+  }
+}
+
+// empty state highlighting
+.empty-state {
+  border-left: 3px solid $error-colour;
+  background: $error-background;
+  padding-left: 10px;
+  margin-left: -13px;
+  .form-hint {
+    color: $black;
+  }
+  @include media(tablet) {
+    border-right: 0;
+    margin-left: -18px;
+    padding-left: $gutter-half;
+  }
+}
+
+.document-section .document-section__item.empty-state {
+  padding: 10px 0;
+  margin-right: 0;
+  background: $error-background;
+}
+
+.document-section__item {
+  margin-left: 0;
+  margin-right: 0;
+
+  &:nth-child(even) {
+    background: $grey-4;
+    padding: 10px 0;
+  }
+}
+
+.document-section__item--collapse {
+  margin: 0;
+}
+
+.transferees {
+  margin-top: $gutter-half;
+}
+
+.signees {
+  padding: 10px $gutter-half 0 $gutter-half;
+  @extend %contain-floats;
+}
+
+.document-section--flush {
+  padding-top: 0;
+}
+
+.confirm-flag--block {
+  display: block;
+  text-align: center;
+}
+
+.addr-collapse {
+  margin-bottom: 0;
+}
+
+.legal-document--bounds {
+  margin-bottom: $gutter;
+  padding: $gutter 0;
+  border-top: 4px solid $light-blue;
+  border-bottom: 2px solid $light-blue;
+
+  .inner-block & {
+    margin: 0 0 $gutter;
+  }
+}
+
+.legal-document--item {
+  width: $two-thirds;
+  padding-right: $one-third;
+
+  @extend %contain-floats;
+}
+
+.legal-document--bordered {
+  margin-top: $gutter;
+  border-top: 1px solid $grey-3;
+}
+
+.legal-document--bounds .legal-document--item:first-of-type h2 {
+  margin-top: 15px;
+}
+
+// Make a deed look like a self-contained document?
+
+.deed-document--bounds {
+  margin-bottom: $gutter;
+  padding: 0 $gutter $gutter $gutter;
+  border-color: $light-blue;
+  border-width: 3px 2px;
+  border-style: solid;
+}
+
+.deed-document--divider {
+  margin-top: $gutter;
+  padding-top: $gutter-half;
+  border-top: 1px solid $grey-3;
+}
+
+// a handy divider
+
+.divider {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 1px solid $grey-3;
+}
+
+// Faux GOV.UK Verify login page
+
+.intro {
+  position: relative;
+  width: 960px;
+  margin: auto;
+
+    .form-label {
+      color: $white;
+    }
+    details, summary, summary:hover {
+      color: $white;
+    }
+  }
+  .intro .step-wrap {
+    position: relative;
+    width: 960px;
+    margin: auto;
+    overflow: hidden;
+    white-space: nowrap; }
+    .intro .step-wrap .progress {
+      display: none;
+      text-align: center; }
+      .intro .step-wrap .progress .steps {
+        padding: 0;
+        margin: 0; }
+      .intro .step-wrap .progress li {
+        margin: 5px;
+        display: inline-block;
+        list-style: none;
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        background: #fff;
+        opacity: 0.3; }
+      .intro .step-wrap .progress li.selected {
+        opacity: 1; }
+  .intro .step {
+    min-height: 360px;
+    white-space: normal;
+    padding: 70px 100px 50px 100px;
+    width: 760px;
+    display: inline-block;
+    vertical-align: top;
+    color: #fff;
+    font-size: 22px;
+    margin-right: -4px;
+    background: #005ea5; }
+    .intro .step .icon {
+      vertical-align: -15px;
+      margin: 0 10px 0 0; }
+    .intro .step details {
+      font-size: 16px; }
+  .intro a {
+    color: #fff; }
+  .intro .step-1 h4 {
+    margin: 22px 0 0.1em 0;
+    font-weight: normal;
+    font-size: 22px; }
+  .intro .step-1 h3 {
+    margin-top: 0;
+    margin-bottom: 1.5em;
+    font-size: 25px; }
+  .intro .step-1 li {
+    margin: 8px 0; }
+  .intro .step-1 img.icon {
+    width: 230px;
+    position: absolute;
+    right: 90px;
+    top: 90px; }
+  .intro .step-1 .text-wrap {
+    width: 525px;
+    padding-right: 20px; }
+  .intro .step-1 .government-gateway-logo {
+    width: 80px; }
+  .intro .step-2 h3 {
+    margin-top: 0;
+    font-size: 22px;
+    max-width: 600px; }
+  .intro .new {
+    display: inline-block;
+    margin: 0 0 10px 0;
+    border: 1px solid #fff;
+    padding: 2px 7px 0 7px;
+    color: #fff;
+    font-size: 19px; }
+  .intro .step-3 .button {
+    background: #fff;
+    color: #28A197;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 2px #087167;
+    margin: 30px;
+    vertical-align: top; }
+    .intro .step-3 .button strong {
+      display: block; }
+  .intro .logos {
+    margin: 8px 0; }
+  .intro .government-gateway {
+    color: #fff;
+    font-size: 17px;
+    margin: 40px 0 0 0; }
+  .intro .actions {
+    font-size: 19px;
+    margin: 30px 0 30px -20px; }
+    .intro .actions .sign-in-link {
+      display: inline-block;
+      margin-left: 20px; }
+    .intro .actions .back, .intro .actions .next, .intro .actions .start, .intro .actions .been-verified {
+      display: inline-block;
+      width: 180px;
+      padding: 8px 6px 6px 6px;
+      text-align: center;
+      border: 1px solid #fff;
+      text-decoration: none;
+      background: #fff;
+      color: #005ea5;
+      font-weight: bold;
+      margin: 0 0 0 20px;
+      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4); }
+    .intro .actions .back {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      display: none; }
+
+
+// Progress indicator - simplest first for testing.
+// See https://www.gov.uk/service-manual/user-centred-design/resources/patterns/progress-indicators
+
+.progress {
+  display: block;
+  color: $grey-1;
+  @include core-24;
+}
+
+
+// Completion box
+
+.completion-box {
+  text-align: center;
+  background-color: $turquoise;
+  padding: $gutter;
+  margin: $gutter 0;
+
+  [class*=heading] {
+    display: inline-block;
+    margin: 0;
+  }
+
+  [class*=heading]:before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: $gutter-half;
+    vertical-align: baseline;
+    background: url(/public/images/global/icon-tick-black.svg) left bottom no-repeat;
+  }
+
+}
+
+
+// Alert box
+
+.alert-box {
+  position: relative;
+  padding: $gutter-half $gutter 1px $gutter*2;
+  background-color: $yellow-25;
+}
+
+// inline alert - bold text, with exclamation mark
+
+.alert-inline {
+  position: relative;
+  padding-left: $gutter*1.5;
+}
+
+// exclamation mark in a circle !
+
+.alert-inline:before,
+.alert-box:before {
+  content: '!';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+  color: $white;
+  font-weight: 700;
+  background-color: $black;
+  border-radius: 100%;
+}
+.alert-box:before {
+  left: $gutter-half;
+  top: $gutter-half;
+}
+
+// alert flag - 37signals yellow bg ;)
+
+.alert-flag {
+  @include bold-16();
+  text-transform: uppercase;
+  padding: 0 $gutter-one-quarter;
+  margin-left: $gutter-one-quarter;
+  background-color: $yellow-25;
+  @include border-radius(5px);
+}
+
