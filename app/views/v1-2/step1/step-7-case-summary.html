@@ -1,4 +1,10 @@
-{{<layout-v1-2}}
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/head}}
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/application-v1-2.css">
+{{/head}}
+
 
 {{$pageTitle}}
 	GOV.UK prototyping kit
@@ -234,4 +240,9 @@
 
 {{/content}}
 
-{{/layout-v1-2}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
