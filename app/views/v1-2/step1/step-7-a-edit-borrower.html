@@ -22,19 +22,19 @@
       <ol>
         <li><a href="step-2-case-list">Case list</a></li>
         <li><a href="step-7-case-summary">Case details</a></li>
-        <li><strong>Add a borrower</strong></li>
+        <li><strong>Edit borrower</strong></li>
       </ol>
     </nav>
   </div>
 
-  <h1 class="heading-large collapse-top">Add a borrower</h1>
+  <h1 class="heading-large collapse-top">Edit borrower</h1>
 
   <form class="form" action="">
 
     <h2 class="heading-medium form-heading">Personal details</h2>
     <div class="form-group">
       <label class="form-label-bold" for="name">Full name</label>
-      <input type="text" class="form-control" id="name">
+      <input type="text" class="form-control" id="name" value="Sarah Jane Spencer">
     </div>
 
     <div class="form-group">
@@ -84,7 +84,18 @@
     <h2 class="heading-medium">Correspondance address</h2>
     <div class="form-group" id="correspondance">
       <label class="form-label" for="address-1">Full address</label>
-      <textarea rows="5" class="form-control" id="address-1"></textarea>
+      <textarea rows="5" class="form-control" id="address-1">
+108 Spring Road
+Bedford
+BE9 3BS</textarea>
+      <div style="margin-top:15px;">
+        <textarea rows="5" class="form-control">
+22A Cedar Court
+Ealing
+London
+W5 9ER</textarea>
+        <a href="#" class="font-xsmall remover" style="margin-left:15px;">Remove</a>
+      </div>
       <p><a href="#" class="font-xsmall duplicator">Add another correspondance address</a></p>
     </div>
 
@@ -110,7 +121,7 @@
     </div>
 
     <div class="form-group">
-      <button class="button">Add borrower</button>
+      <button class="button">Update borrower details</button>
       <p class="collapse-bottom"><a href="step-7-case-summary">Cancel and go back to case details</a></p>
     </div>
 
