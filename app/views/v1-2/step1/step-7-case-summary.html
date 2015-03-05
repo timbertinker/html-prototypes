@@ -2,7 +2,8 @@
 
 {{$head}}
   {{>includes/head}}
-  <link rel="stylesheet" type="text/css" href="/public/stylesheets/application-v1-2.css">
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/alphagov-static.css">
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/case-details-v1-2.css">
 {{/head}}
 
 
@@ -13,229 +14,103 @@
 {{$content}}
 
 <main id="content" role="main">
-	<div class="inner-block">
 
-    {{>includes/alpha_banner}}
+  {{>includes/alpha_banner}}
 
-    <h1 class="heading-large">Confirm case details</h1>
-    <p class="lede text">Please check all the details carefully before confirming.</p>
-
-
-		<article class="legal-document--bounds">
-
-		  <section class="document-section">
-    		<h2 class="heading-medium document-section__heading">Property</h2>
-    		<div class="grid-wrapper document-section__item">
-		      <div class="grid grid-1-4">
-		        <div class="inner-block">Address</div>
-		      </div>
-		      <div class="grid grid-1-3">
-		        <div class="inner-block">
-		          <p itemscope itemtype="http://schema.org/PostalAddress" class="addr-collapse">
-		    				<span itemprop="streetAddress">
-			    				Flat 18 Kingman Court<br>
-			    				Verdant Road<br>
-		    				</span>
-		    				<span itemprop="addressLocality">London</span><br>
-		    				<span itemprop="postalCode">SV19 9BT</span>
-		    			</p>
-		        </div>
-		      </div>
-    		</div>
-
-		    <div class="grid-wrapper document-section__item">
-		      <div class="grid grid-1-4">
-		        <div class="inner-block">Title</div>
-		      </div>
-		      <div class="grid grid-1-3">
-		        <div class="inner-block">GHR67834</div>
-		      </div>
-		    </div>
-
-		  </section><!--  end property section -->
-
-		  <section class="document-section document-section--bordered">
-		  	<h2 class="heading-medium">Borrowers </h2>
-
-			  <div class="grid-wrapper document-section__item">
-			    <div class="grid grid-1-4">
-			      <p class="inner-block">No. of borrowers</p>
-			    </div>
-			    <div class="grid grid-1-4">
-			      <div class="inner-block">2</div>
-			    </div>
-			  </div>
-
-
-  <div class="grid-wrapper document-section__item">
-    <div class="grid">
-      <p class="inner-block"><b>Borrower 1</b></p>
-    </div>
-  </div>
-  <div class="grid-wrapper document-section__item">
-    <div class="grid grid-1-4">
-      <div class="inner-block">Name</div>
-    </div>
-    <div class="grid grid-1-4">
-      <p class="inner-block">Jason Amilio Smith</p>
-    </div>
+  <div class="global-breadcrumb">
+    <nav role="navigation">
+      <ol>
+        <li><a href="step-2-case-list">Case list</a></li>
+        <li><strong>Case details</strong></li>
+      </ol>
+    </nav>
   </div>
 
-  <div class="grid-wrapper document-section__item ">
-    <div class="grid grid-1-4">
-      <div class="inner-block">Address(es)</div>
-    </div>
+  <h1 class="heading-xlarge">Case details</h1>
 
-    <div class="grid grid-1-4">
-      <div class="inner-block">
-	      <p itemscope itemtype="http://schema.org/PostalAddress" class="addr-collapse">
-	    		<span itemprop="streetAddress">118 Leafy Way<br></span>
-	    		<span itemprop="addressLocality">Thale</span><br>
-	    		<span itemprop="">Berks</span><br>
-	    		<span itemprop="postalCode">RG12 9AB</span>
-	    	</p>
-     	</div>
+  <dl class="definition-inline legal-division--bottom">
+    <dt class="heading-small collapse">Case reference</dt>
+    <dd><a href="#">add a unique reference for your case</a></dd>
+  </dl>
 
-      <div class="inner-block">
-        <a href="#" class="button-secondary">Change<span class="visuallyhidden"> address details</span></a>
-      </div>
-    </div>
-
-    <div class="grid grid-1-4">
-      <div class="inner-block">
-        <a href="#" class="button-secondary">Add<span class="visuallyhidden"> another</span> address</a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="grid-wrapper document-section__item">
-    <div class="grid grid-1-4">
-      <div class="inner-block">Email</div>
-    </div>
-
-    <div class="grid grid-1-4">
-      <p class="inner-block">jasmith@gmail.com</p>
-    </div>
-
-    <div class="grid grid-1-4">
-      <div class="inner-block">
-        <a href="#" class="button-secondary">Change<span class="visuallyhidden"> email address</span></a>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="grid-wrapper document-section__item">
-    <div class="grid">
-      <p class="inner-block"><b>Borrower 2</b></p>
-    </div>
-  </div>
-  <div class="grid-wrapper document-section__item">
-    <div class="grid grid-1-4">
-      <div class="inner-block">Name</div>
-    </div>
-    <div class="grid grid-1-4">
-      <p class="inner-block">Peter Smith</p>
-    </div>
-  </div>
-
-  <div class="grid-wrapper document-section__item ">
-    <div class="grid grid-1-4">
-      <div class="inner-block">Address(es)</div>
-    </div>
-
-    <div class="grid grid-1-4">
-      <div class="inner-block">
-        <p itemscope itemtype="http://schema.org/PostalAddress" class="addr-collapse">
-    <span itemprop="streetAddress">118 Leafy Way<br>
-
+  <h2 class="heading-large collapse-top">Property</h2>
+  <p itemscope itemtype="http://schema.org/PostalAddress">
+    <span itemprop="streetAddress">
+      Flat 18 Kingman Court<br>
+      Verdant Road<br>
     </span>
-    <span itemprop="addressLocality">Thale</span><br>
-
-    <span itemprop="">Berks</span><br>
-
-    <span itemprop="postalCode">RG12 9AB</span>
+    <span itemprop="addressLocality">London</span><br>
+    <span itemprop="postalCode">SV19 9BT</span>
   </p>
-      </div>
 
-      <div class="inner-block">
-        <a href="#" class="button-secondary">Change<span class="visuallyhidden"> address details</span></a>
-      </div>
+  <dl class="definition-inline">
+    <dt>Title number</dt>
+    <dd>GHR67834</dd>
+  </dl>
 
+  <h2 class="heading-large division--top">Borrowers</h2>
+
+  <h3 class="heading-medium">Borrower 1 <a href="#" class="font-xsmall">Edit details</a></h3>
+
+  <div class="grid-row">
+    <div class="column-half">
+      <dl class="definition-tabular--1-2--b">
+        <dt>Name</dt>
+        <dd>Sarah Jane Spencer</dd>
+        <dt class="missing-info">Date of birth</dt>
+        <dd class="missing-info-placeholder">Not held</dd>
+        <dt class="missing-info">Gender</dt>
+        <dd class="missing-info-placeholder">Not held</dd>
+      </dl>
     </div>
-
-    <div class="grid grid-1-4">
-      <div class="inner-block">
-        <p itemscope itemtype="http://schema.org/PostalAddress" class="addr-collapse">
-    <span itemprop="streetAddress">12 Spring Road<br>
-
-    </span>
-    <span itemprop="addressLocality">Wakefield</span><br>
-
-    <span itemprop="">Yorks</span><br>
-
-    <span itemprop="postalCode">WK12 9AB</span>
-  </p>
-      </div>
-
-      <div class="inner-block">
-        <a href="#" class="button-secondary">Change<span class="visuallyhidden"> address details</span></a>
-      </div>
-
-    </div>
-
-
-
-      <div class="grid grid-1-4">
-        <div class="inner-block">
-          <a href="#" class="button-secondary">Add<span class="visuallyhidden"> another</span> address</a>
-        </div>
-      </div>
-
-
   </div>
 
-  <div class="grid-wrapper document-section__item">
-    <div class="grid grid-1-4">
-      <div class="inner-block">Email</div>
+  <h4 class="heading-small">Address(es)</h4>
+  <div class="grid-row">
+    <div class="column-quarter">
+      108 Spring Road<br>
+      Bedford<br>
+      BE9 3BS
     </div>
-
-    <div class="grid grid-1-4">
-      <p class="inner-block">p.smithy@aol.com</p>
+    <div class="column-quarter">
+      22A Cedar Court<br>
+      Ealing<br>
+      London<br>
+      W5 9ER
     </div>
-
-      <div class="grid grid-1-4">
-        <div class="inner-block">
-          <a href="#" class="button-secondary">Change<span class="visuallyhidden"> email address</span></a>
-        </div>
-      </div>
-
-
   </div>
 
-
-</section><!-- end buyers section -->
-
-  </section><!-- end mortgage section -->
-
-
-</article>
-
-    <form action="step-8-case-list-created" method="get" class="form">
-      <div class="form-group">
-        <label for="check-1" class="block-label">
-          <input id="check-1" type="checkbox" name="agree-execution">
-          I confirm the above is correct
-        </label>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="button">Confirm mortgage details</button>
-        <p><a href="conveyancer-case-list">Save draft</a></p>
-      </div>
-    </form>
-
+  <div class="alert-inline">
+    <h4 class="heading-small">Contact information</h4>
+    <p class="font-xsmall text">
+      Borrowers will need to be able to access <strong>at least one</strong> of these to be able to sign their mortgage deed.
+    </p>
   </div>
+  <div class="grid-row">
+    <div class="column-half">
+      <dl class="definition-tabular--1-2">
+        <dt class="missing-info">Email</dt>
+        <dd class="missing-info-placeholder">Not held</dd>
+        <dt class="missing-info">Mobile phone number</dt>
+        <dd class="missing-info-placeholder">Not held</dd>
+        <dt class="missing-info">Landline number</dt>
+        <dd class="missing-info-placeholder">Not held</dd>
+      </dl>
+    </div>
+  </div>
+
+  <br>
+
+  <p><a href="#">Edit this borrower’s details</a></p>
+
+  <div class="division--top">
+    <p><a href="#">Add another borrower</a></p>
+  </div>
+
+  <div class="actions legal-division--top">
+    <a href="#" class="button">Confirm all case details</a>
+  </div>
+
 </main>
 
 {{/content}}

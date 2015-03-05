@@ -87,6 +87,18 @@
   }
 }
 
+/* dl */.definition-tabular--1-2 {
+  @include dl-tabular($col1: $half, $col2: $half);
+}
+
+/* dl */.definition-tabular--1-2--b {
+  @extend .definition-tabular--1-2;
+
+  dd {
+    font-weight: bold;
+  }
+}
+
 // An inline definition list - name:value pairs for example
 
 /* dd */.definition-inline {

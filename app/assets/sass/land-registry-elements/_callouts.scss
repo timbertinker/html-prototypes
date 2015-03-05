@@ -78,3 +78,30 @@
   }
   text-align: center;
 }
+
+// alerts - an "!" in a circle :)
+.alert-inline {
+  position: relative;
+  padding-left: $gutter*1.5;
+}
+
+.alert-inline:before,
+.alert-box:before {
+  content: '!';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+  color: $white;
+  font-weight: 700;
+  background-color: $black;
+  border-radius: 100%;
+}
+
+.alert-box:before {
+  left: $gutter-half;
+  top: $gutter-half;
+}
