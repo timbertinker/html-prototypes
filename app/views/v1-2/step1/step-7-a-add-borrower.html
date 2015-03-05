@@ -111,7 +111,7 @@
 
     <div class="form-group">
       <button class="button">Add borrower</button>
-      <p class="collapse-bottom"><a href="#">Cancel and go back to case details</a></p>
+      <p class="collapse-bottom"><a href="step-7-case-summary">Cancel and go back to case details</a></p>
     </div>
 
   </form>
@@ -138,7 +138,7 @@
 
       $('body')
 
-        .on('click', '.form-group a', function(e) {
+        .on('click', '.form-group a[href=#]', function(e) {
           e.preventDefault();
         })
 
