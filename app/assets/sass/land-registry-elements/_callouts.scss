@@ -1,0 +1,80 @@
+// Callout elements - summaries, alerts, notifications
+// ==========================================================================
+
+// Callout - A coloured box
+.callout {
+  margin: $gutter 0;
+  padding: $gutter;
+
+  @extend %contain-floats;
+
+  .first-heading {
+    margin-top: 0;
+  }
+}
+
+// Summary - Register View for example
+.callout--summary {
+  color: $white;
+  background-color: $govuk-blue;
+
+  .title-flag {
+    @include highlight-tag($govuk-blue, $white);
+  }
+
+  .lede {
+    margin-bottom: $gutter;
+    padding: $gutter 0;
+    border-top: 1px solid $white;
+    border-bottom: 1px solid $white;
+
+    @extend %contain-floats;
+  }
+
+  .title-plan {
+    border: 2px solid $white;
+    height: 184px;
+  }
+
+}
+
+// Yellow "basecamp" alert
+.callout--notice {
+  background-color: $yellow-25;
+}
+
+// Download "alert"
+.callout--download {
+  padding: $gutter-half;
+  background-image: url(/public/images/icon-download.svg);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  background-origin: content-box;
+  text-indent: 1.8em;
+}
+
+.callout--summary-download {
+  display: inline-block;
+  background-color: $white;
+  color: $black;
+}
+
+// When an action is generated - ie "now do this".
+// For example see http://prototypes.landregistryconcept.co.uk/relationship-starts/conveyancer-token
+.callout--action-notice {
+  color: $black;
+  background-color: $turquoise;
+
+  .title-flag {
+    @include highlight-tag($white, $black);
+  }
+}
+
+// pairs with the above example
+.callout--generated-token {
+  h1 {
+    margin: 0; 
+  }
+  text-align: center;
+}

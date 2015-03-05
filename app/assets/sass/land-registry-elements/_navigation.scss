@@ -1,0 +1,16 @@
+// Navigation elements - subnavs etc
+// ==========================================================================
+
+nav ol, nav ul {
+  list-style-type: none;
+}
+
+// page contents subnav
+.page-contents {
+  @include core-16;
+
+  li:before {
+    content: '-';
+    margin-right: $gutter-half;
+  }
+}
