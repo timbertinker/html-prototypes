@@ -1,0 +1,58 @@
+// UTILITIES
+// Simple utility classes
+// ==========================================================================
+
+// a utility class to collapse bottom and top borders, on things like a nested <ul>...?
+.collapse {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.collapse-top {
+  margin-top: 0;
+}
+
+.collapse-bottom {
+  margin-bottom: 0;
+}
+
+.expand {
+  margin-top: $gutter;
+  margin-bottom: $gutter;
+}
+
+.expand-top {
+  margin-top: $gutter;
+}
+
+.expand-bottom {
+  margin-bottom: $gutter;
+}
+
+.division--top {
+  margin-top: $gutter;
+  padding-top: $gutter;
+  border-top: 1px solid $grey-3;
+}
+.division--bottom {
+  margin-bottom: $gutter;
+  padding-bottom: $gutter;
+  border-bottom: 1px solid $grey-3;
+}
+
+.legal-division--top {
+  margin-top: $gutter;
+  padding-top: $gutter;
+  border-top: 4px solid $light-blue;
+}
+.legal-division--bottom {
+  margin-bottom: $gutter;
+  padding-bottom: $gutter;
+  border-bottom: 4px solid $light-blue;
+}
+
+.action-division--top {
+  margin-top: $gutter;
+  padding-top: $gutter;
+  border-top: 2px solid $grey-3;
+}

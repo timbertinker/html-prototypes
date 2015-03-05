@@ -1,0 +1,55 @@
+// Highlight tags - much like the Alpha, Beta tags in govuk_toolkit
+// ==========================================================================
+
+@mixin highlight-tag($text-colour: #000, $bg-colour: #fff) {
+  @include inline-block;
+  vertical-align: top;
+
+  @include media(tablet) {
+    vertical-align: baseline;
+  }
+
+  margin: 0 8px 0 0;
+  padding: 2px 5px 0;
+
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  color: $text-colour;
+  background-color: $bg-colour;
+}
+
+.alert-flag {
+  @include highlight-tag($black, $yellow-25);
+
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
+.confirm-flag {
+  @include highlight-tag($black, $green-25);
+
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
+// Circular flags for numbers
+.number-flag {
+  @include core-16;
+  @include border-radius(50%);
+  @include box-sizing(border-box);
+
+  font-weight: bold;
+  color: $white;
+  background-color: $light-blue;
+
+  display: inline-block;
+  width: 1.65em;
+  height: 1.65em;
+  margin-left: 0.25em;
+  padding-top: 0.25em;
+  text-align: center;
+  vertical-align: middle;
+}

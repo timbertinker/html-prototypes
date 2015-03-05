@@ -1,0 +1,59 @@
+// Import GOV.UK frontend toolkit
+@import "colours";
+@import "measurements";
+@import "conditionals";
+@import "shims";
+@import "typography";
+@import "css3";
+@import "design-patterns/alpha-beta";
+@import "design-patterns/buttons";
+
+// Import Land Registry elements
+@import 'land-registry-elements/maps';
+@import 'land-registry-elements/typography';
+@import 'land-registry-elements/tags';
+@import 'land-registry-elements/callouts';
+@import 'land-registry-elements/navigation';
+@import 'land-registry-elements/utilities';
+
+// Register specific styles
+
+/*.pending-changes-flag {
+  margin-top: $gutter-half;
+  padding-top: $gutter-half;
+  border-top: 1px solid #fff;
+
+  p {
+    display: inline-block;
+    margin: 0 8px 0 0;
+    padding: 2px 5px 0;
+    color: #005ea5;
+    background-color: #ffffff;
+  }
+
+  a {
+    margin: 0;
+    font-weight: 700;
+  }
+}*/
+
+.register-item-listing {
+  li {
+    margin-bottom: 1.25em;
+  }
+}
+
+/*p.sub-heading-small{
+  @include core-19;
+
+  margin-top: 0;
+  color: $grey-1;
+}*/
+
+.heading-download {
+  padding-left: $gutter*2;
+  background-image: url(/public/images/icon-download.svg);
+  background-repeat: no-repeat;
+  background-position: 0;
+  background-size: contain;
+}

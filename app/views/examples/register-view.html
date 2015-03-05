@@ -1,0 +1,328 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/vendor/leaflet/leaflet.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/register-v1.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div class="callout callout--summary">
+
+    <h1 class="heading-large first-heading">
+      Summary of title <span class="title-flag">HP725748</span>
+    </h1>
+
+    <p>
+      This register was last changed on <b>15 October 2012</b> at <b>11:21:18</b>
+    </p>
+
+    <div class="lede grid-row">
+
+      <div class="column-third">
+
+        <div itemscope itemtype="http://schema.org/PostalAddress">
+          <span itemprop="streetAddress">
+            3a Mandela Way<br>
+          </span>
+          <span itemprop="addressLocality">Southampton</span><br>
+          <span itemprop="postalCode">SO15 5RZ</span>
+        </div>
+
+      </div>
+
+      <figure class="column-third">
+        <div class="title-plan" id="map-location">
+          <img src="http://placehold.it/276x184" alt="Map showing location of title address">
+        </div>
+      </figure>
+
+    </div>
+
+    <dl class="definition-tabular--b">
+      <dt>Owner(s)</dt>
+      <dd>
+        <!-- if there's only 1 registered owner, don't wrap a <ul> -->
+        <!--<ul class="collapse">-->
+          Darcy Bloggs
+      </dd>
+
+      <dt>Lender(s)</dt>
+      <dd>Abbey National PLC</dd>
+
+      <dt>Tenure type</dt>
+      <dd>Leasehold</dd>
+
+      <dt>Price paid</dt>
+      <dd>&pound;188,000 on 3 October 2012</dd>
+
+      <dt>Title quality</dt>
+      <dd>Absolute</dd>
+
+    </dl>
+
+    <!--
+    <div class="pending-changes-flag">
+      <p>
+        There is a <a href="#">pending application</a> to remove the mortgage
+      </p>
+    </div>
+    -->
+
+  </div><!-- end summary -->
+
+  <div class="grid-row">
+
+    <div class="column-third register-nav">
+      <section class="page-contents js-stick-at-top-when-scrolling">
+
+        <h2 class="visuallyhidden">Register contents</h2>
+        <nav>
+          <ul>
+            <li><a href="#property-details">Property details</a></li>
+            <li><a href="#things">Things that affect this property</a></li>
+            <li><a href="#legal-copy">Download a copy of this title</a></li>
+            <li><a href="#historical-changes">Changes to this title</a></li>
+            <li><a href="#related-titles">Related properties</a></li>
+          </ul>
+        </nav>
+
+        <div class="callout callout--notice callout--download">
+          <a href="#">Download a copy</a> of this title<!-- and associated documents-->
+        </div>
+
+      </section>
+    </div>
+
+    <div class="column-two-thirds">
+
+      <section id="property-details" class="text">
+        
+        <h2 class="heading-large collapse-top">Property details</h2>
+
+        <figure class="maps-and-plans-item">
+          <figcaption>
+            <p>
+              The Leasehold land shown edged with red on the title plan filed at the Registry and being 3a Mandela Way, Southampton SO15 5RZ.
+            </p>
+            <p class="footnote">
+              Ordnance Survey map reference SU4112SW scale 1:1250
+            </p>
+          </figcaption>
+          <img src="/public/images/title-plan-3a-mandela-way.png" alt="Title pan of HP725748">
+        </figure>
+      
+      </section>
+
+      <section class="text">
+        <h3 class="heading-medium">Lease details</h3>
+        <dl class="definition-tabular">
+          <dt>Date</dt>
+          <dd>3 October 2012</dd>
+          <dt>Term</dt>
+          <dd>99 years</dd>
+          <dt>Rent</dt>
+          <dd>Peppercorn</dd>
+          <dt>Parties</dt>
+          <dd>
+            <ol class="list-number">
+              <li>David Bloggs</li>
+              <li>Davida Bloggs</li>
+            </ol>
+          </dd>
+        </dl>
+          
+        <h3 class="heading-medium">Owner(s)</h3>
+
+        <div>
+          Darcy Bloggs<br>
+          3a Mandela Way,<br>
+          Southampton<br>
+          SO15 5RZ
+        </div>
+
+        <p class="footnote">The owners have absolute title</p>
+
+        <h3 class="heading-medium">Lender(s)</h3>
+        <ol>
+          <li>
+            Abbey National PLC<br>
+            Deeds Services,<br>
+            101 Midsummer Boulevard,<br>
+            Milton Keynes<br>
+            MK9 1AA
+          </li>
+        </ol>
+        <p class="footnote">Registered charge dated 3 October 2012</p>
+
+      </section>
+
+      <div class="text" id="things">
+        <h2 class="heading-large">Things that affect this property</h2>
+      </div>
+
+      <section id="property-restrictions" class="text">
+        <h3 class="heading-medium">Restrictions:<br>conditions for changing your register</h3>
+
+        <details>
+          <summary>More about restrictions</summary>
+          <div class="panel-indent footnote">
+            <p>A restriction limits the powers of a registered owner to deal with or dispose of the registered land. It may also limit the powers of a chargee to dispose of a charge.</p>
+          </div>
+        </details>
+
+        <ol class="items">
+          <li>
+            <p>There are <strong>no restrictions</strong> that affect this property.</p>
+          </li>
+        </ol>
+
+      </section>
+
+      <section id="property-restrictive-covenants" class="text">
+
+        <h3 class="heading-medium">Restrictive covenants:<br>what your land can’t be used for</h3>
+
+        <details>
+          <summary>More about restrictive covenants</summary>
+          <div class="panel-indent footnote">
+            <p>A restrictive covenant is a promise by one person to another (eg a buyer of land and a seller) not to do certain things with the property or land. The restrictions will continue to be in effect for any subsequent buyer.</p>
+            <p>Common examples of restrictive covenants include:</p>
+            <ul class="list-bullet">
+              <li>preventing alterations to an existing property</li>
+              <li>agreeing not to run a business from the property</li>
+            </ul>
+          </div>
+        </details>
+
+        <ol class="items">
+          <li>
+            <p>There are <strong>no restrictive covenants</strong> that affect this property.</p>
+          </li>
+        </ol>
+
+      </section>
+
+      <section id="property-easements" class="text">
+
+        <h3 class="heading-medium">Easements:<br>rights of way</h3>
+
+        <details>
+          <summary>More about easements</summary>
+          <div class="panel-indent footnote">
+            <p>An easement is a right to use someone else's land for a specified purpose. It relates to the land or property itself and isn’t a personal right.</p>
+            <p>Common examples of easements:</p>
+            <ul class="list-bullet">
+              <li>rights of way such as public footpaths</li>
+              <li>rights to run service pipes and cables underground</li>
+            </ul>
+          </div>
+        </details>
+
+        <ol class="items">
+          <li>
+            <p>There are <strong>no easements</strong> that affect this property.</p>
+          </li>
+        </ol>
+
+      </section>
+
+      <section id="property-provisions" class="text">
+
+        <h3 class="heading-medium">Provisions:<br>other legal issues affecting your land</h3>
+
+        <details>
+          <summary>More about provisions</summary>
+          <div class="panel-indent footnote">
+            <p>Help text with examples...</p>
+          </div>
+        </details>
+
+        <ol class="items">
+          <li>
+            <p>There are <strong>no provisions</strong> that affect this property.</p>
+          </li>
+        </ol>
+
+      </section>
+
+      <section class="text legal-division--top legal-division--bottom" id="legal-copy">
+        <h3 class="heading-large heading-download">Download a copy of this title</h3>
+
+        <p>
+          You can download a <a href="#">copy of the register of title and associated documents</a> for your records.
+        </p>
+
+      </section>
+
+      <div class="text">
+
+        <section id="historical-changes">
+          <h3 class="heading-large">Changes to this title</h3>
+          <p>
+            View <a href="/find-owner/changes-view">pending and historical</a> changes to this title</a>
+          </p>
+        </section>
+
+        <section id="related-titles">
+
+          <h3 class="heading-large">Related properties</h3>
+
+          <div class="panel-indent footnote">
+            <p>For example, a related property could be the freehold building which contains several leasehold flats.</p>
+          </div>
+
+          <ul>
+            <li><a href="#">Freehold register for 3 Mandela Way, title number DT3572811</a></li>
+          </ul>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  
+  <script type="text/javascript" src="/public/javascripts/jquery-1.11.2.js"></script>
+  <script type="text/javascript" src="/public/javascripts/stick-at-top-when-scrolling.js"></script>
+  <script type="text/javascript" src="/public/javascripts/stop-scrolling-at-footer.js"></script>
+  <script type="text/javascript" src="/public/vendor/leaflet/leaflet.js"></script>
+  <script type="text/javascript">
+    $(function() {
+
+      // initialise map
+      var map = L.map('map-location').setView([50.9093302300135, -1.4162035035567726], 18);
+
+      L.tileLayer('http://{s}.tiles.mapbox.com/v3/demotive.la5i4jpb/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>',
+        maxZoom: 18
+      }).addTo(map);
+
+      var marker = L.marker([50.9093302300135, -1.4162035035567726]).addTo(map);
+
+      // stop the position:fixed subnav rolling into footer
+      GOVUK.stopScrollingAtFooter.addEl($('.js-stick-at-top-when-scrolling'), $('.js-stick-at-top-when-scrolling').height());
+
+    });
+  </script>
+
+{{/bodyEnd}}
+
+{{/govuk_template}}
