@@ -1,0 +1,88 @@
+// Import GOV.UK frontend toolkit
+@import "colours";
+@import "measurements";
+@import "conditionals";
+@import "shims";
+@import "typography";
+@import "css3";
+@import "design-patterns/alpha-beta";
+@import "design-patterns/buttons";
+
+// Import Land Registry elements
+@import 'land-registry-elements/maps';
+@import 'land-registry-elements/typography';
+@import 'land-registry-elements/tags';
+@import 'land-registry-elements/callouts';
+@import 'land-registry-elements/navigation';
+@import 'land-registry-elements/utilities';
+
+.account-area {
+  @include core-16;
+
+  padding: $gutter 0;
+  text-align: right;
+
+  a {
+    border-left: 1px solid $grey-3;
+    margin-left: $gutter-half/2;
+    padding-left: $gutter-half/2;
+  }
+}
+
+// Case listing area (an awful non-semantic prototype)
+table.casework-dashboard {
+  margin: $gutter 0;
+  .new {
+    background-color: $yellow-25;
+  }
+  .summary {
+    cursor: pointer;
+    td {
+      vertical-align: top;
+    }
+  }
+  .summary.open td {
+    border-bottom: none;
+  }
+  .details {
+    td {
+      padding-top: 0;
+      padding-bottom: $gutter;
+    }
+  }
+  .details.hidden {
+    td {
+      padding-bottom: 0;
+    }
+    td > .container {
+      display: none;
+    }
+  }
+  .address {
+    margin-bottom: $gutter-half;
+  }
+  .actions {
+    margin-bottom: $gutter-half;
+    a {
+      margin-right: $gutter-half;
+    }
+    .inactive {
+      margin-right: $gutter-half;
+      color: $grey-3;
+    }
+  }
+
+}
+
+.missing-info {
+  &:before {
+    content: '';
+    position: relative;
+    left: -6px;
+    border-left: 3px solid $mellow-red;
+  }
+}
+
+.missing-info-placeholder {
+  color: $grey-3;
+}
