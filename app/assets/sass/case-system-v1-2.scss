@@ -66,6 +66,10 @@ table.casework-dashboard {
     a {
       margin-right: $gutter-half;
     }
+    .inactive {
+      margin-right: $gutter-half;
+      color: $grey-3;
+    }
   }
 
 }
