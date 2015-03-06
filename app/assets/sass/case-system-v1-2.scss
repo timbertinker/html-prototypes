@@ -32,6 +32,9 @@
 // Case listing area (an awful non-semantic prototype)
 table.casework-dashboard {
   margin: $gutter 0;
+  .new {
+    background-color: $yellow-25;
+  }
   .summary {
     cursor: pointer;
     td {
