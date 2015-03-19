@@ -72,15 +72,16 @@ table.daylist-dashboard {
   padding-right: $gutter*2;
 }
 
-tbody tr.summary:hover {
-  background-color: $yellow-25;
-}
-
 table thead th:first-child,
 table tbody td:first-child {
   border: 0;
 }
 
 table thead th:first-child {
-  width: $gutter;
+  min-width: $gutter;
+}
+
+table tr.summary td:first-child {
+  text-align: right;
+
 }
