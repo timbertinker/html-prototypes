@@ -36,14 +36,14 @@
 }
 
 // Circular flags for numbers
-.number-flag {
+@mixin circular-tag($text-colour: $white, $bg-colour: $light-blue) {
   @include core-16;
   @include border-radius(50%);
   @include box-sizing(border-box);
 
   font-weight: bold;
-  color: $white;
-  background-color: $light-blue;
+  color: $text-colour;
+  background-color: $bg-colour;
 
   display: inline-block;
   width: 1.65em;
@@ -53,3 +53,11 @@
   text-align: center;
   vertical-align: middle;
 }
+
+.number-flag {
+  @include circular-tag;
+}
+.number-flag-priority {
+  @include circular-tag($text-colour: $black, $bg-colour: $turquoise);
+}
+
