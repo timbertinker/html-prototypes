@@ -78,5 +78,10 @@ table tbody td:first-child {
 }
 
 table thead th:first-child {
-  width: $gutter;
+  min-width: $gutter;
+}
+
+table tr.summary td:first-child {
+  text-align: right;
+
 }
