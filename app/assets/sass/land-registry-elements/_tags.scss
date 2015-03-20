@@ -27,6 +27,22 @@
   font-size: 0.8em;
 }
 
+.stop-flag {
+  @include highlight-tag($black, $red-25);
+
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
+.amber-flag {
+  @include highlight-tag($black, $orange-25);
+
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
 .confirm-flag {
   @include highlight-tag($black, $green-25);
 
@@ -59,5 +75,21 @@
 }
 .number-flag-priority {
   @include circular-tag($text-colour: $black, $bg-colour: $turquoise);
+}
+.change-count {
+  @include border-radius(50%);
+  @include box-sizing(border-box);
+
+  font-size: 0.8em;
+  font-weight: bold;
+  line-height: 1.65em;
+  text-align: center;
+  color: $text-colour;
+
+  display: inline-block;
+  width: 1.65em;
+  height: 1.65em;
+  background-color: $yellow-25;
+
 }
 

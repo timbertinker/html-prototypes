@@ -25,21 +25,6 @@
 
   <h1 class="heading-xlarge collapse-top">Case List</h1>
 
-  <!--
-  <div class="grid-row">
-    <div class="column-half">
-      <h1 class="heading-large collapse">Case List</h1>
-    </div>
-    <div class="column-half">
-      <form id="search" class="site-search" action="/search" method="get" role="search">
-        <label for="site-search-text">Search cases</label>
-        <input type="search" name="q" id="site-search-text">
-        <button class="button">Go</button>
-      </form>
-    </div>
-  </div>
-  -->
-
   <a href="#">Create a new case</a>
 
   <table class="casework-dashboard">
@@ -50,12 +35,13 @@
         <th scope="col">Task</th>
         <th scope="col">Status</th>
         <th scope="col">Last updated</th>
+        <th scope="col"><span class="visuallyhidden">Change alerts</span></th>
       </tr>
     </thead>
     <tbody>
 
       <tr class="summary">
-        <td><b>ABCDE123</b>&nbsp;<span class="alert-flag">1 Register Change <br>2 Bankruptcy Changes<br>1 daylist change</span></td>
+        <td><b>ABCDE123</b></td>
         <td>
           Sarah Spencer<br>
           Peter Smith
@@ -63,9 +49,10 @@
         <td>Remortgage</td>
         <td>Mortgage not yet created</td>
         <td>2 March 2015</td>
+        <td><span class="alert-flag">4 changes</span></td>
       </tr>
       <tr class="details hidden">
-        <td colspan="5">
+        <td colspan="6">
           <div class="container">
             <div class="address">
               Flat 16 Kingman Court<br>
@@ -76,12 +63,19 @@
             </div>
             <div class="actions">
               <a href="#">Case details</a>
-              <span class="number-flag">1</span><a href="register-view">View register of title GHR67832</a>
-              <span class="number-flag">2</span><a href="bankruptcy-step-1-search">Bankruptcy search</a>
-              <span class="number-flag">1</span><a href="day-list">Daylist</a>
+              <a href="register-view">
+                <span class="change-count">1<span class="visuallyhidden"> change</span></span>
+                View title GHR67832
+              </a>
+              <a href="bankruptcy-step-1-search">
+                <span class="change-count">2<span class="visuallyhidden"> change</span></span>Bankruptcy search
+              </a>
+              <a href="day-list">
+                <span class="change-count">1<span class="visuallyhidden"> change</span></span>
+                View day list
+              </a>
               <a href="#">Create mortgage</a>
               <a href="#">Reserve priority</a>
-              <a href="#">Create mortgage</a>
             </div>
             <div class="action-delete">
               <a href="#">Delete this case</a>
@@ -99,9 +93,10 @@
         <td>Remortgage</td>
         <td>Mortgage deed created</td>
         <td>2 March 2015</td>
+        <td></td>
       </tr>
       <tr class="details hidden">
-        <td colspan="5">
+        <td colspan="6">
           <div class="container">
             <div class="address">
               108 Spring Road<br>
@@ -131,11 +126,12 @@
           Or&eacute; Sanderson
         </td>
         <td>Remortgage</td>
-        <td><span class="alert-flag">Cancelled</span></td>
+        <td><span class="stop-flag">Cancelled</span></td>
         <td>2 March 2015</td>
+        <td></td>
       </tr>
       <tr class="details hidden">
-        <td colspan="5">
+        <td colspan="6">
           <div class="container">
             <div class="address">
               10 High Street<br>
@@ -162,11 +158,12 @@
         <td><b>SHWY289</b></td>
         <td>James Cameron</td>
         <td>Remortgage</td>
-        <td><span class="alert-flag">Requisition</span></td>
+        <td><span class="amber-flag">Requisition</span></td>
         <td>20 February 2015</td>
+        <td></td>
       </tr>
       <tr class="details hidden">
-        <td colspan="5">
+        <td colspan="6">
           <div class="container">
             <div class="address">
               10 High Street<br>
