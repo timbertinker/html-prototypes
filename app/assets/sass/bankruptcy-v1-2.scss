@@ -1,0 +1,24 @@
+// Import GOV.UK frontend toolkit
+@import "colours";
+@import "measurements";
+@import "conditionals";
+@import "shims";
+@import "typography";
+@import "css3";
+@import "design-patterns/alpha-beta";
+@import "design-patterns/buttons";
+
+// Import Land Registry elements
+@import 'land-registry-elements/maps';
+@import 'land-registry-elements/typography';
+@import 'land-registry-elements/tags';
+@import 'land-registry-elements/callouts';
+@import 'land-registry-elements/navigation';
+@import 'land-registry-elements/utilities';
+@import 'land-registry-elements/account-area';
+
+.bankruptcy-listing {
+  li {
+    margin-bottom: $gutter;
+  }
+}
