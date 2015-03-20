@@ -15,19 +15,7 @@
 @import 'land-registry-elements/callouts';
 @import 'land-registry-elements/navigation';
 @import 'land-registry-elements/utilities';
-
-.account-area {
-  @include core-16;
-
-  padding: $gutter 0;
-  text-align: right;
-
-  a {
-    border-left: 1px solid $grey-3;
-    margin-left: $gutter-half/2;
-    padding-left: $gutter-half/2;
-  }
-}
+@import 'land-registry-elements/account-area';
 
 // Daylist area (an awful non-semantic prototype)
 table.daylist-dashboard {

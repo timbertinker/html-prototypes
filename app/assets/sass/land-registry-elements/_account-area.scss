@@ -1,0 +1,12 @@
+.account-area {
+  @include core-16;
+
+  padding: 0.75em 0 $gutter 0;
+  text-align: right;
+
+  a {
+    border-left: 1px solid $grey-3;
+    margin-left: $gutter-half/2;
+    padding-left: $gutter-half/2;
+  }
+}

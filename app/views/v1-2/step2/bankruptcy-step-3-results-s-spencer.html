@@ -4,38 +4,86 @@
 	GOV.UK prototyping kit
 {{/pageTitle}}
 
+{{$head}}
+  {{>includes/head}}
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/alphagov-static.css">
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/bankruptcy-v1-2.css">
+{{/head}}
+
 {{$content}}
 
 <main id="content" role="main">
-	<div class="inner-block">
 
-	{{>includes/alpha_banner}}
-	<h1 class="heading-xlarge">Land Charges Bankruptcy Result</h1>
+  {{>includes/alpha_banner}}
+
+  <div class="grid-row">
+    <div class="column-half">
+      <div class="global-breadcrumb">
+        <nav role="navigation">
+          <ol>
+            <li><a href="step-2-case-list">Case list</a></li>
+            <li><a href="bankruptcy-step-1-search">Bankruptcy search</a></li>
+            <li><a href="bankruptcy-step-2-results">Search results</a></li>
+            <li><strong>S Spencer</strong></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <div class="column-half">
+      <div class="account-area">
+        <span>Andrew Turner</span>
+        <span>(Ross Clulow Solicitors)</span>
+        <a href="#">Sign out</a>
+      </div>
+    </div>
+  </div>
+
+	<h1 class="heading-xlarge">S Spencer</h1>
+
+	<ol class="bankruptcy-listing">
+		<li>
+
+			<dl class="definition-tabular--1-3 panel-indent">
+				<dt>Type, reference, and date</dt>
+				<dd>WO(B) No. 171/73 dated 4 November 1977</dd>
+				<dt>Chargor’s title, trade or profession</dt>
+				<dd>Lecturer</dd>
+				<dt>Chargor’s address</dt>
+				<dd>11 Hendon High Road, Ealing, Greater London</dd>
+				<dt>Additional info</dt>
+				<dd>Portsmouth County Court no. 17 of 1971</dd>
+			</dl>
+
+		</li>
+		<li>
+
+			<dl class="definition-tabular--1-3 panel-indent">
+				<dt>Type, reference, and date</dt>
+				<dd>PA(B) No. 859 dated 21 December 2010</dd>
+				<dt>Chargor’s address</dt>
+				<dd>24 Smith Street, Plymouth</dd>
+				<dt>Additional info</dt>
+				<dd>Exeter County Court no. 12 of 2000</dd>
+			</dl>
+
+		</li>
+		<li>
+
+			<dl class="definition-tabular--1-3 panel-indent">
+				<dt>Type, reference, and date</dt>
+				<dd>PA(B) No. 2222 dated 25 November 2011</dd>
+				<dt>Chargor’s address</dt>
+				<dd>20 Manor Park, Kingsbridge, Devon</dd>
+				<dt>Additional info</dt>
+				<dd>Shrewsbury County Court no. 4 of 2011</dd>
+			</dl>
+
+		</li>
+	</ol>
 
 
-	<div class="text">
+  <p><a href="bankruptcy-step-2-results">Back to search results</a></p>
 
-
-
-
-		<h1 class="heading-large">S Spencer</h1>
-
-		<p>(1)   wo(b) no. 171/73 dated 4 nov 1977<br>
-		(5)   Portsmouth county court no 17 of 1971<br>
-		(6)   lecturer<br>
-		(7)   11 hendon high road ealing Greater London<br></p>
-
-
-
-
-		<p>(1)   pa no. 69 dated 23 jan 2007<br>
-		(2)   all land comprising of pasture house fishery pasture house road<br>
-		(3)   barton on humber<br>
-					North lincolnshire</p>
-
-</div>
-<a href="step-2-case-list" class="button">Back to case list</a>
-</div>
 </main>
 
 {{/content}}

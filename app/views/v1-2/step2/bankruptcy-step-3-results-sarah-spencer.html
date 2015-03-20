@@ -4,43 +4,61 @@
 	GOV.UK prototyping kit
 {{/pageTitle}}
 
+{{$head}}
+  {{>includes/head}}
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/alphagov-static.css">
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/bankruptcy-v1-2.css">
+{{/head}}
+
 {{$content}}
 
 <main id="content" role="main">
-	<div class="inner-block">
 
-	{{>includes/alpha_banner}}
-	<h1 class="heading-xlarge">Land Charges Bankruptcy Result</h1>
+  {{>includes/alpha_banner}}
 
+  <div class="grid-row">
+    <div class="column-half">
+      <div class="global-breadcrumb">
+        <nav role="navigation">
+          <ol>
+            <li><a href="step-2-case-list">Case list</a></li>
+            <li><a href="bankruptcy-step-1-search">Bankruptcy search</a></li>
+            <li><a href="bankruptcy-step-2-results">Search results</a></li>
+            <li><strong>S Spencer</strong></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <div class="column-half">
+      <div class="account-area">
+        <span>Andrew Turner</span>
+        <span>(Ross Clulow Solicitors)</span>
+        <a href="#">Sign out</a>
+      </div>
+    </div>
+  </div>
 
-	<div class="text">
+	<h1 class="heading-large">Sarah Spencer</h1>
 
-		<h1 class="heading-large">Sarah Spencer</h1>
+	<ol class="bankruptcy-listing">
+		<li>
 
-		<p>(1)   wo(b) no. 171/73 dated 4 nov 1977<br>
-		(5)   portsmouth county court no 17 of 1971<br>
-		(6)   lecturer</br>
-		(7)   11 Hendon high road Ealing Greater London</p>
+			<dl class="definition-tabular--1-3 panel-indent">
+				<dt>Type, reference, and date</dt>
+				<dd>WO(B) No. 2222 dated 26 May 1981</dd>
+				<dt>Chargor’s title, trade or profession</dt>
+				<dd>Clerk</dd>
+				<dt>Chargor’s address</dt>
+				<dd>1 The Dell, Bude, Cornwall</dd>
+				<dt>Additional info</dt>
+				<dd>High Court of Justice no. 223 of 1981</dd>
+			</dl>
 
+		</li>
+	</ol>
 
+	<p><a href="bankruptcy-step-2-results">Back to search results</a></p>
 
-
-		<p>(1)   pa no. 69 dated 23 jan 2007<br>
-		(2)   all land comprising of pasture house fishery pasture house road<br>
-		(3)   barton on humber<br>
-					North Lincolnshire</p>
-
-		<p>(1)   pa no. 413 dated 12 mar 2002<br>
-		(2)   all land comprising of pasture house fishery<br>
-		(3)   barton on humber<br>
-					North Lincolnshire<br>
-		(5)   renewal of 69 regd 23/01/2007 further renewed by 246 regd 06/02/2007</p>
-
-
-
-</div>
-<a href="step-2-case-list" class="button">Back to case list</a>
-</div>
 </main>
 
 {{/content}}
