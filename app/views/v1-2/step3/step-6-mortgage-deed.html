@@ -1,0 +1,152 @@
+{{<layout-v1-2}}
+
+{{$pageTitle}}
+	GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$content}}
+
+
+<main id="content" role="main">
+	<div class="inner-block">
+
+		{{>includes/alpha_banner}}
+
+    <h1 class="heading-xlarge">Mortgage deed</h1>
+
+    <div class="text">
+			<p>Below is the mortage deed that will be sent to the borrower(s) please check this is correct then create the mortgage</p>
+      <div class="alert-inline">
+        <p><b>This is a legal document &mdash; please check all details carefully before signing.</b></p>
+      </div>
+    </div>
+
+    <article class="deed-document--bounds">
+
+      <h2 class="heading-large">Mortgage deed</h2>
+
+      <h2 class="heading-medium">Property:</h2>
+
+      <p itemscope itemtype="http://schema.org/PostalAddress">
+        <span itemprop="streetAddress">
+          Flat 16 Kingman Court<br>
+          Verdant Road<br>
+        </span>
+        <span itemprop="addressLocality">London</span><br>
+        <span itemprop="postalCode">SV19 9BT</span>
+      </p>
+
+      <dl class="definition-inline">
+        <dt>Title number</dt>
+        <dd>GHR67832</dd>
+      </dl>
+
+      <h2 class="heading-medium">Lender:</h2>
+
+      <p itemscope itemtype="http://schema.org/Corporation">
+        <span itemprop="name">Bank of England Plc</span><br>
+        <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="address-inline">
+          <span itemprop="streetAddress">
+            12 Trinity Place, Regents Street,
+          </span>
+          <span itemprop="addressLocality">London</span>
+          <span itemprop="postalCode">NW10 6TQ</span>
+        </span>
+        <dl class="definition-inline">
+          <dt>Company registration number</dt>
+          <dd>2347676</dd>
+        </dl>
+      </p>
+
+      <h2 class="heading-large">Mortgage agreement</h2>
+
+      <h3 class="heading-medium">Borrowers:</h3>
+
+      <div class="grid-row">
+        <div class="column-third">
+          <p>
+            <b>Peter Smith</b><br>
+            Flat 16 Kingman Court,<br>
+            Verdant,<br>
+            London<br>
+            SV19 9BT
+          </p>
+        </div>
+
+        <div class="column-third">
+          <p>
+            Sarah Jane Spencer<br>
+            Flat 16 Kingman Court,<br>
+            Verdant Road,<br>
+            London<br>
+            SV19 9BT
+          </p>
+        </div>
+
+      </div>
+
+      <div class="text">
+
+        <h3 class="heading-small">Charging clause:</h3>
+        <p>You, the borrower, with full title guarantee, charge property to the lender by way of legal mortgage with the payment of all money secured by this charge.</p>
+
+        <h3 class="heading-small">Additional provisions:</h3>
+        <ul class="list-bullet">
+          <li>
+            <p>This Mortgage Deed incorporates the <a href="#" rel="external">Lenders Mortgage Conditions and Explanation 2006</a>, a copy of which has been received by the Borrower.</p>
+          </li>
+          <li>
+            <p>The lender is under an obligation to make further advances and applies for the obligation to be entered in the register.</p>
+          </li>
+          <li>
+            <p>No disposition of the registered estate by the proprietor of the registered estate is to be registered without a written consent signed by Bank of England Plc.</p>
+          </li>
+        </ul>
+
+      </div>
+
+      <div id="signature-area" class="js-hidden">
+        <div class="form ">
+          <div class="form-group">
+            <label class="heading-small" for="signature">Signed:</label>
+            <p class="form-hint">Enter your full name here</p>
+            <input type="text" class="form-control" id="signature" name="signature">
+          </div>
+        </div>
+      </div>
+
+      <div class="text">
+
+        <h3 class="heading-small">Effective date and time:</h3>
+        <p>This charge takes effect when the registrar receives notification from Bailey &amp; Co Solicitors, who prepared this charge. The effective date and time is applied by the registrar on completion.</p>
+
+        <div class="deed-document--divider">
+          <p class="font-xsmall">Mortgage deed reference <a href="#" rel="external">MD859K</a>.</p>
+        </div>
+
+      </div>
+
+    </article>
+
+    <div id="request-code">
+
+      <div class="form">
+
+        <div class="form-group">
+          <a href="step-7-mortgage-created"><button type="submit" class="button">Create mortgage</button></a>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+  </div>
+</main>
+
+
+
+{{/content}}
+
+{{/layout-v1-2}}
