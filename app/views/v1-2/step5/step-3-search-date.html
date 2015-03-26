@@ -1,0 +1,90 @@
+{{<layout-v1-2}}
+
+{{$pageTitle}}
+	GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/bankruptcy-v1-2.css">
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+	{{>includes/alpha_banner}}
+
+  <div class="grid-row">
+    <div class="column-half">
+      <div class="global-breadcrumb">
+        <nav role="navigation">
+          <ol>
+            <li><a href="step-2-case-list">Case list</a></li>
+            <li><a href="Title activity"><b>Search of whole</b></a></li>
+            <li><strong>Title activity</strong></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <div class="column-half">
+      <div class="account-area">
+        <span>Andrew Turner</span>
+        <span>(Ross Clulow Solicitors)</span>
+        <a href="#">Sign out</a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+	<div class="form-group">
+			<fieldset>
+				<legend class="form-label-bold">Search from date</legend>
+
+				<div class="form-date">
+
+					<p class="form-hint">For example, 31 3 2015</p>
+
+					<div class="form-group form-group-day">
+						<label for="dob-day">Day</label>
+						<input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+					</div>
+					<div class="form-group form-group-month">
+						<label for="dob-day">Month</label>
+						<input class="form-control" id="dob-month" type="alpha" pattern="[0-9]*" min="0" max="31">
+					</div>
+					<div class="form-group form-group-year">
+						<label for="dob-day">Year</label>
+						<input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="31">
+
+						<p></p>
+
+
+
+						</div>
+
+
+
+					</div>
+<div class="form-group">
+					<a href="day-list" class="button">Submit</a>
+				</div>
+
+	</div>
+
+
+
+
+
+
+
+</main>
+
+{{/content}}
+
+{{/layout-v1-2}}
