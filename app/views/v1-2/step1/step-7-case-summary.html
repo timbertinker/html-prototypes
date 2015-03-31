@@ -4,6 +4,7 @@
   {{>includes/head}}
   <link rel="stylesheet" type="text/css" href="/public/stylesheets/alphagov-static.css">
   <link rel="stylesheet" type="text/css" href="/public/stylesheets/case-system-v1-2.css">
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/application-v1-2.css">
 {{/head}}
 
 
@@ -12,6 +13,8 @@
 {{/pageTitle}}
 
 {{$content}}
+
+
 
 <main id="content" role="main">
 
@@ -28,7 +31,15 @@
   </div>
   -->
 
-  <h1 class="heading-xlarge">Case details</h1>
+  <form class="form" action="step-7-case-summary" method="get">
+    <h1 class="form-title heading-large">
+      <span class="progress">Step 3 of 3</span>
+      Case details
+    </h1>
+
+
+
+
 
   <dl class="definition-inline legal-division--bottom">
     <dt>Case reference</dt>
@@ -111,6 +122,8 @@
   <div class="actions legal-division--top">
     <a href="step-12-case-list" class="button">Save case details</a>
   </div>
+
+
 
 </main>
 
