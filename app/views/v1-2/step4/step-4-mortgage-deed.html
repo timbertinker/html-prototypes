@@ -109,7 +109,7 @@
           <div class="form-group">
             <label class="heading-small" for="signature">Signed:</label>
             <p class="form-hint">Enter your full name here</p>
-            <input type="text" class="form-control" id="signature" name="signature">
+            <input type="text" class="form-control" id="signature" name="signature" autofocus>
           </div>
 					<div class="form-group">
 						<label class="form-label" for="auth-code">Your authentication code:</label>
@@ -186,6 +186,7 @@
     var $signatureEl = $('#signature-area');
     var $requestEl = $('#request-code');
     var $enterEl = $('#enter-code');
+		var $auth = $('#auth-code')
 
     $requestEl.on('click', 'button', function(e) {
       e.preventDefault();
@@ -200,7 +201,7 @@
         },
         750,
         function() {
-          $signatureEl.find('label').focus();
+          $auth.find('label').focus();
         });
 
     });
