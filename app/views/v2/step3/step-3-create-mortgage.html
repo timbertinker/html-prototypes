@@ -1,0 +1,33 @@
+{{<layout-v1-2}}
+
+{{$pageTitle}}
+	GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main">
+  <div class="inner-block">
+
+    {{>includes/alpha_banner}}
+
+    <h1 class="heading-xlarge">Mortgage Details</h1>
+
+    <form action="step-4-confirm-mortgage" method="get" class="form">
+
+    	<div class="form-group">
+			  <label for="mortgage-ref" class="form-label">MD Reference</label>
+			  <p class='form-hint'>E.g. MD1234F</p>
+			  <input type="text" class="form-control" id="mortgage-ref">
+			</div>
+
+      <button class="button final-btn">Confirm mortgage details</button>
+
+    </form>
+
+  </div>
+</main>
+
+{{/content}}
+
+{{/layout-v1-2}}

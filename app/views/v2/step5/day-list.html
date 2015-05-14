@@ -1,0 +1,174 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Daylist exposed
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/alphagov-static.css">
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/day-list-v1.css">
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <h1 class="heading-xlarge">Day List for GHR67834</h1>
+
+  <table class="daylist-dashboard">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visuallyhidden">Priority</span></th>
+        <th scope="col">Reference</th>
+        <th scope="col">Type</th>
+        <th scope="col">Date</th>
+        <th scope="col">Time</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr class="summary">
+        <td><span class="number-flag-priority">1</span></td>
+        <td>MA49090</td>
+        <td>Dispositionary first lease <span class="alert-flag">in progress</span></td>
+        <td>2 February 2015</td>
+        <td>10:28:20</td>
+      </tr>
+      <tr class="details hidden">
+        <td>&nbsp;</td>
+        <td colspan="4">
+          <dl class="definition-tabular">
+            <dt><b>Customer reference</b></dt>
+            <dd>AC5.9/M-00342667/Nwaokolo</dd>
+            <dt><b>Applicants</b></dt>
+            <dd>None recorded</dd>
+            <dt><b>Lodged by</b></dt>
+            <dd>
+              Shoo Smiths LLP<br>
+              Shoo Smiths<br>
+              The Lakes<br>
+              Northampton<br>
+              NN4 7SH
+            </dd>
+          </dl>
+        </td>
+      </tr>
+
+      <tr class="summary">
+        <td><span class="number-flag-priority">2</span></td>
+        <td>MA49090</td>
+        <td>Dispositionary first lease</td>
+        <td>5 February 2015</td>
+        <td>12:03:10</td>
+      </tr>
+      <tr class="details hidden">
+        <td>&nbsp;</td>
+        <td colspan="4">
+          <dl class="definition-tabular">
+            <dt><b>Customer reference</b></dt>
+            <dd>AC5.9/M-00342667/Nwaokolo</dd>
+            <dt><b>Applicants</b></dt>
+            <dd>None recorded</dd>
+            <dt><b>Lodged by</b></dt>
+            <dd>
+              Shoo Smiths LLP<br>
+              Shoo Smiths<br>
+              The Lakes<br>
+              Northampton<br>
+              NN4 7SH
+            </dd>
+          </dl>
+        </td>
+      </tr>
+
+
+
+      <tr class="summary">
+        <td><span class=""></span>&nbsp;<span class="number-flag-priority">3</span></td>
+        <td>T525JHN</td>
+        <td>Dealing</td>
+        <td>17 March 2015</td>
+        <td>15:30:55</td>
+      </tr>
+      <tr class="details hidden">
+        <td>&nbsp;</td>
+        <td colspan="4">
+          <dl class="definition-tabular">
+            <dt><b>Customer reference</b></dt>
+            <dd>AC5.9/M-00342667/Nwaokolo</dd>
+            <dt><b>Applicants</b></dt>
+            <dd>None recorded</dd>
+            <dt><b>Lodged by</b></dt>
+            <dd>
+              Shoo Smiths LLP<br>
+              Shoo Smiths<br>
+              The Lakes<br>
+              Northampton<br>
+              NN4 7SH
+            </dd>
+          </dl>
+        </td>
+      </tr>
+
+      <tr class="summary">
+        <td><span class="alert-flag">new</span>&nbsp;<span class="number-flag-priority">4</span></td>
+        <td>T525JHN</td>
+        <td>Search of whole (with priority)</td>
+        <td>23 March 2015</td>
+        <td>16:30:55</td>
+      </tr>
+      <tr class="details hidden">
+        <td>&nbsp;</td>
+        <td colspan="4">
+          <dl class="definition-tabular">
+            <dt><b>Reference</b></dt>
+            <dd>S6BFJVR</dd>
+            <dt><b>Application type</b></dt>
+            <dd>Search of whole (with priority) in respect of an intended charge</dd>
+            <dt><b>Priority date</b></dt>
+            <dd>23 March 2015</dd>
+            <dt><b>Priority time</b></dt>
+            <dd>16:30:55</dd>
+            <dt><b>Certificate number</b></dt>
+            <dd>247-A1-D3</dd>
+            <dt><b>Applicants</b></dt>
+            <dd>Sarah Spencer</dd>
+            <dt><b>Lodged by</b></dt>
+            <dd>
+              Company one<br>
+              Address line 1<br>
+              Address line 2<br>
+              Address line 3<br>
+              <dt><b>Customer reference</b></dt>
+              <dd>ABCDE1234</dd>
+
+            </dd>
+          </dl>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <p><a href="/v1-2/step5/step-5-case-list">Back to case list</a></p>
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/javascripts/jquery-1.11.2.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    $('.daylist-dashboard').on('click', '.summary', function(e) {
+      e.preventDefault();
+      $(this).toggleClass('open').next().toggleClass('hidden');
+    })
+  });
+  </script>
+{{/bodyEnd}}
+
+{{/govuk_template}}

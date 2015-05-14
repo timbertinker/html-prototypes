@@ -1,0 +1,262 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/vendor/leaflet/leaflet.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/register-v1.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>includes/alpha_banner}}
+  <div>
+    <p><a href="step-2-case-list">Back to caselist</a><p>
+  </div>
+
+  <div class="callout callout--summary">
+
+    <h1 class="heading-large first-heading">
+      Summary of title <span class="title-flag">GHR67832</span>
+    </h1>
+
+    <p>
+      This register was last changed on <b>15 October 2012</b> at <b>11:21:18</b>
+    </p>
+
+    <div class="lede grid-row">
+
+      <div class="column-third">
+
+        <div itemscope itemtype="http://schema.org/PostalAddress">
+          <span itemprop="streetAddress">
+          Flat 16 Kingman Court<br>
+          Verdant Road<br>
+          </span>
+          <span itemprop="addressLocality">London</span><br>
+          <span itemprop="postalCode">SV19 9BT</span>
+        </div>
+
+      </div>
+
+      <figure class="column-third">
+        <div class="title-plan" id="map-location">
+          <img src="http://placehold.it/276x184" alt="Map showing location of title address">
+        </div>
+      </figure>
+
+    </div>
+
+    <dl class="definition-tabular--b">
+      <dt>Owner(s)</dt>
+      <dd>
+        <!-- if there's only 1 registered owner, don't wrap a <ul> -->
+        <!--<ul class="collapse">-->
+          Sarah Jane Spencer
+      </dd>
+
+      <dt>Lender(s)</dt>
+      <dd>Abbey National PLC</dd>
+
+      <dt>Tenure type</dt>
+      <dd>Leasehold</dd>
+
+      <dt>Price paid</dt>
+      <dd>&pound;188,000 on 3 October 2012</dd>
+
+      <dt>Title quality</dt>
+      <dd>Absolute</dd>
+
+      <dt>Restriction</dt>
+      <dd>Written consent signed by Mat Johnson Management Company Ltd</dd>
+
+    </dl>
+
+    <!--
+    <div class="pending-changes-flag">
+      <p>
+        There is a <a href="#">pending application</a> to remove the mortgage
+      </p>
+    </div>
+    -->
+
+  </div><!-- end summary -->
+
+  <div class="grid-row">
+
+    <div class="column-third register-nav">
+      <section class="page-contents js-stick-at-top-when-scrolling">
+
+        <h2 class="visuallyhidden">Register contents</h2>
+        <nav>
+          <ul>
+            <li><a href="#property-details">Property register</a></li>
+            <li><a href="#proprietorship">Proprietorship register</a></li>
+            <li><a href="#charges">Charges register</a></li>
+            <li><a href="#legal-copy">Download a copy of this title</a></li>
+            <li><a href="#historical-changes">Changes to this title</a></li>
+            <li><a href="#related-titles">Related properties</a></li>
+          </ul>
+        </nav>
+
+        <div class="callout callout--notice callout--download">
+          <a href="#">Download a copy</a> of this title<!-- and associated documents-->
+        </div>
+
+
+      </section>
+    </div>
+
+
+    <div class="column-two-thirds">
+
+      <section id="property-details" class="text">
+
+        <h2 class="heading-large collapse-top">Property register</h2>
+
+        <figure class="maps-and-plans-item">
+          <figcaption>
+            <p>
+              The Leasehold land shown edged with red on the title plan filed at the Registry and being Flat 16 Kingman Court, London SV19 9BT.
+            </p>
+            <p class="footnote">
+              Ordnance Survey map reference SU4112SW scale 1:1250
+            </p>
+          </figcaption>
+          <img src="/public/images/title-plan-18-kingman-court.png" alt="">
+        </figure>
+
+      </section>
+
+      <section class="text">
+        <h3 class="heading-medium">Lease details</h3>
+        <dl class="definition-tabular">
+          <dt>Date</dt>
+          <dd>3 October 2012</dd>
+          <dt>Term</dt>
+          <dd>99 years</dd>
+          <dt>Rent</dt>
+          <dd>Peppercorn</dd>
+          <dt>Parties</dt>
+          <dd>Sarah Jane Spencer</dd>
+        </dl>
+
+        <p class="footnote">The owners have absolute title</p>
+
+        <h3 class="heading-medium">Lender(s)</h3>
+        <ol>
+          <li>
+            Abbey National PLC<br>
+            Deeds Services,<br>
+            101 Midsummer Boulevard,<br>
+            Milton Keynes<br>
+            MK9 1AA
+          </li>
+        </ol>
+        <p class="footnote">Registered charge dated 3 October 2012</p>
+
+      </section>
+
+      <h2 class="heading-large" id="proprietorship">Proprietorship register</h2>
+
+      <section class="text">
+
+        <h3 class="heading-medium">Owner(s)</h3>
+
+        <div>
+          Sarah Jane Spencer<br>
+          Flat 16 Kingman Court<br>
+          Verdant Road<br>
+          London<br>
+          SV19 9BT
+        </div>
+
+        <h3 class="heading-medium">Restriction(s)</h3>
+        <div>
+          <p>No disposition of the registered estate by the proprietor of the registered estate is to be registered without a written consent signed by Mat Johnson Management Company Ltd of London Town, London.</p>
+        </div>
+
+      </section>
+
+      <h2 class="heading-large" id="charges">Charges register</h2>
+
+      <section class="text">
+        <p><span class="new-entry">Registered charge dated 3 October 2012</span></p>
+        <p><span class="new-entry">Proprietor: Abbey National PLC (Co. Regn. No. 2294747) of 101 Midsummer Boulevard, Milton Keynes MK9 1AA.</span></p>
+      </section>
+      <section class="text legal-division--top legal-division--bottom" id="legal-copy">
+        <h3 class="heading-large heading-download">Download a copy of this title</h3>
+
+        <p>
+          You can download a <a href="#">copy of the register of title</a> for your records.
+        </p>
+
+      </section>
+
+      <div class="text">
+
+        <section id="historical-changes">
+          <h3 class="heading-large">Changes to this title</h3>
+          <p>
+            View <a href="#">pending and historical</a> changes to this title</a>
+          </p>
+        </section>
+
+        <section id="related-titles">
+
+          <h3 class="heading-large">Related properties</h3>
+
+          <div class="panel-indent footnote">
+            <p>For example, a related property could be the freehold building which contains several leasehold flats.</p>
+          </div>
+
+          <ul>
+            <li><a href="#">Freehold register for Kingman Court, title number DT3572811</a></li>
+          </ul>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+
+  <script type="text/javascript" src="/public/javascripts/jquery-1.11.2.js"></script>
+  <script type="text/javascript" src="/public/javascripts/stick-at-top-when-scrolling.js"></script>
+  <script type="text/javascript" src="/public/javascripts/stop-scrolling-at-footer.js"></script>
+  <script type="text/javascript" src="/public/vendor/leaflet/leaflet.js"></script>
+  <script type="text/javascript">
+    $(function() {
+
+      // initialise map
+      var map = L.map('map-location').setView([51.483372, -0.244145], 16);
+
+      L.tileLayer('http://{s}.tiles.mapbox.com/v3/demotive.la5i4jpb/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="http://mapbox.com">Mapbox</a>',
+        maxZoom: 18
+      }).addTo(map);
+
+      var marker = L.marker([51.483372, -0.244145]).addTo(map);
+
+      // stop the position:fixed subnav rolling into footer
+      GOVUK.stopScrollingAtFooter.addEl($('.js-stick-at-top-when-scrolling'), $('.js-stick-at-top-when-scrolling').height());
+
+    });
+  </script>
+
+{{/bodyEnd}}
+
+{{/govuk_template}}

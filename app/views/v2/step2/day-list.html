@@ -1,0 +1,141 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Daylist exposed
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/alphagov-static.css">
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/day-list-v1.css">
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <h1 class="heading-xlarge">Day List for GHR67834</h1>
+
+  <table class="daylist-dashboard">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visuallyhidden">Priority</span></th>
+        <th scope="col">Reference</th>
+        <th scope="col">Type</th>
+        <th scope="col">Date</th>
+        <th scope="col">Time</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr class="summary">
+        <td><span class="number-flag-priority">1</span></td>
+        <td>MA49090</td>
+        <td>Dispositionary first lease <span class="alert-flag">in progress</span></td>
+        <td>2 February 2015</td>
+        <td>10:28:20</td>
+      </tr>
+      <tr class="details hidden">
+        <td>&nbsp;</td>
+        <td colspan="4">
+          <dl class="definition-tabular">
+            <dt><b>Customer reference</b></dt>
+            <dd>AC5.9/M-00342667/Nwaokolo</dd>
+            <dt><b>Applicants</b></dt>
+            <dd>None recorded</dd>
+            <dt><b>Lodged by</b></dt>
+            <dd>
+              Shoo Smiths LLP<br>
+              Shoo Smiths<br>
+              The Lakes<br>
+              Northampton<br>
+              NN4 7SH
+            </dd>
+          </dl>
+        </td>
+      </tr>
+
+      <tr class="summary">
+        <td><span class="number-flag-priority">2</span></td>
+        <td>MA49090</td>
+        <td>Dispositionary first lease</td>
+        <td>5 February 2015</td>
+        <td>12:03:10</td>
+      </tr>
+      <tr class="details hidden">
+        <td>&nbsp;</td>
+        <td colspan="4">
+          <dl class="definition-tabular">
+            <dt><b>Customer reference</b></dt>
+            <dd>AC5.9/M-00342667/Nwaokolo</dd>
+            <dt><b>Applicants</b></dt>
+            <dd>None recorded</dd>
+            <dt><b>Lodged by</b></dt>
+            <dd>
+              Shoo Smiths LLP<br>
+              Shoo Smiths<br>
+              The Lakes<br>
+              Northampton<br>
+              NN4 7SH
+            </dd>
+          </dl>
+        </td>
+      </tr>
+
+      <tr class="summary">
+        <td><span class="number-flag-priority">3</span></td>
+        <td>MA49090</td>
+        <td>Dispositionary first lease</td>
+        <td>5 February 2015</td>
+        <td>14:49:40</td>
+      </tr>
+      <tr class="details hidden">
+        <td>&nbsp;</td>
+        <td colspan="4">
+          <dl class="definition-tabular">
+            <dt><b>Customer reference</b></dt>
+            <dd>AC5.9/M-00342667/Nwaokolo</dd>
+            <dt><b>Applicants</b></dt>
+            <dd>None recorded</dd>
+            <dt><b>Lodged by</b></dt>
+            <dd>
+              Shoo Smiths LLP<br>
+              Shoo Smiths<br>
+              The Lakes<br>
+              Northampton<br>
+              NN4 7SH
+            </dd>
+          </dl>
+        </td>
+      </tr>
+
+
+    </tbody>
+  </table>
+
+  <div class="division--top">
+    <p><a href="step-2-case-list">Back to case list</a></p>
+  </div>
+
+
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/javascripts/jquery-1.11.2.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    $('.daylist-dashboard').on('click', '.summary', function(e) {
+      e.preventDefault();
+      $(this).toggleClass('open').next().toggleClass('hidden');
+    })
+  });
+  </script>
+{{/bodyEnd}}
+
+{{/govuk_template}}

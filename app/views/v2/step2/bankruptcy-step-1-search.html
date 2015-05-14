@@ -1,0 +1,61 @@
+{{<layout-v1-2}}
+
+{{$pageTitle}}
+	GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/bankruptcy-v1-2.css">
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+	{{>includes/alpha_banner}}
+
+  <div class="grid-row">
+    <div class="column-half">
+      <div class="global-breadcrumb">
+        <nav role="navigation">
+          <ol>
+            <li><a href="step-2-case-list">Case list</a></li>
+            <li><strong>Bankruptcy search</strong></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <div class="column-half">
+      <div class="account-area">
+        <span>Andrew Turner</span>
+        <span>(Ross Clulow Solicitors)</span>
+        <a href="#">Sign out</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="text">
+
+		<h1 class="heading-xlarge collapse-top">Bankruptcy search</h1>
+		<p class="">We will automatically search initials. For example, a search for ‘John Smith’ will also return any results for ‘J Smith’.</p>
+
+		<form action="bankruptcy-step-2-results" method="get" class="form">
+
+			<div class="form-group">
+				<label for="lc-search" class="form-label-bold">Name</label>
+				<input type="text" class="form-control" id="lc-search">
+			</div>
+
+			<button class="button final-btn">Search</button>
+
+		</form>
+
+	</div>
+
+</main>
+
+{{/content}}
+
+{{/layout-v1-2}}
