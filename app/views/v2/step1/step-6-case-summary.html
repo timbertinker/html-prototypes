@@ -4,6 +4,7 @@
   {{>includes/head}}
   <link rel="stylesheet" type="text/css" href="/public/stylesheets/alphagov-static.css">
   <link rel="stylesheet" type="text/css" href="/public/stylesheets/case-system-v1-2.css">
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/application-v1-2.css">
 {{/head}}
 
 
@@ -12,6 +13,8 @@
 {{/pageTitle}}
 
 {{$content}}
+
+
 
 <main id="content" role="main">
 
@@ -28,11 +31,28 @@
   </div>
   -->
 
-  <h1 class="heading-xlarge">Case details</h1>
+  <form class="form" action="step-6-case-summary" method="get">
+    <h1 class="form-title heading-large">
+      <span class="progress">Step 2 of 2</span>
+      Case details
+    </h1>
+
+    <form action="ste" method="get" class="form">
+
+      <div class="form-group">
+        <label for="Case-reference" class="form-label-bold">Case reference</label>
+        <input type="text" class="form-control" id="Case-reference">
+
+      </div>
+
+
+
+    </form>
+
+
 
   <dl class="definition-inline legal-division--bottom">
-    <dt>Case reference</dt>
-    <dd><b>ABCDE123</b><a href="#" class="font-xsmall" style="margin-left:8px;">edit</a></dd>
+
     <dt>Case task</dt>
     <dd><b>Remortgage</b><a href="#" class="font-xsmall" style="margin-left:8px;">edit</a></dd>
   </dl>
@@ -40,7 +60,7 @@
   <h2 class="heading-large collapse-top">Property</h2>
   <p itemscope itemtype="http://schema.org/PostalAddress">
     <span itemprop="streetAddress">
-      Flat 18 Kingman Court<br>
+      Flat 16 Kingman Court<br>
       Verdant Road<br>
     </span>
     <span itemprop="addressLocality">London</span><br>
@@ -49,22 +69,22 @@
 
   <dl class="definition-inline">
     <dt>Title number</dt>
-    <dd>GHR67834</dd>
+    <dd>GHR67832</dd>
   </dl>
 
   <h2 class="heading-large division--top">Borrowers</h2>
 
-  <h3 class="heading-medium">Borrower 1 <a href="#" class="font-xsmall">Edit details</a></h3>
+  <h3 class="heading-medium">Borrower 1 <a href="step-7-edit-borrower" class="font-xsmall">Edit details</a></h3>
 
   <div class="grid-row">
     <div class="column-half">
       <dl class="definition-tabular--1-2--b">
         <dt>Name</dt>
         <dd>Sarah Jane Spencer</dd>
-        <dt>Date of birth</dt>
-        <dd>26 May 1988</dd>
-        <dt>Gender</dt>
-        <dd>Female</dd>
+        <dt class="missing-info">Date of birth</dt>
+        <dd class="missing-info-placeholder">Not held</dd>
+        <dt class="missing-info">Gender</dt>
+        <dd class="missing-info-placeholder">Not held</dd>
       </dl>
     </div>
   </div>
@@ -72,28 +92,29 @@
   <h4 class="heading-small">Correspondence Address(es)</h4>
   <div class="grid-row">
     <div class="column-quarter">
-      Flat 18 Kingman Court<br>
+      Flat 16 Kingman Court<br>
       Verdant Road<br>
       London<br>
       SV19 9BT
     </div>
+    <div class="column-quarter">
+    </div>
   </div>
 
-  <!--<div class="alert-inline">
+  <div class="alert-inline">
     <h4 class="heading-small">Contact information</h4>
     <p class="font-xsmall text">
       Borrowers will need to be able to access <strong>at least one</strong> of these to be able to sign their mortgage deed.
     </p>
-  </div>-->
-  <h4 class="heading-small">Contact information</h4>
+  </div>
   <div class="grid-row">
     <div class="column-half">
       <dl class="definition-tabular--1-2--b">
-        <dt>Email</dt>
-        <dd>sarah@anemailaddress.co.uk</dd>
-        <dt>Mobile phone number</dt>
-        <dd>07964 123 321</dd>
-        <dt>Landline number</dt>
+        <dt class="missing-info">Email</dt>
+        <dd class="missing-info-placeholder">Not held</dd>
+        <dt class="missing-info">Mobile phone number</dt>
+        <dd class="missing-info-placeholder">Not held</dd>
+        <dt class="missing-info">Landline number</dt>
         <dd class="missing-info-placeholder">Not held</dd>
       </dl>
     </div>
@@ -101,15 +122,16 @@
 
   <br>
 
-  <p><a href="#">Edit this borrower’s details</a></p>
+  <p><a href="step-7-edit-borrower">Edit this borrower’s details</a></p>
 
   <div class="division--top">
-    <p><a href="step-10-add-borrower">Add another borrower</a></p>
+    <p><a href="step-9-add-borrower">Add another borrower</a></p>
   </div>
 
   <div class="actions legal-division--top">
-    <a href="step-2-case-list" class="button">Save case details</a>
+    <a href="step-11-case-list" class="button">Save case details</a>
   </div>
+
   <a href="#">Save Draft</a></br>
   <a href="step-2-case-list">Cancel create case</a>
 
