@@ -1,93 +1,81 @@
-{{<layout-v2}}
+{{<govuk_template}}
 
 {{$pageTitle}}
-	GOV.UK prototyping kit
+  Search results
 {{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/search-results.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="/public/stylesheets/application-v2.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
 
 {{$content}}
 
 <main id="content" role="main">
-	<div class="outer-block">
-		<div class="inner-block">
-			{{>includes/alpha_banner}}
-			<a href="step-4-find-property">Back to search</a>
-			<h1 class="heading-large">
-				<span class="progress">Step 1 of 2</span>
-				Find a property
-			</h1>
 
-			<ul class="results-list">
-				<li class="result">
-					<div class="grid grid-1-3">
-						<p class="lede" itemscope itemtype="http://schema.org/PostalAddress">
-							<span itemprop="streetAddress">
-								Flat 16 Kingman Court<br>
-								Verdant Road<br>
-							</span>
-							<span itemprop="addressLocality">London</span><br>
-							<span itemprop="postalCode">SV19 9BT</span>
-						</p>
-						<p>Title number: GHR67832</p>
-						<p><b>Surname MATCH</b></p>
-						<p>
-							<a href="step-6-case-summary" class="button">Select this property</a>
-						</p>
-					</div>
-					<div class="grid grid-1-2" >
-						<div class="inner-block">
-							<img src="/public/images/v1/dummy-register-plan-cropped-zoom.png" alt="">
-						</div>
-					</div>
-				</li>
-				<li class="result">
-					<div class="grid grid-1-3">
-						<p class="lede" itemscope itemtype="http://schema.org/PostalAddress">
-							<span itemprop="streetAddress">
-								Flat 17 Kingman Court<br>
-								Verdant Road<br>
-							</span>
-							<span itemprop="addressLocality">London</span><br>
-							<span itemprop="postalCode">SV19 9BT</span>
-						</p>
-						<p>Title number: GHR67832</p>
-						<p><b>Surname INCORRECT</b></p>
-						<p>
-							<a href="conveyancer-select-task" class="button">Select this property</a>
-						</p>
-					</div>
-					<div class="grid grid-1-2">
-						<div class="inner-block">
-							<img src="/public/images/v1/dummy-register-plan-cropped-zoom.png" alt="">
-						</div>
-					</div>
-				</li>
-				<li class="result">
-					<div class="grid grid-1-3">
-						<p class="lede" itemscope itemtype="http://schema.org/PostalAddress">
-							<span itemprop="streetAddress">
-								Flat 18 Kingman Court<br>
-								Verdant Road<br>
-							</span>
-							<span itemprop="addressLocality">London</span><br>
-							<span itemprop="postalCode">SV19 9BT</span>
-						</p>
-						<p>Title number: GHR67832</p>
-						<p><b>Surname INCORRECT</b></p>
-						<p>
-							<a href="conveyancer-select-task" class="button">Select this property</a>
-						</p>
-					</div>
-					<div class="grid grid-1-2">
-						<div class="inner-block">
-							<img src="/public/images/v1/dummy-register-plan-cropped-zoom.png" alt="">
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
+<div class="inner-block">
+
+	{{>includes/alpha_banner}}
+
+	<a href="step-4-find-property">Back to search</a>
+
+
+	<h1 class="form-title heading-large">
+		<span class="progress">Step 1 of 2</span>
+		Search results for SV19 9BT
+	</h1>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="font-xsmall expand-bottom-half">3 results found</h2>
+      <ol>
+        <li>
+          <h2 class="heading-small collapse-bottom">
+            <a href="step-6-case-summary">Flat 16 Kingman Court, Verdant Road, London, SV19 9BT</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number GHR67832<br>
+            <b>Leasehold</b>
+          </div>
+        </li>
+				<li>
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">Flat 17 Kingman Court, Verdant Road, London, SV19 9BT</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number GHR67832<br>
+            <b>Leasehold</b>
+          </div>
+        </li>
+				<li>
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">Flat 18 Kingman Court, Verdant Road, London, SV19 9BT</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number GHR67832<br>
+            <b>Leasehold</b>
+          </div>
+        </li>
+      </ol>
+
+    </div>
+  </div>
+
+</div>
+
 </main>
 
 {{/content}}
 
-{{/layout-v2}}
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
