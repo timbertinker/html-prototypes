@@ -1,0 +1,183 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/head}}
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/alphagov-static.css">
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/case-system-v1-2.css">
+{{/head}}
+
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>includes/alpha_banner}}
+
+  <div class="account-area">
+    <span>Andrew Turner</span>
+    <span>(Ross Clulow Solicitors)</span>
+    <a href="#">Sign out</a>
+  </div>
+
+  <h1 class="heading-xlarge collapse-top">Case List</h1>
+
+  <a href="#">Create a new case</a>
+
+  <table class="casework-dashboard">
+    <thead>
+      <tr>
+        <th scope="col">Reference</th>
+        <th scope="col">Client</th>
+        <th scope="col">Task</th>
+        <th scope="col">Status</th>
+        <th scope="col">Last updated ▼</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr class="summary">
+        <td><b>ABCDE123</b></td>
+        <td>
+          Sarah Spencer<br>
+          Peter Smith
+        </td>
+        <td>Remortgage</td>
+        <td>Mortgage created</td>
+        <td>2 March 2015</td>
+      </tr>
+      <tr class="details hidden">
+        <td colspan="6">
+          <div class="container">
+            <div class="address">
+              Flat 16 Kingman Court<br>
+              Verdant Road<br>
+              London<br>
+              SV19 9BT<br>
+              Title number: GHR67832
+            </div>
+            <div class="actions">
+              <a href="#">Case details</a>
+              <a href="step-3-create-mortgage">Create mortgage</a>
+            </div>
+            <div class="action-delete">
+              <a href="#">Delete this case</a>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <tr class="summary">
+        <td><b>FGHIK987</b></td>
+        <td>
+          David Stephens<br>
+          Maria Stephens
+        </td>
+        <td>Remortgage</td>
+        <td>Mortgage deed created</td>
+        <td>2 March 2015</td>
+      </tr>
+      <tr class="details hidden">
+        <td colspan="6">
+          <div class="container">
+            <div class="address">
+              108 Spring Road<br>
+              Bedford<br>
+              BE9 3BS<br>
+              Title number: GHT47583
+            </div>
+            <div class="actions">
+              <a href="#">Case details</a>
+              <a href="#">Create mortgage</a>
+            </div>
+            <div class="action-delete">
+              <a href="#">Delete this case</a>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <tr class="summary">
+        <td><b>10 High Street, Plymouth</b></td>
+        <td>
+          Simeon Rad<br>
+          Or&eacute; Sanderson
+        </td>
+        <td>Remortgage</td>
+        <td>Draft</td>
+        <td>2 March 2015</td>
+      </tr>
+      <tr class="details hidden">
+        <td colspan="6">
+          <div class="container">
+            <div class="address">
+              10 High Street<br>
+              Plymouth<br>
+              BE9 3BS<br>
+              Title number: GHT47583
+            </div>
+            <div class="actions">
+              <a href="#">Case details</a>
+              <a href="#">Create mortgage</a>
+            </div>
+            <div class="action-delete">
+              <a href="#">Delete this case</a>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <tr class="summary">
+        <td><b>SHWY289</b></td>
+        <td>James Cameron</td>
+        <td>Remortgage</td>
+        <td>Draft</td>
+        <td>20 February 2015</td>
+      </tr>
+      <tr class="details hidden">
+        <td colspan="6">
+          <div class="container">
+            <div class="address">
+              10 High Street<br>
+              Plymouth<br>
+              BE9 3BS<br>
+              Title number: GHT47583
+            </div>
+            <div class="actions">
+              <a href="#">Case details</a>
+              <a href="#">Create mortgage</a>
+            </div>
+            <div class="action-delete">
+              <a href="#">Delete this case</a>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <a href="#">Create a new case</a>
+
+</main>
+
+{{/content}}
+
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/javascripts/jquery-1.11.2.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    $('.casework-dashboard').on('click', '.summary', function(e) {
+      e.preventDefault();
+      $(this).toggleClass('open').next().toggleClass('hidden');
+    })
+  });
+  </script>
+{{/bodyEnd}}
+
+{{/govuk_template}}

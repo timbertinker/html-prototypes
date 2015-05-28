@@ -1,0 +1,147 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/head}}
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/alphagov-static.css">
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/case-system-v1-2.css">
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/application-v1-2.css">
+{{/head}}
+
+
+{{$pageTitle}}
+	GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$content}}
+
+
+
+<main id="content" role="main">
+
+  {{>includes/alpha_banner}}
+
+  <!--
+  <div class="global-breadcrumb">
+    <nav role="navigation">
+      <ol>
+        <li><a href="step-2-case-list">Case list</a></li>
+        <li><strong>Case details</strong></li>
+      </ol>
+    </nav>
+  </div>
+  -->
+
+  <form class="form" action="step-6-case-summary" method="get">
+    <h1 class="form-title heading-large">
+      <span class="progress">Step 2 of 2</span>
+      Case details
+    </h1>
+
+    <form action="ste" method="get" class="form">
+
+      <div class="form-group">
+        <label for="Case-reference" class="form-label-bold">Case reference</label>
+        <input type="text" class="form-control" id="Case-reference">
+
+      </div>
+
+
+
+    </form>
+
+
+
+  <dl class="definition-inline legal-division--bottom">
+
+    <dt>Case task</dt>
+    <dd><b>Remortgage</b><a href="#" class="font-xsmall" style="margin-left:8px;">edit</a></dd>
+  </dl>
+
+  <h2 class="heading-large collapse-top">Property</h2>
+  <p itemscope itemtype="http://schema.org/PostalAddress">
+    <span itemprop="streetAddress">
+      Flat 16 Kingman Court<br>
+      Verdant Road<br>
+    </span>
+    <span itemprop="addressLocality">London</span><br>
+    <span itemprop="postalCode">SV19 9BT</span>
+  </p>
+
+  <dl class="definition-inline">
+    <dt>Title number</dt>
+    <dd>GHR67832</dd>
+  </dl>
+
+  <h2 class="heading-large division--top">Borrowers</h2>
+
+  <h3 class="heading-medium">Borrower 1 <a href="step-7-edit-borrower" class="font-xsmall">Edit details</a></h3>
+
+  <div class="grid-row">
+    <div class="column-half">
+      <dl class="definition-tabular--1-2--b">
+        <dt>Name</dt>
+        <dd>Sarah Jane Spencer</dd>
+        <dt class="missing-info">Date of birth</dt>
+        <dd class="missing-info-placeholder">Not held</dd>
+        <dt class="missing-info">Gender</dt>
+        <dd class="missing-info-placeholder">Not held</dd>
+      </dl>
+    </div>
+  </div>
+
+  <h4 class="heading-small">Correspondence Address(es)</h4>
+  <div class="grid-row">
+    <div class="column-quarter">
+      Flat 16 Kingman Court<br>
+      Verdant Road<br>
+      London<br>
+      SV19 9BT
+    </div>
+    <div class="column-quarter">
+    </div>
+  </div>
+
+  <div class="alert-inline">
+    <h4 class="heading-small">Contact information</h4>
+    <p class="font-xsmall text">
+      Borrowers will need to be able to access <strong>at least one</strong> of these to be able to sign their mortgage deed.
+    </p>
+  </div>
+  <div class="grid-row">
+    <div class="column-half">
+      <dl class="definition-tabular--1-2--b">
+        <dt class="missing-info">Email</dt>
+        <dd class="missing-info-placeholder">Not held</dd>
+        <dt class="missing-info">Mobile phone number</dt>
+        <dd class="missing-info-placeholder">Not held</dd>
+        <dt class="missing-info">Landline number</dt>
+        <dd class="missing-info-placeholder">Not held</dd>
+      </dl>
+    </div>
+  </div>
+
+  <br>
+
+  <p><a href="step-7-edit-borrower">Edit this borrower’s details</a></p>
+
+  <div class="division--top">
+    <p><a href="step-9-add-borrower">Add another borrower</a></p>
+  </div>
+
+  <div class="actions legal-division--top">
+    <a href="step-11-case-list" class="button">Save case details</a>
+  </div>
+
+  <a href="#">Save Draft</a></br>
+  <a href="step-2-case-list">Cancel create case</a>
+
+</main>
+
+{{/content}}
+
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

@@ -1,0 +1,81 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Search results
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/search-results.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="/public/stylesheets/application-v2.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+<div class="inner-block">
+
+	{{>includes/alpha_banner}}
+
+	<a href="step-4-find-property">Back to search</a>
+
+
+	<h1 class="form-title heading-large">
+		<span class="progress">Step 1 of 2</span>
+		Search results for SV19 9BT
+	</h1>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="font-xsmall expand-bottom-half">3 results found</h2>
+      <ol>
+        <li>
+          <h2 class="heading-small collapse-bottom">
+            <a href="step-6-case-summary">Flat 16 Kingman Court, Verdant Road, London, SV19 9BT</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number GHR67832<br>
+            <b>Leasehold</b>
+          </div>
+        </li>
+				<li>
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">Flat 17 Kingman Court, Verdant Road, London, SV19 9BT</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number GHR67832<br>
+            <b>Leasehold</b>
+          </div>
+        </li>
+				<li>
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">Flat 18 Kingman Court, Verdant Road, London, SV19 9BT</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number GHR67832<br>
+            <b>Leasehold</b>
+          </div>
+        </li>
+      </ol>
+
+    </div>
+  </div>
+
+</div>
+
+</main>
+
+{{/content}}
+
+{{$footerSupportLinks}}
+  {{>property-page/prototype-v1/includes/footer-support-links}}
+{{/footerSupportLinks}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

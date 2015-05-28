@@ -1,0 +1,30 @@
+// Import GOV.UK frontend toolkit
+@import "colours";
+@import "measurements";
+
+// indent "child" titles - ie leaseholds etc
+
+.children {
+  border-left: 1px dotted $grey-2;
+
+  li {
+    position: relative;
+    padding-left: $gutter;
+  }
+  li:before {
+    content: '';
+    left: 0;
+    top: 50%;
+    position: absolute;
+    border-top: 1px dotted $grey-2;
+    width: $gutter-half;
+  }
+  li:last-child:after {
+    content: '';
+    left: -1px;
+    top: 50%;
+    bottom: 0;
+    position: absolute;
+    border-left: 1px solid $white;
+  }
+}
