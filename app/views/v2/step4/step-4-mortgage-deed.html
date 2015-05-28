@@ -16,7 +16,7 @@
 
     <div class="text">
       <div class="alert-inline">
-        <p><b>This is a legal document &mdash; please check all details carefully before signing.</b></p>
+        <p><b>This is a legal document &mdash; please check all details carefully.</b></p>
       </div>
     </div>
 
@@ -113,98 +113,34 @@
 
     </article>
 
-		<div id="signature-area" class="js-hidden">
-			<div class="form ">
-				<div class="form-group">
-					<label class="heading-small" for="signature">Signed:</label>
-					<p class="form-hint">Enter your full name here</p>
-					<input type="text" class="form-control" id="signature" name="signature" autofocus>
-				</div>
-				<div class="form-group">
-					<label class="form-label" for="auth-code">Your authentication code:</label>
-					<p class="form-hint">Example: ABC1234</p>
-					<input type="text" class="form-control" id="auth-code" name="auth-code">
-				</div>
+    <div class="text">
+      <p>If <b>any</b> details are incorrect, or you require further assistance, please contact your lender or conveyancer.</p>
+      <p>If you’re happy to sign the deed, enter your full name and your authentication code to sign.</p>
+    </div>
+
+		<div class="form ">
+			<div class="form-group">
+				<label class="heading-small" for="signature">Signed:</label>
+				<p class="form-hint">Enter your full name here</p>
+				<input type="text" class="form-control" id="signature" name="signature">
+			</div>
+			<div class="form-group">
+				<label class="form-label" for="auth-code">Your authentication code:</label>
+				<p class="form-hint">Example: ABC1234</p>
+				<input type="text" class="form-control" id="auth-code" name="auth-code">
 			</div>
 		</div>
 
-    <div id="request-code">
-
-      <div class="text">
-        <p>If any details are incorrect, or you require further assistance, please contact your lender or conveyancer.</p>
-        <p>If you’re happy to sign the deed, you will be sent an authentication code. Enter this code and your name to sign.</p>
+    <form action="step-5-confirmation" class="form text">
+      <p><a href="#">I haven't received my code, resend it</a></p>
+      <div class="form-group">
+        <button type="submit" class="button">Sign mortgage deed</button>
       </div>
-
-      <div class="form">
-        <div class="form-group">
-          <h4 class="form-header heading-small">How would you like to receive your code?</h4>
-          <label class="block-label" for="radio-1">
-            <input id="radio-1" type="radio" name="radio-group" value="1">
-            By text message, to my mobile number ending <b>4232</b>
-          </label>
-          <label class="block-label" for="radio-2">
-            <input id="radio-2" type="radio" name="radio-group" value="2">
-            By a phone call, to my phone number ending <b>1632</b>
-          </label>
-          <label class="block-label" for="radio-3">
-            <input id="radio-3" type="radio" name="radio-group" value="3">
-            By email, to <b>email@domain.co.uk</b>
-          </label>
-          <label class="block-label" for="radio-4">
-            <input id="radio-4" type="radio" name="radio-group" value="4">
-            By email, to <b>second-email@domain.co.uk</b>
-          </label>
-        </div>
-        <div class="form-group">
-          <button type="submit" class="button">Get authentication code</button>
-        </div>
-      </div>
-
-    </div>
-
-    <div id="enter-code" class="js-hidden">
-      <form action="step-5-confirmation" class="form text">
-        <p><a href="#">I haven't received my code, resend it</a></p>
-        <div class="form-group">
-          <button type="submit" class="button">Sign mortgage deed</button>
-        </div>
-      </form>
-    </div>
+    </form>
 
 
   </div>
 </main>
-
-<script type="text/javascript">
-
-  $(function() {
-
-    var $signatureEl = $('#signature-area');
-    var $requestEl = $('#request-code');
-    var $enterEl = $('#enter-code');
-		var $auth = $('#auth-code')
-
-    $requestEl.on('click', 'button', function(e) {
-      e.preventDefault();
-
-      $requestEl.addClass('js-hidden');
-      $enterEl.removeClass('js-hidden');
-      $signatureEl.removeClass('js-hidden');
-
-      $('html, body')
-        .animate({
-          scrollTop: $signatureEl.offset().top - 60
-        },
-        750,
-        function() {
-          $auth.find('label').focus();
-        });
-
-    });
-
-  });
-
-</script>
 
 {{/content}}
 
