@@ -1,5 +1,5 @@
 function gotoRoot() {
-  window.location.href = '/v1-2/';
+  window.location.href = '/v2/';
   return false;
 }
 

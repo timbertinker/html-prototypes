@@ -13,42 +13,22 @@
 
     {{>includes/alpha_banner}}
 
+    <h1 class="heading-large">Confirm borrower(s) personal details</h1>
     <div class="text">
-      <h1 class="heading-large">Confirm Mortgage details</h1>
       <p class="lede text">Please check all the details carefully before confirming.</p>
     </div>
 
     <div class="legal-division--top">
 
-      <dl class="definition-inline">
-        <dt><b>Date</b></dt>
-        <dd class="missing-info-placeholder">Not yet dated</dd>
-      </dl>
+      <h2 class="heading-large">Borrowers</h2>
 
-      <h2 class="heading-large division--top">Property</h2>
-      <p itemscope itemtype="http://schema.org/PostalAddress">
-        <span itemprop="streetAddress">
-          Flat 16 Kingman Court<br>
-          Verdant Road<br>
-        </span>
-        <span itemprop="addressLocality">London</span><br>
-        <span itemprop="postalCode">SV19 9BT</span>
-      </p>
-
-      <dl class="definition-inline">
-        <dt>Title number</dt>
-        <dd>GHR67832</dd>
-      </dl>
-
-      <h2 class="heading-large division--top">Borrowers</h2>
-
-      <h3 class="heading-medium collapse-top">Borrower 1 <a href="#" class="font-xsmall">Edit details</a></h3>
+      <h3 class="heading-medium collapse-top">Borrower 1</h3>
 
       <div class="grid-row">
         <div class="column-half">
           <dl class="definition-tabular--1-2--b">
             <dt>Name</dt>
-            <dd>Sarah Jane Spencer</dd>
+            <dd>Sarah Jane Smith</dd>
           </dl>
         </div>
       </div>
@@ -58,10 +38,9 @@
           <dl class="definition-tabular--1-2">
             <dt>Correspondance address(es)</dt>
             <dd>
-              Flat 16 Kingman Court<br>
-              Verdant Road<br>
+              83 Lordship Park<br>
               London<br>
-              SV19 9BT
+              N16 5UP
             </dd>
           </dl>
         </div>
@@ -78,7 +57,7 @@
         </div>
       </div>
 
-      <h3 class="heading-medium">Borrower 2 <a href="#" class="font-xsmall">Edit details</a></h3>
+      <h3 class="heading-medium">Borrower 2</h3>
 
       <div class="grid-row">
         <div class="column-half">
@@ -94,10 +73,11 @@
           Correspondance address(es):
         </div>
         <div class="column-quarter" style="padding-left:0px">
-          Flat 16 Kingman Court<br>
-          Verdant Road<br>
-          London<br>
-          SV19 9BT
+          <dd>
+            83 Lordship Park<br>
+            London<br>
+            N16 5UP
+          </dd>
         </div>
         <div class="column-quarter" style="padding-left:0px">
           12 Spring Road<br>
@@ -118,40 +98,12 @@
         </div>
       </div>
 
-
-      <h2 class="heading-large division--top">Mortgage details</h2>
-
-      <div class="grid-row">
-        <div class="column-half">
-          <dl class="definition-tabular--1-2">
-            <dt>MD reference</dt>
-            <dd><b>MD1234F</b> <a href="#" class="font-xsmall">Change</a></dd>
-            <dt>Lender</dt>
-            <dd>Bank of England Plc</dd>
-          </dl>
-        </div>
-      </div>
-
-      <div class="grid-row">
-        <div class="column-half">
-          <dl class="definition-tabular--1-2">
-            <dt>Address</dt>
-            <dd>
-              12 Trinity Place<br>
-              Regents Street<br>
-              London<br>
-              NW10 6TQ
-            </dd>
-          </dl>
-        </div>
-      </div>
-
     </div>
 
 
 
 
-    <form action="step-6-mortgage-deed" method="get" class="form legal-division--top">
+    <form action="step-4-create-mortgage" method="get" class="form legal-division--top">
       <div class="form-group">
         <label for="check-1" class="block-label">
           <input id="check-1" type="checkbox" name="agree-execution">
@@ -159,7 +111,7 @@
         </label>
       </div>
       <div class="form-group">
-        <button type="submit" class="button">Confirm mortgage details</button>
+        <button type="submit" class="button">Confirm personal details</button>
       </div>
     </form>
 
