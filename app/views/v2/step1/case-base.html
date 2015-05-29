@@ -1,0 +1,144 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/head}}
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/application-v1-2.css">
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/case-system-v1-2.css">
+{{/head}}
+
+{{$pageTitle}}
+	GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  <div class="outer-block">
+    <div class="inner-block">
+
+      {{>includes/alpha_banner}}
+
+      <h1 class="heading-xlarge">
+        <span class="progress">Case</span>
+        ABCDE123
+        <a href="#" class="font-xsmall" style="margin-left:8px;">edit case reference</a>
+      </h1>
+
+      <dl class="definition-inline legal-division--bottom">
+        <dt>Task</dt>
+        <dd><b>Remortgage</b></dd>
+      </dl>
+
+      <h2 class="heading-large">Property</h2>
+      {{#property}}
+        <p>
+          Flat 16 Kingman Court<br>
+          Verdant Road<br>
+          London<br>
+          SV19 9BT
+        </p>
+
+        <dl class="definition-inline">
+          <dt>Title number</dt>
+          <dd>GHR67832</dd>
+        </dl>
+      {{/property}}
+      {{^property}}
+        <p><a href="find-property">Add a property to this case</a></p>
+      {{/property}}
+
+      <h2 class="heading-large division--top">Borrowers</h2>
+      
+      {{#borrower_1}}
+        <h3 class="heading-medium">
+          Sarah Jane Spencer
+          <a href="#" class="font-xsmall" style="margin-left:8px;">edit borrower details</a>
+        </h3>
+
+        <dl class="definition-tabular--b">
+          <dt>Date of birth</dt>
+          <dd>26 May 1988</dd>
+          <dt>Gender</dt>
+          <dd>Female</dd>
+        </dl>
+
+        <h4 class="heading-small">Correspondence Address(es)</h4>
+        Flat 16 Kingman Court<br>
+        Verdant Road<br>
+        London<br>
+        SV19 9BT
+
+        <h4 class="heading-small">Contact information</h4>
+        <dl class="definition-tabular--b">
+          <dt>Email</dt>
+          <dd>sarah@anemailaddress.co.uk</dd>
+          <dt>Mobile phone number</dt>
+          <dd>07964 123 321</dd>
+          <dt>Landline number</dt>
+          <dd class="missing-info-placeholder">Not held</dd>
+        </dl>
+      {{/borrower_1}}
+
+      {{#borrower_2}}
+        <div class="text division--top"></div>
+
+        <h3 class="heading-medium collapse-top">
+          Peter Smith
+          <a href="#" class="font-xsmall" style="margin-left:8px;">edit borrower details</a>
+        </h3>
+
+        <dl class="definition-tabular--b">
+          <dt>Date of birth</dt>
+          <dd>2 December 1986</dd>
+          <dt>Gender</dt>
+          <dd>Male</dd>
+        </dl>
+
+        <h4 class="heading-small">Correspondence Address(es)</h4>
+        <div class="grid-row">
+          <div class="column-quarter">
+            Flat 16 Kingman Court<br>
+            Verdant Road<br>
+            London<br>
+            SV19 9BT
+          </div>
+          <div class="column-quarter" style="padding-left:0px">
+            12 Spring Road<br>
+            Wakefield<br>
+            Yorks<br>
+            WK12 9AB
+          </div>
+        </div>
+
+        <h4 class="heading-small">Contact information</h4>
+        <dl class="definition-tabular--b">
+          <dt>Email</dt>
+          <dd>peter.smith@anemailaddress.co.uk</dd>
+          <dt>Mobile phone number</dt>
+          <dd>07964 123 321</dd>
+          <dt>Landline number</dt>
+          <dd class="missing-info-placeholder">Not held</dd>
+        </dl>
+      {{/borrower_2}}
+
+      {{#borrower_1}}
+        <div class="text division--top">
+          <p><a href="add-borrower">Add another borrower to this case</a></p>
+        </div>
+      {{/borrower_1}}
+      {{^borrower_1}}
+        <p><a href="add-borrower">Add a borrower to this case</a></p>
+      {{/borrower_1}}
+
+      <div class="legal-division--top">
+        <a href="case-list" class="button">Save and return to case list</a>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+{{/content}}
+
+{{/govuk_template}}
