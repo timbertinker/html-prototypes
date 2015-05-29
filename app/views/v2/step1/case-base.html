@@ -30,7 +30,12 @@
         <dd><b>Remortgage</b></dd>
       </dl>
 
-      <h2 class="heading-large">Property</h2>
+      <h2 class="heading-large">
+        Property
+        {{#property}}
+          <a href="find-property" class="font-xsmall" style="margin-left:8px;">edit property details</a>
+        {{/property}}
+      </h2>
       {{#property}}
         <p>
           Flat 16 Kingman Court<br>
@@ -132,7 +137,8 @@
       {{/borrower_1}}
 
       <div class="legal-division--top">
-        <a href="case-list" class="button">Save and return to case list</a>
+        <p><a href="case-list" class="button">Save and return to case list</a></p>
+        <p><a href="#">Cancel and delete this case</a></p>
       </div>
 
     </div>
