@@ -25,22 +25,7 @@
 
   <h1 class="heading-xlarge collapse-top">Case List</h1>
 
-  <!--
-  <div class="grid-row">
-    <div class="column-half">
-      <h1 class="heading-large collapse">Case List</h1>
-    </div>
-    <div class="column-half">
-      <form id="search" class="site-search" action="/search" method="get" role="search">
-        <label for="site-search-text">Search cases</label>
-        <input type="search" name="q" id="site-search-text">
-        <button class="button">Go</button>
-      </form>
-    </div>
-  </div>
-  -->
-
-  <a href="#">Create a new case</a>
+  <a href="create-case-start">Create a new case</a>
 
   <table class="casework-dashboard">
     <thead>
@@ -54,6 +39,7 @@
     </thead>
     <tbody>
 
+    {{#borrower_2}}
       <tr class="summary new">
         <td><b>ABCDE123</b></td>
         <td>
@@ -76,7 +62,7 @@
               Title number: GHR67832
             </div>
             <div class="actions">
-              <a href="step-10-case-summary">Case details</a>
+              <a href="case-base">Case details</a>
               <a href="#">Create mortgage</a>
             </div>
             <div class="action-delete">
@@ -85,6 +71,7 @@
           </div>
         </td>
       </tr>
+    {{/borrower_2}}
 
       <tr class="summary">
         <td><b>FGHIK987</b></td>
@@ -106,7 +93,7 @@
               Title number: GHT47583
             </div>
             <div class="actions">
-              <a href="step-6-case-summary">Case details</a>
+              <a href="#">Case details</a>
               <a href="#">Create mortgage</a>
             </div>
             <div class="action-delete">
@@ -136,7 +123,7 @@
               Title number: GHT47583
             </div>
             <div class="actions">
-              <a href="step-6-case-summary">Case details</a>
+              <a href="#">Case details</a>
               <a href="#">Create mortgage</a>
             </div>
             <div class="action-delete">
@@ -163,7 +150,7 @@
               Title number: GHT47583
             </div>
             <div class="actions">
-              <a href="step-6-case-summary">Case details</a>
+              <a href="#">Case details</a>
               <a href="#">Create mortgage</a>
             </div>
             <div class="action-delete">
@@ -176,7 +163,7 @@
     </tbody>
   </table>
 
-  <a href="#">Create a new case</a>
+  <a href="create-case-start">Create a new case</a>
 
 </main>
 

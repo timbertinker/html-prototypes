@@ -8,7 +8,7 @@
 
 
 {{$pageTitle}}
-	GOV.UK prototyping kit
+  GOV.UK prototyping kit
 {{/pageTitle}}
 
 {{$content}}
@@ -17,21 +17,15 @@
 
   {{>includes/alpha_banner}}
 
-  <div class="global-breadcrumb">
-    <nav role="navigation">
-      <ol>
-        <li><a href="step-2-case-list">Case list</a></li>
-        <li><a href="step-6-case-summary">Case details</a></li>
-        <li><strong>Add a borrower</strong></li>
-      </ol>
-    </nav>
-  </div>
+  <h1 class="heading-xlarge">Add a borrower to case</h1>
 
-  <h1 class="heading-large collapse-top">Add a borrower</h1>
-
-  <form class="form" action="step-10-case-summary">
-
-    <h2 class="heading-medium form-heading">Personal details</h2>
+  {{#borrower_1}}
+    <form class="form" action="case-add-borrower-2">
+  {{/borrower_1}}
+  {{^borrower_1}}
+    <form class="form" action="case-add-borrower-1">
+  {{/borrower_1}}
+  
     <div class="form-group">
       <label class="form-label-bold" for="name">Full name</label>
       <input type="text" class="form-control" id="name">
@@ -113,11 +107,12 @@
     </div>
 
     <div class="form-group">
-      <button class="button">Add borrower</button>
-      <p class="collapse-bottom"><a href="step-8-case-summary">Cancel and go back to case details</a></p>
+      <button class="button">Add borrower to case</button>
     </div>
 
   </form>
+
+  <p><a href="case-property">Cancel and go back</a></p>
 
 </main>
 
