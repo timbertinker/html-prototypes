@@ -1,0 +1,50 @@
+{{<layout-v2}}
+
+{{$pageTitle}}
+	GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main">
+	<div class="inner-block">
+
+		{{>includes/alpha_banner}}
+
+		<h1 class="heading-xlarge">Sign your mortgage deed</h1>
+
+		<div class="text">
+      <p class="lede">In order to sign your mortgage deed, you will be sent a unique authentication code.</p>
+    </div>
+
+    <div class="form">
+      <div class="form-group">
+        <h4 class="form-header heading-small">How would you like to receive your code?</h4>
+        <label class="block-label" for="radio-1">
+          <input id="radio-1" type="radio" name="radio-group" value="1">
+          By text message, to my mobile number ending <b>4232</b>
+        </label>
+        <label class="block-label" for="radio-2">
+          <input id="radio-2" type="radio" name="radio-group" value="2">
+          By a phone call, to my phone number ending <b>1632</b>
+        </label>
+        <label class="block-label" for="radio-3">
+          <input id="radio-3" type="radio" name="radio-group" value="3">
+          By email, to <b>email@domain.co.uk</b>
+        </label>
+        <label class="block-label" for="radio-4">
+          <input id="radio-4" type="radio" name="radio-group" value="4">
+          By email, to <b>second-email@domain.co.uk</b>
+        </label>
+      </div>
+      <div class="form-group">
+        <a type="submit" class="button" href="step-4-mortgage-deed">Get authentication code</a>
+      </div>
+    </div>
+
+	</div>
+</main>
+
+{{/content}}
+
+{{/layout-v2}}
