@@ -101,6 +101,22 @@
 
       </div>
 
+			<div class="form ">
+				<div class="form-group">
+					<label class="heading-small" for="signature">Borrower electronic signature(s)</label></br>
+					<input type="text" class="form-control" id="signature" name="signature" disabled="true" value="Signatures will be shown here ">
+				</div>
+				<div class="form-group">
+					<label class="heading-small" for="auth-code">Effective date and time</label></br>
+					<input type="text" class="form-control" id="auth-code" name="auth-code" disabled="true" value="Effective date and time will be shown here">
+				</div>
+				<div class="form-group">
+					<label class="heading-small" for="auth-code">Registrar electronic signature</label><br>
+						<p class="form-hint">Electronic signature applied by the registrar</p>
+					<input type="text" class="form-control" id="auth-code" name="auth-code" disabled="true" value="Signatures will be shown here">
+				</div>
+			</div>
+
       <div class="text">
 
         <h3 class="heading-small">Effective date and time:</h3>
@@ -111,10 +127,11 @@
     </article>
 
     <div class="text">
-      <p>If <b>any</b> details are incorrect, or you require further assistance, please contact your lender or conveyancer.</p>
-      <p>If you’re happy to sign the deed, enter your full name and your authentication code to sign.</p>
-    </div>
+				<label class="heading-large" for="signature">This is your digital signature</label>
 
+			<p><b>If any part of the mortgage deed is incorrect</b>, or you require assistance, please contact your lender or conveyancer.</p>
+
+			<p>If you're happy to sign the deed, enter your full name and your authentication code. This will be added to the document above</p></div>
 		<div class="form ">
 			<div class="form-group">
 				<label class="heading-small" for="signature">Signed:</label>
@@ -127,6 +144,7 @@
 				<input type="text" class="form-control" id="auth-code" name="auth-code">
 			</div>
 		</div>
+	</article>
 
     <form action="step-5-confirmation" class="form text">
       <p><a href="#">I haven't received my code, resend it</a></p>
@@ -134,7 +152,6 @@
         <button type="submit" class="button">Sign mortgage deed</button>
       </div>
     </form>
-
 
   </div>
 </main>
