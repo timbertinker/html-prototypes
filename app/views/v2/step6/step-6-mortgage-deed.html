@@ -12,12 +12,11 @@
 
 		{{>includes/alpha_banner}}
 
-    <h1 class="heading-xlarge">Mortgage deed</h1>
+    <h1 class="heading-xlarge">Sign your mortgage deed</h1>
 
     <div class="text">
-			<p>Below is the mortage deed that will be sent to the borrower(s). Please ensure this is correct, then create the mortgage.</p>
       <div class="alert-inline">
-        <p><b>This is a legal document &mdash; please check all details carefully before signing.</b></p>
+        <p><b>This is a legal document &mdash; please check all details carefully.</b></p>
       </div>
     </div>
 
@@ -64,10 +63,10 @@
       <div class="grid-row">
         <div class="column-third">
           <p>
-            <b>Peter Smith</b><br>
+            <b>Peter Smith</b> <span class="alert-flag">you</span><br>
             83 Lordship Park,<br>
             London<br>
-						N16 5UP
+            N16 5UP
           </p>
         </div>
 
@@ -76,7 +75,7 @@
             <b>Sarah Jane Smith</b><br>
 						83 Lordship Park,<br>
             London<br>
-						N16 5UP
+            N16 5UP
           </p>
         </div>
 
@@ -102,24 +101,14 @@
 
       </div>
 
-      <div id="signature-area" class="js-hidden">
-        <div class="form ">
-          <div class="form-group">
-            <label class="heading-small" for="signature">Signed:</label>
-            <p class="form-hint">Enter your full name here</p>
-            <input type="text" class="form-control" id="signature" name="signature">
-          </div>
-        </div>
-      </div>
-
 			<div class="form ">
 				<div class="form-group">
 					<label class="heading-small" for="signature">Borrower electronic signature(s)</label></br>
-					<input type="text" class="form-control" id="signature" name="signature" disabled="true" value="Signatures will be shown here ">
+					<input type="text" class="form-control" id="signature" name="signature" disabled="true" value="Peter Smith ">&nbsp;<input type="text" class="form-control" id="signature" name="signature" disabled="true" value="Sarah Jane Smith ">
 				</div>
 				<div class="form-group">
 					<label class="heading-small" for="auth-code">Effective date and time</label></br>
-					<input type="text" class="form-control" id="auth-code" name="auth-code" disabled="true" value="Effective date and time will be shown here">
+					<input type="text" class="form-control" id="auth-code" name="auth-code" disabled="true" value="11/06/2015 at 11:26">
 				</div>
 				<div class="form-group">
 					<label class="heading-small" for="auth-code">Registrar electronic signature</label><br>
@@ -137,24 +126,14 @@
 
     </article>
 
-    <div id="request-code">
-
-      <div class="form">
-
-        <div class="form-group">
-          <a href="step-7-mortgage-created"><button type="submit" class="button">Create mortgage</button></a>
-        </div>
+    <form action="step-7-case-list" class="form text">
+      <div class="form-group">
+        <button type="submit" class="button">Apply to register</button>
       </div>
-
-    </div>
-
-
-
+    </form>
 
   </div>
 </main>
-
-
 
 {{/content}}
 

@@ -1,0 +1,36 @@
+{{<layout-v2}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main">
+  <div class="inner-block">
+  {{>includes/alpha_banner}}
+
+  <h1 class="form-title heading-large">Comfirm completion date</h1>
+
+<div class="text">
+  <p>Please confirm that the following date is the completion date to be added to the mortgage deed.</p>
+
+<p><b>18/06/2015</b> at <b>2:34pm</b></p>
+
+<p>Once you have confirmed this date, you will not be able to edit the mortgage deed.</p>
+
+</div>
+<form action="step-4-case-list" method="get" class="form">
+
+  <div class="form-group">
+    <button type="submit" class="button">Confirm completion</button>
+  </div>
+  <a href="step-2-case-list">Cancel</a>
+
+</form>
+</div>
+</main>
+
+{{/content}}
+
+{{/layout-v2}}

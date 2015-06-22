@@ -1,0 +1,35 @@
+{{<layout-v2}}
+
+{{$pageTitle}}
+  GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main">
+  <div class="inner-block">
+  {{>includes/alpha_banner}}
+
+  <h1 class="form-title heading-large">Comfirm mortgage value</h1>
+
+  <form action="step-6-mortgage-deed" method="get" class="form">
+
+    <div class="form-group">
+      <label for="username" class="form-label">Value of mortgage</label>
+      <p class="form-hint">E.g. 250000</p>
+      £<input type="text" class="form-control" id="username">
+    </div>
+    <p>You will be charged: <b>£0</b></p>
+
+  <div class="form-group">
+    <button type="submit" class="button">Confirm completion</button>
+  </div>
+  <a href="step-2-case-list">Cancel</a>
+
+</form>
+</div>
+</main>
+
+{{/content}}
+
+{{/layout-v2}}
