@@ -33,7 +33,7 @@
       <h2 class="heading-large">
         Property
         {{#property}}
-          <a href="find-property" class="font-xsmall" style="margin-left:8px;">edit property details</a>
+          <a href="find-property" class="font-xsmall" style="margin-left:8px;">select a different property</a>
         {{/property}}
       </h2>
       {{#property}}
@@ -52,7 +52,12 @@
         <p><a href="find-property">Add a property to this case</a></p>
       {{/property}}
 
-      <h2 class="heading-large division--top">Borrowers</h2>
+      <h2 class="heading-large division--top">
+        Borrowers
+        {{#borrower_1}}
+          <a href="add-borrower" class="font-xsmall" style="margin-left:8px;">add another borrower to this case</a>
+        {{/borrower_1}}
+      </h2>
 
       {{#borrower_1}}
         <h3 class="heading-medium">
@@ -134,7 +139,7 @@
       {{/borrower_1}}
 
       <div class="legal-division--top">
-        <p><a href="case-list-created" class="button">Save and return to case list</a></p>
+        <p><a href="case-list" class="button">Save and return to case list</a></p>
         <p><a href="#">Cancel and delete this case</a></p>
       </div>
 
