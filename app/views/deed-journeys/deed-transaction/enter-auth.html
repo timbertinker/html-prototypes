@@ -1,0 +1,52 @@
+{{<govuk_template}}
+
+	{{$pageTitle}}
+		Authorisation code
+	{{/pageTitle}}
+
+	{{$head}}
+		<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+		<style type="text/css">
+			b, strong {
+				font-weight: bold;
+			}
+		</style>
+	{{/head}}
+
+	{{$content}}
+		<main id="content" role="main">
+			<div class="inner-block">
+
+				<h1 class="heading-large">Enter your code</h1>
+
+				<form class="form">
+					<div class="form-group">
+						<label class="form-label" for="auth-code">
+							<span class="form-hint">Example: ABC1234</span>
+						</label>
+						<input type="text" class="form-control" id="auth-code" name="auth-code">
+					</div>
+					<p>
+						<a href="#">I haven’t received my code, please resend it</a>
+					</p>
+					<div class="form-group">
+						<a href="deed-agreed" class="button">Next</a>
+					</div>
+				</form>
+
+			</div>
+		</main>
+	{{/content}}
+
+	{{$bodyEnd}}
+	  <script type="text/javascript" src="/public/javascripts/jquery-1.11.2.js"></script>
+	  <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+		<script type="text/javascript">
+			// Use GOV.UK selection-buttons.js to set selected
+			// and focused states for block labels
+			var $blockLabels = $(".block-label input[type='radio'], .block-label input[type='checkbox']");
+			new GOVUK.SelectionButtons($blockLabels);
+		</script>
+	{{/bodyEnd}}
+
+{{/govuk_template}}
