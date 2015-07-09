@@ -1,0 +1,76 @@
+{{<govuk_template}}
+
+	{{$pageTitle}}
+		Borrower details
+	{{/pageTitle}}
+
+	{{$head}}
+		<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css" />
+	{{/head}}
+
+	{{$content}}
+		<main id="content" role="main">
+			<div class="inner-block">
+
+				<div class="text">
+
+					<h1 class="heading-xlarge">Mortgage deed agreed</h1>
+
+					<p class="lede">
+						You’ve confirmed and agreed your mortgage deed.
+					</p>
+
+					<div class="service-notice expand-bottom">
+		  			<p>
+							Sarah Jane Smith <b>still needs to complete this service</b> before
+							your lender can continue.
+						</p>
+						<p>
+							<a href="#">Back to start</a>
+						</p>
+					</div>
+
+					<p>
+						A confirmation email has been sent to peter.smith@gmail.com, which you
+						 should keep for your records.
+					</p>
+
+					<h2 class="heading-large">What happens next</h2>
+
+					<p>
+						When everyone has confirmed and agreed to the deed, your lender or
+						conveyancer will continue the process. The Land Registry will then
+						update records to reflect the change.
+					</p>
+
+					<p>
+						If you have any questions about your mortgage transaction, please
+						contact Bank Of England Ltd or your conveyancer.
+					</p>
+
+					<div class="division-standard-top">
+						<ul>
+							<li><a href="#">What did you think of this service?</a> (Takes 30 seconds)</li>
+							<li><a href="#">More about the land registry</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+		</main>
+	{{/content}}
+
+	{{$bodyEnd}}
+	  <script type="text/javascript" src="/public/javascripts/jquery-1.11.2.js"></script>
+	  <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+		<script type="text/javascript">
+			// Use GOV.UK selection-buttons.js to set selected
+			// and focused states for block labels
+			var $blockLabels = $(".block-label input[type='radio'], .block-label input[type='checkbox']");
+			new GOVUK.SelectionButtons($blockLabels);
+		</script>
+	{{/bodyEnd}}
+
+{{/govuk_template}}
