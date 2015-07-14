@@ -36,6 +36,8 @@
 						 should keep for your records.
 					</p>
 
+					<p><span class="print-page">Print this page</span></p>
+
 					<h2 class="heading-large">What happens next</h2>
 
 					<p>
@@ -63,14 +65,7 @@
 	{{/content}}
 
 	{{$bodyEnd}}
-	  <script type="text/javascript" src="/public/javascripts/jquery-1.11.2.js"></script>
-	  <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
-		<script type="text/javascript">
-			// Use GOV.UK selection-buttons.js to set selected
-			// and focused states for block labels
-			var $blockLabels = $(".block-label input[type='radio'], .block-label input[type='checkbox']");
-			new GOVUK.SelectionButtons($blockLabels);
-		</script>
+	  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
 	{{/bodyEnd}}
 
 {{/govuk_template}}

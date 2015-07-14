@@ -6,24 +6,36 @@
 
 	{{$head}}
 		<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
-		<style type="text/css">
-			b, strong {
-				font-weight: bold;
-			}
-		</style>
+		<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css" />
 	{{/head}}
 
 	{{$content}}
 		<main id="content" role="main">
 			<div class="inner-block">
 
-				<h1 class="heading-large">Are these property details correct?</h1>
+				<h1 class="heading-large">
+					<span class="heading-secondary">Step 1 of 7</span>
+					Property details
+				</h1>
 
-				<p class="lede">
-					83 Lordship Park,<br>
-					London<br>
-					N16 5UP
-				</p>
+				<div class="text">
+					<p>
+						This should accurately show the address of the property that you are
+						remortgaging.
+					</p>
+				</div>
+
+				<div class="text division-primary">
+					<p class="lede">
+						83 Lordship Park,<br>
+						London<br>
+						N16 5UP
+					</p>
+				</div>
+
+				<h2 class="heading-medium">
+					Are these property details correct?
+				</h2>
 
 				<form class="form">
 					<div class="form-group">
@@ -40,6 +52,9 @@
 					</div>
 					<div class="form-group">
 						<a href="lender-details" class="button">Next</a>
+						<p>
+							<a href="#">Back</a>
+						</p>
 					</div>
 				</form>
 
@@ -48,14 +63,7 @@
 	{{/content}}
 
 	{{$bodyEnd}}
-	  <script type="text/javascript" src="/public/javascripts/jquery-1.11.2.js"></script>
-	  <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
-		<script type="text/javascript">
-			// Use GOV.UK selection-buttons.js to set selected
-			// and focused states for block labels
-			var $blockLabels = $(".block-label input[type='radio'], .block-label input[type='checkbox']");
-			new GOVUK.SelectionButtons($blockLabels);
-		</script>
+	  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
 	{{/bodyEnd}}
 
 {{/govuk_template}}
