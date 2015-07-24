@@ -1,0 +1,63 @@
+{{<govuk_template}}
+
+{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/public/stylesheets/application-v3.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$pageTitle}}
+  Create a new case
+{{/pageTitle}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$propositionHeader}}
+  <div class="account">
+    <div>Andrew Turner (Ross Clulow Solicitors)</div>
+    <a href="#">My account</a>
+    <a href="login">Sign out</a>
+  </div>
+{{/propositionHeader}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  <div class="global-breadcrumb">
+    <nav role="navigation">
+      <ol>
+        <li><a href="case-list">Case list</a></li>
+	      <li>Create new case</li>
+      </ol>
+    </nav>
+  </div><!-- global-breadcrumb -->
+
+	<h1 class="heading-xlarge">Create a new case</h1>
+
+	<div class="text">
+		<p>To use this service you’ll need to provide:</p>
+		<ul class="list-bullet">
+			<li>the address of the property or land</li>
+			<li>the full details of the borrower(s)</li>
+		</ul>
+		<p>When complete, you will be able to send an electronic mortgage deed.</p>
+	</div>
+
+	<div>
+		<a href="case" class="button button-get-started">Start now</a>
+		<div>
+			<a href="case-list" class="font-xsmall">Back to case list</a>
+		</div>
+	</div>
+
+</main>
+
+{{/content}}
+
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+{{/bodyEnd}}
+
+{{/govuk_template}}

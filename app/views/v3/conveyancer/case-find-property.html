@@ -1,0 +1,73 @@
+{{<govuk_template}}
+
+{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/public/stylesheets/application-v3.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$pageTitle}}
+  Create a new case
+{{/pageTitle}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$propositionHeader}}
+  <div class="account">
+    <div>Andrew Turner (Ross Clulow Solicitors)</div>
+    <a href="#">My account</a>
+    <a href="login">Sign out</a>
+  </div>
+{{/propositionHeader}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  <div class="global-breadcrumb">
+    <nav role="navigation">
+      <ol>
+        <li><a href="case-list">Case list</a></li>
+	      <li>
+					<a href="case">
+          {{^case_reference}}New case{{/case_reference}}
+          {{#case_reference}}{{case_reference}}{{/case_reference}}
+					</a>
+        </li>
+	      <li>Add a property</li>
+      </ol>
+    </nav>
+  </div><!-- global-breadcrumb -->
+
+			<h1 class="heading-xlarge">Add a property to case</h1>
+
+			<form class="form" action="case-property-results" method="get">
+
+				<p class="lede">Search the Land Registry</p>
+
+				<div class="form-group">
+					<label class="form-label" for="postcode">Postcode</label>
+					<input type="text" class="form-control-1-4" id="postcode" name="postcode">
+				</div>
+				<div class="form-group">
+					<label class="form-label" for="building">Building number or name (optional)</label>
+					<input type="text" class="form-control" id="building" name="building">
+				</div>
+
+				<div class="form-group">
+					<input type="submit" class="button" value="Search">
+				</div>
+
+				<a href="case-base">Back</a>
+
+			</form>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+{{/bodyEnd}}
+
+{{/govuk_template}}

@@ -1,0 +1,166 @@
+{{<govuk_template}}
+
+{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/public/stylesheets/application-v3.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$pageTitle}}
+  Case list
+{{/pageTitle}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$propositionHeader}}
+  <div class="account">
+    <div>Andrew Turner (Ross Clulow Solicitors)</div>
+    <a href="#">My account</a>
+    <a href="login">Sign out</a>
+  </div>
+{{/propositionHeader}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  <div class="global-breadcrumb">
+    <nav role="navigation">
+      <ol>
+        <li>Case list</li>
+      </ol>
+    </nav>
+  </div><!-- global-breadcrumb -->
+
+  <h1 class="heading-xlarge">Case List</h1>
+
+  <div>
+    <a href="create-new-case">Create a new case</a>
+  </div>
+
+  <table class="case-list">
+    <thead>
+      <tr>
+        <th scope="col">Reference</th>
+        <th scope="col">Client</th>
+        <!--<th scope="col">Task</th>-->
+        <th scope="col">Status</th>
+        <th scope="col">Last updated</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {{#new_case}}
+      <tr class="summary new-case"><!-- .new-case class should go after first load -->
+        <td>
+          {{^case_reference}}83 Lordship Park{{/case_reference}}
+          {{#case_reference}}{{case_reference}}{{/case_reference}}
+        </td>
+        <td>
+          Sarah Jane Smith<br>
+          Peter Smith
+        </td>
+        <!--<td>Remortgage</td>-->
+        <td>Mortgage not yet created</td>
+        <td>2 March 2015</td>
+      </tr>
+      <tr class="details js-hidden">
+        <td colspan="5">
+
+          <p>
+            83 Lordship Park<br>
+            London<br>
+            N16 5UP<br>
+            Title number: GHR67832
+          </p>
+
+          <div class="actions">
+            <a href="#">Case details</a>
+            <a href="#">Create mortgage</a>
+          </div>
+          <div class="action-delete">
+            <a href="#">Delete this case</a>
+          </div>
+
+        </td>
+      </tr>
+      {{/new_case}}
+
+      <tr class="summary">
+        <td>10 High Street, Plymouth</td>
+        <td>
+          Simeon Rad<br>
+          Or&eacute; Sanderson
+        </td>
+        <!--<td>Remortgage</td>-->
+        <td>Draft</td>
+        <td>2 March 2015</td>
+      </tr>
+      <tr class="details js-hidden">
+        <td colspan="5">
+
+          <p>
+            108 Spring Road<br>
+            Bedford<br>
+            BE9 3BS<br>
+            Title number: GHT47583
+          </p>
+
+          <div class="actions">
+            <a href="#">Case details</a>
+            <a href="#">Create mortgage</a>
+          </div>
+          <div class="action-delete">
+            <a href="#">Delete this case</a>
+          </div>
+
+        </td>
+      </tr>
+
+      <tr class="summary">
+        <td>SHWY289</td>
+        <td>
+          James Cameron
+        </td>
+        <!--<td>Remortgage</td>-->
+        <td>Draft</td>
+        <td>20 February 2015</td>
+      </tr>
+      <tr class="details js-hidden">
+        <td colspan="5">
+
+          <p>
+            10 High Street<br>
+            Plymouth<br>
+            BE9 3BS<br>
+            Title number: GHT47583
+          </p>
+
+          <div class="actions">
+            <a href="#">Case details</a>
+            <a href="#">Create mortgage</a>
+          </div>
+          <div class="action-delete">
+            <a href="#">Delete this case</a>
+          </div>
+
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <div class="expand-top">
+    <a href="create-new-case">Create a new case</a>
+  </div>
+
+</main>
+
+{{/content}}
+
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+{{/bodyEnd}}
+
+{{/govuk_template}}

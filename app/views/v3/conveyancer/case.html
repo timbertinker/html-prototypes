@@ -1,0 +1,178 @@
+{{<govuk_template}}
+
+{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/public/stylesheets/application-v3.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$pageTitle}}
+  Create a new case
+{{/pageTitle}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$propositionHeader}}
+  <div class="account">
+    <div>Andrew Turner (Ross Clulow Solicitors)</div>
+    <a href="#">My account</a>
+    <a href="login">Sign out</a>
+  </div>
+{{/propositionHeader}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  <div class="global-breadcrumb">
+    <nav role="navigation">
+      <ol>
+        <li><a href="case-list">Case list</a></li>
+	      <li>
+          {{^case_reference}}New case{{/case_reference}}
+          {{#case_reference}}{{case_reference}}{{/case_reference}}
+        </li>
+      </ol>
+    </nav>
+  </div><!-- global-breadcrumb -->
+
+  {{^case_reference}}
+  <h1 class="heading-xlarge">
+    New case
+    <a href="case-reference" class="font-xsmall" style="margin-left:8px;">
+      add a case reference (optional)
+    </a>
+  </h1>
+  {{/case_reference}}
+  {{#case_reference}}
+  <h1 class="heading-xlarge">
+    <span class="heading-secondary">Case</span>
+    {{case_reference}}
+    <a href="case-reference" class="font-xsmall" style="margin-left:8px;">
+      edit case reference
+    </a>
+  </h1>
+  {{/case_reference}}
+
+  <dl class="definition-inline division-primary-bottom">
+    <dt>Task</dt>
+    <dd><b>Remortgage</b></dd>
+  </dl>
+
+  <h2 class="heading-large">
+    Property
+    {{#property}}
+      <a href="case-find-property" class="font-xsmall" style="margin-left:8px;">select a different property</a>
+    {{/property}}
+  </h2>
+  {{#property}}
+    <p>
+      83 Lordship Park<br>
+      London<br>
+      N16 5UP
+    </p>
+
+    <dl class="definition-inline">
+      <dt>Title number</dt>
+      <dd>GHR67832</dd>
+    </dl>
+  {{/property}}
+  {{^property}}
+    <p><a href="case-find-property">Add a property to this case</a></p>
+  {{/property}}
+
+  <h2 class="heading-large division-standard-top">
+    Borrowers
+    {{#borrower_1}}
+      <a href="add-borrower" class="font-xsmall" style="margin-left:8px;">add another borrower to this case</a>
+    {{/borrower_1}}
+  </h2>
+
+  {{#borrower_1}}
+    <h3 class="heading-medium">
+      Sarah Jane Smith
+      <a href="#" class="font-xsmall" style="margin-left:8px;">edit borrower details</a>
+    </h3>
+
+    <dl class="definition-tabular-bold">
+      <dt>Date of birth</dt>
+      <dd>26 May 1988</dd>
+      <dt>Gender</dt>
+      <dd>Female</dd>
+    </dl>
+
+    <h4 class="heading-small">Correspondence Address(es)</h4>
+    83 Lordship Park<br>
+    London<br>
+    N16 5UP
+
+    <h4 class="heading-small">Contact information</h4>
+    <dl class="definition-tabular-bold">
+      <dt>Email</dt>
+      <dd>sarah.smith@gmail.com</dd>
+      <dt>Mobile phone number</dt>
+      <dd>07964 123 321</dd>
+    </dl>
+  {{/borrower_1}}
+
+  {{#borrower_2}}
+    <div class="text division-standard-top"></div>
+
+    <h3 class="heading-medium collapse-top">
+      Peter Smith
+      <a href="#" class="font-xsmall" style="margin-left:8px;">edit borrower details</a>
+    </h3>
+
+    <dl class="definition-tabular-bold">
+      <dt>Date of birth</dt>
+      <dd>7 January 1972</dd>
+      <dt>Gender</dt>
+      <dd>Male</dd>
+    </dl>
+
+    <h4 class="heading-small">Correspondence Address(es)</h4>
+    <div class="grid-row">
+      <div class="column-quarter">
+        83 Lordship Park<br>
+        London<br>
+        N16 5UP
+      </div>
+      <div class="column-quarter" style="padding-left:0px">
+        12 Spring Road<br>
+        Wakefield<br>
+        Yorks<br>
+        WK12 9AB
+      </div>
+    </div>
+
+    <h4 class="heading-small">Contact information</h4>
+    <dl class="definition-tabular-bold">
+      <dt>Email</dt>
+      <dd>peter.smith@gmail.com</dd>
+      <dt>Mobile phone number</dt>
+      <dd>07700 900 546</dd>
+    </dl>
+  {{/borrower_2}}
+
+  {{#borrower_1}}
+    <div class="text division-standard-top">
+      <p><a href="add-borrower">Add another borrower to this case</a></p>
+    </div>
+  {{/borrower_1}}
+  {{^borrower_1}}
+    <p><a href="add-borrower">Add a borrower to this case</a></p>
+  {{/borrower_1}}
+
+  <div class="division-primary-top">
+    <div><a href="case-list" class="button">Save and return to case list</a></div>
+    <div><a href="#" class="font-xsmall">Cancel and delete this case</a></div>
+  </div>
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+{{/bodyEnd}}
+
+{{/govuk_template}}

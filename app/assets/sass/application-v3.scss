@@ -1,0 +1,65 @@
+// Styles for V3 of prototype ONLY
+// If successful, styles in here need to be worked into lr-style-guide
+
+// ==========================================================================
+// GOV.UK front end toolkit (all)
+// ENSURE IMPORT PATHS ARE SET!
+@import 'colours';
+@import 'conditionals';
+@import 'css3';
+@import 'device-pixels';
+@import 'font_stack';
+@import 'grid_layout';
+@import 'measurements';
+@import 'shims';
+@import 'typography';
+@import 'url-helpers';
+@import 'design-patterns/alpha-beta';
+@import 'design-patterns/buttons';
+@import 'design-patterns/media-player';
+
+// Global areas
+
+// account area in GOV.UK header
+.account {
+  position: relative;
+  top: -5px;
+  float: right;
+  margin: 0 $gutter-half;
+  padding-bottom: 0;
+  color: $white;
+  a {
+    margin-left: $gutter-one-quarter;
+    font-weight: bold;
+    &:link,
+    &:visited {
+      color: $white;
+    }
+    &:active,
+    &:hover {
+      color: $link-hover-colour;
+    }
+  }
+}
+
+// Case list
+
+// Fade out a "new" case in case list
+@keyframes fadenew {
+  0% {
+    background-color: $yellow-25;//rgba(255,0,0,1);
+  }
+  100% {
+    background-color: transparent;//rgba(255,0,0,0);
+  }
+}
+.case-list .new-case {
+  background-color: transparent;
+  animation-name: fadenew;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+.case-list .new-case + .details {
+  background-color: transparent;
+}

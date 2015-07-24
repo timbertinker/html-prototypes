@@ -1,0 +1,92 @@
+{{<govuk_template}}
+
+{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/public/stylesheets/application-v3.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$pageTitle}}
+  Create a new case
+{{/pageTitle}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$propositionHeader}}
+  <div class="account">
+    <div>Andrew Turner (Ross Clulow Solicitors)</div>
+    <a href="#">My account</a>
+    <a href="login">Sign out</a>
+  </div>
+{{/propositionHeader}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  <div class="global-breadcrumb">
+    <nav role="navigation">
+      <ol>
+        <li><a href="case-list">Case list</a></li>
+	      <li>
+					<a href="case">
+          {{^case_reference}}New case{{/case_reference}}
+          {{#case_reference}}{{case_reference}}{{/case_reference}}
+					</a>
+        </li>
+	      <li><a href="case-find-property">Add a property</a></li>
+        <li>Search results</li>
+      </ol>
+    </nav>
+  </div><!-- global-breadcrumb -->
+
+
+	<h1 class="heading-large">
+		Search results for N16 5UP
+	</h1>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="font-xsmall expand-bottom-half">3 results found</h2>
+      <ol>
+        <li>
+          <h2 class="heading-small collapse-bottom">
+            <a href="case-property-selected">83 Lordship Park, London, N16 5UP</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number GHR67832<br>
+            <b>Freehold</b>
+          </div>
+        </li>
+				<li>
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">84 Lordship Park, London, N16 5UP</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number GHR67833<br>
+            <b>Freehold</b>
+          </div>
+        </li>
+				<li>
+          <h2 class="heading-small collapse-bottom">
+            <a href="#">85 Lordship Park, London, N16 5UP</a>
+          </h2>
+          <div class="font-xsmall">
+            Title number GHR67834<br>
+            <b>Freehold</b>
+          </div>
+        </li>
+      </ol>
+
+    </div>
+  </div>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+{{/bodyEnd}}
+
+{{/govuk_template}}
