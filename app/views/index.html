@@ -1,8 +1,13 @@
-{{<layout}}
+{{<govuk_template}}
 
 {{$pageTitle}}
-	GOV.UK prototyping kit
+	HTML prototypes
 {{/pageTitle}}
+
+{{$head}}
+	<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
 
 {{$content}}
 
@@ -10,39 +15,32 @@
 
 	<h1 class="heading-xlarge">HTML Prototypes</h1>
 
-	<h2 class="heading-large">Charges Prototype Option 1</h2>
-
-	<h3 class="heading-medium">Private Beta Version 2</h3>
-	<p>This is the version of the prototype that will reflect what is being delivered for private beta</p>
+	<h2 class="heading-medium">Private beta versions</h2>
 	<ul>
 		<li>
-			<a href="/v2">Charges v2</a>
+			<a href="/v3">Version 3</a>
 		</li>
 		<li>
-			<a href="/deed-journeys">Alternate deed journeys</a>
+			<a href="/v2"><strike>Version 2</strike></a>
 		</li>
-	</ul>
-
-	<h3 class="heading-medium">Current Version 1.2</h3>
-	<p>This is the current version expect this to change continuously based on user testing</p>
-	<ul>
 		<li>
-			<a href="/v1-2">Charges v1.2</a>
+			<a href="/deed-journeys"><strike>Alternate deed journeys</strike></a>
 		</li>
 	</ul>
 
 	<h3 class="heading-medium">Previous Versions</h3>
-	<p>All Historical versions of the prototype along with the dates they were active are listed here</p>
-	<h4 class="heading-small">Version 1.1 14/02/2015 - 27/02/2015</h4>
+	<p>
+		Historical versions along with the dates they were active.
+	</p>
 	<ul>
 		<li>
-			<a href="/v1-1">Charges v1.1</a>
+			<a href="/v1-2">v1.2: 28/02/2015 - 24/07/2015</a>
 		</li>
-	</ul>
-	<h4 class="heading-small">Version 1.0 05/01/2015 - 13/02/2015</h4>
-	<ul>
 		<li>
-			<a href="/v1">Charges v1</a>
+			<a href="/v1-1">v1.1: 14/02/2015 - 27/02/2015</a>
+		</li>
+		<li>
+			<a href="/v1">v1: 05/01/2015 - 13/02/2015</a>
 		</li>
 	</ul>
 
@@ -51,4 +49,8 @@
 
 {{/content}}
 
-{{/layout}}
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
