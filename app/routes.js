@@ -17,8 +17,9 @@ module.exports = {
 
       console.log('new_case: ' + req.session.new_case);
       console.log('case_reference: ' + req.session.case_reference);
+      console.log('property: ' + req.session.property);
 
-      //console.log('displayProperty: ' + req.session.displayProperty);
+      //console.log('property: ' + req.session.property);
       //console.log('displayBorrower_1: ' + req.session.displayBorrower_1);
       //console.log('displayBorrower_2: ' + req.session.displayBorrower_2);
       console.log('\n');
@@ -30,6 +31,7 @@ module.exports = {
 
     // req.session.new_case - true / false - controls display of "new" case in case list
     // req.session.case_reference - string / undefined - customisable reference number
+    // req.session.property - true / false - controls display of property details in case page
 
 
     // PAGE requests --------------------
@@ -53,7 +55,8 @@ module.exports = {
     app.get('/v3/conveyancer/case', function (req, res) {
       req.session.new_case = true;
       res.render('v3/conveyancer/case', {
-        "case_reference": req.session.case_reference
+        "case_reference": req.session.case_reference,
+        "property": req.session.property
       });
     });
 
@@ -76,6 +79,16 @@ module.exports = {
     // Reference handler
     app.get('/v3/conveyancer/case-reference-handler', function (req, res) {
       req.session.case_reference = req.query.caseref;
+      res.redirect('/v3/conveyancer/case');
+    });
+
+    // Property handler
+    app.get('/v3/conveyancer/case-property-handler', function (req, res) {
+      // if there's no reference set, use the first line of the address
+      if (typeof req.session.case_reference === 'undefined') {
+        req.session.case_reference = '83 Lordship Park';
+      }
+      req.session.property = true;
       res.redirect('/v3/conveyancer/case');
     });
 
