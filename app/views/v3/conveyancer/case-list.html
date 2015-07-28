@@ -57,10 +57,13 @@
         </td>
         <td>
           Sarah Jane Smith<br>
-          Peter Smith
+          Peter James Smith
         </td>
         <!--<td>Remortgage</td>-->
-        <td>Mortgage not yet created</td>
+        <td>
+					{{^case_status}}Mortgage not yet created{{/case_status}}
+          {{#case_status}}{{case_status}}{{/case_status}}
+				</td>
         <td>2 March 2015</td>
       </tr>
       <tr class="details js-hidden">
@@ -75,7 +78,12 @@
 
           <div class="actions">
             <a href="case">Case details</a>
-            <a href="#">Create mortgage</a>
+						{{^case_status}}
+							<a href="create-mortgage-confirm-details">Create mortgage</a>
+						{{/case_status}}
+	          {{#case_status}}
+							<a href="#">Confirm completion</a>
+						{{/case_status}}
           </div>
           <div class="action-delete">
             <a href="#">Delete this case</a>

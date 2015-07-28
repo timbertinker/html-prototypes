@@ -15,23 +15,16 @@ module.exports = {
       req.session.views = ++n;
       console.log('views: ' + req.session.views);
 
+      // To help. A list of all the session vars used:
       console.log('new_case: ' + req.session.new_case);
       console.log('case_reference: ' + req.session.case_reference);
       console.log('property: ' + req.session.property);
-
-      //console.log('property: ' + req.session.property);
-      //console.log('displayBorrower_1: ' + req.session.displayBorrower_1);
-      //console.log('displayBorrower_2: ' + req.session.displayBorrower_2);
+      console.log('borrower_1: ' + req.session.borrower_1);
+      console.log('borrower_2: ' + req.session.borrower_2);
       console.log('\n');
 
       next();
     });
-
-    // To help. A list of all the session vars used:
-
-    // req.session.new_case - true / false - controls display of "new" case in case list
-    // req.session.case_reference - string / undefined - customisable reference number
-    // req.session.property - true / false - controls display of property details in case page
 
 
     // PAGE requests --------------------
@@ -47,7 +40,8 @@ module.exports = {
     app.get('/v3/conveyancer/case-list', function (req, res) {
       res.render('v3/conveyancer/case-list', {
         "new_case": req.session.new_case,
-        "case_reference": req.session.case_reference
+        "case_reference": req.session.case_reference,
+        "case_status": req.session.case_status
       });
     });
 
@@ -71,8 +65,19 @@ module.exports = {
 
     // Case Find Property - send this page a session var:
     app.get('/v3/conveyancer/case-find-property', function (req, res) {
+      req.session.building_search = false;
       res.render('v3/conveyancer/case-find-property', {
         "case_reference": req.session.case_reference
+      });
+    });
+
+    // Case Find Property (results)
+    app.get('/v3/conveyancer/case-property-results', function (req, res) {
+      if (req.query.building !== '') {
+        req.session.building_search = true;
+      }
+      res.render('v3/conveyancer/case-property-results', {
+        "building_search": req.session.building_search
       });
     });
 
@@ -82,6 +87,30 @@ module.exports = {
         "case_reference": req.session.case_reference,
         "property": req.session.property
       });
+    });
+
+    // Create mortgage - send this page a session var:
+    app.get('/v3/conveyancer/create-mortgage-confirm-details', function (req, res) {
+      res.render('v3/conveyancer/create-mortgage-confirm-details', {
+        "case_reference": req.session.case_reference
+      });
+    });
+
+    // Create mortgage - MD ref - send this page a session var:
+    app.get('/v3/conveyancer/create-mortgage-md-ref', function (req, res) {
+      if (req.query.md_ref !== '') {
+        req.session.md_ref = req.query.md_ref;
+      }
+      res.render('v3/conveyancer/create-mortgage-md-ref', {
+        "md_ref": req.session.md_ref,
+        "case_reference": req.session.case_reference
+      });
+    });
+
+    // Mortgage created
+    app.get('/v3/conveyancer/create-mortgage-confirmed', function (req, res) {
+      req.session.case_status = "Mortgage deed created";
+      res.render('v3/conveyancer/create-mortgage-confirmed');
     });
 
     // HANDLERS --------------------

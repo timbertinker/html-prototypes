@@ -41,12 +41,17 @@
 
 
 	<h1 class="heading-large">
-		Search results for N16 5UP
+		Search results
 	</h1>
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <h2 class="font-xsmall expand-bottom-half">3 results found</h2>
+			{{#building_search}}
+      	<h2 class="font-xsmall expand-bottom-half">1 result found</h2>
+			{{/building_search}}
+			{{^building_search}}
+      	<h2 class="font-xsmall expand-bottom-half">3 results found</h2>
+			{{/building_search}}
       <ol class="list-plain">
         <li class="expand-bottom">
           <h2 class="heading-small collapse-bottom">
@@ -60,6 +65,7 @@
             <a href="case-property-handler"><b>Select this property</b></a>
           </div>
         </li>
+				{{^building_search}}
         <li class="expand-bottom">
           <h2 class="heading-small collapse-bottom">
             84 Lordship Park, London, N16 5UP
@@ -84,6 +90,7 @@
             <a href="#"><b>Select this property</b></a>
           </div>
         </li>
+				{{/building_search}}
       </ol>
 
     </div>

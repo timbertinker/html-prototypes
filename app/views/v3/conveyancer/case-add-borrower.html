@@ -42,9 +42,19 @@
 
   <form class="form" action="case-borrower-handler">
 
+    <h2 class="heading-medium form-title collapse-bottom">Borrower’s full name</h2>
+
+    <div class="form-group expand-bottom-half">
+      <label class="form-label" for="first-name">First name</label>
+      <input type="text" class="form-control" id="first-name">
+    </div>
+    <div class="form-group expand-bottom-half">
+      <label class="form-label" for="middle-name">Middle name(s)</label>
+      <input type="text" class="form-control" id="middle-name">
+    </div>
     <div class="form-group">
-      <label class="form-label-bold" for="name">Borrower’s full name</label>
-      <input type="text" class="form-control" id="name">
+      <label class="form-label" for="family-name">Family name</label>
+      <input type="text" class="form-control" id="family-name">
     </div>
 
     <div class="form-group">
@@ -94,7 +104,10 @@
 
     <div class="form-group" id="correspondance">
       <div class="address-field-group">
-        <label class="form-label-bold" for="address-1">Borrower’s correspondence address</label>
+        <label class="form-label-bold" for="address-1">
+					Borrower’s correspondence address
+					<span class="form-hint">As it would appear on an envelope</span>
+				</label>
         <input type="text" id="address-1" class="form-control expand-bottom-quarter"
           {{#property}} value="83 Lordship Park"{{/property}}
           {{^property}} value=""{{/property}}
