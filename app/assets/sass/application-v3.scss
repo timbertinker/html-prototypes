@@ -18,6 +18,10 @@
 @import 'design-patterns/buttons';
 @import 'design-patterns/media-player';
 
+.expand-bottom-quarter {
+  margin-bottom: $gutter/4;
+}
+
 // Global areas
 
 // account area in GOV.UK header
@@ -62,4 +66,18 @@
 }
 .case-list .new-case + .details {
   background-color: transparent;
+}
+
+//
+
+.address-field-group {
+  padding-top: $gutter-half;
+  input[type='text'] {
+    display: block;
+  }
+  & + .remover {
+    position: absolute;
+    bottom: 0.3em;
+    left: 50%;
+  }
 }

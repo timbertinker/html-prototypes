@@ -56,7 +56,9 @@ module.exports = {
       req.session.new_case = true;
       res.render('v3/conveyancer/case', {
         "case_reference": req.session.case_reference,
-        "property": req.session.property
+        "property": req.session.property,
+        "borrower_1": req.session.borrower_1,
+        "borrower_2": req.session.borrower_2
       });
     });
 
@@ -71,6 +73,14 @@ module.exports = {
     app.get('/v3/conveyancer/case-find-property', function (req, res) {
       res.render('v3/conveyancer/case-find-property', {
         "case_reference": req.session.case_reference
+      });
+    });
+
+    // Case Add Borrower - send this page a session var:
+    app.get('/v3/conveyancer/case-add-borrower', function (req, res) {
+      res.render('v3/conveyancer/case-add-borrower', {
+        "case_reference": req.session.case_reference,
+        "property": req.session.property
       });
     });
 
@@ -89,6 +99,16 @@ module.exports = {
         req.session.case_reference = '83 Lordship Park';
       }
       req.session.property = true;
+      res.redirect('/v3/conveyancer/case');
+    });
+
+    // Borrower handler
+    app.get('/v3/conveyancer/case-borrower-handler', function (req, res) {
+      if (typeof req.session.borrower_1 === 'undefined') {
+        req.session.borrower_1 = true;
+      } else {
+        req.session.borrower_2 = true;
+      }
       res.redirect('/v3/conveyancer/case');
     });
 

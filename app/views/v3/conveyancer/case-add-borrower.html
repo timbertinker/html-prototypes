@@ -1,0 +1,200 @@
+{{<govuk_template}}
+
+{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/public/stylesheets/application-v3.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$pageTitle}}
+  Add a borrower
+{{/pageTitle}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$propositionHeader}}
+  <div class="account">
+    <div>Andrew Turner (Ross Clulow Solicitors)</div>
+    <a href="#">My account</a>
+    <a href="login">Sign out</a>
+  </div>
+{{/propositionHeader}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  <div class="global-breadcrumb">
+    <nav role="navigation">
+      <ol>
+        <li><a href="case-list">Case list</a></li>
+	      <li>
+					<a href="case">
+          {{^case_reference}}New case{{/case_reference}}
+          {{#case_reference}}{{case_reference}}{{/case_reference}}
+					</a>
+        </li>
+	      <li>Add a borrower</li>
+      </ol>
+    </nav>
+  </div><!-- global-breadcrumb -->
+
+  <h1 class="heading-xlarge">Add a borrower</h1>
+
+  <form class="form" action="case-borrower-handler">
+
+    <div class="form-group">
+      <label class="form-label-bold" for="name">Borrower’s full name</label>
+      <input type="text" class="form-control" id="name">
+    </div>
+
+    <div class="form-group">
+      <fieldset>
+        <legend class="form-label-bold">Borrower’s date of birth</legend>
+        <div class="form-date">
+
+          <p class="form-hint">For example, 31 3 1980</p>
+
+          <div class="form-group form-group-day">
+            <label for="dob-day">Day</label>
+            <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+          </div>
+
+          <div class="form-group form-group-month">
+            <label for="dob-month">Month</label>
+            <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+          </div>
+
+          <div class="form-group form-group-year">
+            <label for="dob-year">Year</label>
+            <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2015">
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <!--
+    <div class="form-group">
+      <fieldset class="inline">
+        <legend class="form-label-bold">Borrower’s gender</legend>
+        <label class="block-label" for="radio-1">
+          <input id="radio-1" type="radio" name="radio-group" value="">
+          Female
+        </label>
+        <label class="block-label" for="radio-2">
+          <input id="radio-2" type="radio" name="radio-group" value="">
+          Male
+        </label>
+        <label class="block-label" for="radio-3">
+          <input id="radio-3" type="radio" name="radio-group" value="">
+          Other
+        </label>
+      </fieldset>
+    </div>
+    -->
+
+    <div class="form-group" id="correspondance">
+      <div class="address-field-group">
+        <label class="form-label-bold" for="address-1">Borrower’s correspondence address</label>
+        <input type="text" id="address-1" class="form-control expand-bottom-quarter"
+          {{#property}} value="83 Lordship Park"{{/property}}
+          {{^property}} value=""{{/property}}
+        >
+        <input type="text" class="form-control expand-bottom-quarter"
+          {{#property}} value="London"{{/property}}
+          {{^property}} value=""{{/property}}
+        >
+        <input type="text" class="form-control expand-bottom-quarter"
+          {{#property}} value="N16 5UP"{{/property}}
+          {{^property}} value=""{{/property}}
+        >
+        <input type="text" class="form-control expand-bottom-quarter" value="">
+        <input type="text" class="form-control expand-bottom-quarter" value="">
+        <input type="text" class="form-control expand-bottom-quarter" value="">
+      </div>
+      <p><a href="#" class="font-xsmall duplicator">Add another correspondence address</a></p>
+    </div>
+
+    <h4 class="heading-medium">Contact information</h4>
+    <div class="service-notice expand-bottom font-xsmall text">
+      Borrowers will need to be able to access <strong>at least one</strong>
+      of these to be able to sign their mortgage deed.
+    </div>
+
+    <div class="form-group" id="email">
+      <label class="form-label-bold" for="email-1">Borrower’s email address</label>
+      <p class="form-hint">Try to avoid shared email addresses</p>
+      <input type="text" class="form-control" id="email-1">
+      <p class="collapse-bottom"><a href="#" class="font-xsmall duplicator">Add another email address</a></p>
+    </div>
+
+    <div class="form-group tel">
+      <label class="form-label-bold" for="mobile-1">Borrower’s mobile phone number</label>
+      <input type="text" class="form-control-1-4" id="mobile-1">
+      <p class="collapse-bottom"><a href="#" class="font-xsmall duplicator">Add another mobile number</a></p>
+    </div>
+
+    <div class="form-group">
+      <button class="button">Add borrower to case</button>
+      <div><a href="case">Cancel and go back</a></div>
+    </div>
+
+  </form>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+
+      var templateStart = '<div style="margin-top:15px; position: relative;">';
+
+      //var textarea = '<textarea rows="5" class="form-control"></textarea>';
+      var textarea = '<div class="address-field-group">';
+      textarea += '<label class="form-label">Additional correspondance address</label>';
+      textarea += '<input type="text" class="form-control expand-bottom-quarter" value="">';
+      textarea += '<input type="text" class="form-control expand-bottom-quarter" value="">';
+      textarea += '<input type="text" class="form-control expand-bottom-quarter" value="">';
+      textarea += '<input type="text" class="form-control expand-bottom-quarter" value="">';
+      textarea += '<input type="text" class="form-control expand-bottom-quarter" value="">';
+      textarea += '<input type="text" class="form-control expand-bottom-quarter" value="">';
+      textarea += '</div>';
+      var inputLrg = '<input type="text" class="form-control">';
+      var inputSml = '<input type="text" class="form-control-1-4">';
+
+      var templateEnd = '<a href="#" class="font-xsmall remover" style="margin-left:15px;">Remove</a>';
+      templateEnd += '</div>';
+
+      $('body')
+
+        .on('click', '.form-group a[href=#]', function(e) {
+          e.preventDefault();
+        })
+
+        .on('click', '#correspondance .duplicator', function() {
+          var template = templateStart + textarea + templateEnd;
+          $(this).parents('.form-group').children(':last-child').before(template);
+        })
+
+        .on('click', '#email .duplicator', function() {
+          var template = templateStart + inputLrg + templateEnd;
+          $(this).parents('.form-group').children(':last-child').before(template);
+        })
+
+        .on('click', '.tel .duplicator', function() {
+          var template = templateStart + inputSml + templateEnd;
+          $(this).parents('.form-group').children(':last-child').before(template);
+        })
+
+        .on('click', '.form-group .remover', function() {
+          $(this).parent().remove();
+        });
+
+    });
+  </script>
+{{/bodyEnd}}
+
+{{/govuk_template}}
