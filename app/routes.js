@@ -29,6 +29,13 @@ module.exports = {
 
     // PAGE requests --------------------
 
+    // INTERCEPT the Verify prototype return page. Redirect it to V3.
+    // This can only be tested on "live" :)
+    // /v2/step4/step-2-identity-verified
+    /*app.get('/v2/step4/step-2-identity-verified', function (req, res) {
+      res.redirect('v3/citizen/identity-verified');
+    });*/
+
     // Sign in page ALWAYS flushes the session
     app.get('/v3/conveyancer/login', function (req, res) {
       // destroy the session:

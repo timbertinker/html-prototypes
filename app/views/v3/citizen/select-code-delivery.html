@@ -1,0 +1,69 @@
+{{<govuk_template}}
+
+{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/public/stylesheets/application-v3.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$pageTitle}}
+  Sign your mortgage deed
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main">
+	<div class="inner-block">
+
+		<h1 class="heading-large">
+			<span class="heading-secondary">Step 1 of 8</span>
+			Authentication code
+		</h1>
+
+		<div class="text">
+			<p>
+				We will send you an authentication code. You must
+				enter this code to complete the signing of your deed.
+			</p>
+		</div>
+
+    <div class="form">
+			<h2 class="heading-medium">
+				How would you like to receive your code?
+			</h2>
+      <div class="form-group">
+        <label class="block-label" for="radio-1">
+          <input id="radio-1" type="radio" name="radio-group" value="1">
+          By text message, to my mobile number ending <b>0546</b>
+        </label>
+        <label class="block-label" for="radio-2">
+          <input id="radio-3" type="radio" name="radio-group" value="3">
+          By email, to <b>peter.smith@gmail.com</b>
+        </label>
+        <label class="block-label" for="radio-3">
+          <input id="radio-4" type="radio" name="radio-group" value="4">
+          By email, to <b>peter.smith@workmail.com</b>
+        </label>
+      </div>
+			<div class="panel-indent">
+				<p>
+					If you cannot use any of these options, contact your conveyancer.
+				</p>
+			</div>
+      <div class="form-group">
+        <a class="button" href="/deed-journeys/deed-transaction/property-details">
+					Get authentication code
+				</a>
+      </div>
+    </div>
+
+	</div>
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+{{/bodyEnd}}
+
+{{/govuk_template}}
