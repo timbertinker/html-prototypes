@@ -120,6 +120,13 @@ module.exports = {
       res.render('v3/conveyancer/create-mortgage-confirmed');
     });
 
+    // Completion
+    app.get('/v3/conveyancer/case-confirm-completion', function (req, res) {
+      res.render('v3/conveyancer/case-confirm-completion', {
+        "case_reference": req.session.case_reference
+      });
+    });
+
     // HANDLERS --------------------
 
     // Reference handler
