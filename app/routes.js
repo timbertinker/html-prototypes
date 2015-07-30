@@ -44,8 +44,11 @@ module.exports = {
 
     // Sign in page ALWAYS flushes the session
     app.get('/v3/conveyancer/login', function (req, res) {
-      // destroy the session:
-      req.session = null;
+      // destroy the session if there's no "preserve" query
+      console.log(req.query.preserve);
+      if (typeof req.query.preserve === 'undefined') {
+        req.session = null;
+      }
       res.render('v3/conveyancer/login');
     });
 
@@ -123,13 +126,6 @@ module.exports = {
         "property": req.session.property
       });
     });
-
-    // Create mortgage - send this page a session var:
-    /*app.get('/v3/conveyancer/create-mortgage-confirm-details', function (req, res) {
-      res.render('v3/conveyancer/create-mortgage-confirm-details', {
-        "case_reference": req.session.case_reference
-      });
-    });*/
 
     // Create mortgage - MD ref - send this page a session var:
     app.get('/v3/conveyancer/create-mortgage-md-ref', function (req, res) {
