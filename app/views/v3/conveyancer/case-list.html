@@ -34,7 +34,7 @@
   <h1 class="heading-xlarge">Case List</h1>
 
   <div>
-    <a href="create-new-case">Create a new case</a>
+    <a href="case">Create a new case</a>
   </div>
 
   <table class="case-list">
@@ -50,10 +50,12 @@
     <tbody>
 
       {{#new_case}}
-      <tr class="summary new-case"><!-- .new-case class should go after first load -->
+      <tr class="summary"><!-- .new-case class should go after first load -->
         <td>
-          {{^case_reference}}83 Lordship Park{{/case_reference}}
-          {{#case_reference}}{{case_reference}}{{/case_reference}}
+					<a href="case">
+	          {{^case_reference}}83 Lordship Park{{/case_reference}}
+	          {{#case_reference}}{{case_reference}}{{/case_reference}}
+					</a>
         </td>
         <td>
           Sarah Jane Smith<br>
@@ -61,40 +63,19 @@
         </td>
         <!--<td>Remortgage</td>-->
         <td>
-					{{^case_status}}Mortgage not yet created{{/case_status}}
-          {{#case_status}}{{case_status}}{{/case_status}}
+					{{^case_status}}
+						Draft
+					{{/case_status}}
+					{{#case_status}}
+						{{case_status}}
+					{{/case_status}}
 				</td>
         <td>2 March 2015</td>
-      </tr>
-      <tr class="details js-hidden">
-        <td colspan="5">
-
-          <p>
-            83 Lordship Park<br>
-            London<br>
-            N16 5UP<br>
-            Title number: GHR67832
-          </p>
-
-          <div class="actions">
-            <a href="case">Case details</a>
-						{{^case_status}}
-							<a href="create-mortgage-confirm-details">Create mortgage</a>
-						{{/case_status}}
-	          {{#case_status}}
-							<a href="#">Confirm completion</a>
-						{{/case_status}}
-          </div>
-          <div class="action-delete">
-            <a href="#">Delete this case</a>
-          </div>
-
-        </td>
       </tr>
       {{/new_case}}
 
       <tr class="summary">
-        <td>10 High Street, Plymouth</td>
+        <td><a href="#">10 High Street, Plymouth</a></td>
         <td>
           Simeon Rad<br>
           Or&eacute; Sanderson
@@ -103,29 +84,9 @@
         <td>Draft</td>
         <td>2 March 2015</td>
       </tr>
-      <tr class="details js-hidden">
-        <td colspan="5">
-
-          <p>
-            108 Spring Road<br>
-            Bedford<br>
-            BE9 3BS<br>
-            Title number: GHT47583
-          </p>
-
-          <div class="actions">
-            <a href="#">Case details</a>
-            <a href="#">Create mortgage</a>
-          </div>
-          <div class="action-delete">
-            <a href="#">Delete this case</a>
-          </div>
-
-        </td>
-      </tr>
 
       <tr class="summary">
-        <td>SHWY289</td>
+        <td><a href="#">SHWY289</a></td>
         <td>
           James Cameron
         </td>
@@ -133,32 +94,12 @@
         <td>Draft</td>
         <td>20 February 2015</td>
       </tr>
-      <tr class="details js-hidden">
-        <td colspan="5">
-
-          <p>
-            10 High Street<br>
-            Plymouth<br>
-            BE9 3BS<br>
-            Title number: GHT47583
-          </p>
-
-          <div class="actions">
-            <a href="#">Case details</a>
-            <a href="#">Create mortgage</a>
-          </div>
-          <div class="action-delete">
-            <a href="#">Delete this case</a>
-          </div>
-
-        </td>
-      </tr>
 
     </tbody>
   </table>
 
   <div class="expand-top">
-    <a href="create-new-case">Create a new case</a>
+    <a href="case">Create a new case</a>
   </div>
 
 </main>
@@ -168,7 +109,7 @@
 
 {{$bodyEnd}}
   {{>includes/scripts}}
-  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+  <!--<script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>-->
 {{/bodyEnd}}
 
 {{/govuk_template}}

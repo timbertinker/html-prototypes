@@ -6,7 +6,7 @@
 {{/head}}
 
 {{$pageTitle}}
-  Create a new case
+  Case
 {{/pageTitle}}
 
 {{$headerClass}}with-proposition{{/headerClass}}
@@ -35,6 +35,17 @@
     </nav>
   </div><!-- global-breadcrumb -->
 
+	{{^completion_date}}
+		{{#deed_created}}
+			<div class="service-notice text">
+				<div class="bold-small">Deed created</div>
+				<p>
+					If you edit details in this case, you will need to create a new deed.
+				</p>
+			</div>
+		{{/deed_created}}
+	{{/completion_date}}
+
   {{^case_reference}}
   <h1 class="heading-xlarge">
     New case
@@ -47,21 +58,40 @@
   <h1 class="heading-xlarge">
     <span class="heading-secondary">Case</span>
     {{case_reference}}
-    <a href="case-reference" class="font-xsmall" style="margin-left:8px;">
-      edit case reference
-    </a>
+		{{^completion_date}}
+	    <a href="case-reference" class="font-xsmall" style="margin-left:8px;">
+	      edit case reference
+	    </a>
+		{{/completion_date}}
   </h1>
   {{/case_reference}}
 
-  <dl class="definition-inline division-primary-bottom">
-    <dt>Task</dt>
-    <dd><b>Remortgage</b></dd>
-  </dl>
+	<div class="text">
+		<dl class="definition-tabular-bold">
+	    <dt>Task</dt>
+	    <dd>Remortgage</dd>
+	    <dt>Status</dt>
+	    <dd>
+				{{^case_status}}
+					Draft
+				{{/case_status}}
+				{{#case_status}}
+					{{case_status}}
+				{{/case_status}}
+			</dd>
+			{{#completion_date}}
+				<dt>Completion</dt>
+				<dd>{{completion_date}}</dd>
+			{{/completion_date}}
+	  </dl>
+	</div>
 
-  <h2 class="heading-large">
+  <h2 class="heading-large division-primary-top">
     Property
     {{#property}}
-      <a href="case-find-property" class="font-xsmall" style="margin-left:8px;">select a different property</a>
+			{{^completion_date}}
+      	<a href="case-find-property" class="font-xsmall" style="margin-left:8px;">select a different property</a>
+			{{/completion_date}}
     {{/property}}
   </h2>
   {{#property}}
@@ -80,17 +110,21 @@
     <p><a href="case-find-property">Add a property to this case</a></p>
   {{/property}}
 
-  <h2 class="heading-large division-standard-top">
+  <h2 class="heading-large division-secondary-top">
     Borrowers
     {{#borrower_1}}
-      <a href="case-add-borrower" class="font-xsmall" style="margin-left:8px;">add another borrower to this case</a>
+			{{^completion_date}}
+      	<a href="case-add-borrower" class="font-xsmall" style="margin-left:8px;">add another borrower to this case</a>
+			{{/completion_date}}
     {{/borrower_1}}
   </h2>
 
   {{#borrower_1}}
     <h3 class="heading-medium">
       Sarah Jane Smith
-      <a href="#" class="font-xsmall" style="margin-left:8px;">edit borrower details</a>
+			{{^completion_date}}
+      	<a href="#" class="font-xsmall" style="margin-left:8px;">edit borrower details</a>
+			{{/completion_date}}
     </h3>
 
     <dl class="definition-tabular-bold">
@@ -119,7 +153,9 @@
 
     <h3 class="heading-medium collapse-top">
       Peter James Smith
-      <a href="#" class="font-xsmall" style="margin-left:8px;">edit borrower details</a>
+			{{^completion_date}}
+      	<a href="#" class="font-xsmall" style="margin-left:8px;">edit borrower details</a>
+			{{/completion_date}}
     </h3>
 
     <dl class="definition-tabular-bold">
@@ -153,18 +189,95 @@
     </dl>
   {{/borrower_2}}
 
-  {{#borrower_1}}
-    <div class="text division-standard-top">
-      <p><a href="case-add-borrower">Add another borrower to this case</a></p>
-    </div>
-  {{/borrower_1}}
-  {{^borrower_1}}
-    <p><a href="case-add-borrower">Add a borrower to this case</a></p>
-  {{/borrower_1}}
+	{{^completion_date}}
+	  {{#borrower_1}}
+	    <div class="text division-standard-top">
+	      <p><a href="case-add-borrower">Add another borrower to this case</a></p>
+	    </div>
+	  {{/borrower_1}}
+	  {{^borrower_1}}
+	    <p><a href="case-add-borrower">Add a borrower to this case</a></p>
+	  {{/borrower_1}}
+	{{/completion_date}}
+
+	<div class="division-secondary-top">
+		<h2 class="heading-large collapse-top">
+			Mortgage
+			{{#md_ref}}
+				{{^completion_date}}
+	      	<a href="create-mortgage-md-ref" class="font-xsmall" style="margin-left:8px;">select a different mortgage</a>
+				{{/completion_date}}
+	    {{/md_ref}}
+		</h2>
+		{{^md_ref}}
+  		<p><a href="create-mortgage-md-ref">Add a mortgage</a></p>
+		{{/md_ref}}
+		{{#md_ref}}
+			<dl class="definition-inline">
+				<dt>MD ref</dt>
+				<dd><b>{{md_ref}}</b></dd>
+			</dl>
+			<p>
+				<b>Bank of England PLC</b><br>
+				12 Trinity Place<br>
+				Regents Street<br>
+				London<br>
+				NW10 6TQ
+			</p>
+		{{/md_ref}}
+	</div>
+
+	<div class="division-secondary-top">
+		<h2 class="heading-large collapse-top">
+			Mortgage value
+			{{#mortgage_value}}
+				{{^completion_date}}
+	      	<a href="case-mortgage-value" class="font-xsmall" style="margin-left:8px;">edit mortgage value</a>
+				{{/completion_date}}
+	    {{/mortgage_value}}
+		</h2>
+		<div class="text">
+			{{^mortgage_value}}
+	  		<p><a href="case-mortgage-value">Add mortgage value</a></p>
+			{{/mortgage_value}}
+			{{#mortgage_value}}
+				<dl class="definition-tabular-bold">
+					<dt>Value</dt>
+					<dd>£{{mortgage_value}}</dd>
+					<dt>Charge</dt>
+					<dd>£{{mortgage_charge}}</dd>
+				</dl>
+			{{/mortgage_value}}
+		</div>
+	</div>
 
   <div class="division-primary-top">
-    <div><a href="case-list" class="button">Save and return to case list</a></div>
-    <div><a href="#" class="font-xsmall">Cancel and delete this case</a></div>
+		{{^deed_created}}
+		<p>
+			<a href="create-mortgage-deed" class="button"
+				{{^deed_available}} disabled="disabled"{{/deed_available}}
+			>
+				Create mortgage deed
+			</a>
+		</p>
+		{{/deed_created}}
+		{{#deed_created}}
+			<p>
+				<a href="#">View mortgage deed</a>
+			</p>
+			{{^completion_date}}
+				<p>
+					<a href="case-confirm-completion" class="button">Complete mortgage</a>
+				</p>
+			{{/completion_date}}
+			{{#completion_date}}
+				<p>
+					<a href="#" class="button">Apply to register</a>
+				</p>
+			{{/completion_date}}
+		{{/deed_created}}
+    <p><a href="case-list">Back to case list</a></p>
+    <p><a href="#" class="font-xsmall">Delete this case</a></p>
   </div>
 </main>
 

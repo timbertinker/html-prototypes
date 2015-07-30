@@ -44,18 +44,26 @@
     <p>Please confirm that the following date is the completion date to be added to the mortgage deed.</p>
 
     <div class="service-notice expand-bottom">
-      <p><b>18/06/2015</b></p>
+      <p><b>{{completion_date}}</b></p>
     </div>
 
     <p>Once you have confirmed this date, you will not be able to edit the mortgage deed.</p>
   </div>
 
-  <div>
-    <a href="#" class="button">Confirm completion</a>
-    <div>
-      <a href="case-list">Cancel</a>
-    </div>
-  </div>
+	<form class="form" action="case" method="get">
+		<div class="form-group">
+			<label class="block-label" for="apply_immediately">
+				<input id="apply_immediately" type="checkbox" name="apply_immediately">
+				Apply to register this charge now
+			</label>
+		</div>
+		<div class="form-group">
+			<button type="submit" class="button">Next</button>
+			<p>
+				<a href="case-list">Cancel</a>
+			</p>
+		</div>
+	</form>
 
 </main>
 

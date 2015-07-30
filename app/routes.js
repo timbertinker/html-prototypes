@@ -18,9 +18,15 @@ module.exports = {
       // To help. A list of all the session vars used:
       console.log('new_case: ' + req.session.new_case);
       console.log('case_reference: ' + req.session.case_reference);
+      console.log('case_status: ' + req.session.case_status);
       console.log('property: ' + req.session.property);
       console.log('borrower_1: ' + req.session.borrower_1);
       console.log('borrower_2: ' + req.session.borrower_2);
+      console.log('md_ref: ' + req.session.md_ref);
+      console.log('mortgage_value: ' + req.session.mortgage_value);
+      console.log('mortgage_charge: ' + req.session.mortgage_charge);
+      console.log('deed_created: ' + req.session.deed_created);
+      console.log('completion: ' + req.session.completion);
       console.log('\n');
 
       next();
@@ -48,18 +54,40 @@ module.exports = {
       res.render('v3/conveyancer/case-list', {
         "new_case": req.session.new_case,
         "case_reference": req.session.case_reference,
-        "case_status": req.session.case_status
+        "case_status": req.session.case_status,
+        "completion_date": req.session.completion_date
       });
     });
 
     // Case - send this page some session vars:
     app.get('/v3/conveyancer/case', function (req, res) {
       req.session.new_case = true;
+      if (typeof req.session.completion_date !== 'undefined') {
+        req.session.case_status = 'Completion confirmed';
+      } else if (req.session.deed_available === true) {
+        req.session.case_status = 'Mortgage deed created';
+      } else if (
+        typeof req.session.property !== 'undefined' &&
+        typeof req.session.borrower_1 !== 'undefined' &&
+        typeof req.session.md_ref !== 'undefined' &&
+        typeof req.session.mortgage_value !== 'undefined' &&
+        typeof req.session.deed_available === 'undefined'
+        ) {
+        req.session.case_status = 'Mortgage not yet created';
+        req.session.deed_available = true;
+      }
       res.render('v3/conveyancer/case', {
         "case_reference": req.session.case_reference,
+        "case_status": req.session.case_status,
         "property": req.session.property,
         "borrower_1": req.session.borrower_1,
-        "borrower_2": req.session.borrower_2
+        "borrower_2": req.session.borrower_2,
+        "md_ref": req.session.md_ref,
+        "mortgage_value": req.session.mortgage_value,
+        "mortgage_charge": req.session.mortgage_charge,
+        "deed_available": req.session.deed_available,
+        "deed_created": req.session.deed_created,
+        "completion_date": req.session.completion_date
       });
     });
 
@@ -97,11 +125,11 @@ module.exports = {
     });
 
     // Create mortgage - send this page a session var:
-    app.get('/v3/conveyancer/create-mortgage-confirm-details', function (req, res) {
+    /*app.get('/v3/conveyancer/create-mortgage-confirm-details', function (req, res) {
       res.render('v3/conveyancer/create-mortgage-confirm-details', {
         "case_reference": req.session.case_reference
       });
-    });
+    });*/
 
     // Create mortgage - MD ref - send this page a session var:
     app.get('/v3/conveyancer/create-mortgage-md-ref', function (req, res) {
@@ -114,16 +142,37 @@ module.exports = {
       });
     });
 
-    // Mortgage created
+    // Add mortgage value - send this page a session var:
+    app.get('/v3/conveyancer/case-mortgage-value', function (req, res) {
+      res.render('v3/conveyancer/case-mortgage-value', {
+        "case_reference": req.session.case_reference,
+        "mortgage_value": req.session.mortgage_value,
+        "mortgage_charge": req.session.mortgage_charge
+      });
+    });
+
+    // Create DEED - send this page a session var:
+    app.get('/v3/conveyancer/create-mortgage-deed', function (req, res) {
+      res.render('v3/conveyancer/create-mortgage-deed', {
+        "case_reference": req.session.case_reference
+      });
+    });
     app.get('/v3/conveyancer/create-mortgage-confirmed', function (req, res) {
-      req.session.case_status = "Mortgage deed created";
-      res.render('v3/conveyancer/create-mortgage-confirmed');
+      res.render('v3/conveyancer/create-mortgage-confirmed', {
+        "case_reference": req.session.case_reference
+      });
     });
 
     // Completion
     app.get('/v3/conveyancer/case-confirm-completion', function (req, res) {
+      var today = new Date();
+      var monthNames = [
+        "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+      ];
+      req.session.completion_date = today.getDate() + ' ' + monthNames[today.getMonth()] + ' ' + today.getFullYear()
       res.render('v3/conveyancer/case-confirm-completion', {
-        "case_reference": req.session.case_reference
+        "case_reference": req.session.case_reference,
+        "completion_date": req.session.completion_date
       });
     });
 
@@ -154,6 +203,21 @@ module.exports = {
       }
       res.redirect('/v3/conveyancer/case');
     });
+
+    // Mortgage deed handler
+    app.get('/v3/conveyancer/case-mortgage-handler', function (req, res) {
+      req.session.deed_created = true;
+      res.redirect('/v3/conveyancer/case');
+    });
+
+    // Mortgage value handler
+    app.get('/v3/conveyancer/mortgage-value-handler', function (req, res) {
+      req.session.mortgage_value = req.query.mortgage_value;
+      req.session.mortgage_charge = req.query.mortgage_charge;
+      res.redirect('/v3/conveyancer/case');
+    });
+
+
 
     // ----------------------------------------------------------------------
     // ----------------------------------------------------------------------
