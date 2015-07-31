@@ -26,7 +26,8 @@ module.exports = {
       console.log('mortgage_value: ' + req.session.mortgage_value);
       console.log('mortgage_charge: ' + req.session.mortgage_charge);
       console.log('deed_created: ' + req.session.deed_created);
-      console.log('completion: ' + req.session.completion);
+      console.log('completion_date: ' + req.session.completion_date);
+      console.log('applied: ' + req.session.applied);
       console.log('\n');
 
       next();
@@ -65,7 +66,9 @@ module.exports = {
     // Case - send this page some session vars:
     app.get('/v3/conveyancer/case', function (req, res) {
       req.session.new_case = true;
-      if (typeof req.session.completion_date !== 'undefined') {
+      if (typeof req.session.applied !== 'undefined') {
+        req.session.case_status = "Applied to Register";
+      } else if (typeof req.session.completion_date !== 'undefined') {
         req.session.case_status = 'Completion confirmed';
       } else if (req.session.deed_available === true) {
         req.session.case_status = 'Mortgage deed created';
@@ -90,7 +93,8 @@ module.exports = {
         "mortgage_charge": req.session.mortgage_charge,
         "deed_available": req.session.deed_available,
         "deed_created": req.session.deed_created,
-        "completion_date": req.session.completion_date
+        "completion_date": req.session.completion_date,
+        "applied": req.session.applied
       });
     });
 
@@ -172,6 +176,14 @@ module.exports = {
       });
     });
 
+    // Apply to Register
+    app.get('/v3/conveyancer/case-apply-deed', function (req, res) {
+      res.render('v3/conveyancer/case-apply-deed', {
+        "case_reference": req.session.case_reference,
+        "md_ref": req.session.md_ref
+      });
+    });
+
     // HANDLERS --------------------
 
     // Reference handler
@@ -210,6 +222,22 @@ module.exports = {
     app.get('/v3/conveyancer/mortgage-value-handler', function (req, res) {
       req.session.mortgage_value = req.query.mortgage_value;
       req.session.mortgage_charge = req.query.mortgage_charge;
+      res.redirect('/v3/conveyancer/case');
+    });
+
+    // Completion handler
+    app.get('/v3/conveyancer/completion-handler', function (req, res) {
+      console.log(req.query.apply_immediately);
+      if (req.query.apply_immediately === 'on') {
+        res.redirect('/v3/conveyancer/case-apply-deed');
+      } else {
+        res.redirect('/v3/conveyancer/case');
+      }
+    });
+
+    // Apply to Register handler
+    app.get('/v3/conveyancer/apply-to-register-handler', function (req, res) {
+      req.session.applied = true;
       res.redirect('/v3/conveyancer/case');
     });
 

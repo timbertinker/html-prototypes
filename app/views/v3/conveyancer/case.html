@@ -265,19 +265,26 @@
 			<p>
 				<a href="#">View mortgage deed</a>
 			</p>
+			{{#applied}}
+	    	<p><a href="#">View proof of application</a></p>
+			{{/applied}}
 			{{^completion_date}}
 				<p>
 					<a href="case-confirm-completion" class="button">Complete mortgage</a>
 				</p>
 			{{/completion_date}}
 			{{#completion_date}}
-				<p>
-					<a href="#" class="button">Apply to register</a>
-				</p>
+				{{^applied}}
+					<p>
+						<a href="case-apply-deed" class="button">Apply to register</a>
+					</p>
+				{{/applied}}
 			{{/completion_date}}
 		{{/deed_created}}
     <p><a href="case-list">Back to case list</a></p>
-    <p><a href="#" class="font-xsmall">Delete this case</a></p>
+		{{^applied}}
+    	<p><a href="#" class="font-xsmall">Delete this case</a></p>
+		{{/applied}}
   </div>
 </main>
 

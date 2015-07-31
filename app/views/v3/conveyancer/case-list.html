@@ -42,9 +42,9 @@
       <tr>
         <th scope="col">Reference</th>
         <th scope="col">Client</th>
-        <!--<th scope="col">Task</th>-->
         <th scope="col">Status</th>
         <th scope="col">Last updated</th>
+        <th scope="col">Next action</th>
       </tr>
     </thead>
     <tbody>
@@ -61,7 +61,6 @@
           Sarah Jane Smith<br>
           Peter James Smith
         </td>
-        <!--<td>Remortgage</td>-->
         <td>
 					{{^case_status}}
 						Draft
@@ -70,7 +69,21 @@
 						{{case_status}}
 					{{/case_status}}
 				</td>
-        <td>2 March 2015</td>
+        <td>
+					{{^completion_date}}
+						<script type="text/javascript">
+							var today = new Date();
+							var monthNames = [
+								"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+							];
+							document.write(today.getDate() + ' ' + monthNames[today.getMonth()] + ' ' + today.getFullYear());
+						</script>
+					{{/completion_date}}
+					{{#completion_date}}
+						{{completion_date}}
+					{{/completion_date}}
+				</td>
+        <td><a href="case">Case details</a></td>
       </tr>
       {{/new_case}}
 
@@ -80,9 +93,9 @@
           Simeon Rad<br>
           Or&eacute; Sanderson
         </td>
-        <!--<td>Remortgage</td>-->
         <td>Draft</td>
         <td>2 March 2015</td>
+        <td><a href="#">Case details</a></td>
       </tr>
 
       <tr class="summary">
@@ -90,9 +103,9 @@
         <td>
           James Cameron
         </td>
-        <!--<td>Remortgage</td>-->
         <td>Draft</td>
         <td>20 February 2015</td>
+        <td><a href="#">Case details</a></td>
       </tr>
 
     </tbody>
