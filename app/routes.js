@@ -42,9 +42,9 @@ module.exports = {
     // INTERCEPT the Verify prototype return page. Redirect it to V3.
     // This can only be tested on "live" :)
     // /v2/step4/step-2-identity-verified
-    /*app.get('/v2/step4/step-2-identity-verified', function (req, res) {
-      res.redirect('v3/citizen/identity-verified');
-    });*/
+    //app.get('/v2/step4/step-2-identity-verified', function (req, res) {
+    //  res.redirect('v3/citizen/identity-verified');
+    //});
 
     // Sign in page ALWAYS flushes the session UNLESS we're coming back from index
     app.get('/v3/conveyancer/login', function (req, res) {
@@ -260,27 +260,10 @@ module.exports = {
       res.redirect('/v3/conveyancer/case');
     });
 
-
-
     // ----------------------------------------------------------------------
     // ----------------------------------------------------------------------
 
     // v2 step 1 - create case
-
-    app.get('/v2/step1/*', function(req, res, next) {
-
-      var n = req.session.views || 0;
-      req.session.views = ++n;
-
-      console.log('views: ' + req.session.views);
-      console.log('caseRef: ' + req.session.caseRef);
-      console.log('displayProperty: ' + req.session.displayProperty);
-      console.log('displayBorrower_1: ' + req.session.displayBorrower_1);
-      console.log('displayBorrower_2: ' + req.session.displayBorrower_2);
-      console.log('\n');
-
-      next();
-    });
 
     app.get('/v2/step1/login', function (req, res) {
       // destroy the session:
