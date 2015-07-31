@@ -35,16 +35,18 @@
     </nav>
   </div><!-- global-breadcrumb -->
 
-	{{^completion_date}}
-		{{#deed_created}}
-			<div class="service-notice text">
-				<div class="bold-small">Deed created</div>
-				<p>
-					If you edit details in this case, you will need to create a new deed.
-				</p>
-			</div>
-		{{/deed_created}}
-	{{/completion_date}}
+	{{^conveyancer_returns}}
+		{{^completion_date}}
+			{{#deed_created}}
+				<div class="service-notice text">
+					<div class="bold-small">Deed created</div>
+					<p>
+						If you edit details in this case, you will need to create a new deed.
+					</p>
+				</div>
+			{{/deed_created}}
+		{{/completion_date}}
+	{{/conveyancer_returns}}
 
   {{^case_reference}}
   <h1 class="heading-xlarge">

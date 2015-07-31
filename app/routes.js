@@ -26,6 +26,9 @@ module.exports = {
       console.log('mortgage_value: ' + req.session.mortgage_value);
       console.log('mortgage_charge: ' + req.session.mortgage_charge);
       console.log('deed_created: ' + req.session.deed_created);
+
+      console.log('conveyancer_returns: ' + req.session.conveyancer_returns);
+
       console.log('completion_date: ' + req.session.completion_date);
       console.log('applied: ' + req.session.applied);
       console.log('\n');
@@ -43,12 +46,30 @@ module.exports = {
       res.redirect('v3/citizen/identity-verified');
     });*/
 
-    // Sign in page ALWAYS flushes the session
+    // Sign in page ALWAYS flushes the session UNLESS we're coming back from index
     app.get('/v3/conveyancer/login', function (req, res) {
       // destroy the session if there's no "preserve" query
-      console.log(req.query.preserve);
       if (typeof req.query.preserve === 'undefined') {
         req.session = null;
+      } else {
+        req.session.conveyancer_returns = true;
+        // if anything is undefined, give it a value according to our default scenarios
+        req.session.new_case = true;
+        if (typeof req.session.case_reference === 'undefined') {
+          req.session.case_reference = '83 Lordship Park';
+        }
+        req.session.case_status = 'Mortgage deed signed';
+        req.session.property = true;
+        req.session.borrower_1 = true;
+        req.session.borrower_2 = true;
+        if (typeof req.session.md_ref === 'undefined') {
+          req.session.md_ref = 'MD1234F';
+        }
+        if (typeof req.session.mortgage_value === 'undefined') {
+          req.session.mortgage_value = '240000';
+          req.session.mortgage_charge = '40';
+        }
+        req.session.deed_created = true;
       }
       res.render('v3/conveyancer/login');
     });
@@ -66,13 +87,8 @@ module.exports = {
     // Case - send this page some session vars:
     app.get('/v3/conveyancer/case', function (req, res) {
       req.session.new_case = true;
-      if (typeof req.session.applied !== 'undefined') {
-        req.session.case_status = "Applied to Register";
-      } else if (typeof req.session.completion_date !== 'undefined') {
-        req.session.case_status = 'Completion confirmed';
-      } else if (req.session.deed_available === true) {
-        req.session.case_status = 'Mortgage deed created';
-      } else if (
+      if (
+        typeof req.session.case_status === 'undefined' &&
         typeof req.session.property !== 'undefined' &&
         typeof req.session.borrower_1 !== 'undefined' &&
         typeof req.session.md_ref !== 'undefined' &&
@@ -93,6 +109,7 @@ module.exports = {
         "mortgage_charge": req.session.mortgage_charge,
         "deed_available": req.session.deed_available,
         "deed_created": req.session.deed_created,
+        "conveyancer_returns": req.session.conveyancer_returns,
         "completion_date": req.session.completion_date,
         "applied": req.session.applied
       });
@@ -215,6 +232,7 @@ module.exports = {
     // Mortgage deed handler
     app.get('/v3/conveyancer/case-mortgage-handler', function (req, res) {
       req.session.deed_created = true;
+      req.session.case_status = 'Mortgage deed created';
       res.redirect('/v3/conveyancer/case');
     });
 
@@ -238,6 +256,7 @@ module.exports = {
     // Apply to Register handler
     app.get('/v3/conveyancer/apply-to-register-handler', function (req, res) {
       req.session.applied = true;
+      req.session.case_status = "Applied to Register";
       res.redirect('/v3/conveyancer/case');
     });
 
