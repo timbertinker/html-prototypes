@@ -81,3 +81,28 @@
     left: 50%;
   }
 }
+
+select {
+  @include box-sizing(border-box);
+  @include bold-16;
+  width: 100%;
+
+  padding: 4px;
+  background-color: $white;
+  border: 1px solid $border-colour;
+
+  // Disable webkit appearance and remove rounded corners
+  //-webkit-appearance: auto;
+  //border-radius: 0;
+
+  @include media(tablet) {
+    width: 18%;
+    margin-right: 2%;
+  }
+}
+
+select + .form-control {
+  @include media(tablet) {
+    width: 30%;
+  }
+}

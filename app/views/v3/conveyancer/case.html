@@ -272,13 +272,19 @@
 			{{/applied}}
 			{{^completion_date}}
 				<p>
-					<a href="case-confirm-completion" class="button">Complete mortgage</a>
+					<a href="case-confirm-completion" class="button"
+						{{^deed_signed}} disabled="disabled"{{/deed_signed}}
+					>
+						Complete mortgage
+					</a>
 				</p>
 			{{/completion_date}}
 			{{#completion_date}}
 				{{^applied}}
 					<p>
-						<a href="case-apply-deed" class="button">Apply to register</a>
+						<a href="case-apply-deed" class="button">
+							Apply to register
+						</a>
 					</p>
 				{{/applied}}
 			{{/completion_date}}

@@ -30,6 +30,7 @@ module.exports = {
       console.log('conveyancer_returns: ' + req.session.conveyancer_returns);
 
       console.log('completion_date: ' + req.session.completion_date);
+      console.log('deed_signed: ' + req.session.deed_signed);
       console.log('applied: ' + req.session.applied);
       console.log('\n');
 
@@ -45,6 +46,12 @@ module.exports = {
     //app.get('/v2/step4/step-2-identity-verified', function (req, res) {
     //  res.redirect('v3/citizen/identity-verified');
     //});
+
+    // Once the CITIZEN demo journey is complete, set deed_signed to true
+    app.get('/deed-journeys/deed-transaction/deed-agreed', function(req, res) {
+      req.session.deed_signed = true;
+      res.render('deed-journeys/deed-transaction/deed-agreed');
+    });
 
     // Sign in page ALWAYS flushes the session UNLESS we're coming back from index
     app.get('/v3/conveyancer/login', function (req, res) {
@@ -70,6 +77,7 @@ module.exports = {
           req.session.mortgage_charge = '40';
         }
         req.session.deed_created = true;
+        req.session.deed_signed = true;
       }
       res.render('v3/conveyancer/login');
     });
@@ -80,7 +88,9 @@ module.exports = {
         "new_case": req.session.new_case,
         "case_reference": req.session.case_reference,
         "case_status": req.session.case_status,
-        "completion_date": req.session.completion_date
+        "completion_date": req.session.completion_date,
+        "deed_signed": req.session.deed_signed,
+        "applied": req.session.applied
       });
     });
 
@@ -110,6 +120,7 @@ module.exports = {
         "deed_available": req.session.deed_available,
         "deed_created": req.session.deed_created,
         "conveyancer_returns": req.session.conveyancer_returns,
+        "deed_signed": req.session.deed_signed,
         "completion_date": req.session.completion_date,
         "applied": req.session.applied
       });
@@ -245,7 +256,7 @@ module.exports = {
 
     // Completion handler
     app.get('/v3/conveyancer/completion-handler', function (req, res) {
-      console.log(req.query.apply_immediately);
+      req.session.case_status = 'Completion confirmed';
       if (req.query.apply_immediately === 'on') {
         res.redirect('/v3/conveyancer/case-apply-deed');
       } else {

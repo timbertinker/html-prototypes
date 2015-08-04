@@ -83,7 +83,24 @@
 						{{completion_date}}
 					{{/completion_date}}
 				</td>
-        <td><a href="case">Case details</a></td>
+        <td>
+					{{^deed_signed}}
+						<a href="case">Case details</a>
+					{{/deed_signed}}
+					{{#deed_signed}}
+						{{^completion_date}}
+							<a href="case-confirm-completion">Complete mortgage</a>
+						{{/completion_date}}
+						{{#completion_date}}
+							{{^applied}}
+								<a href="case-apply-deed">Apply to register</a>
+							{{/applied}}
+							{{#applied}}
+								n/a
+							{{/applied}}
+						{{/completion_date}}
+					{{/deed_signed}}
+				</td>
       </tr>
       {{/new_case}}
 

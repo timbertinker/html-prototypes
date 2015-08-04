@@ -103,7 +103,7 @@
     <div class="form-group" id="correspondance">
       <div class="address-field-group">
         <label class="form-label-bold" for="address-1">
-					Borrower’s correspondence address
+					Borrower’s current address
 					<span class="form-hint">As it would appear on an envelope</span>
 				</label>
         <input type="text" id="address-1" class="form-control expand-bottom-quarter"
@@ -122,15 +122,33 @@
         <input type="text" class="form-control expand-bottom-quarter" value="">
         <input type="text" class="form-control expand-bottom-quarter" value="">
       </div>
-      <p><a href="#" class="font-xsmall duplicator">Add another correspondence address</a></p>
+      <!--<p><a href="#" class="font-xsmall duplicator">Add another correspondence address</a></p>-->
     </div>
 
     <h4 class="heading-medium">Contact information</h4>
     <div class="service-notice expand-bottom font-xsmall text">
-      Borrowers will need to be able to access <strong>at least one</strong>
-      of these to be able to sign their mortgage deed.
+      <p>
+				Borrowers will need to be able to access <strong>at least one</strong>
+      	email address or mobile phone number to be able to sign their mortgage
+				deed.
+			</p>
+			<p>
+				<b>Try to avoid shared email addresses.</b>
+			</p>
     </div>
 
+    <div class="form-group" id="contact-info">
+			<select name="type" class="">
+				<option value="email">Email address</option>
+				<option value="mobile">Mobile phone number</option>
+			</select>
+			<input type="text" class="form-control">
+      <p class="collapse-bottom">
+				<a href="#" class="font-xsmall duplicator">Add another contact method</a>
+			</p>
+		</div>
+
+<!--
     <div class="form-group" id="email">
       <label class="form-label-bold" for="email-1">Borrower’s email address</label>
       <p class="form-hint">Try to avoid shared email addresses</p>
@@ -143,6 +161,7 @@
       <input type="text" class="form-control-1-4" id="mobile-1">
       <p class="collapse-bottom"><a href="#" class="font-xsmall duplicator">Add another mobile number</a></p>
     </div>
+-->
 
     <div class="form-group">
       <button class="button">Add borrower to case</button>
@@ -176,6 +195,12 @@
       var inputLrg = '<input type="text" class="form-control">';
       var inputSml = '<input type="text" class="form-control-1-4">';
 
+			var fancyInput = '<select>';
+			fancyInput += '<option value="email">Email address</option>';
+			fancyInput += '<option value="mobile">Mobile phone number</option>';
+			fancyInput += '</select>';
+			fancyInput += '<input type="text" class="form-control">';
+
       var templateEnd = '<a href="#" class="font-xsmall remover" style="margin-left:15px;">Remove</a>';
       templateEnd += '</div>';
 
@@ -183,6 +208,11 @@
 
         .on('click', '.form-group a[href=#]', function(e) {
           e.preventDefault();
+        })
+
+        .on('click', '#contact-info .duplicator', function() {
+          var template = templateStart + fancyInput + templateEnd;
+          $(this).parents('.form-group').children(':last-child').before(template);
         })
 
         .on('click', '#correspondance .duplicator', function() {
