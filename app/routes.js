@@ -38,7 +38,7 @@ module.exports = {
     });
 
 
-    // PAGE requests --------------------
+    // CITIZEN --------------------
 
     // INTERCEPT the Verify prototype return page. Redirect it to V3.
     // This can only be tested on "live" :)
@@ -47,11 +47,23 @@ module.exports = {
     //  res.redirect('v3/citizen/identity-verified');
     //});
 
+    // Unhappy path catcher
+    app.get('/deed-journeys/deed-transaction/*', function(req, res, next) {
+      var answer = req.query['radio-inline-group'];
+      if (answer === 'No') {
+        res.redirect('/deed-journeys/deed-transaction/unhappy-path');
+      } else {
+        next();
+      }
+    });
+
     // Once the CITIZEN demo journey is complete, set deed_signed to true
     app.get('/deed-journeys/deed-transaction/deed-agreed', function(req, res) {
       req.session.deed_signed = true;
       res.render('deed-journeys/deed-transaction/deed-agreed');
     });
+
+    // CONVEYANCER ----------------
 
     // Sign in page ALWAYS flushes the session UNLESS we're coming back from index
     app.get('/v3/conveyancer/login', function (req, res) {
