@@ -65,7 +65,7 @@ module.exports = {
         if (typeof req.session.case_reference === 'undefined') {
           req.session.case_reference = '83 Lordship Park';
         }
-        req.session.case_status = 'Mortgage deed signed';
+        req.session.case_status = '<span class="highlight-yellow">Mortgage deed signed</span>';
         req.session.property = true;
         req.session.borrower_1 = true;
         req.session.borrower_2 = true;
@@ -182,7 +182,8 @@ module.exports = {
     // Create DEED - send this page a session var:
     app.get('/v3/conveyancer/create-mortgage-deed', function (req, res) {
       res.render('v3/conveyancer/create-mortgage-deed', {
-        "case_reference": req.session.case_reference
+        "case_reference": req.session.case_reference,
+        "md_ref": req.session.md_ref
       });
     });
     app.get('/v3/conveyancer/create-mortgage-confirmed', function (req, res) {
@@ -208,7 +209,8 @@ module.exports = {
     app.get('/v3/conveyancer/case-apply-deed', function (req, res) {
       res.render('v3/conveyancer/case-apply-deed', {
         "case_reference": req.session.case_reference,
-        "md_ref": req.session.md_ref
+        "md_ref": req.session.md_ref,
+        "completion_date": req.session.completion_date
       });
     });
 
@@ -267,7 +269,7 @@ module.exports = {
     // Apply to Register handler
     app.get('/v3/conveyancer/apply-to-register-handler', function (req, res) {
       req.session.applied = true;
-      req.session.case_status = "Applied to Register";
+      req.session.case_status = '<span class="highlight-yellow">Applied to Register</span>';
       res.redirect('/v3/conveyancer/case');
     });
 

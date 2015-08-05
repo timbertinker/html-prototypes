@@ -46,30 +46,6 @@
   }
 }
 
-// Case list
-
-// Fade out a "new" case in case list
-/*@keyframes fadenew {
-  0% {
-    background-color: $yellow-25;//rgba(255,0,0,1);
-  }
-  100% {
-    background-color: transparent;//rgba(255,0,0,0);
-  }
-}
-.case-list .new-case {
-  background-color: transparent;
-  animation-name: fadenew;
-  animation-duration: 1s;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in-out;
-}
-.case-list .new-case + .details {
-  background-color: transparent;
-}*/
-
-//
-
 .address-field-group {
   padding-top: $gutter-half;
   input[type='text'] {
@@ -105,4 +81,47 @@ select + .form-control {
   @include media(tablet) {
     width: 30%;
   }
+}
+
+// Highlight tags - much like the Alpha, Beta tags in govuk_toolkit
+// ==========================================================================
+
+@mixin highlight-tag($text-colour: #000, $bg-colour: #fff) {
+  @include inline-block;
+  vertical-align: top;
+
+  @include media(tablet) {
+    vertical-align: baseline;
+  }
+
+  margin: 0 8px 0 0;
+  padding: 2px 5px 0;
+
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  color: $text-colour;
+  background-color: $bg-colour;
+}
+
+.highlight-yellow {
+  @include inline-block;
+  margin: 0 8px 0 0;
+  padding: 2px 5px 0;
+  color: $black;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  text-decoration: none;
+  vertical-align: top;
+  background-color: $yellow-25;
+
+  @include media(tablet) {
+    vertical-align: baseline;
+  }
+}
+
+.outline-yellow {
+  border: 4px solid $yellow-25;
 }

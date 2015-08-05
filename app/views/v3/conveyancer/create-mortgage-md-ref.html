@@ -56,20 +56,25 @@
     </form>
 
 		{{#md_ref}}
-		<div>
-			<div class="font-xsmall">1 result found</div>
-			<h2 class="heading-medium">{{md_ref}}</h2>
-			<p class="font-xsmall">
-				<b>Bank of England PLC</b><br>
-				12 Trinity Place<br>
-				Regents Street<br>
-				London<br>
-				NW10 6TQ
-			</p>
-			<p class="bold-xsmall">
-				<a href="case">Select this mortgage</a>
-			</p>
-		</div>
+			<h2 class="font-xsmall expand-bottom-half">1 result found</h2>
+
+			<ol class="search-results-listing">
+				<li>
+					<h3 class="heading-small">
+						MD Reference {{md_ref}}
+					</h3>
+					<div class="font-xsmall">
+						<b>Bank of England PLC</b><br>
+						12 Trinity Place<br>
+						Regents Street<br>
+						London<br>
+						NW10 6TQ
+					</div>
+					<div>
+						<a href="case"><b>Select this mortgage</b></a>
+					</div>
+				</li>
+			</ol>
 		{{/md_ref}}
 
   </div>

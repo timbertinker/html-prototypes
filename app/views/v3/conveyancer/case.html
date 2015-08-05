@@ -60,11 +60,11 @@
   <h1 class="heading-xlarge">
     <span class="heading-secondary">Case</span>
     {{case_reference}}
-		{{^completion_date}}
+		{{^deed_signed}}
 	    <a href="case-reference" class="font-xsmall" style="margin-left:8px;">
 	      edit case reference
 	    </a>
-		{{/completion_date}}
+		{{/deed_signed}}
   </h1>
   {{/case_reference}}
 
@@ -78,7 +78,7 @@
 					Draft
 				{{/case_status}}
 				{{#case_status}}
-					{{case_status}}
+					{{{case_status}}}
 				{{/case_status}}
 			</dd>
 			{{#completion_date}}
@@ -91,9 +91,9 @@
   <h2 class="heading-large division-primary-top">
     Property
     {{#property}}
-			{{^completion_date}}
+			{{^deed_signed}}
       	<a href="case-find-property" class="font-xsmall" style="margin-left:8px;">select a different property</a>
-			{{/completion_date}}
+			{{/deed_signed}}
     {{/property}}
   </h2>
   {{#property}}
@@ -115,39 +115,48 @@
   <h2 class="heading-large division-secondary-top">
     Borrowers
     {{#borrower_1}}
-			{{^completion_date}}
+			{{^deed_signed}}
       	<a href="case-add-borrower" class="font-xsmall" style="margin-left:8px;">add another borrower to this case</a>
-			{{/completion_date}}
+			{{/deed_signed}}
     {{/borrower_1}}
   </h2>
 
   {{#borrower_1}}
     <h3 class="heading-medium">
       Sarah Jane Smith
-			{{^completion_date}}
+			{{^deed_signed}}
       	<a href="#" class="font-xsmall" style="margin-left:8px;">edit borrower details</a>
-			{{/completion_date}}
+			{{/deed_signed}}
     </h3>
 
     <dl class="definition-tabular-bold">
       <dt>Date of birth</dt>
       <dd>26 May 1988</dd>
-      <!--<dt>Gender</dt>
-      <dd>Female</dd>-->
+      <dt>Gender</dt>
+      <dd>Female</dd>
     </dl>
 
-    <h4 class="heading-small">Correspondence address(es)</h4>
+    <h4 class="heading-small">Current address</h4>
     83 Lordship Park<br>
     London<br>
     N16 5UP
 
     <h4 class="heading-small">Contact information</h4>
     <dl class="definition-tabular-bold">
-      <dt>Email</dt>
+      <dt>Email address</dt>
       <dd>sarah.smith@gmail.com</dd>
       <dt>Mobile phone number</dt>
       <dd>07964 123 321</dd>
     </dl>
+
+		{{#deed_signed}}
+			<h4 class="heading-small">Signed</h4>
+			<div class="grid-row">
+				<div class="column-third">
+					<img src="/public/images/signature-sarah.svg" class="outline-yellow">
+				</div>
+			</div>
+		{{/deed_signed}}
   {{/borrower_1}}
 
   {{#borrower_2}}
@@ -155,43 +164,52 @@
 
     <h3 class="heading-medium collapse-top">
       Peter James Smith
-			{{^completion_date}}
+			{{^deed_signed}}
       	<a href="#" class="font-xsmall" style="margin-left:8px;">edit borrower details</a>
-			{{/completion_date}}
+			{{/deed_signed}}
     </h3>
 
     <dl class="definition-tabular-bold">
       <dt>Date of birth</dt>
       <dd>7 January 1972</dd>
-      <!--<dt>Gender</dt>
-      <dd>Male</dd>-->
+      <dt>Gender</dt>
+      <dd>Male</dd>
     </dl>
 
-    <h4 class="heading-small">Correspondence address(es)</h4>
+    <h4 class="heading-small">Current address</h4>
     <div class="grid-row">
       <div class="column-quarter">
         83 Lordship Park<br>
         London<br>
         N16 5UP
       </div>
-      <div class="column-quarter" style="padding-left:0px">
+      <!--<div class="column-quarter" style="padding-left:0px">
         12 Spring Road<br>
         Wakefield<br>
         Yorks<br>
         WK12 9AB
-      </div>
+      </div>-->
     </div>
 
     <h4 class="heading-small">Contact information</h4>
     <dl class="definition-tabular-bold">
-      <dt>Email</dt>
+      <dt>Email address</dt>
       <dd>peter.smith@gmail.com</dd>
       <dt>Mobile phone number</dt>
       <dd>07700 900 546</dd>
     </dl>
+
+		{{#deed_signed}}
+			<h4 class="heading-small">Signed</h4>
+			<div class="grid-row">
+				<div class="column-third">
+					<img src="/public/images/signature-peter.svg" class="outline-yellow">
+				</div>
+			</div>
+		{{/deed_signed}}
   {{/borrower_2}}
 
-	{{^completion_date}}
+	{{^deed_signed}}
 	  {{#borrower_1}}
 	    <div class="text division-standard-top">
 	      <p><a href="case-add-borrower">Add another borrower to this case</a></p>
@@ -200,15 +218,15 @@
 	  {{^borrower_1}}
 	    <p><a href="case-add-borrower">Add a borrower to this case</a></p>
 	  {{/borrower_1}}
-	{{/completion_date}}
+	{{/deed_signed}}
 
 	<div class="division-secondary-top">
 		<h2 class="heading-large collapse-top">
 			Mortgage
 			{{#md_ref}}
-				{{^completion_date}}
+				{{^deed_signed}}
 	      	<a href="create-mortgage-md-ref" class="font-xsmall" style="margin-left:8px;">select a different mortgage</a>
-				{{/completion_date}}
+				{{/deed_signed}}
 	    {{/md_ref}}
 		</h2>
 		{{^md_ref}}
@@ -216,7 +234,7 @@
 		{{/md_ref}}
 		{{#md_ref}}
 			<dl class="definition-inline">
-				<dt>MD ref</dt>
+				<dt>MD reference</dt>
 				<dd><b>{{md_ref}}</b></dd>
 			</dl>
 			<p>
@@ -233,9 +251,9 @@
 		<h2 class="heading-large collapse-top">
 			Mortgage value
 			{{#mortgage_value}}
-				{{^completion_date}}
+				{{^deed_signed}}
 	      	<a href="case-mortgage-value" class="font-xsmall" style="margin-left:8px;">edit mortgage value</a>
-				{{/completion_date}}
+				{{/deed_signed}}
 	    {{/mortgage_value}}
 		</h2>
 		<div class="text">
