@@ -40,12 +40,23 @@ module.exports = {
 
     // CITIZEN --------------------
 
-    // INTERCEPT the Verify prototype return page. Redirect it to V3.
-    // This can only be tested on "live" :)
+    // INTERCEPT the Verify prototype return page. Redirect it to V3 if appropriate.
     // /v2/step4/step-2-identity-verified
-    //app.get('/v2/step4/step-2-identity-verified', function (req, res) {
-    //  res.redirect('v3/citizen/identity-verified');
-    //});
+    app.get('/v2/step4/step-2-identity-verified', function (req, res, next) {
+      var tokenVar = req.session.use_v3;
+      if (typeof tokenVar !== 'undefined') {
+        res.redirect('v3/citizen/identity-verified');
+      } else {
+        next();
+      }
+    });
+
+    // Make sure the "v3" var is set on the start page
+    app.get('/v3/citizen', function(req, res) {
+      req.session.use_v3 = true;
+      res.render('v3/citizen/index');
+    });
+
 
     // Unhappy path catcher
     app.get('/deed-journeys/deed-transaction/*', function(req, res, next) {
