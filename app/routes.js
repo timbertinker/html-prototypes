@@ -2,6 +2,8 @@ module.exports = {
   bind : function (app) {
 
     app.get('/', function (req, res) {
+      // ALWAYS flush sessions if you're at the root index:
+      req.session = null;
       res.render('index');
     });
 
