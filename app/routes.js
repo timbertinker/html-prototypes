@@ -44,7 +44,7 @@ module.exports = {
 
     // INTERCEPT the Verify prototype return page.
     // Redirect it to V3 IF APPROPRIATE.
-    app.get('/v2/step4/step-2-identity-verified', function (req, res, next) {
+    app.get('/v2/step4/step-2-identity-verified?requestId=sign-mortgage&action=sign-in', function (req, res, next) {
       var tokenVar = req.session.use_v3;
       if (typeof tokenVar === true) {
         res.redirect('v3/citizen/identity-verified');
