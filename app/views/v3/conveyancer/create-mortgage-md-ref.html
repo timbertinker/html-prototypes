@@ -1,0 +1,91 @@
+{{<govuk_template}}
+
+{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/public/stylesheets/application-v3.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$pageTitle}}
+  Create mortgage
+{{/pageTitle}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$propositionHeader}}
+  <div class="account">
+    <div>Andrew Turner (Ross Clulow Solicitors)</div>
+    <a href="#">My account</a>
+    <a href="login">Sign out</a>
+  </div>
+{{/propositionHeader}}
+
+{{$content}}
+
+<main id="content" role="main">
+	<div class="inner-block">
+
+    <div class="global-breadcrumb">
+      <nav role="navigation">
+        <ol>
+          <li><a href="case-list">Case list</a></li>
+  	      <li>
+  					<a href="case">
+            {{^case_reference}}New case{{/case_reference}}
+            {{#case_reference}}{{case_reference}}{{/case_reference}}
+  					</a>
+          </li>
+  	      <li>Create mortgage</li>
+        </ol>
+      </nav>
+    </div><!-- global-breadcrumb -->
+
+    <h1 class="heading-xlarge">
+      <span class="heading-secondary">Create mortgage</span>
+      Mortgage details
+    </h1>
+
+    <form action="create-mortgage-md-ref" method="get" class="form">
+			<div class="form-group">
+				<label class="form-label" for="md-ref">
+					MD reference
+					<span class="form-hint">eg MD1234F</span>
+				</label>
+				<input type="text" class="form-control" id="md_ref" name="md_ref">
+				<button type="submit" class="button">Search</button>
+			</div>
+    </form>
+
+		{{#md_ref}}
+			<h2 class="font-xsmall expand-bottom-half">1 result found</h2>
+
+			<ol class="search-results-listing">
+				<li>
+					<h3 class="heading-small">
+						MD Reference {{md_ref}}
+					</h3>
+					<div class="font-xsmall">
+						<b>Bank of England PLC</b><br>
+						12 Trinity Place<br>
+						Regents Street<br>
+						London<br>
+						NW10 6TQ
+					</div>
+					<div>
+						<a href="case"><b>Select this mortgage</b></a>
+					</div>
+				</li>
+			</ol>
+		{{/md_ref}}
+
+  </div>
+</main>
+
+{{/content}}
+
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+{{/bodyEnd}}
+
+{{/govuk_template}}
