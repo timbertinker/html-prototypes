@@ -42,8 +42,7 @@ module.exports = {
 
     // CITIZEN --------------------
 
-    // INTERCEPT the Verify prototype return page. Redirect it to V3 if appropriate.
-    // /v2/step4/step-2-identity-verified
+    // INTERCEPT the Verify prototype return page. Redirect it to V3 IF APPROPRIATE.
     app.get('/v2/step4/step-2-identity-verified', function (req, res, next) {
       var tokenVar = req.session.use_v3;
       if (typeof tokenVar !== 'undefined') {
