@@ -42,32 +42,6 @@ module.exports = {
 
     // CITIZEN --------------------
 
-    // INTERCEPT the Verify prototype return page.
-    // Redirect it to V3 IF APPROPRIATE.
-    app.get('/v2/step4/step-2-identity-verified?requestId=sign-mortgage&action=sign-in', function (req, res, next) {
-      var tokenVar = req.session.use_v3;
-      if (typeof tokenVar === true) {
-        res.redirect('v3/citizen/identity-verified');
-      } else {
-        next();
-      }
-    });
-
-    // Make sure the "v3" var is TRUE on the V3 start page for the citizen.
-    // This will activate the redirect above
-    app.get('/v3/citizen', function(req, res) {
-      req.session.use_v3 = true;
-      res.render('v3/citizen/index');
-    });
-
-    // Make sure the "v3" var is FALSE on the V2 start page.
-    // This will prvent the redirect above
-    app.get('/v2/step4/step-1-citizen-signs-deed', function(req, res) {
-      req.session.use_v3 = false;
-      res.render('v2/step4/step-1-citizen-signs-deed');
-    });
-
-
     // Unhappy path catcher
     app.get('/deed-journeys/deed-transaction/*', function(req, res, next) {
       var answer = req.query['radio-inline-group'];
