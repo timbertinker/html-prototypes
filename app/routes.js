@@ -43,20 +43,20 @@ module.exports = {
     // CITIZEN --------------------
 
     // Unhappy path catcher
-    // app.get('/deed-journeys/deed-transaction/*', function(req, res, next) {
-    //   var answer = req.query['radio-inline-group'];
-    //   if (answer === 'No') {
-    //     res.redirect('/deed-journeys/deed-transaction/unhappy-path');
-    //   } else {
-    //     next();
-    //   }
-    // });
+    app.get('/v3-1/deed-journeys/deed-transaction/*', function(req, res, next) {
+      var answer = req.query['radio-inline-group'];
+      if (answer === 'No') {
+        res.redirect('/v3-1/deed-journeys/deed-transaction/unhappy-path');
+      } else {
+        next();
+      }
+    });
 
     // Once the CITIZEN demo journey is complete, set deed_signed to true
-    // app.get('/deed-journeys/deed-transaction/deed-agreed', function(req, res) {
-    //   req.session.deed_signed = true;
-    //   res.render('deed-journeys/deed-transaction/deed-agreed');
-    // });
+    app.get('/v3-1/deed-journeys/deed-transaction/deed-agreed', function(req, res) {
+      req.session.deed_signed = true;
+      res.render('v3-1/deed-journeys/deed-transaction/deed-agreed');
+    });
 
     // CONVEYANCER ----------------
 

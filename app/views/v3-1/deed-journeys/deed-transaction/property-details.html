@@ -1,0 +1,70 @@
+{{<govuk_template}}
+
+	{{$pageTitle}}
+		Property details
+	{{/pageTitle}}
+
+	{{$head}}
+		<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css" />
+	{{/head}}
+
+	{{$content}}
+		<main id="content" role="main">
+			<div class="inner-block">
+
+				<h1 class="heading-large">
+					<span class="heading-secondary">Step 1 of 7</span>
+					Property details
+				</h1>
+
+				<div class="text">
+					<p>
+						This should accurately show the address of the property that you are
+						remortgaging.
+					</p>
+				</div>
+
+				<div class="text division-primary">
+					<p class="lede">
+						83 Lordship Park,<br>
+						London<br>
+						N16 5UP
+					</p>
+				</div>
+
+				<h2 class="heading-medium">
+					Are these property details correct?
+				</h2>
+
+				<form class="form" action="lender-details" method="get">
+					<div class="form-group">
+						<fieldset class="inline">
+					    <label class="block-label" for="radio-inline-1">
+					      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+					      Yes
+					    </label>
+					    <label class="block-label" for="radio-inline-2">
+					      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+					      No
+					    </label>
+					  </fieldset>
+					</div>
+					<div class="form-group">
+						<button class="button">Next</button>
+						<p>
+							<a href="/v3-1/citizen/identity-verified">Back</a>
+						</p>
+					</div>
+				</form>
+
+			</div>
+		</main>
+	{{/content}}
+
+	{{$bodyEnd}}
+	  {{>includes/scripts}}
+	  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+	{{/bodyEnd}}
+
+{{/govuk_template}}

@@ -1,0 +1,105 @@
+{{<govuk_template}}
+
+	{{$pageTitle}}
+		Mortgage deed
+	{{/pageTitle}}
+
+	{{$head}}
+		<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css" />
+	{{/head}}
+
+	{{$content}}
+
+
+	<main id="content" role="main">
+		<div class="inner-block">
+
+	    <h1 class="heading-xlarge">Mortgage deed</h1>
+
+	    <div class="text">
+	      <div class="service-notice">
+	        <p><b>This is a legal document &mdash; please check all details carefully.</b></p>
+	      </div>
+	    </div>
+
+			<h2 class="heading-large">Property:</h2>
+      <p>
+        83 Lordship Park<br>
+        London<br>
+				N16 5UP
+      </p>
+      <dl class="definition-inline">
+        <dt>Title number</dt>
+        <dd>GHR67832</dd>
+      </dl>
+
+    	<h2 class="heading-large">Lender:</h2>
+    	<p>
+        Bank of England Plc<br>
+      	12 Trinity Place<br>
+				Regents Street<br>
+        London<br>
+				NW10 6TQ
+			</p>
+      <dl class="definition-inline">
+        <dt>Company registration number</dt>
+        <dd>2347676</dd>
+      </dl>
+
+    	<h2 class="heading-large">Borrowers:</h2>
+      <div class="grid-row">
+        <div class="column-third">
+          <p>
+            <b>Peter Smith</b><br>
+            83 Lordship Park<br>
+            London<br>
+            N16 5UP
+          </p>
+        </div>
+        <div class="column-third">
+          <p>
+            <b>Sarah Jane Smith</b><br>
+						83 Lordship Park<br>
+            London<br>
+            N16 5UP
+          </p>
+        </div>
+      </div>
+
+			<h2 class="heading-large">Deed clauses:</h2>
+
+    	<div class="text">
+
+				{{>deed-journeys/includes/deed-simple}}
+
+    	</div>
+
+			<div class="text division-secondary-top">
+				<p>
+					If there are any errors in the mortgage deed please contact your
+					conveyancer, Ross Clulow Solicitors, on 0208 198 8943 before
+					authorising this mortgage deed.
+				</p>
+				<p>
+					When you’re happy with the above, confirm your mortgage deed and send
+					it back to your conveyancer:
+				</p>
+			</div>
+
+			<div class="form">
+				<div class="form-group">
+					<a href="deed-agreed" class="button">Authorise mortgage deed</a>
+				</div>
+			</div>
+
+	  </div>
+	</main>
+
+	{{/content}}
+
+	{{$bodyEnd}}
+	  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+	{{/bodyEnd}}
+
+{{/govuk_template}}
