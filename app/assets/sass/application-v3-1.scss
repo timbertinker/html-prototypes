@@ -125,3 +125,21 @@ select + .form-control {
 .outline-yellow {
   border: 4px solid $yellow-25;
 }
+
+.highlight-green {
+  @include inline-block;
+  margin: 0 8px 0 0;
+  padding: 2px 5px 0;
+  color: $black;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  text-decoration: none;
+  vertical-align: top;
+  background-color: $green-25;
+
+  @include media(tablet) {
+    vertical-align: baseline;
+  }
+}
