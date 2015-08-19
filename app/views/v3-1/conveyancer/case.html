@@ -256,15 +256,20 @@
 				{{/deed_signed}}
 	    {{/mortgage_value}}
 		</h2>
+
 		<div class="text">
 			{{^mortgage_value}}
+			<div class="panel-indent">
+	          	<p>This will be used to calculate the fee, and should be added before applying to register
+	          	</p>
+        	</div>
 	  		<p><a href="case-mortgage-value">Add mortgage value</a></p>
 			{{/mortgage_value}}
 			{{#mortgage_value}}
 				<dl class="definition-tabular-bold">
 					<dt>Value</dt>
 					<dd>£{{mortgage_value}}</dd>
-					<dt>Charge</dt>
+					<dt>Fee</dt>
 					<dd>£{{mortgage_charge}}</dd>
 				</dl>
 			{{/mortgage_value}}
