@@ -134,6 +134,14 @@ module.exports = function(grunt){
     'concurrent:target'
   ]);
 
+  grunt.registerTask('generate-assets', [
+    'clean',
+    'copy',
+    'convert_template',
+    'replace',
+    'sass'
+  ]);
+
   grunt.event.on('watch', function(action, filepath, target) {
 
     // just copy the asset that was changed, not all of them
