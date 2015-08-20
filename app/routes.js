@@ -46,7 +46,7 @@ module.exports = {
     app.get('/v3-1/deed-journeys/deed-transaction/*', function(req, res, next) {
       var answer = req.query['radio-inline-group'];
       if (answer === 'No') {
-        res.redirect('/v3-1/deed-journeys/deed-transaction/unhappy-path');
+        res.redirect('/v3-1/deed-journeys/deed-transaction/not-happy-to-proceed');
       } else {
         next();
       }
