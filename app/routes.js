@@ -9,6 +9,28 @@ module.exports = {
 
     // add your routes here
 
+    // V3.2 - citizen deed only - Santander special -----------------------------
+    
+    // CITIZEN --------------------
+
+    // citizen - not happy to proceed - catcher
+    app.get('/v3-2/deed-journeys/deed-transaction/*', function(req, res, next) {
+      var answer = req.query['radio-inline-group'];
+      if (answer === 'No') {
+        res.redirect('/v3-2/deed-journeys/deed-transaction/not-happy-to-proceed');
+      } else {
+        next();
+      }
+    });
+    
+
+    // Once the CITIZEN demo journey is complete, set deed_signed to true
+    app.get('/v3-2/deed-journeys/deed-transaction/deed-agreed', function(req, res) {
+      req.session.deed_signed = true;
+      res.render('v3-2/deed-journeys/deed-transaction/deed-agreed');
+    });
+
+
     // V3.1 --------------------------------------------------------
 
     app.get('/v3-1/conveyancer/*', function(req, res, next) {
