@@ -123,7 +123,10 @@
 
   {{#borrower_1}}
     <h3 class="heading-medium">
-      Sarah Jane Smith
+    	{{#deed_signed}}
+      		<span class="highlight-green">Signed</span>
+		{{/deed_signed}} 
+      Sarah Jane Smith 
 			{{^deed_signed}}
       	<a href="#" class="font-xsmall" style="margin-left:8px;">edit borrower details</a>
 			{{/deed_signed}}
@@ -149,20 +152,23 @@
       <dd>07964 123 321</dd>
     </dl>
 
-		{{#deed_signed}}
+<!-- 		{{#deed_signed}}
 			<h4 class="heading-small">Signed</h4>
 			<div class="grid-row">
 				<div class="column-third">
 					<img src="/public/images/signature-sarah.svg" class="outline-yellow">
 				</div>
 			</div>
-		{{/deed_signed}}
+		{{/deed_signed}} -->
   {{/borrower_1}}
 
   {{#borrower_2}}
     <div class="text division-standard-top"></div>
 
     <h3 class="heading-medium collapse-top">
+    	{{#deed_signed}}
+      		<span class="highlight-green">Signed</span>
+		{{/deed_signed}} 
       Peter James Smith
 			{{^deed_signed}}
       	<a href="#" class="font-xsmall" style="margin-left:8px;">edit borrower details</a>
@@ -199,14 +205,14 @@
       <dd>07700 900 546</dd>
     </dl>
 
-		{{#deed_signed}}
+<!-- 		{{#deed_signed}}
 			<h4 class="heading-small">Signed</h4>
 			<div class="grid-row">
 				<div class="column-third">
 					<img src="/public/images/signature-peter.svg" class="outline-yellow">
 				</div>
 			</div>
-		{{/deed_signed}}
+		{{/deed_signed}} -->
   {{/borrower_2}}
 
 	{{^deed_signed}}
