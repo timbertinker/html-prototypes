@@ -42,7 +42,7 @@ module.exports = {
 
     // CITIZEN --------------------
 
-    // Unhappy path catcher
+    // citizen - not happy to proceed - catcher
     app.get('/v3-1/deed-journeys/deed-transaction/*', function(req, res, next) {
       var answer = req.query['radio-inline-group'];
       if (answer === 'No') {
