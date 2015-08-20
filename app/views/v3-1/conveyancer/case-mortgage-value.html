@@ -1,0 +1,100 @@
+{{<govuk_template}}
+
+{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/public/stylesheets/application-v3-1.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$pageTitle}}
+  Mortgage value
+{{/pageTitle}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$propositionHeader}}
+  <div class="account">
+    <div>Andrew Turner (Ross Clulow Solicitors)</div>
+    <a href="#">My account</a>
+    <a href="login">Sign out</a>
+  </div>
+{{/propositionHeader}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  <div class="global-breadcrumb">
+    <nav role="navigation">
+      <ol>
+        <li><a href="case-list">Case list</a></li>
+	      <li>
+					<a href="case">
+          {{^case_reference}}New case{{/case_reference}}
+          {{#case_reference}}{{case_reference}}{{/case_reference}}
+					</a>
+        </li>
+	      <li>Mortgage value</li>
+      </ol>
+    </nav>
+  </div><!-- global-breadcrumb -->
+
+	<h1 class="heading-large">Mortgage value</h1>
+
+	<div class="text">
+
+		<form class="form" action="mortgage-value-handler" method="get">
+
+			<div class="form-group">
+				<label class="form-label" for="mortgage_value">
+					Mortgage value
+					<span class="form-hint">eg 250000</span>
+				</label>
+				£ <input type="text" value="{{mortgage_value}}" class="form-control" id="mortgage_value" name="mortgage_value">
+			</div>
+			<div class="form-group">
+				Upon application to register, Ross Clulow Solicitors, will be charged a fee of <b>£</b>
+				<input type="text" value="{{mortgage_charge}}" name="mortgage_charge" id="mortgage_charge" style="font-weight:bold; border:none;" onfocus="blur()">
+			</div>
+
+			<div class="form-group">
+				<input type="submit" class="button" value="Confirm mortgage value">
+        <div>
+          <a href="case" class="font-xsmall">Cancel</a>
+        </div>
+			</div>
+
+		</form>
+
+	</div>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			var $el = $('#mortgage_value');
+			var $output = $('#mortgage_charge');
+			$el.on('keyup', function() {
+				var val = parseInt($(this).val());
+				if (val < 100000) {
+					console.log('here');
+					$output.val('20');
+				} else if (val > 100000 && val < 200000) {
+					$output.val('30');
+				} else if (val > 200000 && val < 500000) {
+						$output.val('40');
+				} else if (val > 500000 && val < 1000000) {
+						$output.val('60');
+				} else if (val > 1000000) {
+						$output.val('125');
+				}
+			});
+		});
+	</script>
+{{/bodyEnd}}
+
+{{/govuk_template}}

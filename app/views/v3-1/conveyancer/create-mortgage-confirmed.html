@@ -1,0 +1,92 @@
+{{<govuk_template}}
+
+{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/public/stylesheets/application-v3-1.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$pageTitle}}
+  Create mortgage
+{{/pageTitle}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$propositionHeader}}
+  <div class="account">
+    <div>Andrew Turner (Ross Clulow Solicitors)</div>
+    <a href="#">My account</a>
+    <a href="login">Sign out</a>
+  </div>
+{{/propositionHeader}}
+
+{{$content}}
+
+<main id="content" role="main">
+	<div class="inner-block">
+
+    <div class="global-breadcrumb">
+      <nav role="navigation">
+        <ol>
+          <li><a href="case-list">Case list</a></li>
+  	      <li>
+  					<a href="case">
+            {{^case_reference}}New case{{/case_reference}}
+            {{#case_reference}}{{case_reference}}{{/case_reference}}
+  					</a>
+          </li>
+  	      <li>Create mortgage</li>
+        </ol>
+      </nav>
+    </div><!-- global-breadcrumb -->
+
+    <h1 class="heading-xlarge">
+      <span class="heading-secondary">Create mortgage</span>
+      Mortgage created
+    </h1>
+
+    <div class="text">
+      <h2 class="heading-medium">What happens next</h2>
+			<p>
+				Your borrower(s) now need to visit the GOV.UK website to sign their
+				mortgage deed. When all borrowers have signed, you will be able to
+				apply to register.
+ 			</p>
+			<p>
+				The link and some suggested explanatory text have been provided below:
+			</p>
+
+			<div class="panel-simple">
+				<p>
+				To sign your mortgage deed, please follow the attached link. You will
+				be asked to identify yourself using GOV.UK Verify, and you can then
+				read and sign your mortgage deed. Everyone on the mortgage deed will
+				need to complete this process to submit the application.
+				</p>
+				<p>You will need:</p>
+				<ul>
+					<li>your passport and/or driving licence</li>
+					<li>a bank/credit card statement, if possible</li>
+					<li>the phone number and/or email address you've given us</li>
+				</ul>
+				<p><a href="/v3/citizen">charges-prototype.herokuapp.com/v3/citizen</a></p>
+			</div>
+
+		</div>
+
+
+    <p>
+      <a href="case-mortgage-handler">Back to case list</a>
+    </p>
+
+	</div>
+</main>
+
+{{/content}}
+
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+{{/bodyEnd}}
+
+{{/govuk_template}}

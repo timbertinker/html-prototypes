@@ -1,0 +1,72 @@
+{{<govuk_template}}
+
+	{{$pageTitle}}
+		Lender details
+	{{/pageTitle}}
+
+	{{$head}}
+		<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css" />
+	{{/head}}
+
+	{{$content}}
+		<main id="content" role="main">
+			<div class="inner-block">
+
+				<h1 class="heading-large">
+					<span class="heading-secondary">Step 2 of 6</span>
+					Lender details
+				</h1>
+
+				<div class="text">
+					<p>
+						This should accurately show the details of the lender you are
+						remortgaging with.
+					</p>
+				</div>
+
+				<div class="text division-primary">
+					<p class="lede">
+						Bank of England PLC<br>
+						12 Trinity Place,<br>
+						Regents Street,<br>
+						London<br>
+						NW10 6TQ
+					</p>
+				</div>
+
+				<h2 class="heading-medium">
+					Are these lender details correct?
+				</h2>
+
+				<form class="form" action="borrower-details" method="get">
+					<div class="form-group">
+						<fieldset class="inline">
+					    <label class="block-label" for="radio-inline-1">
+					      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+					      Yes
+					    </label>
+					    <label class="block-label" for="radio-inline-2">
+					      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+					      No
+					    </label>
+					  </fieldset>
+					</div>
+					<div class="form-group">
+						<button class="button">Next</button>
+						<p>
+							<a href="property-details">Back</a>
+						</p>
+					</div>
+				</form>
+
+			</div>
+		</main>
+	{{/content}}
+
+	{{$bodyEnd}}
+	  {{>includes/scripts}}
+	  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+	{{/bodyEnd}}
+
+{{/govuk_template}}

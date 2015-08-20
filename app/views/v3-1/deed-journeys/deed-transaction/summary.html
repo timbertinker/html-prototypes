@@ -1,0 +1,167 @@
+{{<govuk_template}}
+
+	{{$pageTitle}}
+		Review your mortgage deed
+	{{/pageTitle}}
+
+	{{$head}}
+		<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css" />
+		<style type="text/css">
+			table {
+				border-top: 1px solid #bfc1c3;
+				margin: 30px 0;
+			}
+			table th, table td {
+				padding-top: 20px;
+				padding-bottom: 20px;
+				vertical-align: top;
+			}
+			td:last-child {
+				padding-right: 0;
+				text-align: right;
+			}
+		</style>
+	{{/head}}
+
+	{{$content}}
+		<main id="content" role="main">
+			<div class="inner-block">
+
+				<h1 class="heading-large">Review your mortgage deed</h1>
+
+				<table>
+					<tr>
+						<th scope="row">Property details</th>
+						<td>
+							83 Lordship Park,<br>
+							London<br>
+							N16 5UP
+						</td>
+						<td>
+							<a href="property-details">Go to this step</a>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">Lender details</th>
+						<td>
+							Bank of England PLC<br>
+							12 Trinity Place,<br>
+							Regents Street,<br>
+							London<br>
+							NW10 6TQ
+						</td>
+						<td>
+							<a href="lender-details">Go to this step</a>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">Borrower details</th>
+						<td>
+							Peter Smith<br>
+							83 Lordship Park,<br>
+							London<br>
+							N16 5UP<br>
+							<br>
+							Sarah Jane Smith<br>
+							83 Lordship Park,<br>
+							London<br>
+							N16 5UP
+						</td>
+						<td>
+							<a href="borrower-details">Go to this step</a>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">Charging clause</th>
+						<td>
+							<div class="text">
+								The Mortgagor with full title guarantee charges the Property by way of
+								legal mortgage with payment of all moneys, obligation and liabilities
+								whatsoever whether for principal interest or otherwise which may now
+								or at any time in the future be due owing or incurred by the
+								Mortgagor and/or Borrower to the Lender (the “Secured Liabilities” as
+								defined in the Conditions.
+							</div>
+						</td>
+						<td>
+							<a href="charging-clause">Go to this step</a>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">Restriction</th>
+						<td>
+							<div class="text">
+								If the property is, or includes, registered land, the Lender and the
+								Mortgagor(s) apply to the Chief Land Registrar for a restriction to
+								be entered on the register that, no disposition of the registered
+								estate by the proprietor of the registered estate is to be registered
+								without a written consent signed by the proprietor for the time being
+								of the Charge date ___________ in favour of Bank of England Ltd
+								referred to in the Charges Register.
+							</div>
+						</td>
+						<td>
+							<a href="restrictions">Go to this step</a>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">Obligation</th>
+						<td>
+							<div class="text">
+								The Society has power under the mortgage conditions to make further
+								advances secured by the mortgage and is obliged to do so.
+							</div>
+						</td>
+						<td>
+							<a href="obligations">Go to this step</a>
+						</td>
+					</tr>
+				</table>
+
+				<div class="text">
+					<p>
+						If you’re happy with these details, we’ll send you a code which
+						you’ll need to enter on the next screen. Doing so confirms your
+						mortgage deed and sends it back to your conveyancer.
+					</p>
+					<p>
+						This means that you <b>don't need to sign a paper document</b>,
+						or get it witnessed.
+					</p>
+				</div>
+
+				<h2 class="heading-medium">How would you like to receive your code?</h2>
+
+				<form class="form">
+					<div class="form-group">
+						<fieldset>
+					    <label class="block-label" for="item-1">
+					      <input id="item-1" type="radio" name="item" value="Yes">
+					      By text message, to my mobile number ending <strong>0546</strong>
+					    </label>
+					    <label class="block-label" for="item-2">
+					      <input id="item-2" type="radio" name="item" value="Yes">
+					      By email, to <strong>peter.smith@gmail.com</strong>
+					    </label>
+					    <label class="block-label" for="item-3">
+					      <input id="item-3" type="radio" name="item" value="Yes">
+					      By email, to <strong>peter.smith@workmail.com</strong>
+					    </label>
+					  </fieldset>
+					</div>
+					<div class="form-group">
+						<a href="enter-auth" class="button">Send code</a>
+					</div>
+				</form>
+
+			</div>
+		</main>
+	{{/content}}
+
+	{{$bodyEnd}}
+	  {{>includes/scripts}}
+	  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+	{{/bodyEnd}}
+
+{{/govuk_template}}

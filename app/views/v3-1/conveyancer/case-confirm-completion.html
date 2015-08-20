@@ -1,0 +1,78 @@
+{{<govuk_template}}
+
+{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/public/stylesheets/application-v3-1.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$pageTitle}}
+  Confirm completion
+{{/pageTitle}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$propositionHeader}}
+  <div class="account">
+    <div>Andrew Turner (Ross Clulow Solicitors)</div>
+    <a href="#">My account</a>
+    <a href="login">Sign out</a>
+  </div>
+{{/propositionHeader}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  <div class="global-breadcrumb">
+    <nav role="navigation">
+      <ol>
+        <li><a href="case-list">Case list</a></li>
+	      <li>
+					<a href="case">
+          {{^case_reference}}New case{{/case_reference}}
+          {{#case_reference}}{{case_reference}}{{/case_reference}}
+					</a>
+        </li>
+	      <li>Case reference</li>
+      </ol>
+    </nav>
+  </div><!-- global-breadcrumb -->
+
+  <h1 class="form-title heading-xlarge">Confirm completion</h1>
+
+  <div class="text">
+    <p>Please confirm that the following date is the completion date to be added to the mortgage deed.</p>
+
+    <div class="service-notice expand-bottom">
+      <p><b>{{completion_date}}</b></p>
+    </div>
+
+    <p>Once you have confirmed this date, you will not be able to edit the mortgage deed.</p>
+  </div>
+
+	<form class="form" action="completion-handler" method="get">
+		<div class="form-group">
+			<label class="block-label" for="apply_immediately">
+				<input id="apply_immediately" type="checkbox" name="apply_immediately">
+				Apply to register this charge now
+			</label>
+		</div>
+		<div class="form-group">
+			<button type="submit" class="button">Next</button>
+			<p>
+				<a href="case-list">Cancel</a>
+			</p>
+		</div>
+	</form>
+
+</main>
+
+{{/content}}
+
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+{{/bodyEnd}}
+
+{{/govuk_template}}

@@ -1,0 +1,83 @@
+{{<govuk_template}}
+
+	{{$pageTitle}}
+		Borrower details
+	{{/pageTitle}}
+
+	{{$head}}
+		<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css" />
+	{{/head}}
+
+	{{$content}}
+		<main id="content" role="main">
+			<div class="inner-block">
+
+				<h1 class="heading-large">
+					<span class="heading-secondary">Step 3 of 6</span>
+					Borrower details
+				</h1>
+
+				<div class="text">
+					<p>
+						This should accurately show the details of anyone to be included on
+						the mortgage.
+					</p>
+				</div>
+
+				<div class="text division-primary">
+					<div class="grid-row">
+						<div class="column-half">
+							<p class="lede">
+								Peter James Smith<br>
+								83 Lordship Park,<br>
+								London<br>
+								N16 5UP
+							</p>
+						</div>
+						<div class="column-half">
+							<p class="lede">
+								Sarah Jane Smith<br>
+								83 Lordship Park,<br>
+								London<br>
+								N16 5UP
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<h2 class="heading-medium">
+					Are these borrower details correct?
+				</h2>
+
+				<form class="form" action="charging-clause" method="get">
+					<div class="form-group">
+						<fieldset class="inline">
+					    <label class="block-label" for="radio-inline-1">
+					      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+					      Yes
+					    </label>
+					    <label class="block-label" for="radio-inline-2">
+					      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+					      No
+					    </label>
+					  </fieldset>
+					</div>
+					<div class="form-group">
+						<button class="button">Next</button>
+						<p>
+							<a href="lender-details">Back</a>
+						</p>
+					</div>
+				</form>
+
+			</div>
+		</main>
+	{{/content}}
+
+	{{$bodyEnd}}
+	  {{>includes/scripts}}
+	  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+	{{/bodyEnd}}
+
+{{/govuk_template}}

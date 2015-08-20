@@ -1,0 +1,116 @@
+{{<govuk_template}}
+
+{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/public/stylesheets/application-v3-1.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$pageTitle}}
+  Create mortgage
+{{/pageTitle}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$propositionHeader}}
+  <div class="account">
+    <div>Andrew Turner (Ross Clulow Solicitors)</div>
+    <a href="#">My account</a>
+    <a href="login">Sign out</a>
+  </div>
+{{/propositionHeader}}
+
+{{$content}}
+
+<main id="content" role="main">
+	<div class="inner-block">
+
+    <div class="global-breadcrumb">
+      <nav role="navigation">
+        <ol>
+          <li><a href="case-list">Case list</a></li>
+  	      <li>
+  					<a href="case">
+            {{^case_reference}}New case{{/case_reference}}
+            {{#case_reference}}{{case_reference}}{{/case_reference}}
+  					</a>
+          </li>
+  	      <li>Create mortgage</li>
+        </ol>
+      </nav>
+    </div><!-- global-breadcrumb -->
+
+    <h1 class="heading-xlarge">
+      <span class="heading-secondary">Create mortgage</span>
+      Confirm borrower details
+    </h1>
+    <div class="text">
+      <p class="text">Check all details carefully before confirming.</p>
+    </div>
+
+    <div class="division-primary-top">
+
+      <h3 class="heading-medium collapse-top">
+				Borrower 1
+				<a href="#" class="font-xsmall" style="margin-left:8px;">
+		      edit details
+		    </a>
+			</h3>
+
+      <div class="text">
+        <dl class="definition-tabular-1-3-bold">
+          <dt>Name</dt>
+          <dd>Sarah Jane Smith</dd>
+          <dt>Email</dt>
+          <dd>sarah.smith@gmail.com</dd>
+          <dt>Mobile number</dt>
+          <dd>07964 123 321</dd>
+        </dl>
+      </div>
+
+      <h3 class="heading-medium">
+				Borrower 2
+				<a href="#" class="font-xsmall" style="margin-left:8px;">
+		      edit details
+		    </a>
+			</h3>
+
+      <div class="text">
+        <dl class="definition-tabular-1-3-bold">
+          <dt>Name</dt>
+          <dd>Peter James Smith</dd>
+          <dt>Email</dt>
+          <dd>peter.smith@gmail.com</dd>
+          <dt>Mobile number</dt>
+          <dd>07700 900 546</dd>
+        </dl>
+      </div>
+
+    </div>
+
+
+
+
+    <form action="create-mortgage-md-ref" method="get" class="form division-primary-top">
+      <div class="form-group">
+        <label for="check-1" class="block-label">
+          <input id="check-1" type="checkbox" name="agree-execution">
+          I confirm these details are correct
+        </label>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="button">Next</button>
+      </div>
+    </form>
+
+  </div>
+</main>
+
+{{/content}}
+
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+{{/bodyEnd}}
+
+{{/govuk_template}}
