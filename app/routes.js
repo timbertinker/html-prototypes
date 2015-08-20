@@ -42,7 +42,8 @@ module.exports = {
       // To help. A list of all the session vars used:
       console.log('new_case: ' + req.session.new_case);
       console.log('case_reference: ' + req.session.case_reference);
-      console.log('case_status: ' + req.session.case_status);
+      console.log('case_status: ' + req.session.case_status);   
+      console.log('title_number: ' + req.session.title_number);
       console.log('property: ' + req.session.property);
       console.log('borrower_1: ' + req.session.borrower_1);
       console.log('borrower_2: ' + req.session.borrower_2);
@@ -96,6 +97,7 @@ module.exports = {
           req.session.case_reference = '83 Lordship Park';
         }
         req.session.case_status = '<span class="highlight-yellow">Mortgage deed signed</span>';
+        req.session.title_number = 'GHR67832';
         req.session.property = true;
         req.session.borrower_1 = true;
         req.session.borrower_2 = true;
@@ -141,6 +143,7 @@ module.exports = {
       res.render('v3-1/conveyancer/case', {
         "case_reference": req.session.case_reference,
         "case_status": req.session.case_status,
+        "title_number": req.session.title_number,
         "property": req.session.property,
         "borrower_1": req.session.borrower_1,
         "borrower_2": req.session.borrower_2,
@@ -164,22 +167,34 @@ module.exports = {
     });
 
     // Case Find Property - send this page a session var:
+    // app.get('/v3-1/conveyancer/case-find-property', function (req, res) {
+    //   req.session.building_search = false;
+    //   res.render('v3-1/conveyancer/case-find-property', {
+    //     "case_reference": req.session.case_reference
+    //   });
+    // });
+
+    // Add property - title number search - title_number - send this page a session var:
     app.get('/v3-1/conveyancer/case-find-property', function (req, res) {
-      req.session.building_search = false;
+      if (req.query.title_number !== '') {
+        req.session.title_number = req.query.title_number;
+      }
       res.render('v3-1/conveyancer/case-find-property', {
+        "title_number": req.session.title_number,
         "case_reference": req.session.case_reference
       });
     });
 
+
     // Case Find Property (results)
-    app.get('/v3-1/conveyancer/case-property-results', function (req, res) {
-      if (req.query.building !== '') {
-        req.session.building_search = true;
-      }
-      res.render('v3-1/conveyancer/case-property-results', {
-        "building_search": req.session.building_search
-      });
-    });
+    // app.get('/v3-1/conveyancer/case-property-results', function (req, res) {
+    //   if (req.query.building !== '') {
+    //     req.session.building_search = true;
+    //   }
+    //   res.render('v3-1/conveyancer/case-property-results', {
+    //     "building_search": req.session.building_search
+    //   });
+    // });
 
     // Case Add Borrower - send this page a session var:
     app.get('/v3-1/conveyancer/case-add-borrower', function (req, res) {
@@ -199,6 +214,7 @@ module.exports = {
         "case_reference": req.session.case_reference
       });
     });
+
 
     // Add mortgage value - send this page a session var:
     app.get('/v3-1/conveyancer/case-mortgage-value', function (req, res) {
