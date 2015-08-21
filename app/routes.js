@@ -292,7 +292,7 @@ module.exports = {
     app.get('/v3-1/conveyancer/case-mortgage-handler', function (req, res) {
       req.session.deed_created = true;
       req.session.case_status = 'Mortgage deed created';
-      res.redirect('/v3-1/conveyancer/case');
+      res.redirect('/v3-1/conveyancer/case-list');
     });
 
     // Mortgage value handler
