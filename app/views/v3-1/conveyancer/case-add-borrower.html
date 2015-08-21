@@ -100,30 +100,36 @@
       </fieldset>
     </div>
 
-    <div class="form-group" id="correspondance">
-      <div class="address-field-group">
-        <label class="form-label-bold" for="address-1">
-					Borrower’s current address
-					<span class="form-hint">As it appears on the register</span>
-				</label>
-        <input type="text" id="address-1" class="form-control expand-bottom-quarter"
-          {{#property}} value="83 Lordship Park"{{/property}}
-          {{^property}} value=""{{/property}}
-        >
-        <input type="text" class="form-control expand-bottom-quarter"
-          {{#property}} value="London"{{/property}}
-          {{^property}} value=""{{/property}}
-        >
-        <input type="text" class="form-control expand-bottom-quarter"
-          {{#property}} value="N16 5UP"{{/property}}
-          {{^property}} value=""{{/property}}
-        >
-        <input type="text" class="form-control expand-bottom-quarter" value="">
-        <input type="text" class="form-control expand-bottom-quarter" value="">
-        <input type="text" class="form-control expand-bottom-quarter" value="">
-      </div>
-      <!--<p><a href="#" class="font-xsmall duplicator">Add another correspondence address</a></p>-->
+
+    <div class="form-group">
+        <fieldset>
+          <legend>
+            <span class="form-label-bold">
+              Borrower’s current address
+            </span>
+          </legend>
+          <div class="form-group form-group-compound">
+            <label class="block-label selected" for="same-address" data-target="different-address">
+              <input id="same-address" checked="true" type="checkbox" value="Same address as property" aria-controls="different-address" aria-expanded="true">
+              Same as property address
+            </label>
+          </div>
+          <div class="panel-indent js-hidden" id="different-address" aria-hidden="false" style="display: none;">
+            <div class="address-field-group">
+              <label class="form-label-bold" for="address-1">
+                <span class="form-hint">Add address, as it appears on the register</span>
+              </label>
+              <input type="text" id="address-1" class="form-control expand-bottom-quarter" value="">
+              <input type="text" class="form-control expand-bottom-quarter" value="">
+              <input type="text" class="form-control expand-bottom-quarter" value="">
+              <input type="text" class="form-control expand-bottom-quarter" value="">
+              <input type="text" class="form-control expand-bottom-quarter" value="">
+              <input type="text" class="form-control expand-bottom-quarter" value="">
+            </div>
+          </div>
+        </fieldset>
     </div>
+
 
     <h4 class="heading-medium">Contact information</h4>
     <div class="service-notice expand-bottom font-xsmall text">
@@ -175,7 +181,9 @@
 {{/content}}
 
 {{$bodyEnd}}
+<script src="/public/javascripts/jquery-1.11.2.js"></script>
   {{>includes/scripts}}
+
   <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
   <script type="text/javascript">
     $(function() {
