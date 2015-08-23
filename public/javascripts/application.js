@@ -1,5 +1,5 @@
 function gotoRoot() {
-  if (window.location.href.indexOf("/v3-1") > 1) {
+  if ((window.location.href.indexOf("/v3-1") > 1) || (window.location.href.indexOf("/v3-2") > 1)) {
   	window.location.href = '/v3-1/';
   }
   else {

@@ -166,14 +166,6 @@ module.exports = {
       });
     });
 
-    // Case Find Property - send this page a session var:
-    // app.get('/v3-1/conveyancer/case-find-property', function (req, res) {
-    //   req.session.building_search = false;
-    //   res.render('v3-1/conveyancer/case-find-property', {
-    //     "case_reference": req.session.case_reference
-    //   });
-    // });
-
     // Add property - title number search - title_number - send this page a session var:
     app.get('/v3-1/conveyancer/case-find-property', function (req, res) {
       if (req.query.title_number !== '') {
@@ -184,17 +176,6 @@ module.exports = {
         "case_reference": req.session.case_reference
       });
     });
-
-
-    // Case Find Property (results)
-    // app.get('/v3-1/conveyancer/case-property-results', function (req, res) {
-    //   if (req.query.building !== '') {
-    //     req.session.building_search = true;
-    //   }
-    //   res.render('v3-1/conveyancer/case-property-results', {
-    //     "building_search": req.session.building_search
-    //   });
-    // });
 
     // Case Add Borrower - send this page a session var:
     app.get('/v3-1/conveyancer/case-add-borrower', function (req, res) {
