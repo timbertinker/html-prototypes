@@ -50,7 +50,7 @@
     <p>Once you have confirmed this date, you will not be able to edit the mortgage deed.</p>
   </div>
 
-	<form class="form" action="completion-handler" method="get">
+<!-- 	<form class="form" action="completion-handler" method="get">
 		<div class="form-group">
 			<label class="block-label" for="apply_immediately">
 				<input id="apply_immediately" type="checkbox" name="apply_immediately">
@@ -58,12 +58,35 @@
 			</label>
 		</div>
 		<div class="form-group">
-			<button type="submit" class="button">Next</button>
+			<button type="submit" class="button">Confirm completion</button>
 			<p>
 				<a href="case-list">Cancel</a>
 			</p>
 		</div>
-	</form>
+	</form> -->
+
+  <form class="form" action="completion-handler" method="get">
+    <div class="form-group">
+      <fieldset class="inline">
+        <legend class="form-label-bold">Do you want to apply to register this charge now?</legend>
+          <label class="block-label" for="apply_now">
+            <input id="apply_now" type="radio" name="apply_immediately" value="Yes">
+            Yes
+          </label>
+          <label class="block-label" for="apply_later">
+            <input id="apply_later" type="radio" name="apply_immediately" value="No">
+            No
+          </label>
+      </fieldset>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="button">Confirm completion</button>
+      <p>
+        <a href="case-list">Cancel</a>
+      </p>
+    </div>
+  </form>
+
 
 </main>
 

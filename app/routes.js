@@ -305,7 +305,7 @@ module.exports = {
     // Completion handler
     app.get('/v3-1/conveyancer/completion-handler', function (req, res) {
       req.session.case_status = 'Completion confirmed';
-      if (req.query.apply_immediately === 'on') {
+      if (req.query.apply_immediately === 'Yes') {
         res.redirect('/v3-1/conveyancer/case-apply-deed');
       } else {
         res.redirect('/v3-1/conveyancer/case');
@@ -316,7 +316,7 @@ module.exports = {
     app.get('/v3-1/conveyancer/apply-to-register-handler', function (req, res) {
       req.session.applied = true;
       req.session.case_status = '<span class="highlight-yellow">Applied to Register</span>';
-      res.redirect('/v3-1/conveyancer/case');
+      res.redirect('/v3-1/conveyancer/case-list');
     });
 
     // end v3-1 -------------------------------------------------------------
