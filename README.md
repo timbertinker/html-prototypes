@@ -29,6 +29,12 @@ Install Node.js (see requirements)
 git clone git@github.com:LandRegistry/charges-html-prototypes.git
 ```
 
+#### Bring in the GOV.UK style guide submodule
+
+```
+git submodule update --init
+```
+
 #### Install dependencies
 
 ```
