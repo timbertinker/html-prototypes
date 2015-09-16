@@ -83,7 +83,7 @@ module.exports = {
     });
 
     //Redirect return from verify to v3.1
-    app.get('/v2/step4/step-2-identity-verified?requestId=sign-mortgage&action=sign-in', function(req, res) {
+    app.get('/v2/step4/step-2-identity-verified', function(req, res) {
       res.redirect('/v3-1/citizen/identity-verified')
     });
 
