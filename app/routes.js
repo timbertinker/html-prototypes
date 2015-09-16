@@ -10,7 +10,7 @@ module.exports = {
     // add your routes here
 
     // V3.2 - citizen deed only - Santander special -----------------------------
-    
+
     // CITIZEN --------------------
 
     // citizen - not happy to proceed - catcher
@@ -22,7 +22,7 @@ module.exports = {
         next();
       }
     });
-    
+
 
     // Once the CITIZEN demo journey is complete, set deed_signed to true
     app.get('/v3-2/deed-journeys/deed-transaction/deed-agreed', function(req, res) {
@@ -42,7 +42,7 @@ module.exports = {
       // To help. A list of all the session vars used:
       console.log('new_case: ' + req.session.new_case);
       console.log('case_reference: ' + req.session.case_reference);
-      console.log('case_status: ' + req.session.case_status);   
+      console.log('case_status: ' + req.session.case_status);
       console.log('title_number: ' + req.session.title_number);
       console.log('property: ' + req.session.property);
       console.log('borrower_1: ' + req.session.borrower_1);
@@ -74,12 +74,17 @@ module.exports = {
         next();
       }
     });
-    
+
 
     // Once the CITIZEN demo journey is complete, set deed_signed to true
     app.get('/v3-1/deed-journeys/deed-transaction/deed-agreed', function(req, res) {
       req.session.deed_signed = true;
       res.render('v3-1/deed-journeys/deed-transaction/deed-agreed');
+    });
+
+    //Redirect return from verify to v3.1
+    app.get('/v2/step4/step-2-identity-verified?requestId=sign-mortgage&action=sign-in', function(req, res) {
+      res.redirect('/v3-1/citizen/identity-verified')
     });
 
     // CONVEYANCER ----------------
