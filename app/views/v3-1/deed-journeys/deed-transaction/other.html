@@ -1,7 +1,7 @@
 {{<govuk_template}}
 
 	{{$pageTitle}}
-		Property details
+		Other terms and conditions
 	{{/pageTitle}}
 
 	{{$head}}
@@ -14,30 +14,38 @@
 			<div class="inner-block">
 
 				<h1 class="heading-large">
-					<span class="heading-secondary">Step 1 of 7</span>
-					Property details
+					<span class="heading-secondary">Step 7 of 7</span>
+					Additional provisions
 				</h1>
-
-				<div class="text">
-					<p>
-						This should accurately show the address of the property that you are
-						remortgaging.
-					</p>
-				</div>
 
 				<div class="text division-primary">
 					<p class="lede">
-						83 Lordship Park,<br>
-						London<br>
-						N16 5UP
+						The mortgage incorporates the Bank of England Ltd Mortgage
+						Conditions (England and Wales) 2015 Edition, a copy of which has
+						been safely received by the Borrower who covenants to observe and
+						comply with the same.</br>
+						By signing this Mortgage Deed the Borrower:</br>
+						Confirms having received and read the Mortgage Offer (as defined in
+						the Mortgage Conditions)</br>
+						Accepts the terms of the Mortgage Offer (as defined in the Mortgage
+						Conditions)</br>
+						Agrees to perform and observe in full all obligations contained in
+						the Mortgage Offer as if set out in full in this Mortgage Deed</br>
+					</p>
+				</div>
+
+				<div class="text">
+					<p>
+						These are other terms and conditions that the Lender has asked to
+						be included in the mortgage deed.
 					</p>
 				</div>
 
 				<h2 class="heading-medium">
-					Are these property details correct?
+					Are you happy to proceed?
 				</h2>
 
-				<form class="form" action="lender-details" method="get">
+				<form class="form" action="summary" method="get">
 					<div class="form-group">
 						<fieldset class="inline">
 					    <label class="block-label" for="radio-inline-1">
@@ -53,7 +61,7 @@
 					<div class="form-group">
 						<button class="button">Next</button>
 						<p>
-							<a href="/v3-1/citizen/identity-verified">Back</a>
+							<a href="obligations">Back</a>
 						</p>
 					</div>
 				</form>
