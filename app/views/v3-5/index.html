@@ -1,0 +1,56 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+	HTML prototypes : version 3
+{{/pageTitle}}
+
+{{$head}}
+	<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+	<div class="global-breadcrumb">
+    <nav role="navigation">
+      <ol>
+        <li><a href="/">HTML Prototypes</a></li>
+        <li><b>V3.5 Santander Deed</b></li>
+      </ol>
+    </nav>
+  </div><!-- global-breadcrumb -->
+
+	<h1 class="heading-xlarge">
+		HTML Prototypes
+	</h1>
+	<ol>
+		<li>
+			<a href="/v3-5/conveyancer/login"><b>Conveyancer</b> creates a new case</a>
+		</li>
+		<li>
+			<a href="/v3-5/citizen">
+				<b>Citizen</b> - start page
+			</a>
+			<br>
+			<a href="/v3-5/citizen/identity-verified">
+				<b>Citizen</b> (first of a couple) “signs” mortgage, after Verify
+			</a>
+			<br>
+			<a href="/v3-5/citizen/identity-verified"><b>Citizen</b> (first of a couple) “signs” mortgage, after Verify, different mortgage clause example</a>
+		</li>
+		<li>
+			<a href="/v3-5/conveyancer/login?preserve=true"><b>Conveyancer</b> submits mortgage</a>
+		</li>
+	</ol>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
