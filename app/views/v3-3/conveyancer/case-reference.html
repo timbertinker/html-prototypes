@@ -1,0 +1,73 @@
+{{<govuk_template}}
+
+{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/public/stylesheets/application-v3-1.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$pageTitle}}
+  Add a case reference
+{{/pageTitle}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$propositionHeader}}
+  <div class="account">
+    <div>Andrew Turner (Ross Clulow Solicitors)</div>
+    <a href="#">My account</a>
+    <a href="login">Sign out</a>
+  </div>
+{{/propositionHeader}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  <div class="global-breadcrumb">
+    <nav role="navigation">
+      <ol>
+        <li><a href="case-list">Case list</a></li>
+	      <li>
+					<a href="case">
+          {{^case_reference}}New case{{/case_reference}}
+          {{#case_reference}}{{case_reference}}{{/case_reference}}
+					</a>
+        </li>
+	      <li>Case reference</li>
+      </ol>
+    </nav>
+  </div><!-- global-breadcrumb -->
+
+	<h1 class="heading-large">Case reference</h1>
+
+	<div class="text">
+
+		<form class="form" action="case-reference-handler" method="get">
+
+			<div class="form-group">
+				<label class="form-label" for="caseref">
+					Case reference:
+				</label>
+				<input type="text" value="{{case_reference}}" class="form-control" id="caseref" name="caseref">
+			</div>
+
+			<div class="form-group">
+				<input type="submit" class="button" value="Create reference">
+        <div>
+          <a href="case" class="font-xsmall">Cancel</a>
+        </div>
+			</div>
+
+		</form>
+
+	</div>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

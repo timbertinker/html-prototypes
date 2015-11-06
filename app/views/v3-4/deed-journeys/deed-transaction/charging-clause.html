@@ -1,0 +1,67 @@
+{{<govuk_template}}
+
+	{{$pageTitle}}
+		Charging clause
+	{{/pageTitle}}
+
+	{{$head}}
+		<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css" />
+	{{/head}}
+
+	{{$content}}
+		<main id="content" role="main">
+			<div class="inner-block">
+
+				<h1 class="heading-large">
+					<span class="heading-secondary">Read your mortgage: Step 4 of 6</span>
+					Charging clause
+				</h1>
+
+				<div class="text division-primary">
+					<p class="lede">
+						The Mortgagor charges the property by way of legal mortgage with the payment and discharge of all monies now or at any future time due to the Lender from the person or persons named as the Borrower under each and every Loan Agreement now or at any time made between the Lender and the Borrower and all costs, charges and expenses incurred by the Lender in connection with the preservation, protection or enforcement of the lender’s rights and interests under this Charge.
+					</p>
+				</div>
+
+				<div class="text">
+					<p>
+						This is the legal wording needed to make your mortgage effective in law.
+					</p>
+				</div>
+
+				<h2 class="heading-medium">
+					Are you happy to proceed?
+				</h2>
+
+				<form class="form" action="restrictions" method="get">
+					<div class="form-group">
+						<fieldset class="inline">
+					    <label class="block-label" for="radio-inline-1">
+					      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+					      Yes
+					    </label>
+					    <label class="block-label" for="radio-inline-2">
+					      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+					      No
+					    </label>
+					  </fieldset>
+					</div>
+					<div class="form-group">
+						<button class="button">Next</button>
+						<p>
+							<a href="borrower-details">Back</a>
+						</p>
+					</div>
+				</form>
+
+			</div>
+		</main>
+	{{/content}}
+
+	{{$bodyEnd}}
+	  {{>includes/scripts}}
+	  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+	{{/bodyEnd}}
+
+{{/govuk_template}}

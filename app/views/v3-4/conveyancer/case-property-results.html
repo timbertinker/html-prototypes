@@ -1,0 +1,140 @@
+{{<govuk_template}}
+
+{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/public/stylesheets/application-v3-1.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$pageTitle}}
+  Create a new case
+{{/pageTitle}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$propositionHeader}}
+  <div class="account">
+    <div>Andrew Turner (Ross Clulow Solicitors)</div>
+    <a href="#">My account</a>
+    <a href="login">Sign out</a>
+  </div>
+{{/propositionHeader}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  <div class="global-breadcrumb">
+    <nav role="navigation">
+      <ol>
+        <li><a href="case-list">Case list</a></li>
+	      <li>
+					<a href="case">
+          {{^case_reference}}New case{{/case_reference}}
+          {{#case_reference}}{{case_reference}}{{/case_reference}}
+					</a>
+        </li>
+	      <li><a href="case-find-property">Add a property</a></li>
+        <li>Search results</li>
+      </ol>
+    </nav>
+  </div><!-- global-breadcrumb -->
+
+
+	<h1 class="heading-large">
+		Search results
+	</h1>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+			{{#building_search}}
+      	<h2 class="font-xsmall expand-bottom-half">1 result found</h2>
+			{{/building_search}}
+			{{^building_search}}
+      	<h2 class="font-xsmall expand-bottom-half">3 results found</h2>
+			{{/building_search}}
+
+			<ol class="search-results-listing">
+			  <li>
+			    <h3 class="heading-small">
+			      83 Lordship Park, London, N16 5UP
+			    </h3>
+			    <div class="font-xsmall">
+			      Title number HP725748<br>
+			      <b>Freehold</b>
+			    </div>
+          <div>
+            <a href="case-property-handler"><b>Select this property</b></a>
+          </div>
+
+			    <ol class="nested-child">
+			      <li>
+			        <h3 class="heading-small">
+			          Flat 1, 83 Lordship Park, London, N16 5UP
+			        </h3>
+			        <div class="font-xsmall">
+			          Title number HP725748<br>
+			          <b>Leasehold</b>
+			        </div>
+		          <div>
+		            <a href="#"><b>Select this property</b></a>
+		          </div>
+			      </li>
+			      <li>
+			        <h3 class="heading-small">
+			          Flat 2, 83 Lordship Park, London, N16 5UP
+			        </h3>
+			        <div class="font-xsmall">
+			          Title number HP725748<br>
+			          <b>Leasehold</b>
+			        </div>
+		          <div>
+		            <a href="#"><b>Select this property</b></a>
+		          </div>
+			      </li>
+			    </ol>
+			  </li>
+
+				{{^building_search}}
+
+			  <li>
+			    <h3 class="heading-small">
+			      84 Lordship Park, London, N16 5UP
+			    </h3>
+			    <div class="font-xsmall">
+			      Title number HP725748<br>
+			      <b>Freehold</b>
+			    </div>
+          <div>
+            <a href="#"><b>Select this property</b></a>
+          </div>
+				</li>
+
+			  <li>
+			    <h3 class="heading-small">
+			      85 Lordship Park, London, N16 5UP
+			    </h3>
+			    <div class="font-xsmall">
+			      Title number HP725748<br>
+			      <b>Freehold</b>
+			    </div>
+          <div>
+            <a href="#"><b>Select this property</b></a>
+          </div>
+				</li>
+
+				{{/building_search}}
+			</ol>
+
+    </div>
+  </div>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+{{/bodyEnd}}
+
+{{/govuk_template}}
