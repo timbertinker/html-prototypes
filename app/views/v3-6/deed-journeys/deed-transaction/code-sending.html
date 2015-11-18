@@ -1,0 +1,50 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Sending
+{{/pageTitle}}
+
+{{$head}}
+  {{>includes/head}}
+  <link href="/public/vendor/leaflet/leaflet.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/alphagov-static.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/land-registry-elements.css" media="screen" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+    #processing {
+      text-align: center;
+    }
+    #processing img {
+      width: 40px;
+      margin: 0 auto;
+    }
+  </style>
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+  {{>digital-register/includes/banner}}
+
+  <div id="processing" class="expand">
+    <h1 class="heading-large">Sending...</h1>
+    <div>
+      <img src="/public/images/loader.gif">
+    </div>
+  </div>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript">
+   var timeoutID = window.setTimeout(move, 1000);
+  function move() {
+    window.location.href = 'enter-auth';
+  }
+  </script>
+{{/bodyEnd}}
+
+{{/govuk_template}}

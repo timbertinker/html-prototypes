@@ -1,0 +1,77 @@
+{{<govuk_template}}
+
+{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/public/stylesheets/application-v3-1.css" media="screen" rel="stylesheet" type="text/css">
+  <style>
+    .external-link:after {
+     	background-image: url(/public/lr-style-guide/lr-styleguide/images/external-links/external-link.png);
+    	content: "\A0\A0\A0\A0";
+   		background-position: right 0px;
+   		background-position: right 0px;
+     	background-repeat: no-repeat;
+    } 
+  </style>
+
+{{/head}}
+
+{{$pageTitle}}
+  Applied to register
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main">
+
+	<h1 class="heading-xlarge">
+		Applied to register
+	</h1>
+
+	<div class="text">
+		<p class="lede">
+			You've successfully applied to register this charge.
+		</p>
+		<p>
+			<a href="#" class="external-link" >Download proof of application (PDF, 0.8Mb)</a>
+		</p>
+		<p>
+			You can download proof of your application at any time from the case details page.
+		</p>
+	</div>
+
+	<h2 class="heading-large">
+		What happens next
+	</h2>
+	<div class="text">
+		<ul>
+			<li>
+				Your application will be added to the Daylist in the standard priority order
+			</li>
+			<li>
+				A caseworker will be assigned to review and apply the changes
+			</li>
+			<li>
+				If there are any issues with the application, they will contact you
+			</li>
+			<li>
+				When the charge is registered, this will be shown on the case list and an updated office copy will be attached as a PDF
+			</li>
+		</ul>
+	</div>
+
+	<div class="text">
+		<p>
+			<a href="apply-to-register-handler">Back to case list</a>
+		</p>
+	</div>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+{{/bodyEnd}}
+
+{{/govuk_template}}
