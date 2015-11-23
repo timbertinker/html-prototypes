@@ -1,7 +1,7 @@
 {{<govuk_template}}
 
 {{$pageTitle}}
-	HTML prototypes
+	MVP Prototype
 {{/pageTitle}}
 
 {{$head}}
@@ -12,64 +12,22 @@
 {{$content}}
 
 <main id="content" role="main">
+	<h1 class="heading-xlarge">
+		Digital Mortgages MVP Prototype
+	</h1>
 
-	<h1 class="heading-xlarge">HTML Prototypes</h1>
-
-	<h2 class="heading-medium">Latest prototype versions</h2>
-	<p>“Edge” prototypes, subject to change without notice</p>
 	<ul>
-		<li>
-			<a href="/v3-6">Version 3.6</a>
-		</li>
-		<li>
-			<a href="/v3-5">Version 3.5 - Santander Deed</a>
-		</li>
-
-		<li>
-			<a href="/v3-4">Version 3.4 - Shawbrook Deed</a>
-		</li>
-		<li>
-			<a href="/v3-4-1">Version 3.4.1 - Shawbrook Deed - Alternate</a>
-		</li>
-		<li>
-			<a href="/v3-1">Version 3.1</a>
-		</li>
-		<li>
-			<a href="/v3-3">Version 3.3</a>
-		</li>
+		<li><a href="/citizen"><b>Full Journey</b> Including Verify</a></li>
 	</ul>
-
-	<h2 class="heading-large">Private beta versions</h2>
-	<p>Versions of the prototype that reflect private beta delivery</p>
 	<ul>
-		<li>
-			<a href="/v3">Version 3</a>
-		</li>
-		<li>
-			<a href="/v2">Version 2</a>
-		</li>
-		<li>
-			<a href="/deed-journeys">Alternate deed journeys</a>
-		</li>
+		<li><a href="/citizen/identity-verified"><b>Happy Path</b> Journey AFTER Verify</a></li>
+		<li><a href="/citizen/identity-unverified"><b>Sad Path</b> Part Journey AFTER Verify</a></li>
+		<li><a href="/conveyancer/login"><b>Conveyancer</b> creates a new case</a></li>
+		<li><a href="/mvp/citizen/identity-verified"><b>Citizen</b> (first of a couple) “signs” mortgage, after Verify, different mortgage clause example</a></li>
+		<li><a href="/mvp/conveyancer/login?preserve=true"><b>Conveyancer</b> submits mortgage</a></li>
+		<li><a href="/mvp/deed-journeys/deed-transaction/deed-agreed_single"><b>Deed Signed</b> by a single individual</a></li>
+		<li><a href="/mvp/deed-journeys/deed-transaction/deed-agreed"><b>Deed Signed</b> by 2nd individual of a couple</a></li>
 	</ul>
-
-	<h3 class="heading-medium">Previous Versions</h3>
-	<p>
-		Historical versions along with the dates they were active.
-	</p>
-	<ul>
-		<li>
-			<a href="/v1-2">v1.2: 28/02/2015 - 24/07/2015</a>
-		</li>
-		<li>
-			<a href="/v1-1">v1.1: 14/02/2015 - 27/02/2015</a>
-		</li>
-		<li>
-			<a href="/v1">v1: 05/01/2015 - 13/02/2015</a>
-		</li>
-	</ul>
-
-
 </main>
 
 {{/content}}
