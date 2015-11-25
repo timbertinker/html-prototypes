@@ -1,0 +1,74 @@
+{{<govuk_template}}
+
+	{{$pageTitle}}
+	Mortgage Deed Signed
+	{{/pageTitle}}
+
+	{{$head}}
+		<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css" />
+
+	{{/head}}
+
+	{{$content}}
+		<main id="content" role="main">
+			<div class="inner-block">
+
+				<div class="deed-successful">
+
+					<h3 class="heading-large">Mortgage deed signed</h3>
+
+					<p>
+						You’ve digitally signed your mortgage deed.
+					</p>
+
+					<!-- div class="service-notice expand-bottom">
+					<p>The following people <b>still need to sign the mortgage deed</b></p>
+		  			<ul style="margin-top: 15px;">
+		  				<li>Sarah Jane Smith</li>
+					</ul>
+						<p>
+							<a href="#"><b>Back to start</b></a>
+						</p>
+					</div>
+
+					<p>
+						A confirmation email has been sent to <b>peter.smith@gmail.com</b>,
+						which you should keep for your records.
+					</p-->
+				</div>
+					<h2 class="heading-medium">What happens next?</h2>
+
+					<p >Now everyone has signed the deed:</p>
+					<ul>
+						<li>
+							Your conveyancer will comlplete your mortgage and submit to the Land Registry
+						</li>
+						<li>
+							The Land Registry will then update your title records to reflect the change
+						</li>
+					</ul>
+
+					<p>
+						The time this takes will vary depending on the complexity of the
+						transaction.
+					</p>
+
+					<div class="division-standard-top">
+						<ul>
+							<li><a href="#">What did you think of this service?</a> (Takes 30 seconds)</li>
+							<li><a href="#">More about the Land Registry</a></li>
+						</ul>
+					</div>
+
+
+			</div>
+		</main>
+	{{/content}}
+
+	{{$bodyEnd}}
+	  {{>includes/scripts}}
+	  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+	{{/bodyEnd}}
+
+{{/govuk_template}}
