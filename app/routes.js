@@ -1,7 +1,36 @@
-module.exports = {
-  bind : function (app) {
+var express = require('express');
+var router = express.Router();
 
-    app.get('/', function (req, res) {
+////////////
+// examples
+////////////
+
+
+// router.get('/', function (req, res) {
+//   res.render('index');
+// });
+
+// router.get('/examples/template-data', function (req, res) {
+//   res.render('examples/template-data', { 'name' : 'Foo' });
+// });
+
+
+
+
+//     router.get('/MS-v3/case4', function (req, res) {
+//       res.render('MS-v3/case4', { 'title' : 'Case', 'ref' : 'REF0782', 'type' : 'Mortgage' });
+//     });
+
+
+
+// module.exports = router;
+
+
+
+// module.exports = {
+//   bind : function (app) {
+
+    router.get('/', function (req, res) {
       // ALWAYS flush sessions if you're at the root index:
       req.session = null;
       res.render('index');
@@ -14,7 +43,7 @@ module.exports = {
     // CITIZEN --------------------
 
     // citizen - not happy to proceed - catcher
-    app.get('/v3-2/deed-journeys/deed-transaction/*', function(req, res, next) {
+    router.get('/v3-2/deed-journeys/deed-transaction/*', function(req, res, next) {
       var answer = req.query['radio-inline-group'];
       if (answer === 'No') {
         res.redirect('/v3-2/deed-journeys/deed-transaction/not-happy-to-proceed');
@@ -25,7 +54,7 @@ module.exports = {
 
 
     // Once the CITIZEN demo journey is complete, set deed_signed to true
-    app.get('/v3-2/deed-journeys/deed-transaction/deed-agreed', function(req, res) {
+    router.get('/v3-2/deed-journeys/deed-transaction/deed-agreed', function(req, res) {
       req.session.deed_signed = true;
       res.render('v3-2/deed-journeys/deed-transaction/deed-agreed');
     });
@@ -33,7 +62,7 @@ module.exports = {
 
     // V3.1 --------------------------------------------------------
 
-    app.get('/v3-1/conveyancer/*', function(req, res, next) {
+    router.get('/v3-1/conveyancer/*', function(req, res, next) {
 
       var n = req.session.views || 0;
       req.session.views = ++n;
@@ -66,7 +95,7 @@ module.exports = {
     // CITIZEN --------------------
 
     // citizen - not happy to proceed - catcher
-    app.get('/v3-1/deed-journeys/deed-transaction/*', function(req, res, next) {
+    router.get('/v3-1/deed-journeys/deed-transaction/*', function(req, res, next) {
       var answer = req.query['radio-inline-group'];
       if (answer === 'No') {
         res.redirect('/v3-1/deed-journeys/deed-transaction/not-happy-to-proceed');
@@ -77,20 +106,20 @@ module.exports = {
 
 
     // Once the CITIZEN demo journey is complete, set deed_signed to true
-    app.get('/v3-1/deed-journeys/deed-transaction/deed-agreed', function(req, res) {
+    router.get('/v3-1/deed-journeys/deed-transaction/deed-agreed', function(req, res) {
       req.session.deed_signed = true;
       res.render('v3-1/deed-journeys/deed-transaction/deed-agreed');
     });
 
     //Redirect return from verify to v3.1
-    app.get('/v2/step4/step-2-identity-verified', function(req, res) {
+    router.get('/v2/step4/step-2-identity-verified', function(req, res) {
       res.redirect('/v3-1/citizen/identity-verified')
     });
 
     // CONVEYANCER ----------------
 
     // Sign in page ALWAYS flushes the session UNLESS we're coming back from index
-    app.get('/v3-1/conveyancer/login', function (req, res) {
+    router.get('/v3-1/conveyancer/login', function (req, res) {
       // destroy the session if there's no "preserve" query
       if (typeof req.query.preserve === 'undefined') {
         req.session = null;
@@ -120,7 +149,7 @@ module.exports = {
     });
 
     // Case List - send this page some session vars:
-    app.get('/v3-1/conveyancer/case-list', function (req, res) {
+    router.get('/v3-1/conveyancer/case-list', function (req, res) {
       res.render('v3-1/conveyancer/case-list', {
         "new_case": req.session.new_case,
         "case_reference": req.session.case_reference,
@@ -132,7 +161,7 @@ module.exports = {
     });
 
     // Case - send this page some session vars:
-    app.get('/v3-1/conveyancer/case', function (req, res) {
+    router.get('/v3-1/conveyancer/case', function (req, res) {
       req.session.new_case = true;
       if (
         typeof req.session.case_status === 'undefined' &&
@@ -165,14 +194,14 @@ module.exports = {
     });
 
     // Case Reference - send this page a session var:
-    app.get('/v3-1/conveyancer/case-reference', function (req, res) {
+    router.get('/v3-1/conveyancer/case-reference', function (req, res) {
       res.render('v3-1/conveyancer/case-reference', {
         "case_reference": req.session.case_reference
       });
     });
 
     // Add property - title number search - title_number - send this page a session var:
-    app.get('/v3-1/conveyancer/case-find-property', function (req, res) {
+    router.get('/v3-1/conveyancer/case-find-property', function (req, res) {
       if (req.query.title_number !== '') {
         req.session.title_number = req.query.title_number;
       }
@@ -183,7 +212,7 @@ module.exports = {
     });
 
     // Case Add Borrower - send this page a session var:
-    app.get('/v3-1/conveyancer/case-add-borrower', function (req, res) {
+    router.get('/v3-1/conveyancer/case-add-borrower', function (req, res) {
       res.render('v3-1/conveyancer/case-add-borrower', {
         "case_reference": req.session.case_reference,
         "property": req.session.property
@@ -191,7 +220,7 @@ module.exports = {
     });
 
     // Create mortgage - MD ref - send this page a session var:
-    app.get('/v3-1/conveyancer/create-mortgage-md-ref', function (req, res) {
+    router.get('/v3-1/conveyancer/create-mortgage-md-ref', function (req, res) {
       if (req.query.md_ref !== '') {
         req.session.md_ref = req.query.md_ref;
       }
@@ -203,7 +232,7 @@ module.exports = {
 
 
     // Add mortgage value - send this page a session var:
-    app.get('/v3-1/conveyancer/case-mortgage-value', function (req, res) {
+    router.get('/v3-1/conveyancer/case-mortgage-value', function (req, res) {
       res.render('v3-1/conveyancer/case-mortgage-value', {
         "case_reference": req.session.case_reference,
         "mortgage_value": req.session.mortgage_value,
@@ -212,20 +241,20 @@ module.exports = {
     });
 
     // Create DEED - send this page a session var:
-    app.get('/v3-1/conveyancer/create-mortgage-deed', function (req, res) {
+    router.get('/v3-1/conveyancer/create-mortgage-deed', function (req, res) {
       res.render('v3-1/conveyancer/create-mortgage-deed', {
         "case_reference": req.session.case_reference,
         "md_ref": req.session.md_ref
       });
     });
-    app.get('/v3-1/conveyancer/create-mortgage-confirmed', function (req, res) {
+    router.get('/v3-1/conveyancer/create-mortgage-confirmed', function (req, res) {
       res.render('v3-1/conveyancer/create-mortgage-confirmed', {
         "case_reference": req.session.case_reference
       });
     });
 
     // Completion
-    app.get('/v3-1/conveyancer/case-confirm-completion', function (req, res) {
+    router.get('/v3-1/conveyancer/case-confirm-completion', function (req, res) {
       var today = new Date();
       var monthNames = [
         "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
@@ -238,7 +267,7 @@ module.exports = {
     });
 
     // Apply to Register
-    app.get('/v3-1/conveyancer/case-apply-deed', function (req, res) {
+    router.get('/v3-1/conveyancer/case-apply-deed', function (req, res) {
       res.render('v3-1/conveyancer/case-apply-deed', {
         "case_reference": req.session.case_reference,
         "md_ref": req.session.md_ref,
@@ -249,13 +278,13 @@ module.exports = {
     // HANDLERS --------------------
 
     // Reference handler
-    app.get('/v3-1/conveyancer/case-reference-handler', function (req, res) {
+    router.get('/v3-1/conveyancer/case-reference-handler', function (req, res) {
       req.session.case_reference = req.query.caseref;
       res.redirect('/v3-1/conveyancer/case');
     });
 
     // Property handler
-    app.get('/v3-1/conveyancer/case-property-handler', function (req, res) {
+    router.get('/v3-1/conveyancer/case-property-handler', function (req, res) {
       // if there's no reference set, use the first line of the address
       if (typeof req.session.case_reference === 'undefined') {
         req.session.case_reference = '83 Lordship Park';
@@ -265,7 +294,7 @@ module.exports = {
     });
 
     // Borrower handler
-    app.get('/v3-1/conveyancer/case-borrower-handler', function (req, res) {
+    router.get('/v3-1/conveyancer/case-borrower-handler', function (req, res) {
       if (typeof req.session.borrower_1 === 'undefined') {
         req.session.borrower_1 = true;
       } else {
@@ -275,21 +304,21 @@ module.exports = {
     });
 
     // Mortgage deed handler
-    app.get('/v3-1/conveyancer/case-mortgage-handler', function (req, res) {
+    router.get('/v3-1/conveyancer/case-mortgage-handler', function (req, res) {
       req.session.deed_created = true;
       req.session.case_status = 'Mortgage deed created';
       res.redirect('/v3-1/conveyancer/case-list');
     });
 
     // Mortgage value handler
-    app.get('/v3-1/conveyancer/mortgage-value-handler', function (req, res) {
+    router.get('/v3-1/conveyancer/mortgage-value-handler', function (req, res) {
       req.session.mortgage_value = req.query.mortgage_value;
       req.session.mortgage_charge = req.query.mortgage_charge;
       res.redirect('/v3-1/conveyancer/case');
     });
 
     // Completion handler
-    app.get('/v3-1/conveyancer/completion-handler', function (req, res) {
+    router.get('/v3-1/conveyancer/completion-handler', function (req, res) {
       req.session.case_status = 'Completion confirmed';
       if (req.query.apply_immediately === 'Yes') {
         res.redirect('/v3-1/conveyancer/case-apply-deed');
@@ -299,7 +328,7 @@ module.exports = {
     });
 
     // Apply to Register handler
-    app.get('/v3-1/conveyancer/apply-to-register-handler', function (req, res) {
+    router.get('/v3-1/conveyancer/apply-to-register-handler', function (req, res) {
       req.session.applied = true;
       req.session.case_status = '<span class="highlight-yellow">Applied to Register</span>';
       res.redirect('/v3-1/conveyancer/case-list');
@@ -311,7 +340,7 @@ module.exports = {
 
     // V3 --------------------------------------------------------
 
-    app.get('/v3/conveyancer/*', function(req, res, next) {
+    router.get('/v3/conveyancer/*', function(req, res, next) {
 
       var n = req.session.views || 0;
       req.session.views = ++n;
@@ -343,7 +372,7 @@ module.exports = {
     // CITIZEN --------------------
 
     // Unhappy path catcher
-    app.get('/deed-journeys/deed-transaction/*', function(req, res, next) {
+    router.get('/deed-journeys/deed-transaction/*', function(req, res, next) {
       var answer = req.query['radio-inline-group'];
       if (answer === 'No') {
         res.redirect('/deed-journeys/deed-transaction/unhappy-path');
@@ -353,15 +382,15 @@ module.exports = {
     });
 
     // Once the CITIZEN demo journey is complete, set deed_signed to true
-    app.get('/deed-journeys/deed-transaction/deed-agreed', function(req, res) {
-      req.session.deed_signed = true;
+    router.get('/deed-journeys/deed-transaction/deed-agreed', function(req, res) {
+      // req.session.deed_signed = true;
       res.render('deed-journeys/deed-transaction/deed-agreed');
     });
 
     // CONVEYANCER ----------------
 
     // Sign in page ALWAYS flushes the session UNLESS we're coming back from index
-    app.get('/v3/conveyancer/login', function (req, res) {
+    router.get('/v3/conveyancer/login', function (req, res) {
       // destroy the session if there's no "preserve" query
       if (typeof req.query.preserve === 'undefined') {
         req.session = null;
@@ -390,7 +419,7 @@ module.exports = {
     });
 
     // Case List - send this page some session vars:
-    app.get('/v3/conveyancer/case-list', function (req, res) {
+    router.get('/v3/conveyancer/case-list', function (req, res) {
       res.render('v3/conveyancer/case-list', {
         "new_case": req.session.new_case,
         "case_reference": req.session.case_reference,
@@ -402,7 +431,7 @@ module.exports = {
     });
 
     // Case - send this page some session vars:
-    app.get('/v3/conveyancer/case', function (req, res) {
+    router.get('/v3/conveyancer/case', function (req, res) {
       req.session.new_case = true;
       if (
         typeof req.session.case_status === 'undefined' &&
@@ -434,14 +463,14 @@ module.exports = {
     });
 
     // Case Reference - send this page a session var:
-    app.get('/v3/conveyancer/case-reference', function (req, res) {
+    router.get('/v3/conveyancer/case-reference', function (req, res) {
       res.render('v3/conveyancer/case-reference', {
         "case_reference": req.session.case_reference
       });
     });
 
     // Case Find Property - send this page a session var:
-    app.get('/v3/conveyancer/case-find-property', function (req, res) {
+    router.get('/v3/conveyancer/case-find-property', function (req, res) {
       req.session.building_search = false;
       res.render('v3/conveyancer/case-find-property', {
         "case_reference": req.session.case_reference
@@ -449,7 +478,7 @@ module.exports = {
     });
 
     // Case Find Property (results)
-    app.get('/v3/conveyancer/case-property-results', function (req, res) {
+    router.get('/v3/conveyancer/case-property-results', function (req, res) {
       if (req.query.building !== '') {
         req.session.building_search = true;
       }
@@ -459,7 +488,7 @@ module.exports = {
     });
 
     // Case Add Borrower - send this page a session var:
-    app.get('/v3/conveyancer/case-add-borrower', function (req, res) {
+    router.get('/v3/conveyancer/case-add-borrower', function (req, res) {
       res.render('v3/conveyancer/case-add-borrower', {
         "case_reference": req.session.case_reference,
         "property": req.session.property
@@ -467,7 +496,7 @@ module.exports = {
     });
 
     // Create mortgage - MD ref - send this page a session var:
-    app.get('/v3/conveyancer/create-mortgage-md-ref', function (req, res) {
+    router.get('/v3/conveyancer/create-mortgage-md-ref', function (req, res) {
       if (req.query.md_ref !== '') {
         req.session.md_ref = req.query.md_ref;
       }
@@ -478,7 +507,7 @@ module.exports = {
     });
 
     // Add mortgage value - send this page a session var:
-    app.get('/v3/conveyancer/case-mortgage-value', function (req, res) {
+    router.get('/v3/conveyancer/case-mortgage-value', function (req, res) {
       res.render('v3/conveyancer/case-mortgage-value', {
         "case_reference": req.session.case_reference,
         "mortgage_value": req.session.mortgage_value,
@@ -487,20 +516,20 @@ module.exports = {
     });
 
     // Create DEED - send this page a session var:
-    app.get('/v3/conveyancer/create-mortgage-deed', function (req, res) {
+    router.get('/v3/conveyancer/create-mortgage-deed', function (req, res) {
       res.render('v3/conveyancer/create-mortgage-deed', {
         "case_reference": req.session.case_reference,
         "md_ref": req.session.md_ref
       });
     });
-    app.get('/v3/conveyancer/create-mortgage-confirmed', function (req, res) {
+    router.get('/v3/conveyancer/create-mortgage-confirmed', function (req, res) {
       res.render('v3/conveyancer/create-mortgage-confirmed', {
         "case_reference": req.session.case_reference
       });
     });
 
     // Completion
-    app.get('/v3/conveyancer/case-confirm-completion', function (req, res) {
+    router.get('/v3/conveyancer/case-confirm-completion', function (req, res) {
       var today = new Date();
       var monthNames = [
         "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
@@ -513,7 +542,7 @@ module.exports = {
     });
 
     // Apply to Register
-    app.get('/v3/conveyancer/case-apply-deed', function (req, res) {
+    router.get('/v3/conveyancer/case-apply-deed', function (req, res) {
       res.render('v3/conveyancer/case-apply-deed', {
         "case_reference": req.session.case_reference,
         "md_ref": req.session.md_ref,
@@ -524,13 +553,13 @@ module.exports = {
     // HANDLERS --------------------
 
     // Reference handler
-    app.get('/v3/conveyancer/case-reference-handler', function (req, res) {
+    router.get('/v3/conveyancer/case-reference-handler', function (req, res) {
       req.session.case_reference = req.query.caseref;
       res.redirect('/v3/conveyancer/case');
     });
 
     // Property handler
-    app.get('/v3/conveyancer/case-property-handler', function (req, res) {
+    router.get('/v3/conveyancer/case-property-handler', function (req, res) {
       // if there's no reference set, use the first line of the address
       if (typeof req.session.case_reference === 'undefined') {
         req.session.case_reference = '83 Lordship Park';
@@ -540,7 +569,7 @@ module.exports = {
     });
 
     // Borrower handler
-    app.get('/v3/conveyancer/case-borrower-handler', function (req, res) {
+    router.get('/v3/conveyancer/case-borrower-handler', function (req, res) {
       if (typeof req.session.borrower_1 === 'undefined') {
         req.session.borrower_1 = true;
       } else {
@@ -550,21 +579,21 @@ module.exports = {
     });
 
     // Mortgage deed handler
-    app.get('/v3/conveyancer/case-mortgage-handler', function (req, res) {
+    router.get('/v3/conveyancer/case-mortgage-handler', function (req, res) {
       req.session.deed_created = true;
       req.session.case_status = 'Mortgage deed created';
       res.redirect('/v3/conveyancer/case');
     });
 
     // Mortgage value handler
-    app.get('/v3/conveyancer/mortgage-value-handler', function (req, res) {
+    router.get('/v3/conveyancer/mortgage-value-handler', function (req, res) {
       req.session.mortgage_value = req.query.mortgage_value;
       req.session.mortgage_charge = req.query.mortgage_charge;
       res.redirect('/v3/conveyancer/case');
     });
 
     // Completion handler
-    app.get('/v3/conveyancer/completion-handler', function (req, res) {
+    router.get('/v3/conveyancer/completion-handler', function (req, res) {
       req.session.case_status = 'Completion confirmed';
       if (req.query.apply_immediately === 'on') {
         res.redirect('/v3/conveyancer/case-apply-deed');
@@ -574,7 +603,7 @@ module.exports = {
     });
 
     // Apply to Register handler
-    app.get('/v3/conveyancer/apply-to-register-handler', function (req, res) {
+    router.get('/v3/conveyancer/apply-to-register-handler', function (req, res) {
       req.session.applied = true;
       req.session.case_status = '<span class="highlight-yellow">Applied to Register</span>';
       res.redirect('/v3/conveyancer/case');
@@ -585,32 +614,32 @@ module.exports = {
 
     // v2 step 1 - create case
 
-    app.get('/v2/step1/login', function (req, res) {
+    router.get('/v2/step1/login', function (req, res) {
       // destroy the session:
       req.session = null;
       res.render('v2/step1/login');
     });
 
     // property is now found and should be displayed
-    app.get('/v2/step1/case-property-selected', function (req, res) {
+    router.get('/v2/step1/case-property-selected', function (req, res) {
       req.session.displayProperty = true;
       res.redirect('/v2/step1/case-base');
     });
 
     // first borrower addition
-    app.get('/v2/step1/case-add-borrower-1', function (req, res) {
+    router.get('/v2/step1/case-add-borrower-1', function (req, res) {
       req.session.displayBorrower_1 = true;
       res.redirect('/v2/step1/case-base');
     });
 
     // second borrower addition
-    app.get('/v2/step1/case-add-borrower-2', function (req, res) {
+    router.get('/v2/step1/case-add-borrower-2', function (req, res) {
       req.session.displayBorrower_2 = true;
       res.redirect('/v2/step1/case-base');
     });
 
 
-    app.get('/v2/step1/case-base', function (req, res) {
+    router.get('/v2/step1/case-base', function (req, res) {
       req.session.caseRef = true;
       res.render('v2/step1/case-base', {
         "property": req.session.displayProperty,
@@ -620,7 +649,7 @@ module.exports = {
     });
 
     // borrowers form page needs the variables too
-    app.get('/v2/step1/add-borrower', function (req, res) {
+    router.get('/v2/step1/add-borrower', function (req, res) {
       res.render('v2/step1/add-borrower', {
         "property": req.session.displayProperty,
         "borrower_1": req.session.displayBorrower_1,
@@ -629,12 +658,14 @@ module.exports = {
     });
 
     // finally, case list needs just one of the variables
-    app.get('/v2/step1/case-list', function (req, res) {
+    router.get('/v2/step1/case-list', function (req, res) {
       res.render('v2/step1/case-list', {
         "caseRef": req.session.caseRef,
         "borrower_2": req.session.displayBorrower_2
       });
     });
 
-  }
-};
+//   }
+// };
+
+module.exports = router;
