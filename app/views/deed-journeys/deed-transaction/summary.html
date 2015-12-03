@@ -1,7 +1,7 @@
 {{<govuk_template}}
 
 	{{$pageTitle}}
-		Sign mortgage deed
+		Your mortgage deed
 	{{/pageTitle}}
 
 	{{$head}}
@@ -14,7 +14,7 @@
 	<main id="content" role="main">
 		<div class="inner-block">
 
-			<h1 class="heading-xlarge">Sign your mortgage deed</h1>
+			<h1 class="heading-xlarge">Your mortgage deed</h1>
 
 		    <div class="text">
 		      <div class="alert-inline">
@@ -131,31 +131,18 @@
 
 
 		    <div class="text">
-						<label class="heading-large" for="signature">This is your digital signature</label>
+				<p>
+					If you’re ready to sign your mortgage, we’ll send you a code which you’ll need to enter on the next screen. <br>Doing so <b>digitally signs your mortgage deed</b> and sends it back to your conveyancer.
+				</p>
+				<p>
+				If you do not wish to sign the mortgage deed (for instance if you think there is a mistake or you want further explanation) you should contact your conveyancer. 
+				</p>
+			<h2 class="heading-medium">Receiving your code</h2>
+					<p>
+						We will be sending your code by text message to your mobile number ending <b>0546</b></p>
+					<a href="code-sending" class="button">Send my code</a>
+			</div>
 
-					<p><b>If any part of the mortgage deed is incorrect</b>, or you require assistance, please contact your lender or conveyancer.</p>
-
-					<p>If you're happy to sign the deed, enter your full name and your authentication code. This will be added to the document above</p></div>
-				<div class="form ">
-					<div class="form-group">
-						<label class="heading-small" for="signature">Signed:</label>
-						<p class="form-hint">Enter your full name here</p>
-						<input type="text" class="form-control" id="signature" name="signature">
-					</div>
-					<div class="form-group">
-						<label class="form-label" for="auth-code">Your authentication code:</label>
-						<p class="form-hint">Example: ABC1234</p>
-						<input type="text" class="form-control" id="auth-code" name="auth-code">
-					</div>
-				</div>
-			</article>
-
-		    <form action="deed-agreed" class="form text">
-		      <p><a href="#">I haven't received my code, resend it</a></p>
-		      <div class="form-group">
-		        <button type="submit" class="button">Sign mortgage deed</button>
-		      </div>
-		    </form>
 
 			</div>
 		</main>
