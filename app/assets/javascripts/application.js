@@ -1,10 +1,12 @@
 function gotoRoot() {
-  if ((window.location.href.indexOf("/v3-1") > 1) || (window.location.href.indexOf("/v3-2") > 1)) {
-  	window.location.href = '/v3-1/';
-  }
-  else {
-  	window.location.href = '/v3/';
-  }
+  // if ((window.location.href.indexOf("/v3-1") > 1) || (window.location.href.indexOf("/v3-2") > 1)) {
+  // 	window.location.href = '/v3-1/';
+  // }
+  // else {
+  // 	window.location.href = '/v3/';
+  // }
+  // return false;
+  window.location.href = '/';
   return false;
 }
 
