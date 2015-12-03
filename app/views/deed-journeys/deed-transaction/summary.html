@@ -1,130 +1,149 @@
 {{<govuk_template}}
 
 	{{$pageTitle}}
-		Review your mortgage deed
+		Your mortgage deed
 	{{/pageTitle}}
 
 	{{$head}}
 	  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css">
+  	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css" />
+  	 <link href="/public/stylesheets/shame-v3-8.css" media="screen" rel="stylesheet" type="text/css" />
 	{{/head}}
 
 	{{$content}}
 	<main id="content" role="main">
 		<div class="inner-block">
 
-			<h1 class="heading-large">Your mortgage deed</h1>
+			<h1 class="heading-xlarge">Your mortgage deed</h1>
 
-			<table>
-				<tr>
-					<th scope="row">Property</th>
-					<td>
-						83 Lordship Park,<br>
-						London<br>
-						N16 5UP
-						<br><br>
-						Title number: GHR67832
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">We (the lender)</th>
-					<td>
-						Bank of England PLC<br>
-						12 Trinity Place,<br>
-						Regents Street,<br>
-						London<br>
-						NW10 6TQ
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">You (the borrower)</th>
-					<td>
-						Peter Smith</br>
-					</br>
-					Sarah Jane Smith</br>
-				</td>
-			</tr>
-			<tr>
-				<th scope="row">Charging clause</th>
-				<td>
-					<div class="text">
-						You charge the property with full title guarantee and by way of
-						legal mortgage with the payment of all moneys payable by you to
-						us under the Mortgage Conditions.
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<th scope="row">Restriction</th>
-				<td>
-					<div class="text">
-						You apply to the Chief Land Registrar to enter a restriction on the
-						register to the effect that no disposition of the registered estate
-						by the proprietor of the registered estate is to be registered
-						without a written consent signed by the proprietor for the time
-						being of the charge dated ____________________ in favour of
-						Santander UK plc referred to in the Charges Register.”
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<th scope="row">Obligation</th>
-				<td>
-					<div class="text">
-						We are obliged to make further advances to you on the terms set
-						out in the Mortgage Conditions and we apply to the Chief Land
-						Registrar for a note of that obligation to be entered on the register.
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<th scope="row">Additional provisions</th>
-				<td>
-					<div class="text">
-						This mortgage incorporates our Flexible Offset Mortgage Terms and
-						Conditions January 2015. You acknowledge that you have received a
-						copy of the Mortgage Conditions.<br/><br/>This mortgage secures further advances.
-					</div>
-				</td>
-			</tr>
+		    <div class="text">
+		      <div class="alert-inline">
+		        <p><b>This is a legal document &mdash; please check all details carefully.</b></p>
+		      </div>
+		    </div>
 
-			<tr>
-				<th scope="row">Borrower electronic signature(s)</th>
-				<td>
-					<div class="text">
-						<ul>
-							<li>Signed by: <b>Sarah Jane Smith</b>
-							</li>
-							<li>Awaiting signature by: <b>Peter Smith</b>
-							</li>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">Registrar electronic signature</th>
-					<td>
-						<div class="text">
-							Not Applied</br>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">Official user MD reference</th>
-					<td>
-						<div class="text">
-							MD1118</br>
-						</div>
-					</td>
-				</tr>
-			</table>
-<br/>
-			<div class="column-full">
+		    <article class="deed-document--bounds">
+
+		      <h2 class="heading-large">Electronic Mortgage deed</h2>
+
+		      <h2 class="heading-medium">Property:</h2>
+
+		      <p itemscope itemtype="http://schema.org/PostalAddress">
+		        <span itemprop="streetAddress">
+		          83 Lordship Park<br>
+		        </span>
+		        <span itemprop="addressLocality">London</span><br>
+		        <span itemprop="postalCode">N16 5UP</span>
+		      </p>
+
+		      <dl class="definition-inline">
+		        <dt><b>Title number</b></dt>
+		        <dd>GHR67832</dd>
+		      </dl>
+
+		      <h2 class="heading-medium">Lender:</h2>
+
+		      <p itemscope itemtype="http://schema.org/Corporation">
+		        <span itemprop="name">Bank of England Plc</span><br>
+		        <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="address-inline">
+		          <span itemprop="streetAddress">
+		            12 Trinity Place, Regents Street,
+		          </span>
+		          <span itemprop="addressLocality">London</span>
+		          <span itemprop="postalCode">NW10 6TQ</span>
+		        </span>
+		        <dl class="definition-inline">
+		          <dt>Company registration number</dt>
+		          <dd>2347676</dd>
+		        </dl>
+		      </p>
+
+
+		      <h3 class="heading-medium">Borrower:</h3>
+
+		      <div class="grid-row">
+		        <div class="column-third">
+		          <p>
+		            <b>Peter Smith</b><br>
+		            83 Lordship Park,<br>
+		            London<br>
+		            N16 5UP
+		          </p>
+		        </div>
+
+		        <div class="column-third">
+		          <p>
+		            <b>Sarah Jane Smith</b><br>
+								83 Lordship Park,<br>
+		            London<br>
+		            N16 5UP
+		          </p>
+		        </div>
+
+		      </div>
+
+		      <div class="text">
+
+		        <h3 class="heading-small">Charging clause:</h3>
+		        <p>The borrower, with full title guarantee, charges to the lender the property by way of legal mortgage with payment of all money secured by the charge.</p>
+
+		        <h3 class="heading-small">Additional provisions:</h3>
+		        <ol class="list-number">
+		          <li>
+		            <p>This Mortgage Deed incorporates the <a href="#" rel="external">Lenders Mortgage Conditions and Explanation 2006</a>, a copy of which the borrower has received.</p>
+		          </li>
+		          <li>
+		            <p>The lender is obliged to make further advances and applies for the obligation to be entered in the register.</p>
+		          </li>
+		          <li>
+		            <p>The borrower applies to enter a restriction in the register that no disposition of the registered estate by the proprietor of the registered estate is to be registered without a written consent signed by the proprietor for the time being of the charge dated [the date of this charge] in favour of Bank of England Plc referred to in the charges register.</p>
+		          </li>
+		        </ol>
+
+		      </div>
+
+			  <div class="form">
+
+		        <div class="form-group">
+		          <label class="heading-small" for="auth-code">Effective date and time</label></br>
+		          <p class="form-hint text">This charge takes effect when the registrar receives notification from [name of conveyancer preparing the charge] that the charge is to take effect.</p>
+		          <input type="text" class="form-control" id="auth-code" name="auth-code" disabled="true" style="color: #6f777b;" value="Effective date and time will be shown here">
+		        </div>
+
+				<div class="form-group">
+					<label class="heading-small" for="signature">Borrower's electronic signature(s)</label></br>
+					<input type="text" class="form-control" id="signature1" name="signature1" disabled="true" value="Electronically signed by Sarah Jane Smith">
+		          </br></br>
+		          <input type="text" class="form-control" id="signature2" name="signature2" disabled="false" style="color: #6f777b;" value="[Awaiting signature by Peter Smith]">
+				</div>
+
+				<div class="form-group">
+					<label class="heading-small" for="auth-code">Registrar's electronic signature</label><br>
+					<input type="text" class="form-control" id="auth-code" name="auth-code" disabled="true" style="color: #6f777b;" value="[Will be applied when the charge takes effect]">
+				</div>
+
+		        <div class="form-group">
+		          <label>E-MD ref: 1118</label><br>
+		        </div>
+			  </div>
+
+		    </article>
+
+
+		    <div class="text">
 				<p>
-					If you’re happy with these details, we’ll send you a code which you’ll need to enter on the next screen. <br/>Doing so <b>digitally signs your mortgage deed</b> and sends it back to your conveyancer.
+					If you’re ready to sign your mortgage, we’ll send you a code which you’ll need to enter on the next screen. <br>Doing so <b>digitally signs your mortgage deed</b> and sends it back to your conveyancer.
+				</p>
+				<p>
+				If you do not wish to sign the mortgage deed (for instance if you think there is a mistake or you want further explanation) you should contact your conveyancer. 
 				</p>
 			<h2 class="heading-medium">Receiving your code</h2>
 					<p>
 						We will be sending your code by text message to your mobile number ending <b>0546</b></p>
 					<a href="code-sending" class="button">Send my code</a>
+			</div>
+
+
 			</div>
 		</main>
 	{{/content}}
