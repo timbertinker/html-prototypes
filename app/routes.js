@@ -16,20 +16,6 @@ var router = express.Router();
 
 
 
-
-//     router.get('/MS-v3/case4', function (req, res) {
-//       res.render('MS-v3/case4', { 'title' : 'Case', 'ref' : 'REF0782', 'type' : 'Mortgage' });
-//     });
-
-
-
-// module.exports = router;
-
-
-
-// module.exports = {
-//   bind : function (app) {
-
     router.get('/', function (req, res) {
       // ALWAYS flush sessions if you're at the root index:
       req.session = null;
@@ -665,7 +651,5 @@ var router = express.Router();
       });
     });
 
-//   }
-// };
 
 module.exports = router;
