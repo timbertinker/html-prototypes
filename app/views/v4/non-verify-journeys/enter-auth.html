@@ -1,0 +1,68 @@
+{{<govuk_template}}
+
+	{{$pageTitle}}
+		Confirm your mortgage deed
+	{{/pageTitle}}
+
+	{{$head}}
+	  <link href="/public/stylesheets/application-v4.css" media="screen" rel="stylesheet" type="text/css">
+	{{/head}}
+
+	{{$content}}
+		<main id="content" role="main">
+			<div class="inner-block">
+
+				<h1 class="heading-xlarge">Confirm your details</h1>
+
+				<div class="text">
+					<p>In order to finish confirming your details we need to send a
+					code to the mobile number you registered with your conveyancer so
+					that we can confirm the correct person will be signing the deed</p>
+					<div class="panel-indent">
+						<p class="font-xsmall">There may be a delay in receiving the code
+						depending on the mobile signal in your area</p>
+					</div>
+				</div>
+
+				<div id="request-auth" style="display:block;">
+						<div class="text">
+							<p>We will be sending your code by text message to your mobile
+							number ending 0546</p>
+						</div>
+						<div class="form-group">
+							<a class="button" onclick="showHide();">Request code</a>
+						</div>
+				</div>
+
+				<div id="enter-auth" style="display:none;">
+					<div class="form-group">
+						<label class="form-label-bold" for="auth-code">
+							Enter your code to finish confirming your details
+							<span class="form-hint">Example: ABC1234</span>
+						</label>
+						<input type="text" class="form-control" id="auth-code" name="auth-code">
+					</div>
+					<div class="form-group">
+						<a href="details-confirmed" class="button">Confirm details</a>
+					</div>
+					<p>
+						<a href="enter-auth">I haven't received my code, resend it</a>
+					</p>
+				</div>
+
+			</div>
+		</main>
+	{{/content}}
+
+	{{$bodyEnd}}
+	  {{>includes/scripts}}
+	  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+		<script type="text/javascript">
+			function showHide() {
+				document.getElementById('request-auth').style.display = 'none';
+				document.getElementById('enter-auth').style.display = 'block';
+			}
+		</script>
+	{{/bodyEnd}}
+
+{{/govuk_template}}

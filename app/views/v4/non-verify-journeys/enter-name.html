@@ -1,0 +1,41 @@
+{{<govuk_template}}
+
+	{{$pageTitle}}
+		Confirm your mortgage deed
+	{{/pageTitle}}
+
+	{{$head}}
+	  <link href="/public/stylesheets/application-v4.css" media="screen" rel="stylesheet" type="text/css">
+	{{/head}}
+
+	{{$content}}
+		<main id="content" role="main">
+			<div class="inner-block">
+
+				<h1 class="heading-xlarge">Confirm your details</h1>
+
+
+				<form class="form">
+					<div class="form-group">
+						<label class="form-label-bold" for="full-name">
+							Enter your name:
+						</label>
+						<input type="text" class="form-control" id="full-name" name="full-name">
+					</div>
+					<div class="form-group">
+						<a href="enter-ref" class="button">Confirm name</a>
+					</div>
+				</form>
+
+
+
+			</div>
+		</main>
+	{{/content}}
+
+	{{$bodyEnd}}
+	  {{>includes/scripts}}
+	  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+	{{/bodyEnd}}
+
+{{/govuk_template}}
