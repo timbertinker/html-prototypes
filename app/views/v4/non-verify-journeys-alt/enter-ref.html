@@ -1,7 +1,7 @@
 {{<govuk_template}}
 
 	{{$pageTitle}}
-		Confirm your details
+		Confirm your mortgage deed
 	{{/pageTitle}}
 
 	{{$head}}
@@ -12,25 +12,30 @@
 		<main id="content" role="main">
 			<div class="inner-block">
 
-				<h1 class="heading-xlarge">Sign in</h1>
+				<h1 class="heading-xlarge">Confirm your details</h1>
 
 
 				<form class="form">
 					<div class="form-group">
-						<label class="form-label-bold" for="borrowerid">
-							Your Borrower ID
+						<label class="form-label-bold" for="deed-ref">
+							Enter your deed reference:
 							<span class="form-hint">Example: ABC1234</span>
 						</label>
-						<input type="text" class="form-control" id="borrowerid" name="borrowerid">
+						<input type="text" class="form-control" id="deed-ref" name="deed-ref">
 					</div>
 					<div class="form-group">
-		      			<div><a href="#">I don't have a reference number</a></div>
-		    		</div>
-
-					<div class="form-group">
-						<a href="enter-dob" class="button">Continue</a>
+						<a href="enter-auth" class="button">Confirm reference</a>
 					</div>
 				</form>
+
+				<details>
+					<summary>
+						What is my deed reference?
+					</summary>
+					<p>Your deed reference will be a 7 digit code sent to you by your
+					conveyancer in an email, entering this will allow you to view the
+					mortgage deed requiring your signature.</p>
+				</details>
 
 			</div>
 		</main>
