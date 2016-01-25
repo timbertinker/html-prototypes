@@ -271,13 +271,14 @@ input[type="radio"]:checked ~ .dec-trust__hidden {
 // Make a deed look like a self-contained document?
 
 .deed-document--bounds {
-  margin-left: $gutter;
+ // margin-left: $gutter;
   margin-top: $gutter;
   margin-bottom: $gutter;
   padding: 0 $gutter $gutter $gutter;
   border-color: $light-blue;
   border-width: 3px 2px;
   border-style: solid;
+  max-width:30em;
 }
 
 .deed-document--divider {
