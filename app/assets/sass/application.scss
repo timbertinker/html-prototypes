@@ -18,6 +18,13 @@
   @include phase-tag(alpha); // Change this to (beta) for a beta tag
 }
 
+.beta-banner  {
+  @include phase-banner(beta); // Change this to (beta) for a beta banner
+}
+.beta-tag {
+  @include phase-tag(beta); // Change this to (beta) for a beta tag
+}
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you,
 // either add and import new partial files, or modify those in GOV.UK elements to fit your user needs.
 .deed-summary {
@@ -27,7 +34,7 @@
 .deed-successful {
 width: 100%;
 margin-bottom: 10px;
-margin-top: 10px;
+margin-top: 20px;
 padding-top: 2px;
 padding-bottom: 40px;
 background-color: #30a197;
