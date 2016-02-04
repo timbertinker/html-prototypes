@@ -1,0 +1,47 @@
+{{<govuk_template}}
+
+	{{$pageTitle}}
+		Borrower Reference
+	{{/pageTitle}}
+
+	{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+	  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css">
+	{{/head}}
+
+	{{$content}}
+		<main id="content" role="main">
+			{{>includes/beta_banner}}
+			<div class="inner-block">
+
+				<h1 class="heading-xlarge">Unable to view your deed</h1>
+
+		    <div class="text">
+					<p>
+	            Sorry, but you are unable to view your deed through this service.
+							This is probably not because any of the details you just entered
+							were wrong.
+	        </p>
+
+					<h3 class="heading-medium">
+						Why can't I view my deed?
+					</h3>
+
+					<p>
+						Your conveyancer will have been contacted about this and will be able
+						to provide you with more information about the state of your mortgage
+						application, please contact them.
+					</p>
+
+				</div>
+
+			</div>
+		</main>
+	{{/content}}
+
+	{{$bodyEnd}}
+	  {{>includes/scripts}}
+	  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+	{{/bodyEnd}}
+
+{{/govuk_template}}
