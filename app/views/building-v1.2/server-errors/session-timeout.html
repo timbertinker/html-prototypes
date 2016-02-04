@@ -1,0 +1,40 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Your session has timed out
+{{/pageTitle}}
+
+{{$head}}
+  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$content}}
+
+<main id="wrapper" role="main">
+
+  <div id="content">
+{{>includes/beta_banner}}
+
+
+    <div class="inner-block">
+
+      	<h1 class="heading-xlarge">Your session has timed out</h1>
+
+		    <p class="text">
+            Because you haven’t done anything for 20 minutes, your session has timed out.  We’ve deleted all the details you’ve entered to protect your privacy.
+        </p>
+
+        <p class="text">
+            You’ll need to <a href="/building/sign-my-mortgage">start again</a>.
+        </p>
+
+
+    </div>
+
+  </div>
+
+</main>
+
+{{/content}}
+
+{{/govuk_template}}

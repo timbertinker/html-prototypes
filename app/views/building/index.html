@@ -1,0 +1,58 @@
+{{<govuk_template}}
+
+{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$pageTitle}}
+  View your mortgage deed
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main">
+	{{>includes/beta_banner}}
+
+	<h1 class="heading-xlarge">what we are building</h1>
+
+	<div class="text">
+
+		<p>
+			Latest version of what we're been building - for Sprint - from 10th Feb to 23rd Feb 2016
+		</p>
+
+		<h2 class="heading-medium">View mortgage deed flow</h2>
+		<ul>
+			<li><a href="sign-my-mortgage">Viewing mortgage deed - happy path</a></li>
+			<ul>
+				<li><a href="mortgage-deed">mortgage deed - nobody confirmed</a></li>
+				<li><a href="mortgage-deed-1-confirmed">mortgage deed - 1 borrower confirmed</a></li>
+				<li><a href="mortgage-deed-both-confirmed">mortgage deed - both borrowers confirmed</a></li>
+			</ul>
+		</ul>
+		<h2 class="heading-medium">Unhappy paths</h2>
+		<ul>
+			<li><a href="deed-not-found-error/borrower-reference">borrower reference / DOB does not match a deed</a></li>
+			<li><a href="incorrect-dob/date-of-birth">invalid date of birth</a></li>
+		</ul>
+		<h2 class="heading-medium">Errors</h2>
+		<ul>
+			<li><a href="server-errors/404">server error - 404 - page not found</a></li>
+			<li><a href="server-errors/503">server error - 5xx - unexpected error</a></li>
+			<li><a href="server-errors/session-timeout">session timeout</a></li>
+		</ul>
+
+
+	</div>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+{{/bodyEnd}}
+
+{{/govuk_template}}
