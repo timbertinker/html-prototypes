@@ -1,0 +1,70 @@
+{{<govuk_template}}
+
+{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$pageTitle}}
+  View your mortgage deed
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main">
+	{{>includes/beta_banner}}
+
+	<h1 class="heading-xlarge">View your mortgage deed</h1>
+
+	<div class="text">
+
+		<p>
+			Use this service to view and check your mortgage details are correct. The online deed is not the legal mortgage. You should still sign and return your paper mortgage deed following the instructions you have from your conveyancer.
+		</p>
+		<p>
+			Once all parties have signed the paper mortgage your conveyancer will then ensure the Land Registry is updated.
+		</p>
+
+		<p>To do this you will need:</p>
+
+		<ul>
+			<li>a unique borrower reference sent to you by your coveyancer</li>
+		</ul>
+
+		<!-- use class="panel panel-border-wide" in application -->
+		<div class="font-xsmall panel-indent">
+			<p>
+				By using this service you consent to Land Registry retaining your personal
+				details for fraud prevention and detection purposes. You also consent to
+				Land Registry carrying out third party checks in relation to the information supplied.
+			</p>
+			<p>
+				For further information please view our <a href="https://www.gov.uk/government/organisations/land-registry/about/personal-information-charter">Personal Information Charter.</a>
+			</p>
+		</div>
+
+		<p>
+			<a href="borrower-reference" class="button button-get-started">Start now</a>
+		</p>
+
+		<details>
+			<summary>
+				Why is the government involved in this?
+			</summary>
+			<p>The Land Registry registers any interests affecting registered land,
+			such as a change of mortgage. Find out more
+			<a href="https://www.gov.uk/government/organisations/land-registry/about" rel="external">here</a>.</p>
+		</details>
+
+	</div>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+{{/bodyEnd}}
+
+{{/govuk_template}}
