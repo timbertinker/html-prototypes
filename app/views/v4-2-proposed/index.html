@@ -1,0 +1,53 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+	MVP Prototype
+{{/pageTitle}}
+
+{{$head}}
+	<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+
+<main id="content" role="main">
+	<h1 class="heading-xlarge">
+		Digital Mortgages MVP Prototype
+	</h1>
+
+	<p class="lede">version 4.2 - proposed version of flow - work in progress
+
+	<ul>
+		<li><a href="citizen"><b>Full Journey</b> Including Verify</a>
+			<br/><span style="color:grey; font-size:16px;">(Link back from Verify is out of date - use two links below)</span></li>
+		<li><a href="citizen/identity-verified"><b>Happy Path</b> Journey AFTER Verify</a></li>
+		<li><a href="citizen/identity-unverified"><b>Sad Path</b> Part Journey AFTER Verify</a></li>
+	</ul>
+
+	<h2 class="heading-medium">
+		Other journeys in the MVP Prototype
+	</h1>
+	<ul>
+		<!-- <li><a href="/conveyancer/login"><b>Conveyancer</b> creates a new case</a></li> -->
+		<!-- <li><a href="/citizen/identity-verified"><b>Citizen</b> (first of a couple) “signs” mortgage, after Verify, different mortgage clause example</a></li> -->
+		<!-- <li><a href="/conveyancer/login?preserve=true"><b>Conveyancer</b> submits mortgage</a></li> -->
+		<li><a href="deed-journeys/deed-transaction/deed-agreed_single"><b>Deed Signed</b> by a single individual</a></li>
+		<li><a href="deed-journeys/deed-transaction/deed-agreed"><b>Deed Signed</b> by 2nd individual of a couple</a></li>
+		<li><a href="non-verify-journeys/enter-token-dob-error/index">Incorrect token or date of birth entered</a></li>
+	</ul>
+
+	<h2 class="heading-medium">
+		Historic and alternative prototypes
+	</h1>
+	<ul>
+		<li><a href="/historic">older links</a></li>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
