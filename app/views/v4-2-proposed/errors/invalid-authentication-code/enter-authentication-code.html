@@ -1,7 +1,7 @@
 {{<govuk_template}}
 
 	{{$pageTitle}}
-		Confirm your details
+		Confirm your mortgage deed
 	{{/pageTitle}}
 
 	{{$head}}
@@ -11,26 +11,28 @@
 	{{$content}}
 		<main id="content" role="main">
 			<div class="inner-block">
+			{{>includes/beta_banner}}
 
-				<h1 class="heading-xlarge">Sign in</h1>
+				<h1 class="heading-xlarge">Sign your mortgage deed</h1>
 
 
 				<form class="form">
 					<div class="form-group">
-						<label class="form-label-bold" for="borrowerid">
-							Your Borrower ID
+						<label class="form-label-bold" for="auth-code">
+							Enter your code to sign your mortgage deed
 							<span class="form-hint">Example: ABC1234</span>
 						</label>
-						<input type="text" class="form-control" id="borrowerid" name="borrowerid">
+						<input type="text" class="form-control" id="auth-code" name="auth-code">
 					</div>
+					<p>
+						<a href="mortgage-deed">I haven't received my code, resend it</a>
+					</p>
 					<div class="form-group">
-		      			<div><a href="#">I don't have a reference number</a></div>
-		    		</div>
-
-					<div class="form-group">
-						<a href="enter-dob" class="button">Continue</a>
+						<a href="invalid-authentication-code" class="button">Sign mortgage</a>
 					</div>
 				</form>
+
+
 
 			</div>
 		</main>

@@ -14,33 +14,38 @@
 	<h1 class="heading-xlarge">
 		Digital Mortgages MVP Prototype
 	</h1>
-
+	<h3 class="heading-small">Main journey for the live milestone</h3>
 	<p class="lede">version 4.2 - proposed version of flow - work in progress
 
 	<ul>
 		<li><a href="v4-2-proposed/citizen/sign-your-mortgage-deed"><b>Full Journey</b> Including Verify</a>
-			<br/><span style="color:grey; font-size:16px;">(Link back from Verify is out of date - use two links below)</span></li>
-		<li><a href="citizen/identity-verified"><b>Happy Path</b> Journey AFTER Verify</a></li>
-		<li><a href="citizen/identity-unverified"><b>Sad Path</b> Part Journey AFTER Verify</a></li>
+			<br/><span style="color:grey; font-size:16px;">(Link back from Verify is out of date - use link below)</span></li>
+		<li><a href="v4-2-proposed/citizen/identity-verified"><b>Happy Path</b> Journey AFTER Verify</a></li>
+		<ul>
+			<li><a href="v4-2-proposed/deed-journeys/mortgage-deed">mortgage deed - nobody signed</a></li>
+			<li><a href="v4-2-proposed/deed-journeys/mortgage-deed-1-signed">mortgage deed - 1 borrower signed</a></li>
+			<li><a href="v4-2-proposed/deed-journeys/mortgage-deed-both-signed">mortgage deed - both borrowers signed</a></li>
+		</ul>
 	</ul>
 
-	<h2 class="heading-medium">
-		Other journeys in the MVP Prototype
-	</h1>
+
+
+	<h3 class="heading-small">Other journeys for the live milestone</h3>
 	<ul>
-		<!-- <li><a href="/conveyancer/login"><b>Conveyancer</b> creates a new case</a></li> -->
-		<!-- <li><a href="/citizen/identity-verified"><b>Citizen</b> (first of a couple) “signs” mortgage, after Verify, different mortgage clause example</a></li> -->
-		<!-- <li><a href="/conveyancer/login?preserve=true"><b>Conveyancer</b> submits mortgage</a></li> -->
-		<li><a href="deed-journeys/deed-transaction/deed-agreed_single"><b>Deed Signed</b> by a single individual</a></li>
-		<li><a href="deed-journeys/deed-transaction/deed-agreed"><b>Deed Signed</b> by 2nd individual of a couple</a></li>
-		<li><a href="non-verify-journeys/enter-token-dob-error/index">Incorrect token or date of birth entered</a></li>
+		<li><a href="v4-2-proposed/citizen/identity-unverified"><b>Sad Path</b> Part Journey AFTER Verify</a> - can't be verified</li>
+		<li><a href="v4-2-proposed/citizen/unable-to-match"><b>Sad Path</b> Part Journey AFTER Verify</a> - can't match to a mortgage</li>
+		<li><a href="v4-2-proposed/deed-journeys/deed-agreed-single"><b>Deed Signed</b> by a single individual</a></li>
+		<li><a href="v4-2-proposed/deed-journeys/deed-agreed"><b>Deed Signed</b> by both borrowers</a></li>
+		<li>error pages, and other late journey alternate pages - code, resend code, code entered wrongly, code exopires?</li>
+	</ul>
+	<h3 class="heading-small">Errors</h3>
+	<ul>
+		<li><a href="v4-2-proposed/errors/invalid-authentication-code/enter-authentication-code">Invalid authentication code</a></li>
+		<li><a href="v4-2-proposed/errors/404">Server error - 404 - page not found</a></li>
+		<li><a href="v4-2-proposed/errors/503">Server error - 5xx - unexpected error</a></li>
+		<li><a href="v4-2-proposed/errors/session-ended">Session has timed out or ended</a></li>
 	</ul>
 
-	<h2 class="heading-medium">
-		Historic and alternative prototypes
-	</h1>
-	<ul>
-		<li><a href="/historic">older links</a></li>
 
 </main>
 

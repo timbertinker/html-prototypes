@@ -1,0 +1,43 @@
+{{<govuk_template}}
+
+{{$head}}
+  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$pageTitle}}
+  Unable to verify for mortgage service
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main">
+{{>includes/beta_banner}}
+	<h1 class="heading-xlarge">
+		<!-- <span class="heading-secondary">Sign your mortgage deed</span> -->
+		Unable to match you to the mortgage transaction
+	</h1>
+
+	<div class="text">
+		<p>
+			We regret we have been unable to match your identity to a current mortgage transaction.
+		</p>
+		<p>There are a few reasons why this might happen, for example if you’ve recently had a change of circumstances.</p>
+	</div>
+
+		<h2 class="heading-medium">What happens next?</h2>
+	 	<div class="text">
+			<p>Your lender and conveyancer have been notified that you have not been able to digitally sign your mortgage deed.</p>
+			<p>The person dealing with your mortgage will be in touch in the coming days to update you on what to do next.</p>
+		</div>
+	
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+{{/bodyEnd}}
+
+{{/govuk_template}}

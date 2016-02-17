@@ -10,15 +10,17 @@ Mortgage Deed Signed
 
 {{$content}}
 <main id="content" role="main">
-	<div class="inner-block">
-		<div class="deed-successful">
-			<h3 class="heading-large">Mortgage deed signed</h3>
-			<p>
-				You’ve digitally signed your mortgage deed.
-			</p>
-		</div>
-		<h2 class="heading-medium">What happens next?</h2>
-		<p>When everyone has signed the deed:</p>
+
+  {{>includes/beta_banner}}
+
+	<div class="grid-row">
+    <div class="column-two-thirds">
+  		<div class="deed-successful">
+  			<h1 class="heading-large">Mortgage deed signed</h1>
+  			<p>You’ve digitally signed your mortgage deed.</p>
+  		</div>
+
+  		<h2 class="heading-medium">What happens next?</h2>
 		<ul>
 			<li>
 				Your conveyancer will complete the mortgage and submit it to Land Registry
@@ -27,17 +29,18 @@ Mortgage Deed Signed
 				Land Registry will then update your title register to include the new mortgage
 			</li>
 		</ul>
-		<p>
-			The time this takes will vary depending on the complexity of the
-			transaction.
-		</p>
-		<div class="division-standard-top">
-			<ul>
-				<li><a href="#">What did you think of this service?</a> (Takes 30 seconds)</li>
-				<li><a href="#">More about the Land Registry</a></li>
-			</ul>
-		</div>
-	</div>
+
+  		<p>
+  			The time this takes will vary depending on the complexity of the
+  			transaction.
+  		</p>
+  		<div class="division-standard-top">
+				<p><a href="#">How could we improve this service?</a></p>
+				<p><a href="#">More about the Land Registry</a></p>
+  		</div>
+    </div><!-- column-two-thirds -->
+  </div>
+
 </main>
 {{/content}}
 

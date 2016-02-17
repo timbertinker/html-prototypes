@@ -22,6 +22,7 @@
 <main id="content" role="main">
 
   {{>digital-register/includes/banner}}
+  {{>includes/beta_banner}}
 
   <div id="processing" class="expand">
     <h1 class="heading-xlarge">Sending code...</h1>
@@ -39,7 +40,7 @@
   <script type="text/javascript">
    var timeoutID = window.setTimeout(move, 1000);
   function move() {
-    window.location.href = 'enter-auth';
+    window.location.href = 'enter-authentication-code';
   }
   </script>
 {{/bodyEnd}}
