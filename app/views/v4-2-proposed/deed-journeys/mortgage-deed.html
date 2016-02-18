@@ -6,14 +6,23 @@
 
 	{{$head}}
 	  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css">
-  	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css" />
-  	<link href="/public/stylesheets/shame-v4-1.css" media="screen" rel="stylesheet" type="text/css" />
+
+  	<link href="/public/stylesheets/shame-v4-2.css" media="screen" rel="stylesheet" type="text/css" />
 	{{/head}}
 
 	{{$content}}
+
+
+
 	<main id="content" role="main">
-		<div class="inner-block">
-		{{>includes/beta_banner}}
+	
+	{{>includes/beta_banner}}
+	
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+		<!-- <div class="inner-block"> -->
+		
 
 			<h1 class="heading-xlarge">Your mortgage deed</h1>
 
@@ -102,25 +111,39 @@
 
 		    </article>
 
-	   	</div> <!-- end inner-block -->
+	   	<!-- </div> end inner-block -->
 
 
 
-		<div class="inner-block">
+		<!-- <div class="inner-block"> -->
 		    <div class="text">
 		    	<h2 class="visuallyhidden">Signing your Mortgage</h2>
 				<p>
-					If you’re ready to sign your mortgage, we’ll send you a code which you’ll need to enter on the next screen. <br>Doing so <b>digitally signs your mortgage deed</b> and sends it back to your conveyancer.
+					If you’re ready to sign your mortgage, we’ll send you an authentication code which you’ll need to enter on the next screen. <br>Doing so <b>digitally signs your mortgage deed</b> and sends it back to your conveyancer.
 				</p>
 				<p>
 				If you do not wish to sign the mortgage deed (for instance if you think there is a mistake or you want further explanation) you should contact your conveyancer. 
 				</p>
-			<h2 class="heading-medium">Receiving your code</h2>
-					<p>
-						We will be sending your code by text message to your mobile number ending <b>0546</b></p>
-					<a href="code-sending" class="button">Send my code</a>
+				<h2 class="heading-medium">Receiving your authentication code</h2>
+				<p>
+						We will be sending your authentication code by text message to your mobile number ending <b>0546</b></p>
+				<a href="code-sending" class="button">Send my code</a>
 			</div>
-		</div>
+		<!-- </div> -->
+
+
+		</div> <!-- column two thirds-->
+
+		<div class="column-third" style="font-size:14px;">
+			<!-- MattP Verify feedback -->
+			<p>GDS Feedback</p> 
+			<p>If this content remains on one page and not segmented, there should be a reminder at the top as to why the user sees this content.</p>
+			<p><strike>What happens if you're not happy? Need to do and flag something - giving people a way to proceed.</strike> Done: Wording about contacting conveyancer (however - is your conveyancer correct/misleading?)</p>
+		</div> <!-- column one third -->
+
+	
+	</div> <!-- grid row -->
+
 
 	</main>
 	{{/content}}

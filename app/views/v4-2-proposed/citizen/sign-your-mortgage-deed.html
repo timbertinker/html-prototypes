@@ -3,7 +3,7 @@
 {{$head}}
 	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
   <link href="/public/stylesheets/application-v4-2.css" media="screen" rel="stylesheet" type="text/css">
-  <link href="/public/stylesheets/legalx.css" media="screen" rel="stylesheet" type="text/css">
+  <!-- <link href="/public/stylesheets/legal.css" media="screen" rel="stylesheet" type="text/css"> -->
 {{/head}}
 
 {{$pageTitle}}
@@ -12,48 +12,78 @@
 
 {{$content}}
 
+
 <main id="content" role="main">
 {{>includes/beta_banner}}
-	<h1 class="heading-xlarge">Sign your mortgage deed</h1>
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-xlarge">Sign your mortgage deed</h1>
 
-	<div class="text">
+			<div class="textx">
 
-		<p>
-			Use this service to check your mortgage details are correct, and sign
-			your mortgage deed. Your conveyancer will then ensure the Land Registry is
-			updated.
-		</p>
+				<p>
+					Use this service to check your mortgage details are correct, and sign
+					your mortgage deed. Your conveyancer will then ensure the Land Registry is
+					updated.
+				</p>
 
-		<p>To do this you will need:</p>
+				<p>To do this you will need:</p>
 
-		<ul>
-			<li>To verify your identity using GOV.UK Verify</li>
-		</ul>
+				<ul>
+					<li>To verify your identity using GOV.UK Verify</li>
+				</ul>
+<!-- reinstate this link to verify -->
+<!-- 				<p>
+					<a href="http://govuk-verify.herokuapp.com/intro?requestId=sign-mortgage" class="button button-get-started">Start now</a>
+				</p> -->
 
-		<p>
-			<a href="http://govuk-verify.herokuapp.com/intro?requestId=sign-mortgage" class="button button-get-started">Start now</a>
-		</p>
+				<p>
+					<a href="identity-verified" class="button button-get-started">Start now</a>
+				</p>
 
-<div class="legal-highlight">
-<!-- LM owns copy.  get copy from latest build -->
-		<div class="panel-indent">
-			<p class="font-xsmall">
-				Any information you provide during this process will be stored by
-				GOV.UK for fraud prevention purposes.
-			</p>
+		<div class="legal-highlight">
+		<!-- LM owns copy.  get copy from latest build -->
+				<div class="panel-indent">
+					<p class="font-xsmall">
+						Any information you provide during this process will be stored by
+						GOV.UK for fraud prevention purposes.
+					</p>
+				</div>
 		</div>
-</div>
 
-		<details>
-			<summary>
-				Why is the government involved in this?
-			</summary>
-			<p>The Land Registry registers any interests affecting registered land,
-				such as a change of mortgage. Find out more
-				<a href="https://www.gov.uk/government/organisations/land-registry/about">here.</a>
-			</p>
-		</details>
+				<details>
+					<summary>
+						Why is the government involved in this?
+					</summary>
+					<p>The Land Registry registers any interests affecting registered land,
+						such as a change of mortgage. Find out more
+						<a href="https://www.gov.uk/government/organisations/land-registry/about">here.</a>
+					</p>
+				</details>
 
+			</div>
+		</div>
+
+		<div class="column-third" style="font-size:14px;">
+		<!-- MattP Verify feedback -->
+		<p>GDS Feedback</p> 
+		<p>If this page will be generally available on GOV.UK...</p>
+		<p>
+		it doesn't explain itself to people who arrive on the page without guidance i.e. whether they should be seeking to transact, or not;
+		</p>
+		<p>
+		There’s nothing that outlines criteria or reasons why users do or don't need to go through the transaction;
+		</p>
+		<p>
+		There needs to be a clear understanding on whether they're at the right page or not [or if they're at the right page just too early to transact];
+		</p>
+		<p>
+		There needs to be a clear articulation on the audience for that page. For example, “use this page if you're in the middle of this process and your conveyancer has asked you to do it” – explaining to a curious user how they could check if their conveyancer has prepared their details. And why this page might not be right for a user;
+		</p>
+		<p>
+		Is it appropriate to giving timing guidance to the user – for example, please try to sign your mortgage within 1 week of receiving the link?
+		</p>
+		</div>
 	</div>
 
 </main>
