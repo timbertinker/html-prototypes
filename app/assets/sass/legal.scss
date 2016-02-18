@@ -1,0 +1,10 @@
+// for internal use - to highlight legal and required copy
+// so we can better communicate inside team and with stakeholders
+// so we don't change legally agreed copy by accident
+
+// element definitions ONLY WHERE NECESSARY
+div.legal-highlight {
+  border-left: dashed 2px red;
+  padding:0;
+  margin:0;
+}

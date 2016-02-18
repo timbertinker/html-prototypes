@@ -1,0 +1,52 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+Mortgage Deed Signed
+{{/pageTitle}}
+
+{{$head}}
+  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$content}}
+<main id="content" role="main">
+
+  {{>includes/beta_banner}}
+
+	<div class="grid-row">
+    <div class="column-two-thirds">
+  		<div class="deed-successful">
+  			<h1 class="heading-large">Mortgage deed signed</h1>
+  			<p>You’ve digitally signed your mortgage deed.</p>
+  		</div>
+
+  		<h2 class="heading-medium">What happens next?</h2>
+		<ul>
+			<li>
+				Your conveyancer will complete the mortgage and submit it to Land Registry
+			</li>
+			<li>
+				Land Registry will then update your title register to include the new mortgage
+			</li>
+		</ul>
+
+  		<p>
+  			The time this takes will vary depending on the complexity of the
+  			transaction.
+  		</p>
+  		<div class="division-standard-top">
+				<p><a href="#">How could we improve this service?</a></p>
+				<p><a href="#">More about the Land Registry</a></p>
+  		</div>
+    </div><!-- column-two-thirds -->
+  </div>
+
+</main>
+{{/content}}
+
+{{$bodyEnd}}
+{{>includes/scripts}}
+<script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+{{/bodyEnd}}
+
+{{/govuk_template}}

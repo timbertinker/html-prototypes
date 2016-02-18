@@ -1,0 +1,67 @@
+{{<govuk_template}}
+
+	{{$pageTitle}}
+		Confirm your mortgage deed
+	{{/pageTitle}}
+
+	{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css" />
+	  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css">
+	{{/head}}
+
+	{{$content}}
+		<main id="content" role="main">
+			<div class="inner-block">
+			{{>includes/beta_banner}}
+
+				<div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+				    <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+				      Your authentication code has expired
+				    </h1>
+
+				    <p>To protect you, authentication codes do not last very long</p>
+
+				    <p>
+				     Your authentication code has expired, you will need to <a href="mortgage-deed">request a new one</a>.
+				    </p>
+
+
+			  	</div>
+
+				<h1 class="heading-xlarge">Sign your mortgage deed</h1>
+
+				<form class="form">
+					<div class="form-group">
+						<fieldset>
+
+        				<legend id="authentication-code">
+        				<label class="form-label-bold" for="auth-code">
+							Enter your authentication code to sign your mortgage deed
+							<span class="form-hint">Example: ABC1234</span>
+						</label>
+
+        				</legend>
+											
+						<input type="text" class="form-control" id="auth-code" name="auth-code">
+					</div>
+					<p>
+						<a href="mortgage-deed">I haven't received my authentication code, resend it</a>
+					</p>
+					<div class="form-group">
+						<a href="deed-agreed-single" class="button">Sign mortgage</a>
+					</div>
+				</form>
+
+
+
+			</div>
+		</main>
+	{{/content}}
+
+	{{$bodyEnd}}
+	  {{>includes/scripts}}
+	  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+	{{/bodyEnd}}
+
+{{/govuk_template}}

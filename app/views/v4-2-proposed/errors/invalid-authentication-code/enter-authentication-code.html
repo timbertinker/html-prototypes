@@ -1,0 +1,51 @@
+{{<govuk_template}}
+
+	{{$pageTitle}}
+		Confirm your mortgage deed
+	{{/pageTitle}}
+
+	{{$head}}
+	  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css">
+	  <link href="/public/stylesheets/shame-v4-2.css" media="screen" rel="stylesheet" type="text/css" />
+	{{/head}}
+
+	{{$content}}
+	<main id="content" role="main">
+		{{>includes/beta_banner}}
+		<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<h1 class="heading-xlarge">Sign your mortgage deed</h1>
+
+				<p>
+					We have just sent your authentication code by text message to your mobile number ending <b>0546</b>
+				</p>
+
+				<form class="form">
+					<div class="form-group">
+						<label class="form-label-bold" for="auth-code">
+							Enter your authentication code to sign your mortgage deed
+							<span class="form-hint">Example: ABC1234</span>
+						</label>
+						<input type="text" class="form-control" id="auth-code" name="auth-code">
+					</div>
+					<p>
+						<a href="mortgage-deed">I haven't received my authentication code, resend it</a>
+					</p>
+					<div class="form-group">
+						<a href="invalid-authentication-code" class="button">Sign mortgage</a>
+					</div>
+				</form>
+
+			</div>
+
+		</div>
+	</main>
+	{{/content}}
+
+	{{$bodyEnd}}
+	  {{>includes/scripts}}
+	  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+	{{/bodyEnd}}
+
+{{/govuk_template}}
