@@ -1,0 +1,62 @@
+{{<govuk_template}}
+
+	{{$pageTitle}}
+		Sign in
+	{{/pageTitle}}
+
+	{{$head}}
+	  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css">
+	{{/head}}
+
+	{{$content}}
+		<main id="content" role="main">
+			{{>includes/beta_banner}}
+			<div class="inner-block">
+
+				<!-- <h1 class="heading-xlarge">Sign in</h1> -->
+<br><br>
+
+				<form class="form">
+				    <div class="form-group">
+				      <fieldset>
+				        <legend class="form-label-bold">What is your date of birth?</legend>
+				        <div class="form-date">
+
+				          <p class="form-hint">For example, 31 3 1980</p>
+
+				          <div class="form-group form-group-day">
+				            <label for="dob-day">Day</label>
+				            <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+				          </div>
+
+				          <div class="form-group form-group-month">
+				            <label for="dob-month">Month</label>
+				            <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+				          </div>
+
+				          <div class="form-group form-group-year">
+				            <label for="dob-year">Year</label>
+				            <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2015">
+				          </div>
+				        </div>
+				      </fieldset>
+				    </div>
+<!-- 					<div class="form-group">
+		      			<div><a href="#">I don't have a date of birth</a></div>
+		    		</div> -->
+
+					<div class="form-group">
+						<a href="incorrect-dob-format" class="button">Continue</a>
+					</div>
+				</form>
+
+			</div>
+		</main>
+	{{/content}}
+
+	{{$bodyEnd}}
+	  {{>includes/scripts}}
+	  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+	{{/bodyEnd}}
+
+{{/govuk_template}}
