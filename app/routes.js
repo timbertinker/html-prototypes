@@ -22,6 +22,25 @@ var router = express.Router();
       res.render('index');
     });
 
+    // Route to display error when invalid authentication code entered
+    router.get('/:type(next_sprint|current_sprint|last_sprint)/finished', function (req, res) {
+
+      var auth_code = req.query.auth_code;
+
+      if (auth_code == "invalid"){
+
+        url = '/' + req.params.type + '/invalid-authentication-code'
+        res.redirect(url);
+
+      } else {
+
+        url = req.params.type + '/finished'
+        res.render(url);
+
+      }
+
+    });
+
     // add your routes here
 
     // V3.2 - citizen deed only - Santander special -----------------------------
