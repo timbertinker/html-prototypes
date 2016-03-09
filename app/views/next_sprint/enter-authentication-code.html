@@ -1,0 +1,53 @@
+{{<govuk_template}}
+
+	{{$pageTitle}}
+		Confirm your mortgage deed
+	{{/pageTitle}}
+
+	{{$head}}
+	  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css">
+	  <link href="/public/stylesheets/shame-v4-2.css" media="screen" rel="stylesheet" type="text/css" />
+	{{/head}}
+
+	{{$content}}
+		<main id="content" role="main">
+
+		{{>includes/beta_banner}}
+
+		<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<h1 class="heading-xlarge">Confirm your mortgage deed</h1>
+
+				<a class="hack-pad-link" href="https://digitalmortgage.hackpad.com/Enter-Authentication-Code-Screen-BFqKfPR8Y7u#:h=Explanation-Text">discuss on hackpad</a>
+				<p>
+					We have just sent your authentication code by text message to your mobile
+					number ending <b>0546</b>
+				</p>
+
+				<a class="hack-pad-link" href="https://digitalmortgage.hackpad.com/Enter-Authentication-Code-Screen-BFqKfPR8Y7u#:h=Authentication-Code-Entry">discuss on hackpad</a>
+				<form class="form">
+					<div class="form-group">
+						<label class="form-label-bold" for="auth-code">
+							Enter your authentication code
+							<span class="form-hint">For example, c6e78a2</span>
+						</label>
+						<input type="text" class="form-control" id="auth-code" name="auth-code">
+					</div>
+					<div class="form-group">
+						<a href="finished" class="button">Confirm mortgage</a>
+					</div>
+				</form>
+
+			</div>
+		</div>
+
+		</main>
+	{{/content}}
+
+	{{$bodyEnd}}
+	  {{>includes/scripts}}
+	  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+	{{/bodyEnd}}
+
+{{/govuk_template}}
