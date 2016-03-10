@@ -2,6 +2,11 @@
 
 based on the GOV.UK Prototyping Kit...
 
+## Versioning
+
+Versioning is being handled using github branches, the current version can be found on the master branch and the branch with the appropriate version number. If you wish to see the code in old prototype versions then you will need to look in the branch for that version in github.
+
+When creating a new version of the prototype then create a new branch from master (naming is version_x_x) and once that version is in a ready state it can be pushed to master and then onto heroku.
 
 ## GOV.UK Prototyping Kit
 

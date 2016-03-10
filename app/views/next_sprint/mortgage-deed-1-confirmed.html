@@ -1,0 +1,129 @@
+{{<govuk_template}}
+
+	{{$pageTitle}}
+		Your mortgage deed
+	{{/pageTitle}}
+
+	{{$head}}
+	  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css">
+  	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css" />
+  	<link href="/public/stylesheets/shame-v4-1.css" media="screen" rel="stylesheet" type="text/css" />
+	{{/head}}
+
+	{{$content}}
+	<main id="content" role="main">
+
+		<div class="inner-block">
+		{{>includes/beta_banner}}
+
+			<h1 class="heading-xlarge">Your mortgage deed</h1>
+
+				<a class="hack-pad-link" href="https://digitalmortgage.hackpad.com/Mortgage-Deed-Screen-QuR4YtQ8ERG#:h=The-Mortgage-Deed">discuss on hackpad</a>
+		    <article class="text deed-document--bounds">
+
+		    	<h2 class="heading-large">Digital Mortgage Deed</h2>
+
+		    	<h3 class="heading-medium">Property</h3>
+
+		      	<p itemscope itemtype="http://schema.org/PostalAddress">
+		        	<span itemprop="streetAddress">83 Lordship Park<br>
+		        	</span>
+		        	<span itemprop="addressLocality">London</span><br>
+		        	<span itemprop="postalCode">N16 5UP</span>
+		      	</p>
+
+		      	<dl class="definition-inline">
+		        	<dt><b>Title number</b></dt>
+		        	<dd>GHR67832</dd>
+		      	</dl>
+
+		      	<h3 class="heading-medium">Lender</h3>
+
+		      	<p itemscope itemtype="http://schema.org/Corporation">
+		        	<span itemprop="name">Bank of England Plc</span><br>
+		        	<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="address-inline">
+		          		<span itemprop="streetAddress">12 Trinity Place, Regents Street,</span>
+		          		<span itemprop="addressLocality">London</span>
+		          		<span itemprop="postalCode">NW10 6TQ</span>
+		        	</span>
+		        </p>
+
+	        	<dl class="definition-inline">
+	          		<dt>Company registration number</dt>
+	          		<dd>2347676</dd>
+	        	</dl>
+
+		      	<h3 class="heading-medium">Borrower</h3>
+
+		      	<ul>
+		      		<li><b>Peter Smith</b></li>
+		      		<li><b>Sarah Jane Smith</b></li>
+		      	</ul>
+
+		        <h3 class="heading-medium">Charging clause</h3>
+		        <p>The borrower, with full title guarantee, charges to the lender the property by way of legal mortgage with payment of all money secured by the charge.</p>
+
+		        <h3 class="heading-medium">Additional provisions</h3>
+		        <ol class="list-number">
+		          <li>
+		            <p>This Mortgage Deed incorporates the <a href="#" rel="external">Lenders Mortgage Conditions and Explanation 2006</a>, a copy of which the borrower has received.</p>
+		          </li>
+		          <li>
+		            <p>The lender is obliged to make further advances and applies for the obligation to be entered in the register.</p>
+		          </li>
+		          <li>
+		            <p>The borrower applies to enter a restriction in the register that no disposition of the registered estate by the proprietor of the registered estate is to be registered without a written consent signed by the proprietor for the time being of the charge dated [the date of this charge] in favour of Bank of England Plc referred to in the charges register.</p>
+		          </li>
+		        </ol>
+
+	    		<h3 class="heading-medium">Effective date and time</h3>
+	    		<p>This charge takes effect when the registrar receives notification from [name of conveyancer preparing the charge] that the charge is to take effect.</p>
+
+	    		<p style="color: #6f777b;">[Effective date and time will be shown here]</p>
+
+
+					<h3 class="heading-medium">Borrower's digital signature(s)</h3>
+
+					<p>Confirmed by <b>Sarah Jane Smith</b></p>
+
+		    	<p style="color: #6f777b;">[Awaiting confirmation from Peter Smith]</p>
+
+					<!-- <div class="deed-form-ref deed-document--divider"> -->
+	        <div class="deed-form-ref">
+	        	<h3 class="visuallyhidden">Form of digital mortgage deed filed at HM Land Registry under reference</h3>
+	      		<p>e-MD1118</p>
+	        </div>
+					
+		    </article>
+
+	   	</div> <!-- end inner-block -->
+
+		<div class="inner-block">
+			<div class="text">
+				<a class="hack-pad-link" href="https://digitalmortgage.hackpad.com/Mortgage-Deed-Screen-QuR4YtQ8ERG#:h=Explanation-Text">discuss on hackpad</a>
+				<p>
+					If you’re ready to confirm your mortgage, we’ll send you an authentication code
+					which you’ll need to enter on the next screen.
+				</p>
+				<p>
+					If you do not wish to confirm the mortgage deed (for instance if you think
+					there is a mistake or you want further explanation) you should contact
+					your conveyancer.
+				</p>
+				<h2 class="heading-medium">Receiving your authentication code</h2>
+				<p>
+					We will be sending your authentication code by text message to your
+					mobile number ending <b>0546</b>.
+				</p>
+				<a href="enter-authentication-code" class="button">Send my code</a>
+			</div>
+		</div>
+	</main>
+	{{/content}}
+
+	{{$bodyEnd}}
+	  {{>includes/scripts}}
+	  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+	{{/bodyEnd}}
+
+{{/govuk_template}}
