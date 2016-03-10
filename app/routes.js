@@ -29,12 +29,17 @@ var router = express.Router();
 
       if (auth_code == "invalid"){
 
-        url = '/' + req.params.type + '/invalid-authentication-code'
+        url = '/' + req.params.type + '/invalid-authentication-code';
+        res.redirect(url);
+
+      } else if (auth_code == "timeout"){
+
+        url = '/' + req.params.type + '/expired-authentication-code';
         res.redirect(url);
 
       } else {
 
-        url = req.params.type + '/finished'
+        url = req.params.type + '/finished';
         res.render(url);
 
       }

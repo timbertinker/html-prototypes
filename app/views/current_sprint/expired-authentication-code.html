@@ -19,18 +19,20 @@
 
 					<div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
 
-						<a class="hack-pad-link" href="https://digitalmortgage.hackpad.com/Enter-Authentication-Code-Screen-BFqKfPR8Y7u#:h=Error:-Invalid-Authentication-">discuss on hackpad</a>
-				    <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+						<a class="hack-pad-link" href="https://digitalmortgage.hackpad.com/Enter-Authentication-Code-Screen-BFqKfPR8Y7u#:h=Error:-Authentication-Code-Expired">discuss on hackpad</a>
+						<h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
 				      Unable to confirm your deed
 				    </h1>
 
 				    <p>
-				     The authentication code you entered was incorrect, it may have already
-						 been used or may have been mistyped.
+				     The authentication code you entered has expired.
 				    </p>
+						<p>
+							Authentication codes are only valid for a period of ten minutes.
+						</p>
 
 				    <div class="error-summary-list">
-				      <a href="#auth_code">Please enter the authentication code sent to your mobile phone</a>
+				      <a href="resend-authentication-code">Request a new authentication code</a>
 				    </div>
 
 			  	</div>
@@ -45,14 +47,11 @@
 
 					<a class="hack-pad-link" href="https://digitalmortgage.hackpad.com/Enter-Authentication-Code-Screen-BFqKfPR8Y7u#:h=Authentication-Code-Entry">discuss on hackpad</a>
 					<form class="form" action="finished">
-						<div class="form-group error">
+						<div class="form-group">
 							<label class="form-label-bold" for="auth_code">
 								Enter your authentication code
 								<span class="form-hint">For example, c6e78a2</span>
 							</label>
-							<span class="error-message">
-								Please enter the authentication code sent to your mobile phone
-							</span>
 							<input type="text" class="form-control" id="auth_code" name="auth_code">
 						</div>
 						<div class="form-group">
@@ -63,7 +62,6 @@
 					<div class="form-group">
 						<p><a href="resend-authentication-code">Request a new authentication code<a/></p>
 					</div>
-
 				</div>
 			</div>
 		</main>
