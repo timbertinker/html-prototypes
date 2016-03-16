@@ -25,13 +25,21 @@
 				    </h1>
 
 				    <p>
-				     The authentication code you entered was incorrect, it may have already
-						 been used or may have been mistyped.
+				    	The authentication code you entered was not recognised, it may have
+							been mistyped.
 				    </p>
-
 				    <div class="error-summary-list">
-				      <a href="#auth_code">Please enter the authentication code sent to your mobile phone</a>
+				      <a href="#auth_code">Re-enter your authentication code</a>
 				    </div>
+						<br/>
+						<p>
+							Or the authentication you entered may have expired, codes are only valid
+							for a period of ten minutes.
+						</p>
+						<div class="error-summary-list">
+							<a href="resend-authentication-code">Request a new authentication code</a>
+						</div>
+
 
 			  	</div>
 
@@ -48,10 +56,10 @@
 						<div class="form-group error">
 							<label class="form-label-bold" for="auth_code">
 								Enter your authentication code
-								<span class="form-hint">For example, c6e78a2</span>
+								<span class="form-hint">For example, c6e78a</span>
 							</label>
 							<span class="error-message">
-								Please enter the authentication code sent to your mobile phone
+								Re-enter your authentication code
 							</span>
 							<input type="text" class="form-control" id="auth_code" name="auth_code">
 						</div>
