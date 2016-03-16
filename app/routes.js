@@ -32,11 +32,6 @@ var router = express.Router();
         url = '/' + req.params.type + '/invalid-authentication-code';
         res.redirect(url);
 
-      } else if (auth_code == "timeout"){
-
-        url = '/' + req.params.type + '/expired-authentication-code';
-        res.redirect(url);
-
       } else {
 
         url = req.params.type + '/finished';
