@@ -16,7 +16,7 @@
 				<br><br>
 
 				<a class="hack-pad-link" href="https://digitalmortgage.hackpad.com/Enter-Date-of-Birth-Screen-APMw2LyPnpY#:h=Date-of-Birth-Entry">discuss on hackpad</a>
-				<form class="form">
+				<form class="form" action="how-to-proceed">
 			    <div class="form-group">
 			      <fieldset>
 			        <legend class="form-label-bold">What is your date of birth?</legend>
@@ -25,25 +25,25 @@
 			          <p class="form-hint">For example, 31 3 1980</p>
 
 			          <div class="form-group form-group-day">
-			            <label for="dob-day">Day</label>
-			            <input class="form-control" id="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+			            <label for="dob_day">Day</label>
+			            <input class="form-control" id="dob_day" name="dob_day" type="number" pattern="[0-9]*" min="0" max="31">
 			          </div>
 
 			          <div class="form-group form-group-month">
-			            <label for="dob-month">Month</label>
-			            <input class="form-control" id="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+			            <label for="dob_month">Month</label>
+			            <input class="form-control" id="dob_month" name="dob_month" type="number" pattern="[0-9]*" min="0" max="12">
 			          </div>
 
 			          <div class="form-group form-group-year">
-			            <label for="dob-year">Year</label>
-			            <input class="form-control" id="dob-year" type="number" pattern="[0-9]*" min="0" max="2015">
+			            <label for="dob_year">Year</label>
+			            <input class="form-control" id="dob_year" name="dob_year" type="number" pattern="[0-9]*" min="0" max="2015">
 			          </div>
 			        </div>
 			      </fieldset>
 			    </div>
 
 					<div class="form-group">
-						<a href="how-to-proceed" class="button">Continue</a>
+						<input class="button" type="submit" value="Continue">
 					</div>
 				</form>
 

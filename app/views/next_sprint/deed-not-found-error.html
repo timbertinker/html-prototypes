@@ -5,6 +5,7 @@
 	{{/pageTitle}}
 
 	{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
 	  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css">
 	{{/head}}
 
@@ -13,7 +14,22 @@
 			{{>includes/beta_banner}}
 			<div class="inner-block">
 
-				<br><br>
+				<div class="text error-summary" role="group" aria-labelledby="error-deed-not-found" tabindex="-1">
+
+					<a class="hack-pad-link" href="https://digitalmortgage.hackpad.com/Enter-Date-of-Birth-Screen-APMw2LyPnpY#:h=Error:-Unable-to-Find-Deed">discuss on hackpad</a>
+					<h1 class="heading-medium error-summary-heading" id="error-deed-not-found">Unable to find your mortgage deed</h1>
+
+					<p>This might be because:</p>
+					<ul>
+						<li>the borrower reference was mistyped</li>
+						<li>or the date of birth was not in the format dd mm yyyy</li>
+					</ul>
+					<p>
+						If you continue to experience problems please contact your
+						conveyancer.
+					</p>
+
+				</div>
 
 				<a class="hack-pad-link" href="https://digitalmortgage.hackpad.com/Enter-Borrower-Reference-Screen-dXNGph94jRW#:h=Borrower-Reference-Entry">discuss on hackpad</a>
 				<form class="form">

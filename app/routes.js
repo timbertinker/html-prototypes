@@ -22,6 +22,32 @@ var router = express.Router();
       res.render('index');
     });
 
+    // Route to display an error when invalid reference and/or dob entered
+    router.get('/:type(next_sprint|current_sprint|last_sprint)/how-to-proceed', function (req, res) {
+
+      var dob_day = req.query.dob_day;
+      var dob_month = req.query.dob_month;
+      var dob_year = req.query.dob_year;
+
+      if (dob_day == "25" && dob_month == "12" && dob_year == "0000"){
+
+        url = '/' + req.params.type + '/incorrect-dob-format';
+        res.redirect(url);
+
+      } else if (dob_day == "31" && dob_month == "12" && dob_year == "99"){
+
+        url = '/' + req.params.type + '/deed-not-found-error';
+        res.redirect(url);
+
+      } else {
+
+        url = req.params.type + '/how-to-proceed';
+        res.render(url);
+
+      }
+
+    });
+
     // Route to display error when invalid authentication code entered
     router.get('/:type(next_sprint|current_sprint|last_sprint)/finished', function (req, res) {
 
