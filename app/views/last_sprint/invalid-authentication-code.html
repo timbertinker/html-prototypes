@@ -1,0 +1,85 @@
+{{<govuk_template}}
+
+	{{$pageTitle}}
+		Confirm your mortgage deed
+	{{/pageTitle}}
+
+	{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css">
+	{{/head}}
+
+	{{$content}}
+		<main id="content" role="main">
+
+			{{>includes/beta_banner}}
+
+			<div class="grid-row">
+				<div class="column-two-thirds">
+
+					<div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+						<a class="hack-pad-link" href="https://digitalmortgage.hackpad.com/Enter-Authentication-Code-Screen-BFqKfPR8Y7u#:h=Error:-Invalid-Authentication-">discuss on hackpad</a>
+				    <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+				      Unable to confirm your deed
+				    </h1>
+
+				    <p>
+				    	The authentication code you entered was not recognised, it may have
+							been mistyped.
+				    </p>
+				    <div class="error-summary-list">
+				      <a href="#auth_code">Re-enter your authentication code</a>
+				    </div>
+						<br/>
+						<p>
+							Or the authentication you entered may have expired, codes are only valid
+							for a period of ten minutes.
+						</p>
+						<div class="error-summary-list">
+							<a href="resend-authentication-code">Request a new authentication code</a>
+						</div>
+
+
+			  	</div>
+
+					<h1 class="heading-xlarge">Confirm your mortgage deed</h1>
+
+					<a class="hack-pad-link" href="https://digitalmortgage.hackpad.com/Enter-Authentication-Code-Screen-BFqKfPR8Y7u#:h=Explanation-Text">discuss on hackpad</a>
+					<p>
+						We have just sent your authentication code by text message to your mobile
+						number ending <span style="font-weight: bold;">0546</span>
+					</p>
+
+					<a class="hack-pad-link" href="https://digitalmortgage.hackpad.com/Enter-Authentication-Code-Screen-BFqKfPR8Y7u#:h=Authentication-Code-Entry">discuss on hackpad</a>
+					<form class="form" action="finished">
+						<div class="form-group error">
+							<label class="form-label-bold" for="auth_code">
+								Enter your authentication code
+								<span class="form-hint">For example, c6e78a</span>
+							</label>
+							<span class="error-message">
+								Re-enter your authentication code
+							</span>
+							<input type="text" class="form-control" id="auth_code" name="auth_code">
+						</div>
+						<div class="form-group">
+							<input class="button" type="submit" value="Confirm mortgage">
+						</div>
+					</form>
+
+					<div class="form-group">
+						<p><a href="resend-authentication-code">Request a new authentication code<a/></p>
+					</div>
+
+				</div>
+			</div>
+		</main>
+	{{/content}}
+
+	{{$bodyEnd}}
+	  {{>includes/scripts}}
+	  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+	{{/bodyEnd}}
+
+{{/govuk_template}}
