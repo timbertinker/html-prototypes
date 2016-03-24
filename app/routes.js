@@ -49,7 +49,7 @@ var router = express.Router();
     });
 
     // Route to display error when invalid authentication code entered
-    router.get('/:type(next_sprint|current_sprint|last_sprint)/finished', function (req, res) {
+    router.get('/:type(next_sprint|current_sprint|last_sprint)/confirming-mortgage-deed', function (req, res) {
 
       var auth_code = req.query.auth_code;
 
@@ -60,7 +60,7 @@ var router = express.Router();
 
       } else {
 
-        url = req.params.type + '/finished';
+        url = req.params.type + '/confirming-mortgage-deed';
         res.render(url);
 
       }
