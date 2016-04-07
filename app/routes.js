@@ -23,7 +23,7 @@ var router = express.Router();
     });
 
     // Route to display an error when invalid reference and/or dob entered
-    router.get('/:type(next_sprint|current_sprint|last_sprint)/how-to-proceed', function (req, res) {
+    router.get('/:type(user_research|future_sprints|current_sprint)/how-to-proceed', function (req, res) {
 
       var dob_day = req.query.dob_day;
       var dob_month = req.query.dob_month;
@@ -49,7 +49,7 @@ var router = express.Router();
     });
 
     // Route to display error when invalid authentication code entered
-    router.get('/:type(next_sprint|current_sprint|last_sprint)/confirming-mortgage-deed', function (req, res) {
+    router.get('/:type(user_research|future_sprints|current_sprint)/confirming-mortgage-deed', function (req, res) {
 
       var auth_code = req.query.auth_code;
 
