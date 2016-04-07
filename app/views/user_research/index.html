@@ -1,0 +1,62 @@
+{{<govuk_template}}
+
+{{$head}}
+	<link href="/public/lr-style-guide/lr-styleguide/css/styleguide.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$pageTitle}}
+  View your mortgage deed
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main">
+	{{>includes/beta_banner}}
+
+	<h1 class="heading-xlarge">Prototype for user research</h1>
+
+	<div class="text">
+
+		<p>
+			This page contains the prototype for features that require user research
+			in order to better understand the users need and subsequently the approach
+			to design we should be taking.
+		</p>
+
+		<h2 class="heading-medium">View mortgage deed flow</h2>
+		<ul>
+			<li><a href="/future_sprints/sign-my-mortgage">Viewing mortgage deed - happy path</a></li>
+			<ul>
+				<li><a href="/future_sprints/mortgage-deed">mortgage deed - nobody confirmed</a></li>
+				<li><a href="/future_sprints/mortgage-deed-1-confirmed">mortgage deed - other borrower confirmed</a></li>
+				<li><a href="/future_sprints/mortgage-deed-both-confirmed">mortgage deed - borrowers already confirmed</a></li>
+			</ul>
+		</ul>
+		<h2 class="heading-medium">Unhappy paths</h2>
+		<ul>
+			<li><a href="/future_sprints/how-to-proceed?dob_day=31&dob_month=12&dob_year=99">Borrower reference / DOB does not match a deed</a></li>
+			<li><a href="/future_sprints/how-to-proceed?dob_day=25&dob_month=12&dob_year=0000">Invalid date of birth</a></li>
+			<li><a href="/future_sprints/deed-stopped/borrower-reference">Deed processing has been stopped</a></li>
+			<li><a href="/future_sprints/confirming-mortgage-deed?auth_code=invalid">Invalid authentication code</a></li>
+		</ul>
+		<h2 class="heading-medium">Errors</h2>
+		<ul>
+			<li><a href="/future_sprints/server-errors/404">Server error - 404 - page not found</a></li>
+			<li><a href="/future_sprints/server-errors/503">Server error - 5xx - unexpected error</a></li>
+			<li><a href="/future_sprints/server-errors/session-ended">Session has timed out or ended</a></li>
+			<li><a href="/future_sprints/server-errors/deed-not-confirmed">Your deed has not been confirmed</a></li>
+		</ul>
+
+	</div>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript" src="/public/lr-style-guide/lr-styleguide/js/styleguide.min.js"></script>
+{{/bodyEnd}}
+
+{{/govuk_template}}

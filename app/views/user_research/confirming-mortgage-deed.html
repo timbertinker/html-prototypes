@@ -1,0 +1,52 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+  Your session has timed out
+{{/pageTitle}}
+
+{{$head}}
+  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css">
+{{/head}}
+
+{{$content}}
+
+<main id="wrapper" role="main">
+
+  <div id="content">
+    {{>includes/beta_banner}}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+    	<h1 class="heading-xlarge">Confirming...</h1>
+
+	    <p>
+        Your mortgage deed is now being confirmed. This process may take a few
+        moments to complete.
+      </p>
+
+      <p class="panel-indent">
+        Please do not refresh this page, you will be notified when the deed has
+        been successfully confirmed.
+      </p>
+
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/scripts}}
+  <script type="text/javascript">
+   var timeoutID = window.setTimeout(move, 5000);
+   function move() {
+     window.location.href = 'finished';
+   }
+  </script>
+{{/bodyEnd}}
+
+{{/govuk_template}}
