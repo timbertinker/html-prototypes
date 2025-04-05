@@ -14,8 +14,6 @@ var router = express.Router();
 //   res.render('examples/template-data', { 'name' : 'Foo' });
 // });
 
-
-
     router.get('/', function (req, res) {
       // ALWAYS flush sessions if you're at the root index:
       req.session = null;
